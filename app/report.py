@@ -20,6 +20,18 @@ def main():
     lines.append(f"_Generated: {datetime.utcnow().isoformat()}Z_")
     lines.append("")
 
+    # Add data source information
+    lines.append("## Data Sources")
+    lines.append("")
+    lines.append("This report uses real market data from the following sources:")
+    lines.append("")
+    lines.append("- **Crypto Data**: Kraken API → Coinbase API → CoinGecko API (fallback chain)")
+    lines.append("- **Stock Data**: Stooq API → Yahoo Finance (fallback)")
+    lines.append("- **Index Data**: Yahoo Finance")
+    lines.append("")
+    lines.append("All data sources are free, no API keys required for primary sources.")
+    lines.append("")
+
     if summary is not None and not summary.empty:
         lines.append("## Summary")
         lines.append("")

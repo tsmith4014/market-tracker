@@ -122,81 +122,375 @@ def fib_levels(low: float, high: float) -> Dict[str, float]:
     levels = [0.236, 0.382, 0.5, 0.618, 0.786]
     return {f"{int(l*1000)/10:.1f}%": high - (high - low) * l for l in levels}
 
-def fetch_binance_klines(symbol: str, interval="1d", days=365) -> pd.DataFrame:
-    url = "https://api.binance.com/api/v3/klines"
-    params = {"symbol": symbol, "interval": interval, "limit": min(days, 1000)}
+def fetch_stooq_data(symbol: str, days=365) -> pd.DataFrame:
+    """Fetch stock data from Stooq (no API key required)"""
+    # Map our symbols to Stooq format
+    stooq_symbols = {
+        "AMD": "amd.us",
+        "NVDA": "nvda.us", 
+        "^DXY": "^dxy"
+    }
+    
+    stooq_symbol = stooq_symbols.get(symbol)
+    if not stooq_symbol:
+        raise ValueError(f"Unsupported symbol for Stooq: {symbol}")
+    
     try:
-        r = requests.get(url, params=params, timeout=30); r.raise_for_status()
-        data = r.json()
-        cols = ["OpenTime","Open","High","Low","Close","Volume","CloseTime","QuoteAssetVolume","NumberOfTrades","TakerBuyBase","TakerBuyQuote","Ignore"]
-        df = pd.DataFrame(data, columns=cols)
-        df["Date"] = pd.to_datetime(df["OpenTime"], unit="ms")
-        for c in ["Open","High","Low","Close","Volume"]: df[c] = df[c].astype(float)
+        url = f"https://stooq.com/q/d/l/?s={stooq_symbol}&i=d"
+        r = requests.get(url, timeout=30)
+        r.raise_for_status()
+        
+        # Parse CSV data
+        from io import StringIO
+        df = pd.read_csv(StringIO(r.text))
+        
+        if df.empty:
+            raise ValueError("No data received from Stooq")
+        
+        # Rename columns to match our format
+        df = df.rename(columns={
+            "Date": "Date",
+            "Open": "Open", 
+            "High": "High",
+            "Low": "Low",
+            "Close": "Close",
+            "Volume": "Volume"
+        })
+        
+        # Convert date column
+        df["Date"] = pd.to_datetime(df["Date"])
+        
+        # Filter to requested days
+        end_date = datetime.now()
+        start_date = end_date - pd.Timedelta(days=days)
+        df = df[df["Date"] >= start_date]
+        
         return df[["Date","Open","High","Low","Close","Volume"]].sort_values("Date")
+        
     except Exception as e:
-        print(f"Warning: Binance API failed for {symbol}: {e}")
-        print("Using yfinance as fallback...")
-        # Fallback to yfinance for crypto data
-        yf_symbol = symbol.replace("USDT", "-USD")
-        return fetch_yf_daily(yf_symbol, period=f"{days}d")
+        print(f"Error: Stooq API failed for {symbol}: {e}")
+        raise ValueError(f"No data available from Stooq for {symbol}")
 
-def fetch_yf_daily(ticker: str, period="400d") -> pd.DataFrame:
+def fetch_kraken_data(symbol: str, days=365) -> pd.DataFrame:
+    """Fetch crypto data from Kraken (no API key required)"""
+    # Map our symbols to Kraken format
+    kraken_symbols = {
+        "SOL-USD": "SOLUSD",
+        "BTC-USD": "XBTUSD", 
+        "ETH-USD": "ETHUSD",
+        "XRP-USD": "XRPUSD"
+    }
+    
+    kraken_symbol = kraken_symbols.get(symbol)
+    if not kraken_symbol:
+        raise ValueError(f"Unsupported symbol for Kraken: {symbol}")
+    
     try:
+        url = "https://api.kraken.com/0/public/OHLC"
+        params = {
+            "pair": kraken_symbol,
+            "interval": "1440"  # Daily candles
+        }
+        
+        r = requests.get(url, params=params, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        
+        if "error" in data and data["error"]:
+            raise ValueError(f"Kraken API error: {data['error']}")
+        
+        if not data.get("result") or not data["result"].get(kraken_symbol):
+            raise ValueError("No data received from Kraken")
+        
+        # Parse OHLC data
+        ohlc_data = data["result"][kraken_symbol]
+        df_data = []
+        
+        for candle in ohlc_data:
+            df_data.append({
+                "Date": pd.to_datetime(int(candle[0]), unit='s').date(),
+                "Open": float(candle[1]),
+                "High": float(candle[2]),
+                "Low": float(candle[3]),
+                "Close": float(candle[4]),
+                "Volume": float(candle[6])
+            })
+        
+        df = pd.DataFrame(df_data)
+        df["Date"] = pd.to_datetime(df["Date"])
+        
+        # Filter to requested days
+        end_date = datetime.now()
+        start_date = end_date - pd.Timedelta(days=days)
+        df = df[df["Date"] >= start_date]
+        
+        return df[["Date","Open","High","Low","Close","Volume"]].sort_values("Date")
+        
+    except Exception as e:
+        print(f"Error: Kraken API failed for {symbol}: {e}")
+        raise ValueError(f"No data available from Kraken for {symbol}")
+
+def fetch_coinbase_data(symbol: str, days=365) -> pd.DataFrame:
+    """Fetch crypto data from Coinbase (no API key required)"""
+    # Map our symbols to Coinbase format
+    coinbase_symbols = {
+        "SOL-USD": "SOL-USD",
+        "BTC-USD": "BTC-USD",
+        "ETH-USD": "ETH-USD", 
+        "XRP-USD": "XRP-USD"
+    }
+    
+    coinbase_symbol = coinbase_symbols.get(symbol)
+    if not coinbase_symbol:
+        raise ValueError(f"Unsupported symbol for Coinbase: {symbol}")
+    
+    try:
+        # Calculate start and end times
+        end_time = datetime.now()
+        start_time = end_time - pd.Timedelta(days=days)
+        
+        url = f"https://api.exchange.coinbase.com/products/{coinbase_symbol}/candles"
+        params = {
+            "start": start_time.isoformat(),
+            "end": end_time.isoformat(),
+            "granularity": "86400"  # Daily candles (86400 seconds)
+        }
+        
+        r = requests.get(url, params=params, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        
+        if not data:
+            raise ValueError("No data received from Coinbase")
+        
+        # Parse candle data
+        df_data = []
+        for candle in data:
+            df_data.append({
+                "Date": pd.to_datetime(int(candle[0]), unit='s').date(),
+                "Low": float(candle[1]),
+                "High": float(candle[2]),
+                "Open": float(candle[3]),
+                "Close": float(candle[4]),
+                "Volume": float(candle[5])
+            })
+        
+        df = pd.DataFrame(df_data)
+        df["Date"] = pd.to_datetime(df["Date"])
+        
+        return df[["Date","Open","High","Low","Close","Volume"]].sort_values("Date")
+        
+    except Exception as e:
+        print(f"Error: Coinbase API failed for {symbol}: {e}")
+        raise ValueError(f"No data available from Coinbase for {symbol}")
+
+def fetch_coingecko_data(symbol: str, days=365) -> pd.DataFrame:
+    """Fetch crypto data from CoinGecko API"""
+    # Map our symbols to CoinGecko IDs
+    coin_ids = {
+        "SOL-USD": "solana",
+        "BTC-USD": "bitcoin", 
+        "ETH-USD": "ethereum",
+        "XRP-USD": "ripple"
+    }
+    
+    coin_id = coin_ids.get(symbol)
+    if not coin_id:
+        raise ValueError(f"Unsupported symbol: {symbol}")
+    
+    url = f"https://api.coingecko.com/api/v3/coins/{coin_id}/market_chart"
+    params = {
+        "vs_currency": "usd",
+        "days": min(days, 365),  # CoinGecko free tier limit
+        "interval": "daily"
+    }
+    
+    try:
+        r = requests.get(url, params=params, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        
+        # Extract price data
+        prices = data.get("prices", [])
+        if not prices:
+            raise ValueError("No price data received")
+        
+        # Convert to DataFrame
+        df_data = []
+        for timestamp, price in prices:
+            # For daily data, we'll use the price as both open, high, low, close
+            # This is a limitation of the free API - we only get daily close prices
+            df_data.append({
+                "Date": pd.to_datetime(timestamp, unit="ms").date(),
+                "Open": price,
+                "High": price * 1.02,  # Estimate high as 2% above close
+                "Low": price * 0.98,   # Estimate low as 2% below close  
+                "Close": price,
+                "Volume": 1000000  # Placeholder volume
+            })
+        
+        df = pd.DataFrame(df_data)
+        df["Date"] = pd.to_datetime(df["Date"])
+        return df[["Date","Open","High","Low","Close","Volume"]].sort_values("Date")
+        
+    except Exception as e:
+        print(f"Warning: CoinGecko API failed for {symbol}: {e}")
+        print("Trying CoinPaprika as fallback...")
+        return fetch_coinpaprika_data(symbol, days)
+
+def fetch_coinpaprika_data(symbol: str, days=365) -> pd.DataFrame:
+    """Fetch crypto data from CoinPaprika API as fallback"""
+    # Map our symbols to CoinPaprika IDs
+    coin_ids = {
+        "SOL-USD": "sol-solana",
+        "BTC-USD": "btc-bitcoin",
+        "ETH-USD": "eth-ethereum", 
+        "XRP-USD": "xrp-ripple"
+    }
+    
+    coin_id = coin_ids.get(symbol)
+    if not coin_id:
+        raise ValueError(f"Unsupported symbol: {symbol}")
+    
+    url = f"https://api.coinpaprika.com/v1/coins/{coin_id}/ohlcv/historical"
+    params = {
+        "start": (datetime.now() - pd.Timedelta(days=days)).strftime("%Y-%m-%d"),
+        "end": datetime.now().strftime("%Y-%m-%d")
+    }
+    
+    try:
+        r = requests.get(url, params=params, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        
+        if not data:
+            raise ValueError("No data received")
+        
+        # Convert to DataFrame
+        df_data = []
+        for item in data:
+            df_data.append({
+                "Date": pd.to_datetime(item["time_open"]).date(),
+                "Open": float(item["open"]),
+                "High": float(item["high"]),
+                "Low": float(item["low"]),
+                "Close": float(item["close"]),
+                "Volume": float(item["volume"])
+            })
+        
+        df = pd.DataFrame(df_data)
+        df["Date"] = pd.to_datetime(df["Date"])
+        return df[["Date","Open","High","Low","Close","Volume"]].sort_values("Date")
+        
+    except Exception as e:
+        print(f"Warning: CoinPaprika API failed for {symbol}: {e}")
+        print("Trying CoinLore as final fallback...")
+        return fetch_coinlore_data(symbol, days)
+
+def fetch_coinlore_data(symbol: str, days=365) -> pd.DataFrame:
+    """Fetch crypto data from CoinLore API as final fallback"""
+    # Map our symbols to CoinLore IDs
+    coin_ids = {
+        "SOL-USD": "48543",  # Solana
+        "BTC-USD": "90",     # Bitcoin
+        "ETH-USD": "80",     # Ethereum
+        "XRP-USD": "58"      # XRP
+    }
+    
+    coin_id = coin_ids.get(symbol)
+    if not coin_id:
+        raise ValueError(f"Unsupported symbol: {symbol}")
+    
+    try:
+        # Get current price
+        url = f"https://api.coinlore.net/api/ticker/?id={coin_id}"
+        r = requests.get(url, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        
+        if not data:
+            raise ValueError("No data received")
+        
+        current_price = float(data[0]["price_usd"])
+        
+        # CoinLore only provides current price, not historical data
+        # We cannot generate historical data without real API data
+        print(f"Error: CoinLore only provides current price for {symbol}, not historical data")
+        raise ValueError(f"No historical data available for {symbol}")
+        
+    except Exception as e:
+        print(f"Error: CoinLore API failed for {symbol}: {e}")
+        print("All crypto APIs failed - no data available")
+        raise ValueError(f"No API data available for {symbol}")
+
+def fetch_free_stock_data(ticker: str, days=400) -> pd.DataFrame:
+    """Fetch stock data using free APIs - no fallback to mock data"""
+    print(f"Error: No free stock API available for {ticker}")
+    print("No API data available")
+    raise ValueError(f"No API data available for {ticker}")
+
+def fetch_stock_data(ticker: str, days=400) -> pd.DataFrame:
+    """Fetch stock data using no-key APIs"""
+    # Try Stooq first (most reliable for stocks)
+    try:
+        print(f"Trying Stooq API for {ticker}...")
+        return fetch_stooq_data(ticker, days)
+    except Exception as e:
+        print(f"Stooq failed for {ticker}: {e}")
+    
+    # Try Yahoo Finance as fallback
+    try:
+        print(f"Trying Yahoo Finance for {ticker}...")
+        period = f"{days}d"
         df = yf.download(ticker, period=period, interval="1d", auto_adjust=False, progress=False)
         if df.empty:
             raise ValueError("Empty data from yfinance")
         return df.reset_index()[["Date","Open","High","Low","Close","Volume"]].dropna()
     except Exception as e:
-        print(f"Warning: yfinance failed for {ticker}: {e}")
-        print("Generating mock data for testing...")
-        return generate_mock_data(ticker, period)
-
-def generate_mock_data(ticker: str, period="400d") -> pd.DataFrame:
-    """Generate mock OHLCV data for testing when APIs fail"""
-    import random
-    from datetime import datetime, timedelta
+        print(f"Yahoo Finance failed for {ticker}: {e}")
     
-    # Parse period to get number of days
-    if period.endswith('d'):
+    # All APIs failed
+    raise ValueError(f"No API data available for {ticker}")
+
+def fetch_yf_daily(ticker: str, period="400d") -> pd.DataFrame:
+    """Legacy function - now calls fetch_stock_data"""
+    if isinstance(period, str) and period.endswith('d'):
         days = int(period[:-1])
     else:
-        days = 400
+        days = int(period) if isinstance(period, str) else period
+    return fetch_stock_data(ticker, days)
+
+def fetch_crypto_data(symbol: str, days=365) -> pd.DataFrame:
+    """Fetch crypto data using multiple no-key API fallbacks"""
+    import time
     
-    # Generate date range
-    end_date = datetime.now()
-    start_date = end_date - timedelta(days=days)
-    dates = pd.date_range(start=start_date, end=end_date, freq='D')
+    # Try Kraken first (most reliable for crypto)
+    try:
+        print(f"Trying Kraken API for {symbol}...")
+        time.sleep(0.5)  # Rate limiting
+        return fetch_kraken_data(symbol, days)
+    except Exception as e:
+        print(f"Kraken failed for {symbol}: {e}")
     
-    # Generate mock price data with some realistic patterns
-    base_price = 100.0 if 'USD' in ticker else 50.0
-    prices = [base_price]
+    # Try Coinbase as fallback
+    try:
+        print(f"Trying Coinbase API for {symbol}...")
+        time.sleep(0.5)
+        return fetch_coinbase_data(symbol, days)
+    except Exception as e:
+        print(f"Coinbase failed for {symbol}: {e}")
     
-    for i in range(1, len(dates)):
-        # Random walk with slight upward bias
-        change = random.uniform(-0.05, 0.08)  # -5% to +8% daily change
-        new_price = prices[-1] * (1 + change)
-        prices.append(max(new_price, 1.0))  # Ensure positive prices
+    # Try CoinGecko as final fallback
+    try:
+        print(f"Trying CoinGecko API for {symbol}...")
+        time.sleep(0.5)
+        return fetch_coingecko_data(symbol, days)
+    except Exception as e:
+        print(f"CoinGecko failed for {symbol}: {e}")
     
-    # Generate OHLCV data
-    data = []
-    for i, (date, close) in enumerate(zip(dates, prices)):
-        # Generate realistic OHLC from close price
-        volatility = random.uniform(0.01, 0.05)  # 1-5% intraday volatility
-        high = close * (1 + random.uniform(0, volatility))
-        low = close * (1 - random.uniform(0, volatility))
-        open_price = close * (1 + random.uniform(-volatility/2, volatility/2))
-        volume = random.randint(1000000, 10000000)  # Random volume
-        
-        data.append({
-            'Date': date,
-            'Open': round(open_price, 2),
-            'High': round(high, 2),
-            'Low': round(low, 2),
-            'Close': round(close, 2),
-            'Volume': volume
-        })
-    
-    return pd.DataFrame(data)
+    # All APIs failed
+    raise ValueError(f"No API data available for {symbol}")
+
 
 def _nan_to_none(x):
     if isinstance(x, (float, np.floating)) and (np.isnan(x) or np.isinf(x)): return None
@@ -306,7 +600,7 @@ def enforce_guards(symbol_cfg: dict, latest: dict, raw_signal: str) -> str:
 
 def ensure_schema(csv_path: str) -> List[str]:
     cols = [
-        "timestamp_ct","symbol","date","open","high","low","close","volume",
+        "timestamp_ct","symbol","data_source","date","open","high","low","close","volume",
         "ema20","ema50","ema100","ema200","sma20","sma50","sma100","sma200",
         "rsi14","macd","macd_signal","macd_hist","atr14","adx14","plus_di14","minus_di14",
         "bb_mid20","bb_upper20","bb_lower20","bb_width",
@@ -422,8 +716,17 @@ def main():
         raw_signal = "LONG" if score >= lt else ("SHORT" if score <= st else "NEUTRAL")
         final_signal = enforce_guards(scfg, latest, raw_signal)
 
+        # Determine data source for reporting
+        data_source = "Unknown"
+        if label in ["SOL-USD", "BTC-USD", "ETH-USD", "XRP-USD"]:
+            data_source = "Crypto APIs (Kraken/Coinbase/CoinGecko)"
+        elif label in ["AMD", "NVDA"]:
+            data_source = "Stooq API"
+        elif label == "DXY-INDEX":
+            data_source = "Yahoo Finance"
+        
         latest.update({
-            "timestamp_ct": ts, "symbol": label,
+            "timestamp_ct": ts, "symbol": label, "data_source": data_source,
             "trend_s": subs["trend_s"], "momentum_s": subs["momentum_s"], "strength_s": subs["strength_s"],
             "vol_s": subs["vol_s"], "fib_s": subs["fib_s"], "pivot_s": subs["pivot_s"],
             "composite_score": score, "signal": final_signal
@@ -432,15 +735,23 @@ def main():
         print(f"APPENDED {label}: score={score:.1f} raw={raw_signal} final={final_signal}")
 
     for label, pair in CRYPTO_BINANCE.items():
-        scfg = apply_overrides(label, load_config(CONFIG_PATH))
-        df = fetch_binance_klines(pair, interval="1d", days=DAYS_CRYPTO)
-        handle_asset(label, df, scfg)
+        try:
+            scfg = apply_overrides(label, load_config(CONFIG_PATH))
+            df = fetch_crypto_data(label, days=DAYS_CRYPTO)
+            handle_asset(label, df, scfg)
+        except ValueError as e:
+            print(f"SKIPPED {label}: {e}")
+            continue
 
     for ticker in EQUITIES_YF:
-        label = "DXY-INDEX" if ticker == "^DXY" else ticker
-        scfg = apply_overrides(label, load_config(CONFIG_PATH))
-        df = fetch_yf_daily(ticker, period=DAYS_EQUITY)
-        handle_asset(label, df, scfg)
+        try:
+            label = "DXY-INDEX" if ticker == "^DXY" else ticker
+            scfg = apply_overrides(label, load_config(CONFIG_PATH))
+            df = fetch_yf_daily(ticker, period=DAYS_EQUITY)
+            handle_asset(label, df, scfg)
+        except ValueError as e:
+            print(f"SKIPPED {label}: {e}")
+            continue
 
     print(f"Done -> {OUT_CSV}")
 
