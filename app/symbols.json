@@ -1,0 +1,82 @@
+{
+  "crypto": {
+    "major": [
+      {"symbol": "BTC-USD", "name": "Bitcoin", "kraken": "XBTUSD", "coinbase": "BTC-USD", "coingecko": "bitcoin", "category": "store_of_value"},
+      {"symbol": "ETH-USD", "name": "Ethereum", "kraken": "ETHUSD", "coinbase": "ETH-USD", "coingecko": "ethereum", "category": "smart_contracts"},
+      {"symbol": "SOL-USD", "name": "Solana", "kraken": "SOLUSD", "coinbase": "SOL-USD", "coingecko": "solana", "category": "smart_contracts"},
+      {"symbol": "XRP-USD", "name": "XRP", "kraken": "XRPUSD", "coinbase": "XRP-USD", "coingecko": "ripple", "category": "payments"},
+      {"symbol": "ADA-USD", "name": "Cardano", "kraken": "ADAUSD", "coinbase": "ADA-USD", "coingecko": "cardano", "category": "smart_contracts"},
+      {"symbol": "MATIC-USD", "name": "Polygon", "kraken": "MATICUSD", "coinbase": "MATIC-USD", "coingecko": "matic-network", "category": "layer2"},
+      {"symbol": "LINK-USD", "name": "Chainlink", "kraken": "LINKUSD", "coinbase": "LINK-USD", "coingecko": "chainlink", "category": "oracles"},
+      {"symbol": "UNI-USD", "name": "Uniswap", "kraken": "UNIUSD", "coinbase": "UNI-USD", "coingecko": "uniswap", "category": "defi"},
+      {"symbol": "AAVE-USD", "name": "Aave", "kraken": "AAVEUSD", "coinbase": "AAVE-USD", "coingecko": "aave", "category": "defi"},
+      {"symbol": "AVAX-USD", "name": "Avalanche", "kraken": "AVAXUSD", "coinbase": "AVAX-USD", "coingecko": "avalanche-2", "category": "smart_contracts"}
+    ],
+    "defi": [
+      {"symbol": "SUSHI-USD", "name": "SushiSwap", "kraken": "SUSHIUSD", "coinbase": "SUSHI-USD", "coingecko": "sushi", "category": "defi"},
+      {"symbol": "CRV-USD", "name": "Curve", "kraken": "CRVUSD", "coinbase": "CRV-USD", "coingecko": "curve-dao-token", "category": "defi"},
+      {"symbol": "COMP-USD", "name": "Compound", "kraken": "COMPUSD", "coinbase": "COMP-USD", "coingecko": "compound-governance-token", "category": "defi"},
+      {"symbol": "MKR-USD", "name": "Maker", "kraken": "MKRUSD", "coinbase": "MKR-USD", "coingecko": "maker", "category": "defi"},
+      {"symbol": "YFI-USD", "name": "Yearn Finance", "kraken": "YFIUSD", "coinbase": "YFI-USD", "coingecko": "yearn-finance", "category": "defi"}
+    ],
+    "layer1": [
+      {"symbol": "DOT-USD", "name": "Polkadot", "kraken": "DOTUSD", "coinbase": "DOT-USD", "coingecko": "polkadot", "category": "smart_contracts"},
+      {"symbol": "ATOM-USD", "name": "Cosmos", "kraken": "ATOMUSD", "coinbase": "ATOM-USD", "coingecko": "cosmos", "category": "smart_contracts"},
+      {"symbol": "NEAR-USD", "name": "NEAR Protocol", "kraken": "NEARUSD", "coinbase": "NEAR-USD", "coingecko": "near", "category": "smart_contracts"},
+      {"symbol": "FTM-USD", "name": "Fantom", "kraken": "FTMUSD", "coinbase": "FTM-USD", "coingecko": "fantom", "category": "smart_contracts"},
+      {"symbol": "ALGO-USD", "name": "Algorand", "kraken": "ALGOUSD", "coinbase": "ALGO-USD", "coingecko": "algorand", "category": "smart_contracts"}
+    ],
+    "meme": [
+      {"symbol": "DOGE-USD", "name": "Dogecoin", "kraken": "DOGEUSD", "coinbase": "DOGE-USD", "coingecko": "dogecoin", "category": "meme"},
+      {"symbol": "SHIB-USD", "name": "Shiba Inu", "kraken": "SHIBUSD", "coinbase": "SHIB-USD", "coingecko": "shiba-inu", "category": "meme"},
+      {"symbol": "PEPE-USD", "name": "Pepe", "kraken": "PEPEUSD", "coinbase": "PEPE-USD", "coingecko": "pepe", "category": "meme"}
+    ]
+  },
+  "stocks": {
+    "tech_mega_caps": [
+      {"symbol": "AAPL", "name": "Apple Inc.", "stooq": "aapl.us", "yfinance": "AAPL", "sector": "technology"},
+      {"symbol": "MSFT", "name": "Microsoft Corp.", "stooq": "msft.us", "yfinance": "MSFT", "sector": "technology"},
+      {"symbol": "GOOGL", "name": "Alphabet Inc.", "stooq": "googl.us", "yfinance": "GOOGL", "sector": "technology"},
+      {"symbol": "AMZN", "name": "Amazon.com Inc.", "stooq": "amzn.us", "yfinance": "AMZN", "sector": "technology"},
+      {"symbol": "TSLA", "name": "Tesla Inc.", "stooq": "tsla.us", "yfinance": "TSLA", "sector": "automotive"},
+      {"symbol": "NVDA", "name": "NVIDIA Corp.", "stooq": "nvda.us", "yfinance": "NVDA", "sector": "technology"},
+      {"symbol": "META", "name": "Meta Platforms Inc.", "stooq": "meta.us", "yfinance": "META", "sector": "technology"},
+      {"symbol": "NFLX", "name": "Netflix Inc.", "stooq": "nflx.us", "yfinance": "NFLX", "sector": "technology"}
+    ],
+    "semiconductors": [
+      {"symbol": "AMD", "name": "Advanced Micro Devices", "stooq": "amd.us", "yfinance": "AMD", "sector": "technology"},
+      {"symbol": "INTC", "name": "Intel Corp.", "stooq": "intc.us", "yfinance": "INTC", "sector": "technology"},
+      {"symbol": "QCOM", "name": "Qualcomm Inc.", "stooq": "qcom.us", "yfinance": "QCOM", "sector": "technology"},
+      {"symbol": "TXN", "name": "Texas Instruments", "stooq": "txn.us", "yfinance": "TXN", "sector": "technology"},
+      {"symbol": "AVGO", "name": "Broadcom Inc.", "stooq": "avgo.us", "yfinance": "AVGO", "sector": "technology"}
+    ],
+    "finance": [
+      {"symbol": "JPM", "name": "JPMorgan Chase", "stooq": "jpm.us", "yfinance": "JPM", "sector": "financial"},
+      {"symbol": "BAC", "name": "Bank of America", "stooq": "bac.us", "yfinance": "BAC", "sector": "financial"},
+      {"symbol": "WFC", "name": "Wells Fargo", "stooq": "wfc.us", "yfinance": "WFC", "sector": "financial"},
+      {"symbol": "GS", "name": "Goldman Sachs", "stooq": "gs.us", "yfinance": "GS", "sector": "financial"},
+      {"symbol": "MS", "name": "Morgan Stanley", "stooq": "ms.us", "yfinance": "MS", "sector": "financial"}
+    ],
+    "healthcare": [
+      {"symbol": "JNJ", "name": "Johnson & Johnson", "stooq": "jnj.us", "yfinance": "JNJ", "sector": "healthcare"},
+      {"symbol": "PFE", "name": "Pfizer Inc.", "stooq": "pfe.us", "yfinance": "PFE", "sector": "healthcare"},
+      {"symbol": "UNH", "name": "UnitedHealth Group", "stooq": "unh.us", "yfinance": "UNH", "sector": "healthcare"},
+      {"symbol": "ABBV", "name": "AbbVie Inc.", "stooq": "abbv.us", "yfinance": "ABBV", "sector": "healthcare"},
+      {"symbol": "MRK", "name": "Merck & Co.", "stooq": "mrk.us", "yfinance": "MRK", "sector": "healthcare"}
+    ],
+    "energy": [
+      {"symbol": "XOM", "name": "Exxon Mobil", "stooq": "xom.us", "yfinance": "XOM", "sector": "energy"},
+      {"symbol": "CVX", "name": "Chevron Corp.", "stooq": "cvx.us", "yfinance": "CVX", "sector": "energy"},
+      {"symbol": "COP", "name": "ConocoPhillips", "stooq": "cop.us", "yfinance": "COP", "sector": "energy"},
+      {"symbol": "EOG", "name": "EOG Resources", "stooq": "eog.us", "yfinance": "EOG", "sector": "energy"},
+      {"symbol": "SLB", "name": "Schlumberger", "stooq": "slb.us", "yfinance": "SLB", "sector": "energy"}
+    ]
+  },
+  "indices": [
+    {"symbol": "SPY", "name": "SPDR S&P 500 ETF", "stooq": "spy.us", "yfinance": "SPY", "type": "etf"},
+    {"symbol": "QQQ", "name": "Invesco QQQ Trust", "stooq": "qqq.us", "yfinance": "QQQ", "type": "etf"},
+    {"symbol": "IWM", "name": "iShares Russell 2000 ETF", "stooq": "iwm.us", "yfinance": "IWM", "type": "etf"},
+    {"symbol": "VTI", "name": "Vanguard Total Stock Market ETF", "stooq": "vti.us", "yfinance": "VTI", "type": "etf"},
+    {"symbol": "DIA", "name": "SPDR Dow Jones Industrial Average ETF", "stooq": "dia.us", "yfinance": "DIA", "type": "etf"}
+  ]
+}

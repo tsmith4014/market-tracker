@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import requests
 import yfinance as yf
+from symbol_manager import SymbolManager
 
 CT = pytz.timezone("America/Chicago")
 
@@ -19,13 +20,31 @@ DAYS_EQUITY = os.getenv("DAYS_EQUITY", "400d")
 EXPORT_SERIES = os.getenv("EXPORT_SERIES", "false").lower() == "true"
 SERIES_DIR = os.getenv("SERIES_DIR", "/data")
 
-CRYPTO_BINANCE = {
-    "SOL-USD": "SOLUSDT",
-    "BTC-USD": "BTCUSDT",
-    "ETH-USD": "ETHUSDT",
-    "XRP-USD": "XRPUSDT",
-}
-EQUITIES_YF = ["AMD", "NVDA", "^DXY"]
+# Initialize symbol manager
+SYMBOL_MANAGER = SymbolManager()
+
+# Get symbols to track (configurable via environment)
+TRACK_CRYPTO = os.getenv("TRACK_CRYPTO", "major,defi").split(",")
+TRACK_STOCKS = os.getenv("TRACK_STOCKS", "tech_mega_caps,semiconductors").split(",")
+TRACK_INDICES = os.getenv("TRACK_INDICES", "true").lower() == "true"
+
+def get_tracking_symbols():
+    """Get all symbols to track based on configuration"""
+    symbols = {"crypto": [], "stocks": [], "indices": []}
+    
+    # Get crypto symbols
+    for category in TRACK_CRYPTO:
+        symbols["crypto"].extend(SYMBOL_MANAGER.get_by_category(category))
+    
+    # Get stock symbols  
+    for category in TRACK_STOCKS:
+        symbols["stocks"].extend(SYMBOL_MANAGER.get_by_category(category))
+    
+    # Get index symbols
+    if TRACK_INDICES:
+        symbols["indices"].extend(SYMBOL_MANAGER.get_all_indices())
+    
+    return symbols
 
 def load_config(path: str) -> dict:
     if not os.path.exists(path):
@@ -124,14 +143,8 @@ def fib_levels(low: float, high: float) -> Dict[str, float]:
 
 def fetch_stooq_data(symbol: str, days=365) -> pd.DataFrame:
     """Fetch stock data from Stooq (no API key required)"""
-    # Map our symbols to Stooq format
-    stooq_symbols = {
-        "AMD": "amd.us",
-        "NVDA": "nvda.us", 
-        "^DXY": "^dxy"
-    }
-    
-    stooq_symbol = stooq_symbols.get(symbol)
+    # Get Stooq symbol from symbol manager
+    stooq_symbol = SYMBOL_MANAGER.get_api_mapping(symbol, "stooq")
     if not stooq_symbol:
         raise ValueError(f"Unsupported symbol for Stooq: {symbol}")
     
@@ -173,15 +186,8 @@ def fetch_stooq_data(symbol: str, days=365) -> pd.DataFrame:
 
 def fetch_kraken_data(symbol: str, days=365) -> pd.DataFrame:
     """Fetch crypto data from Kraken (no API key required)"""
-    # Map our symbols to Kraken format
-    kraken_symbols = {
-        "SOL-USD": "SOLUSD",
-        "BTC-USD": "XBTUSD", 
-        "ETH-USD": "ETHUSD",
-        "XRP-USD": "XRPUSD"
-    }
-    
-    kraken_symbol = kraken_symbols.get(symbol)
+    # Get Kraken symbol from symbol manager
+    kraken_symbol = SYMBOL_MANAGER.get_api_mapping(symbol, "kraken")
     if not kraken_symbol:
         raise ValueError(f"Unsupported symbol for Kraken: {symbol}")
     
@@ -232,15 +238,8 @@ def fetch_kraken_data(symbol: str, days=365) -> pd.DataFrame:
 
 def fetch_coinbase_data(symbol: str, days=365) -> pd.DataFrame:
     """Fetch crypto data from Coinbase (no API key required)"""
-    # Map our symbols to Coinbase format
-    coinbase_symbols = {
-        "SOL-USD": "SOL-USD",
-        "BTC-USD": "BTC-USD",
-        "ETH-USD": "ETH-USD", 
-        "XRP-USD": "XRP-USD"
-    }
-    
-    coinbase_symbol = coinbase_symbols.get(symbol)
+    # Get Coinbase symbol from symbol manager
+    coinbase_symbol = SYMBOL_MANAGER.get_api_mapping(symbol, "coinbase")
     if not coinbase_symbol:
         raise ValueError(f"Unsupported symbol for Coinbase: {symbol}")
     
@@ -286,15 +285,8 @@ def fetch_coinbase_data(symbol: str, days=365) -> pd.DataFrame:
 
 def fetch_coingecko_data(symbol: str, days=365) -> pd.DataFrame:
     """Fetch crypto data from CoinGecko API"""
-    # Map our symbols to CoinGecko IDs
-    coin_ids = {
-        "SOL-USD": "solana",
-        "BTC-USD": "bitcoin", 
-        "ETH-USD": "ethereum",
-        "XRP-USD": "ripple"
-    }
-    
-    coin_id = coin_ids.get(symbol)
+    # Get CoinGecko ID from symbol manager
+    coin_id = SYMBOL_MANAGER.get_api_mapping(symbol, "coingecko")
     if not coin_id:
         raise ValueError(f"Unsupported symbol: {symbol}")
     
@@ -677,6 +669,10 @@ def main():
     cfg = load_config(CONFIG_PATH)
     cols = ensure_schema(OUT_CSV)
     ts = datetime.now(CT).strftime("%Y-%m-%dT%H:%M:%S%z")
+    
+    # Get symbols to track
+    tracking_symbols = get_tracking_symbols()
+    print(f"Tracking {len(tracking_symbols['crypto'])} crypto, {len(tracking_symbols['stocks'])} stocks, {len(tracking_symbols['indices'])} indices")
 
     def handle_asset(label: str, df: pd.DataFrame, scfg: dict):
         latest_or_series = process_df(df, scfg["lookbacks"]["fib_long"], scfg["lookbacks"]["fib_short"])
@@ -718,12 +714,12 @@ def main():
 
         # Determine data source for reporting
         data_source = "Unknown"
-        if label in ["SOL-USD", "BTC-USD", "ETH-USD", "XRP-USD"]:
+        if label in tracking_symbols["crypto"]:
             data_source = "Crypto APIs (Kraken/Coinbase/CoinGecko)"
-        elif label in ["AMD", "NVDA"]:
+        elif label in tracking_symbols["stocks"]:
             data_source = "Stooq API"
-        elif label == "DXY-INDEX":
-            data_source = "Yahoo Finance"
+        elif label in tracking_symbols["indices"]:
+            data_source = "Stooq API"
         
         latest.update({
             "timestamp_ct": ts, "symbol": label, "data_source": data_source,
@@ -734,23 +730,34 @@ def main():
         append_row(OUT_CSV, cols, latest)
         print(f"APPENDED {label}: score={score:.1f} raw={raw_signal} final={final_signal}")
 
-    for label, pair in CRYPTO_BINANCE.items():
+    # Process crypto symbols
+    for symbol in tracking_symbols["crypto"]:
         try:
-            scfg = apply_overrides(label, load_config(CONFIG_PATH))
-            df = fetch_crypto_data(label, days=DAYS_CRYPTO)
-            handle_asset(label, df, scfg)
+            scfg = apply_overrides(symbol, load_config(CONFIG_PATH))
+            df = fetch_crypto_data(symbol, days=DAYS_CRYPTO)
+            handle_asset(symbol, df, scfg)
         except ValueError as e:
-            print(f"SKIPPED {label}: {e}")
+            print(f"SKIPPED {symbol}: {e}")
             continue
 
-    for ticker in EQUITIES_YF:
+    # Process stock symbols
+    for symbol in tracking_symbols["stocks"]:
         try:
-            label = "DXY-INDEX" if ticker == "^DXY" else ticker
-            scfg = apply_overrides(label, load_config(CONFIG_PATH))
-            df = fetch_yf_daily(ticker, period=DAYS_EQUITY)
-            handle_asset(label, df, scfg)
+            scfg = apply_overrides(symbol, load_config(CONFIG_PATH))
+            df = fetch_stock_data(symbol, days=int(DAYS_EQUITY.replace('d', '')))
+            handle_asset(symbol, df, scfg)
         except ValueError as e:
-            print(f"SKIPPED {label}: {e}")
+            print(f"SKIPPED {symbol}: {e}")
+            continue
+
+    # Process index symbols
+    for symbol in tracking_symbols["indices"]:
+        try:
+            scfg = apply_overrides(symbol, load_config(CONFIG_PATH))
+            df = fetch_stock_data(symbol, days=int(DAYS_EQUITY.replace('d', '')))
+            handle_asset(symbol, df, scfg)
+        except ValueError as e:
+            print(f"SKIPPED {symbol}: {e}")
             continue
 
     print(f"Done -> {OUT_CSV}")
