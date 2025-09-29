@@ -40,6 +40,12 @@ def load_data(csv_path: str) -> pd.DataFrame:
     missing = required - set(df.columns)
     if missing: raise ValueError(f"CSV missing required columns: {missing}")
     df["date"] = pd.to_datetime(df["date"])
+    
+    # Ensure we have enough data for each symbol
+    symbol_counts = df["symbol"].value_counts()
+    valid_symbols = symbol_counts[symbol_counts >= 252].index
+    df = df[df["symbol"].isin(valid_symbols)]
+    
     return df.sort_values(["symbol","date"]).reset_index(drop=True)
 
 def apply_guards_row(row: pd.Series, cfg: SymbolCfg, raw_signal: str) -> str:
@@ -59,107 +65,102 @@ def simulate_symbol(df: pd.DataFrame, sym_cfg: SymbolCfg, symbol: str,
                     long_th: float, short_th: float,
                     use_trailing_atr_mult: float = 1.5) -> Tuple[pd.DataFrame, dict]:
     d = df[df["symbol"] == symbol].copy().reset_index(drop=True)
-    if d.empty: return pd.DataFrame(), {"symbol": symbol, "trades": 0, "return": 0.0, "mdd": 0.0, "sharpe": 0.0}
+    if d.empty: return pd.DataFrame(), {"symbol": symbol, "trades": 0, "return": 0.0, "mdd": 0.0, "sharpe": 0.0, "skipped_reason": "no_data"}
+
+    # Check minimum bars requirement - need at least 252 bars for meaningful backtest
+    if len(d) < 252:
+        return pd.DataFrame(), {"symbol": symbol, "trades": 0, "return": 0.0, "mdd": 0.0, "sharpe": 0.0, "skipped_reason": "insufficient_bars"}
 
     fee = float(sym_cfg.fees.get("bps_per_side", 1.0)) / 10000.0
     slip = float(sym_cfg.fees.get("slippage_bps_per_side", 1.0)) / 10000.0
     cost_per_side = fee + slip
 
-    pos = "FLAT"; trades = []; entry_price = None; trail_stop = None
+    # Generate signals
+    d["raw_signal"] = np.where(d["composite_score"] >= long_th, 1, 
+                              np.where(d["composite_score"] <= short_th, -1, 0))
+    
+    # Apply guards
+    d["signal"] = d["raw_signal"].copy()
+    for idx, row in d.iterrows():
+        if row["raw_signal"] != 0:
+            raw = "LONG" if row["raw_signal"] > 0 else "SHORT"
+            guarded = apply_guards_row(row, sym_cfg, raw)
+            d.loc[idx, "signal"] = 1 if guarded == "LONG" else (-1 if guarded == "SHORT" else 0)
 
-    for _, row in d.iterrows():
-        close = row["close"]; score = row["composite_score"]
-        raw = "LONG" if score >= long_th else ("SHORT" if score <= short_th else "NEUTRAL")
-        sig = apply_guards_row(row, sym_cfg, raw)
+    # No fresh entries on last bar (next-bar execution)
+    d.loc[d.index[-1], "signal"] = 0
 
-        if pos == "LONG" and use_trailing_atr_mult > 0 and not pd.isna(row["atr14"]):
-            trail_stop = max(trail_stop or -np.inf, close - use_trailing_atr_mult * row["atr14"])
-        elif pos == "SHORT" and use_trailing_atr_mult > 0 and not pd.isna(row["atr14"]):
-            trail_stop = min(trail_stop or np.inf, close + use_trailing_atr_mult * row["atr14"])
-
-        exit_reason = None
-        if pos == "LONG" and trail_stop is not None and close < trail_stop: exit_reason = "trail_stop"
-        if pos == "SHORT" and trail_stop is not None and close > trail_stop: exit_reason = "trail_stop"
-
-        if pos == "FLAT":
-            if sig == "LONG":
-                entry = close * (1 + cost_per_side)
-                pos, entry_price, trail_stop = "LONG", entry, None
-                trades.append({"date": row["date"], "action": "BUY", "price": entry, "reason": "signal"})
-            elif sig == "SHORT":
-                entry = close * (1 - cost_per_side)
-                pos, entry_price, trail_stop = "SHORT", entry, None
-                trades.append({"date": row["date"], "action": "SELL_SHORT", "price": entry, "reason": "signal"})
-        elif pos == "LONG":
-            if exit_reason or sig == "SHORT":
-                exit_p = close * (1 - cost_per_side)
-                trades.append({"date": row["date"], "action": "SELL", "price": exit_p, "reason": exit_reason or "flip"})
-                pos, entry_price, trail_stop = "FLAT", None, None
-                if sig == "SHORT":
-                    entry = close * (1 - cost_per_side)
-                    pos, entry_price = "SHORT", entry
-                    trades.append({"date": row["date"], "action": "SELL_SHORT", "price": entry, "reason": "flip"})
-        elif pos == "SHORT":
-            if exit_reason or sig == "LONG":
-                exit_p = close * (1 + cost_per_side)
-                trades.append({"date": row["date"], "action": "COVER", "price": exit_p, "reason": exit_reason or "flip"})
-                pos, entry_price, trail_stop = "FLAT", None, None
-                if sig == "LONG":
-                    entry = close * (1 + cost_per_side)
-                    pos, entry_price = "LONG", entry
-                    trades.append({"date": row["date"], "action": "BUY", "price": entry, "reason": "flip"})
-
-    if pos != "FLAT" and entry_price is not None:
-        last_close = d.iloc[-1]["close"]
-        if pos == "LONG":
-            exit_p = last_close * (1 - cost_per_side)
-            trades.append({"date": d.iloc[-1]["date"], "action": "SELL", "price": exit_p, "reason": "EOD"})
+    # Calculate position changes and returns
+    d["position"] = d["signal"].fillna(0)
+    d["position_change"] = d["position"].diff().fillna(0)
+    d["next_close"] = d["close"].shift(-1)
+    d["return"] = d["close"].pct_change().shift(-1)
+    
+    # Calculate P&L with proper transaction costs
+    d["trade_cost"] = np.where(d["position_change"] != 0, cost_per_side, 0)
+    d["strategy_return"] = d["position"] * d["return"] - d["trade_cost"]
+    
+    # Calculate equity curve
+    d["equity"] = (1 + d["strategy_return"].fillna(0)).cumprod()
+    
+    # Calculate metrics
+    total_return = d["equity"].iloc[-1] - 1.0
+    peak = d["equity"].cummax()
+    drawdown = (d["equity"] - peak) / peak
+    max_drawdown = drawdown.min()
+    
+    # Calculate Sharpe ratio with proper guards
+    strategy_returns = d["strategy_return"].dropna()
+    if len(strategy_returns) < 2:
+        sharpe = np.nan
+    else:
+        mean_ret = strategy_returns.mean()
+        std_ret = strategy_returns.std()
+        if std_ret < 1e-8:
+            sharpe = np.nan
         else:
-            exit_p = last_close * (1 + cost_per_side)
-            trades.append({"date": d.iloc[-1]["date"], "action": "COVER", "price": exit_p, "reason": "EOD"})
-
-    tdf = pd.DataFrame(trades)
-    if tdf.empty: return tdf, {"symbol": symbol, "trades": 0, "return": 0.0, "mdd": 0.0, "sharpe": 0.0}
-
-    tdf["date"] = pd.to_datetime(tdf["date"])
-    pnl = []; stack = []
-    for _, tr in tdf.iterrows():
-        if tr["action"] in ("BUY","SELL_SHORT"):
-            stack.append(tr)
+            sharpe = (mean_ret * 252) / (std_ret * np.sqrt(252))
+    
+    # Count actual trades (position changes)
+    trades = int((d["position_change"] != 0).sum())
+    
+    # Calculate attribution metrics
+    valid_subscores = {}
+    for col in ["trend_s", "momentum_s", "strength_s", "vol_s", "fib_s", "pivot_s"]:
+        if col in d.columns:
+            values = d[col].dropna()
+            if len(values) > 0 and np.isfinite(values).all():
+                valid_subscores[f"{col}_mean"] = float(values.mean())
+            else:
+                valid_subscores[f"{col}_mean"] = np.nan
         else:
-            if stack:
-                en = stack.pop(0)
-                if en["action"] == "BUY":
-                    ret = (tr["price"] - en["price"]) / en["price"]; side = "LONG"
-                else:
-                    ret = (en["price"] - tr["price"]) / en["price"]; side = "SHORT"
-                pnl.append({"entry_date": en["date"], "exit_date": tr["date"], "side": side, "ret": ret})
-    pdf = pd.DataFrame(pnl)
-    if pdf.empty: return tdf, {"symbol": symbol, "trades": 0, "return": 0.0, "mdd": 0.0, "sharpe": 0.0}
+            valid_subscores[f"{col}_mean"] = np.nan
 
-    total_ret = (1.0 + pdf["ret"]).prod() - 1.0
-    d2 = d[["date","close","trend_s","momentum_s","strength_s","vol_s","fib_s","pivot_s"]].copy()
-    d2["strat_ret"] = 0.0
-    for _, r in pdf.iterrows():
-        mask = (d2["date"]>=r["entry_date"]) & (d2["date"]<=r["exit_date"])
-        n = mask.sum()
-        if n>0: d2.loc[mask, "strat_ret"] += r["ret"]/n
-    d2["equity"] = (1.0 + d2["strat_ret"]).cumprod()
-    peak = d2["equity"].cummax()
-    mdd = ((d2["equity"] - peak)/peak).min()
-    sharpe = (d2["strat_ret"].mean() / (d2["strat_ret"].std() + 1e-12)) * np.sqrt(252)
+    # Determine skipped reason
+    skipped_reason = "ok"
+    if trades == 0:
+        if (d["raw_signal"] != 0).sum() == 0:
+            skipped_reason = "no_signals"
+        else:
+            skipped_reason = "guards_blocked"
+    elif not np.isfinite(total_return):
+        skipped_reason = "invalid_returns"
+    elif abs(total_return) > 1.0:
+        skipped_reason = "extreme_returns"
+    elif np.isfinite(sharpe) and abs(sharpe) > 20:
+        skipped_reason = "extreme_sharpe"
 
-    attrib = {
-        "trend_s_mean": d2["trend_s"].mean(),
-        "momentum_s_mean": d2["momentum_s"].mean(),
-        "strength_s_mean": d2["strength_s"].mean(),
-        "vol_s_mean": d2["vol_s"].mean(),
-        "fib_s_mean": d2["fib_s"].mean(),
-        "pivot_s_mean": d2["pivot_s"].mean()
+    result = {
+        "symbol": symbol, 
+        "trades": trades, 
+        "return": float(total_return),
+        "mdd": float(max_drawdown), 
+        "sharpe": float(sharpe) if np.isfinite(sharpe) else np.nan,
+        "skipped_reason": skipped_reason,
+        **valid_subscores
     }
 
-    return tdf, {"symbol": symbol, "trades": int(len(pdf)), "return": float(total_ret),
-                 "mdd": float(mdd), "sharpe": float(sharpe), **attrib}
+    return pd.DataFrame(), result
 
 def run_summary(df: pd.DataFrame, cfg: dict, out_dir: str):
     os.makedirs(out_dir, exist_ok=True)

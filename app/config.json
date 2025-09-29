@@ -1,10 +1,10 @@
 {
   "defaults": {
-    "weights": { "trend": 0.50, "momentum": 0.20, "strength": 0.15, "vol": 0.05, "fib": 0.05, "pivot": 0.05 },
+    "weights": { "trend": 0.50, "momentum": 0.20, "strength": 0.15, "vol": 0.10, "fib": 0.03, "pivot": 0.02 },
     "thresholds": { "long": 30, "short": -30 },
     "lookbacks": { "fib_long": 180, "fib_short": 30 },
-    "guards": { "min_adx_for_signal": 18, "max_atr_pct": 12.0, "require_close_above_ema50_for_long": false, "require_close_below_ema50_for_short": false },
-    "fees": { "bps_per_side": 1.0, "slippage_bps_per_side": 1.0 }
+    "guards": { "min_adx_for_signal": 25, "max_atr_pct": 12.0, "require_close_above_ema50_for_long": false, "require_close_below_ema50_for_short": false },
+    "fees": { "bps_per_side": 2.0, "slippage_bps_per_side": 1.0 }
   },
   "overrides": {
     "SOL-USD": { 

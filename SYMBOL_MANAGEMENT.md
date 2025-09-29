@@ -7,9 +7,10 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 ## Available Symbols
 
 ### 📊 Statistics
+
 - **Total Symbols**: 56
 - **Crypto Symbols**: 23 (across 4 categories)
-- **Stock Symbols**: 28 (across 5 sectors)  
+- **Stock Symbols**: 28 (across 5 sectors)
 - **Index Symbols**: 5 (major ETFs)
 - **Categories**: 10
 - **Sectors**: 5
@@ -17,8 +18,9 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 ### 🔗 Crypto Categories
 
 #### Major Cryptocurrencies (10)
+
 - **BTC-USD**: Bitcoin
-- **ETH-USD**: Ethereum  
+- **ETH-USD**: Ethereum
 - **SOL-USD**: Solana
 - **XRP-USD**: XRP
 - **ADA-USD**: Cardano
@@ -29,6 +31,7 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 - **AVAX-USD**: Avalanche
 
 #### DeFi Tokens (5)
+
 - **SUSHI-USD**: SushiSwap
 - **CRV-USD**: Curve
 - **COMP-USD**: Compound
@@ -36,6 +39,7 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 - **YFI-USD**: Yearn Finance
 
 #### Layer 1 Blockchains (5)
+
 - **DOT-USD**: Polkadot
 - **ATOM-USD**: Cosmos
 - **NEAR-USD**: NEAR Protocol
@@ -43,6 +47,7 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 - **ALGO-USD**: Algorand
 
 #### Meme Coins (3)
+
 - **DOGE-USD**: Dogecoin
 - **SHIB-USD**: Shiba Inu
 - **PEPE-USD**: Pepe
@@ -50,6 +55,7 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 ### 📈 Stock Sectors
 
 #### Technology Mega Caps (8)
+
 - **AAPL**: Apple Inc.
 - **MSFT**: Microsoft Corp.
 - **GOOGL**: Alphabet Inc.
@@ -60,6 +66,7 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 - **NFLX**: Netflix Inc.
 
 #### Semiconductors (5)
+
 - **AMD**: Advanced Micro Devices
 - **INTC**: Intel Corp.
 - **QCOM**: Qualcomm Inc.
@@ -67,6 +74,7 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 - **AVGO**: Broadcom Inc.
 
 #### Financial Services (5)
+
 - **JPM**: JPMorgan Chase
 - **BAC**: Bank of America
 - **WFC**: Wells Fargo
@@ -74,6 +82,7 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 - **MS**: Morgan Stanley
 
 #### Healthcare (5)
+
 - **JNJ**: Johnson & Johnson
 - **PFE**: Pfizer Inc.
 - **UNH**: UnitedHealth Group
@@ -81,6 +90,7 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 - **MRK**: Merck & Co.
 
 #### Energy (5)
+
 - **XOM**: Exxon Mobil
 - **CVX**: Chevron Corp.
 - **COP**: ConocoPhillips
@@ -88,6 +98,7 @@ The Market Tracker now includes a comprehensive, searchable symbol management sy
 - **SLB**: Schlumberger
 
 ### 📊 Indices/ETFs (5)
+
 - **SPY**: SPDR S&P 500 ETF
 - **QQQ**: Invesco QQQ Trust
 - **IWM**: iShares Russell 2000 ETF
@@ -162,7 +173,7 @@ Control which symbols to track via environment variables:
 # Track specific crypto categories (default: major,defi)
 export TRACK_CRYPTO="major,defi,layer1,meme"
 
-# Track specific stock categories (default: tech_mega_caps,semiconductors)  
+# Track specific stock categories (default: tech_mega_caps,semiconductors)
 export TRACK_STOCKS="tech_mega_caps,semiconductors,finance,healthcare,energy"
 
 # Track indices (default: true)
@@ -183,15 +194,18 @@ services:
 ## Data Sources
 
 ### Crypto APIs (No Key Required)
+
 1. **Kraken API** (Primary) - 565+ USD/USDT pairs
-2. **Coinbase API** (Secondary) - 509+ USD/USDT pairs  
+2. **Coinbase API** (Secondary) - 509+ USD/USDT pairs
 3. **CoinGecko API** (Tertiary) - 18,890+ coins
 
 ### Stock APIs (No Key Required)
+
 1. **Stooq API** (Primary) - Thousands of stocks
 2. **Yahoo Finance** (Fallback) - Via yfinance library
 
 ### Fallback Chain
+
 - **Crypto**: Kraken → Coinbase → CoinGecko
 - **Stocks**: Stooq → Yahoo Finance
 - **Indices**: Stooq → Yahoo Finance
@@ -208,7 +222,7 @@ services:
         "symbol": "NEW-USD",
         "name": "New Token",
         "kraken": "NEWUSD",
-        "coinbase": "NEW-USD", 
+        "coinbase": "NEW-USD",
         "coingecko": "new-token",
         "category": "new_category"
       }
@@ -264,21 +278,25 @@ app/
 ## Examples
 
 ### Find All Tech Stocks
+
 ```bash
 make search ARGS="--sector technology"
 ```
 
 ### Export All Crypto to CSV
+
 ```bash
 make search ARGS="--crypto --format csv" > crypto_export.csv
 ```
 
 ### Search for Specific Company
+
 ```bash
 make search ARGS="--search microsoft"
 ```
 
 ### Get API Mappings
+
 ```bash
 make search ARGS="--api-mapping BTC-USD"
 ```

@@ -559,6 +559,7 @@ def composite_and_subscores(latest: Dict[str, float], weights: dict):
     pivot, r1, s1 = latest.get("pivot"), latest.get("r1"), latest.get("s1")
     long_low, long_high = latest.get("fib_long_low"), latest.get("fib_long_high")
 
+    # Calculate subscores
     subs = {
         "trend_s": _score_trend(close, ema20, ema50, ema200, slope20, slope50, slope200),
         "momentum_s": _score_momentum(rsi14, macd_v, macd_sig),
@@ -567,14 +568,37 @@ def composite_and_subscores(latest: Dict[str, float], weights: dict):
         "fib_s": _score_fib(close, long_low, long_high),
         "pivot_s": _score_pivot(close, pivot, r1, s1),
     }
-    caps = np.array([5.0, 3.0, 2.0, 1.0, 1.0, 1.0], dtype=float)
-    arr = np.array([subs["trend_s"], subs["momentum_s"], subs["strength_s"], subs["vol_s"], subs["fib_s"], subs["pivot_s"]]) / caps
-    w = np.array([
-        weights.get("trend",0.5), weights.get("momentum",0.2), weights.get("strength",0.15),
-        weights.get("vol",0.05), weights.get("fib",0.05), weights.get("pivot",0.05)
-    ])
-    blended = float(np.sum(w * arr) / max(w.sum(), 1e-9))
-    return blended * 100.0, subs
+    
+    # Only use valid subscores for composite calculation
+    valid_subs = {}
+    valid_weights = {}
+    caps = {"trend_s": 5.0, "momentum_s": 3.0, "strength_s": 2.0, "vol_s": 1.0, "fib_s": 1.0, "pivot_s": 1.0}
+    weight_map = {"trend_s": "trend", "momentum_s": "momentum", "strength_s": "strength", "vol_s": "vol", "fib_s": "fib", "pivot_s": "pivot"}
+    
+    for key, value in subs.items():
+        if np.isfinite(value):
+            valid_subs[key] = value
+            valid_weights[key] = weights.get(weight_map[key], 0.0)
+    
+    # If no valid subscores, return NaN
+    if not valid_subs:
+        return np.nan, subs
+    
+    # Renormalize weights
+    total_weight = sum(valid_weights.values())
+    if total_weight == 0:
+        return np.nan, subs
+    
+    normalized_weights = {k: v / total_weight for k, v in valid_weights.items()}
+    
+    # Calculate weighted composite
+    weighted_sum = 0.0
+    for key, value in valid_subs.items():
+        cap = caps[key]
+        normalized_value = value / cap
+        weighted_sum += normalized_weights[key] * normalized_value
+    
+    return weighted_sum * 100.0, subs
 
 def enforce_guards(symbol_cfg: dict, latest: dict, raw_signal: str) -> str:
     if raw_signal == "NEUTRAL": return raw_signal
@@ -612,8 +636,33 @@ def append_row(csv_path: str, cols: List[str], row: Dict[str, float]):
     with open(csv_path, "a", newline="") as f:
         csv.DictWriter(f, fieldnames=cols).writerow(row)
 
+def validate_data_integrity(df: pd.DataFrame, symbol: str) -> Tuple[bool, str]:
+    """Validate data integrity and return (is_valid, reason)"""
+    if len(df) < 252:
+        return False, f"insufficient_bars ({len(df)} < 252)"
+    
+    if not df.index.is_monotonic_increasing:
+        return False, "non_monotonic_dates"
+    
+    if df.index.duplicated().any():
+        return False, "duplicate_dates"
+    
+    if not (df["Close"] > 0).all():
+        return False, "invalid_prices"
+    
+    if df["Close"].isna().sum() > len(df) * 0.05:
+        return False, "too_many_nans"
+    
+    return True, "ok"
+
 def process_df(df: pd.DataFrame, fib_long_lb: int, fib_short_lb: int) -> Dict[str, float]:
     df = df.copy().reset_index(drop=True)
+    
+    # Ensure we have enough data for indicators
+    min_required = max(200, fib_long_lb + 50)  # Extra buffer for indicators
+    if len(df) < min_required:
+        raise ValueError(f"Insufficient data for indicators: {len(df)} < {min_required}")
+    
     df["EMA20"]=ema(df["Close"],20); df["EMA50"]=ema(df["Close"],50)
     df["EMA100"]=ema(df["Close"],100); df["EMA200"]=ema(df["Close"],200)
     df["SMA20"]=sma(df["Close"],20); df["SMA50"]=sma(df["Close"],50)
@@ -628,15 +677,36 @@ def process_df(df: pd.DataFrame, fib_long_lb: int, fib_short_lb: int) -> Dict[st
     df["BB_MID20"]=mid; df["BB_UPPER20"]=up; df["BB_LOWER20"]=dn; df["BB_WIDTH"]=width
     P,R1,S1,R2,S2,R3,S3 = pivots(df)
     df["PIVOT"]=P; df["R1"]=R1; df["S1"]=S1; df["R2"]=R2; df["S2"]=S2; df["R3"]=R3; df["S3"]=S3
-    long_low,long_high = detect_swing(df, min(fib_long_lb, len(df)))
-    short_low,short_high = detect_swing(df, min(fib_short_lb, len(df)))
-    long_fib = fib_levels(long_low,long_high); short_fib = fib_levels(short_low,short_high)
+    
+    # Only compute fib levels if we have enough data
+    long_low, long_high = 0.0, 0.0
+    short_low, short_high = 0.0, 0.0
+    long_fib = {}
+    short_fib = {}
+    
+    if len(df) >= fib_long_lb:
+        try:
+            long_low, long_high = detect_swing(df, min(fib_long_lb, len(df)))
+            long_fib = fib_levels(long_low, long_high)
+        except:
+            long_fib = {"23.6%": 0.0, "38.2%": 0.0, "50.0%": 0.0, "61.8%": 0.0, "78.6%": 0.0}
+    
+    if len(df) >= fib_short_lb:
+        try:
+            short_low, short_high = detect_swing(df, min(fib_short_lb, len(df)))
+            short_fib = fib_levels(short_low, short_high)
+        except:
+            short_fib = {"23.6%": 0.0, "38.2%": 0.0, "50.0%": 0.0, "61.8%": 0.0, "78.6%": 0.0}
 
     if EXPORT_SERIES:
         out = df.copy()
         out["fib_long_low"]=long_low; out["fib_long_high"]=long_high
         out["fib_short_low"]=short_low; out["fib_short_high"]=short_high
         return {"_series_df": out}
+    
+    # For backtesting, we need to return all historical data, not just the latest
+    # This will be used to populate the main CSV with all historical rows
+    return {"_historical_df": df}
 
     last = df.iloc[-1]
     return {
@@ -675,7 +745,23 @@ def main():
     print(f"Tracking {len(tracking_symbols['crypto'])} crypto, {len(tracking_symbols['stocks'])} stocks, {len(tracking_symbols['indices'])} indices")
 
     def handle_asset(label: str, df: pd.DataFrame, scfg: dict):
-        latest_or_series = process_df(df, scfg["lookbacks"]["fib_long"], scfg["lookbacks"]["fib_short"])
+        # Validate data integrity first
+        is_valid, reason = validate_data_integrity(df, label)
+        if not is_valid:
+            print(f"SKIPPED {label}: {reason}")
+            return
+        
+        # Log data info
+        first_date = df["Date"].iloc[0] if "Date" in df.columns else "unknown"
+        last_date = df["Date"].iloc[-1] if "Date" in df.columns else "unknown"
+        print(f"[{label}] bars={len(df)} first={first_date} last={last_date}")
+        
+        try:
+            latest_or_series = process_df(df, scfg["lookbacks"]["fib_long"], scfg["lookbacks"]["fib_short"])
+        except ValueError as e:
+            print(f"SKIPPED {label}: {e}")
+            return
+        
         if "_series_df" in latest_or_series:
             os.makedirs(SERIES_DIR, exist_ok=True)
             path = os.path.join(SERIES_DIR, f"series_{label.replace('^','')}.csv")
@@ -704,10 +790,89 @@ def main():
                 "fib_long_23.6%": None, "fib_long_38.2%": None, "fib_long_50.0%": None, "fib_long_61.8%": None, "fib_long_78.6%": None,
                 "fib_short_23.6%": None, "fib_short_38.2%": None, "fib_short_50.0%": None, "fib_short_61.8%": None, "fib_short_78.6%": None
             }
+        elif "_historical_df" in latest_or_series:
+            # Process all historical data for backtesting
+            historical_df = latest_or_series["_historical_df"]
+            
+            # Calculate composite scores for all historical data
+            historical_df["composite_score"] = np.nan
+            historical_df["signal"] = "NEUTRAL"
+            
+            for idx, row in historical_df.iterrows():
+                if idx < 200:  # Skip first 200 rows to ensure indicators are stable
+                    continue
+                    
+                latest_data = {
+                    "close": row["Close"],
+                    "ema20": row["EMA20"], "ema50": row["EMA50"], "ema200": row["EMA200"],
+                    "sma20": row["SMA20"], "sma50": row["SMA50"], "sma200": row["SMA200"],
+                    "rsi14": row["RSI14"], "macd": row["MACD"], "macd_signal": row["MACD_SIGNAL"],
+                    "adx14": row["ADX14"], "plus_di14": row["+DI14"], "minus_di14": row["-DI14"],
+                    "atr14": row["ATR14"], "bb_width": row["BB_WIDTH"],
+                    "pivot": row["PIVOT"], "r1": row["R1"], "s1": row["S1"],
+                    "fib_long_low": long_low, "fib_long_high": long_high
+                }
+                
+                score, subs = composite_and_subscores(latest_data, scfg["weights"])
+                
+                if np.isfinite(score):
+                    historical_df.loc[idx, "composite_score"] = score
+                    lt, st = scfg["thresholds"]["long"], scfg["thresholds"]["short"]
+                    raw_signal = "LONG" if score >= lt else ("SHORT" if score <= st else "NEUTRAL")
+                    final_signal = enforce_guards(scfg, latest_data, raw_signal)
+                    historical_df.loc[idx, "signal"] = final_signal
+            
+            # Write all historical data to CSV
+            for idx, row in historical_df.iterrows():
+                if pd.notna(row["composite_score"]):
+                    data_source = "Unknown"
+                    if label in tracking_symbols["crypto"]:
+                        data_source = "Crypto APIs (Kraken/Coinbase/CoinGecko)"
+                    elif label in tracking_symbols["stocks"]:
+                        data_source = "Stooq API"
+                    elif label in tracking_symbols["indices"]:
+                        data_source = "Stooq API"
+                    
+                    historical_row = {
+                        "timestamp_ct": ts, "symbol": label, "data_source": data_source,
+                        "date": str(row["Date"].date()) if isinstance(row["Date"], pd.Timestamp) else str(row["Date"]),
+                        "open": _nan_to_none(row["Open"]), "high": _nan_to_none(row["High"]), 
+                        "low": _nan_to_none(row["Low"]), "close": _nan_to_none(row["Close"]), 
+                        "volume": _nan_to_none(row["Volume"]),
+                        "ema20": _nan_to_none(row["EMA20"]), "ema50": _nan_to_none(row["EMA50"]),
+                        "ema100": _nan_to_none(row["EMA100"]), "ema200": _nan_to_none(row["EMA200"]),
+                        "sma20": _nan_to_none(row["SMA20"]), "sma50": _nan_to_none(row["SMA50"]),
+                        "sma100": _nan_to_none(row["SMA100"]), "sma200": _nan_to_none(row["SMA200"]),
+                        "rsi14": _nan_to_none(row["RSI14"]), "macd": _nan_to_none(row["MACD"]),
+                        "macd_signal": _nan_to_none(row["MACD_SIGNAL"]), "macd_hist": _nan_to_none(row["MACD_HIST"]),
+                        "atr14": _nan_to_none(row["ATR14"]), "adx14": _nan_to_none(row["ADX14"]),
+                        "plus_di14": _nan_to_none(row["+DI14"]), "minus_di14": _nan_to_none(row["-DI14"]),
+                        "bb_mid20": _nan_to_none(row["BB_MID20"]), "bb_upper20": _nan_to_none(row["BB_UPPER20"]),
+                        "bb_lower20": _nan_to_none(row["BB_LOWER20"]), "bb_width": _nan_to_none(row["BB_WIDTH"]),
+                        "pivot": _nan_to_none(row["PIVOT"]), "r1": _nan_to_none(row["R1"]), "s1": _nan_to_none(row["S1"]),
+                        "r2": _nan_to_none(row["R2"]), "s2": _nan_to_none(row["S2"]), "r3": _nan_to_none(row["R3"]), "s3": _nan_to_none(row["S3"]),
+                        "fib_long_low": float(long_low), "fib_long_high": float(long_high),
+                        "fib_long_23.6%": None, "fib_long_38.2%": None, "fib_long_50.0%": None, "fib_long_61.8%": None, "fib_long_78.6%": None,
+                        "fib_short_low": float(short_low), "fib_short_high": float(short_high),
+                        "fib_short_23.6%": None, "fib_short_38.2%": None, "fib_short_50.0%": None, "fib_short_61.8%": None, "fib_short_78.6%": None,
+                        "trend_s": subs["trend_s"], "momentum_s": subs["momentum_s"], "strength_s": subs["strength_s"],
+                        "vol_s": subs["vol_s"], "fib_s": subs["fib_s"], "pivot_s": subs["pivot_s"],
+                        "composite_score": score, "signal": row["signal"]
+                    }
+                    append_row(OUT_CSV, cols, historical_row)
+            
+            print(f"APPENDED {label}: {len(historical_df)} historical rows")
+            return
         else:
             latest = latest_or_series
 
         score, subs = composite_and_subscores(latest, scfg["weights"])
+        
+        # Check if score is valid
+        if not np.isfinite(score):
+            print(f"SKIPPED {label}: invalid_composite_score")
+            return
+            
         lt, st = scfg["thresholds"]["long"], scfg["thresholds"]["short"]
         raw_signal = "LONG" if score >= lt else ("SHORT" if score <= st else "NEUTRAL")
         final_signal = enforce_guards(scfg, latest, raw_signal)

@@ -35,6 +35,16 @@ def main():
     if summary is not None and not summary.empty:
         lines.append("## Summary")
         lines.append("")
+        
+        # Add data quality summary
+        if "skipped_reason" in summary.columns:
+            quality_summary = summary["skipped_reason"].value_counts()
+            lines.append("### Data Quality")
+            lines.append("")
+            for reason, count in quality_summary.items():
+                lines.append(f"- **{reason}**: {count} symbols")
+            lines.append("")
+        
         lines.append(summary.to_markdown(index=False))
         lines.append("")
 
