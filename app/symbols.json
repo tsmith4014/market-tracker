@@ -77,6 +77,7 @@
     {"symbol": "QQQ", "name": "Invesco QQQ Trust", "stooq": "qqq.us", "yfinance": "QQQ", "type": "etf"},
     {"symbol": "IWM", "name": "iShares Russell 2000 ETF", "stooq": "iwm.us", "yfinance": "IWM", "type": "etf"},
     {"symbol": "VTI", "name": "Vanguard Total Stock Market ETF", "stooq": "vti.us", "yfinance": "VTI", "type": "etf"},
-    {"symbol": "DIA", "name": "SPDR Dow Jones Industrial Average ETF", "stooq": "dia.us", "yfinance": "DIA", "type": "etf"}
+    {"symbol": "DIA", "name": "SPDR Dow Jones Industrial Average ETF", "stooq": "dia.us", "yfinance": "DIA", "type": "etf"},
+    {"symbol": "DXY-INDEX", "name": "US Dollar Index", "stooq": "", "yfinance": "DX-Y.NYB", "type": "index"}
   ]
 }
