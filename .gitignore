@@ -3,4 +3,12 @@ __pycache__/
 *.pyo
 *.DS_Store
 .env
-data/
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated market data and reports are local/CI artifacts by default.
+data/*
+!data/.gitkeep
+!data/*.md
