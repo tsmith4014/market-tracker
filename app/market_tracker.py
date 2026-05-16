@@ -26,8 +26,8 @@ from symbol_manager import SymbolInfo, SymbolManager
 CT = pytz.timezone("America/Chicago")
 OUT_CSV = os.getenv("OUTPUT_PATH", "/data/market_tracker.csv")
 CONFIG_PATH = os.getenv("CONFIG_PATH", "/app/config.json")
-DAYS_CRYPTO = int(os.getenv("DAYS_CRYPTO", "365"))
-DAYS_EQUITY = os.getenv("DAYS_EQUITY", "400d")
+DAYS_CRYPTO = int(os.getenv("DAYS_CRYPTO", "730"))
+DAYS_EQUITY = os.getenv("DAYS_EQUITY", "800d")
 OUTPUT_MODE = os.getenv("OUTPUT_MODE", "historical").strip().lower()
 WRITE_MODE = os.getenv("WRITE_MODE", "replace" if OUTPUT_MODE == "historical" else "append").strip().lower()
 EXPORT_SERIES = os.getenv("EXPORT_SERIES", "false").lower() == "true"
