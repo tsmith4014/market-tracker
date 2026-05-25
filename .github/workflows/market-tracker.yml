@@ -79,6 +79,8 @@ jobs:
       - name: Run tracker
         env:
           OUTPUT_PATH: ./data/market_tracker.csv
+          OUTPUT_JSON_PATH: ./data/copilot_signals.json
+          OUTPUT_LATEST_PATH: ./data/latest_signals.json
           CONFIG_PATH: ./app/config.json
           SYMBOLS_PATH: ./app/symbols.json
           DAYS_CRYPTO: "365"
@@ -86,6 +88,7 @@ jobs:
           OUTPUT_MODE: historical
           WRITE_MODE: replace
           EXPORT_SERIES: "true"
+          EXPORT_JSON: "true"
           SERIES_DIR: ./data
           TRACK_CRYPTO: major,defi
           TRACK_STOCKS: tech_mega_caps,semiconductors
@@ -95,6 +98,7 @@ jobs:
           mkdir -p data
           python app/market_tracker.py
           test -s data/market_tracker.csv
+          test -s data/copilot_signals.json
           tail -n +2 data/market_tracker.csv | wc -l
 
       - name: Run backtest

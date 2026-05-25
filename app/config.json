@@ -1,6 +1,6 @@
 {
   "defaults": {
-    "weights": { "trend": 0.50, "momentum": 0.20, "strength": 0.15, "vol": 0.10, "fib": 0.03, "pivot": 0.02 },
+    "weights": { "trend": 0.45, "momentum": 0.20, "strength": 0.15, "vol": 0.08, "fib": 0.03, "pivot": 0.02, "volume": 0.07 },
     "thresholds": { "long": 30, "short": -30 },
     "lookbacks": { "fib_long": 180, "fib_short": 30 },
     "guards": { "min_adx_for_signal": 25, "max_atr_pct": 12.0, "require_close_above_ema50_for_long": false, "require_close_below_ema50_for_short": false },
@@ -17,7 +17,7 @@
     },
     "ETH-USD": {
       "thresholds": { "long": 35, "short": -35 },
-      "weights": { "trend": 0.45, "momentum": 0.25, "strength": 0.15, "vol": 0.05, "fib": 0.05, "pivot": 0.05 },
+      "weights": { "trend": 0.40, "momentum": 0.22, "strength": 0.15, "vol": 0.08, "fib": 0.05, "pivot": 0.03, "volume": 0.07 },
       "guards": { "min_adx_for_signal": 20, "max_atr_pct": 14.0 }
     },
     "XRP-USD": {
@@ -33,7 +33,7 @@
       "guards": { "min_adx_for_signal": 25, "max_atr_pct": 8.0 }
     },
     "DXY-INDEX": {
-      "weights": { "trend": 0.55, "momentum": 0.15, "strength": 0.15, "vol": 0.05, "fib": 0.05, "pivot": 0.05 },
+      "weights": { "trend": 0.50, "momentum": 0.15, "strength": 0.15, "vol": 0.05, "fib": 0.05, "pivot": 0.03, "volume": 0.07 },
       "guards": { "min_adx_for_signal": 14, "max_atr_pct": 4.0 },
       "thresholds": { "long": 50, "short": -50 }
     }
