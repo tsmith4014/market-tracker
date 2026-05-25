@@ -6,4 +6,12 @@ __pycache__/
 data/
 
 # allow markdown reports in data
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated market data and reports are local/CI artifacts by default.
+data/*
+!data/.gitkeep
 !data/*.md

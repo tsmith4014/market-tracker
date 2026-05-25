@@ -1,17 +1,22 @@
-version: "3.9"
-
 services:
   tracker:
     build: .
     image: market-tracker:latest
     container_name: market-tracker
     environment:
-      - OUTPUT_PATH=/data/market_tracker.csv
-      - CONFIG_PATH=/app/config.json
-      - DAYS_CRYPTO=365
-      - DAYS_EQUITY=400d
-      - EXPORT_SERIES=true
-      - SERIES_DIR=/data
+      OUTPUT_PATH: /data/market_tracker.csv
+      CONFIG_PATH: /app/config.json
+      SYMBOLS_PATH: /app/symbols.json
+      DAYS_CRYPTO: "730"
+      DAYS_EQUITY: 800d
+      OUTPUT_MODE: historical
+      WRITE_MODE: replace
+      EXPORT_SERIES: "true"
+      SERIES_DIR: /data
+      TRACK_CRYPTO: major,defi
+      TRACK_STOCKS: tech_mega_caps,semiconductors
+      TRACK_INDICES: "true"
+      LOG_LEVEL: INFO
     volumes:
       - ./data:/data
     restart: "no"
@@ -21,9 +26,10 @@ services:
     image: market-tracker:latest
     container_name: market-backtest
     environment:
-      - CSV_PATH=/data/market_tracker.csv
-      - CONFIG_PATH=/app/config.json
-      - OUT_DIR=/data
+      CSV_PATH: /data/market_tracker.csv
+      CONFIG_PATH: /app/config.json
+      OUT_DIR: /data
+      MIN_BACKTEST_BARS: "252"
     volumes:
       - ./data:/data
     depends_on:
@@ -35,34 +41,24 @@ services:
     image: market-tracker:latest
     container_name: market-sweep
     environment:
-      - CSV_PATH=/data/market_tracker.csv
-      - CONFIG_PATH=/app/config.json
-      - OUT_DIR=/data
+      CSV_PATH: /data/market_tracker.csv
+      CONFIG_PATH: /app/config.json
+      OUT_DIR: /data
+      MIN_BACKTEST_BARS: "252"
     volumes:
       - ./data:/data
     depends_on:
       - tracker
     restart: "no"
-    command:
-      [
-        "python",
-        "/app/backtest.py",
-        "--mode",
-        "sweep",
-        "--min",
-        "15",
-        "--max",
-        "50",
-        "--step",
-        "5",
-      ]
+    command: ["python", "/app/backtest.py", "--mode", "sweep", "--min", "15", "--max", "50", "--step", "5"]
 
   report:
     image: market-tracker:latest
     container_name: market-report
     environment:
-      - OUT_DIR=/data
-      - REPORT_PATH=/data/backtest_report.md
+      OUT_DIR: /data
+      REPORT_PATH: /data/backtest_report.md
+      MARKET_CSV: /data/market_tracker.csv
     volumes:
       - ./data:/data
     depends_on:
@@ -70,3 +66,14 @@ services:
       - sweep
     restart: "no"
     command: ["python", "/app/report.py"]
+
+  test:
+    build: .
+    image: market-tracker:latest
+    container_name: market-test
+    environment:
+      PYTHONPATH: /app
+    volumes:
+      - ./tests:/tests:ro
+    restart: "no"
+    command: ["python", "-m", "pytest", "/tests"]
