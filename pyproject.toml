@@ -1,4 +1,37 @@
 [tool.pytest.ini_options]
 pythonpath = ["app"]
 testpaths = ["tests"]
-addopts = "-q"
+addopts = "-ra -q --strict-markers"
+filterwarnings = [
+    "ignore::DeprecationWarning:yfinance",
+    "ignore::FutureWarning:pandas",
+    "ignore::DeprecationWarning:dateutil",
+]
+
+[tool.coverage.run]
+source = ["app"]
+omit = [
+    "app/symbol_search.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+src = ["app", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = ["E501", "E731"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011", "F401", "E741"]
+# Legacy stylistic issues in app/ — kept to minimize diff against main.
+# None of these represent real bugs.
+"app/*" = ["E701", "E702", "E731", "E741", "UP006", "UP007", "UP015", "UP017", "UP035", "UP038", "I001"]

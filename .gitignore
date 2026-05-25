@@ -3,11 +3,10 @@ __pycache__/
 *.pyo
 *.DS_Store
 .env
-data/
-
-# allow markdown reports in data
 .venv/
 .pytest_cache/
+.ruff_cache/
+.mypy_cache/
 .coverage
 htmlcov/
 

@@ -98,6 +98,9 @@ class SymbolManager:
         info = self.get_symbol_info(symbol)
         return info.asset_type if info else None
 
+    def all_symbols(self) -> List[str]:
+        return sorted(self._symbol_to_info.keys())
+
     def search_by_name(self, query: str) -> List[str]:
         query = query.lower()
         return sorted({symbol for name, symbol in self._name_index.items() if query in name})
@@ -148,7 +151,7 @@ class SymbolManager:
 
     def search(self, query: str) -> Dict[str, List[str]]:
         query = query.lower()
-        results = {
+        results: Dict[str, List[str]] = {
             "by_symbol": [],
             "by_name": [],
             "by_category": [],
@@ -182,9 +185,9 @@ def main() -> None:
     sm = SymbolManager()
     if args.search:
         print(f"Search results for '{args.search}':")
-        for field, symbols in sm.search(args.search).items():
+        for field_name, symbols in sm.search(args.search).items():
             if symbols:
-                print(f"  {field}: {', '.join(symbols)}")
+                print(f"  {field_name}: {', '.join(symbols)}")
     elif args.category:
         print(f"Symbols in category '{args.category}': {', '.join(sm.get_by_category(args.category))}")
     elif args.sector:

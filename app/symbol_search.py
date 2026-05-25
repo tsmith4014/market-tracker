@@ -72,9 +72,9 @@ def main() -> None:
             emit_symbol_rows(all_symbols, manager, "csv")
         else:
             print(f"Search results for '{args.search}':")
-            for field, symbols in results.items():
+            for field_name, symbols in results.items():
                 if symbols:
-                    print(f"\n{field.replace('_', ' ').title()}:")
+                    print(f"\n{field_name.replace('_', ' ').title()}:")
                     emit_symbol_rows(symbols, manager, "table")
         return
 
@@ -146,7 +146,7 @@ def main() -> None:
 
     if args.export:
         rows = []
-        for symbol in sorted(manager._symbol_to_info):
+        for symbol in manager.all_symbols():
             info = manager.get_symbol_info(symbol)
             if info:
                 rows.append({

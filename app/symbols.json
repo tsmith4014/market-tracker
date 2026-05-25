@@ -6,7 +6,6 @@
       {"symbol": "SOL-USD", "name": "Solana", "kraken": "SOLUSD", "coinbase": "SOL-USD", "coingecko": "solana", "category": "smart_contracts"},
       {"symbol": "XRP-USD", "name": "XRP", "kraken": "XRPUSD", "coinbase": "XRP-USD", "coingecko": "ripple", "category": "payments"},
       {"symbol": "ADA-USD", "name": "Cardano", "kraken": "ADAUSD", "coinbase": "ADA-USD", "coingecko": "cardano", "category": "smart_contracts"},
-      {"symbol": "MATIC-USD", "name": "Polygon", "kraken": "MATICUSD", "coinbase": "MATIC-USD", "coingecko": "matic-network", "category": "layer2"},
       {"symbol": "LINK-USD", "name": "Chainlink", "kraken": "LINKUSD", "coinbase": "LINK-USD", "coingecko": "chainlink", "category": "oracles"},
       {"symbol": "UNI-USD", "name": "Uniswap", "kraken": "UNIUSD", "coinbase": "UNI-USD", "coingecko": "uniswap", "category": "defi"},
       {"symbol": "AAVE-USD", "name": "Aave", "kraken": "AAVEUSD", "coinbase": "AAVE-USD", "coingecko": "aave", "category": "defi"},
@@ -23,11 +22,10 @@
       {"symbol": "DOT-USD", "name": "Polkadot", "kraken": "DOTUSD", "coinbase": "DOT-USD", "coingecko": "polkadot", "category": "smart_contracts"},
       {"symbol": "ATOM-USD", "name": "Cosmos", "kraken": "ATOMUSD", "coinbase": "ATOM-USD", "coingecko": "cosmos", "category": "smart_contracts"},
       {"symbol": "NEAR-USD", "name": "NEAR Protocol", "kraken": "NEARUSD", "coinbase": "NEAR-USD", "coingecko": "near", "category": "smart_contracts"},
-      {"symbol": "FTM-USD", "name": "Fantom", "kraken": "FTMUSD", "coinbase": "FTM-USD", "coingecko": "fantom", "category": "smart_contracts"},
       {"symbol": "ALGO-USD", "name": "Algorand", "kraken": "ALGOUSD", "coinbase": "ALGO-USD", "coingecko": "algorand", "category": "smart_contracts"}
     ],
     "meme": [
-      {"symbol": "DOGE-USD", "name": "Dogecoin", "kraken": "DOGEUSD", "coinbase": "DOGE-USD", "coingecko": "dogecoin", "category": "meme"},
+      {"symbol": "DOGE-USD", "name": "Dogecoin", "kraken": "XDGUSD", "coinbase": "DOGE-USD", "coingecko": "dogecoin", "category": "meme"},
       {"symbol": "SHIB-USD", "name": "Shiba Inu", "kraken": "SHIBUSD", "coinbase": "SHIB-USD", "coingecko": "shiba-inu", "category": "meme"},
       {"symbol": "PEPE-USD", "name": "Pepe", "kraken": "PEPEUSD", "coinbase": "PEPE-USD", "coingecko": "pepe", "category": "meme"}
     ]
