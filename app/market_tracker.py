@@ -190,13 +190,46 @@ def validate_data_integrity(df: pd.DataFrame, symbol: str, min_bars: int = 220) 
 
 # --- Data Fetchers ---
 
+def fetch_yahoo_chart_data(symbol: str, days: int) -> MarketData:
+    yf_symbol = SYMBOL_MANAGER.get_api_mapping(symbol, "yfinance") or symbol
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{yf_symbol}"
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; MarketTracker/1.0)"}
+    r = requests.get(
+        url,
+        params={"range": f"{max(days, 7)}d", "interval": "1d", "includePrePost": "false"},
+        headers=headers,
+        timeout=(5, HTTP_TIMEOUT_SECONDS),
+    )
+    r.raise_for_status()
+    result = (r.json().get("chart") or {}).get("result")
+    if not result:
+        raise ValueError("No chart data in Yahoo Finance response")
+    block = result[0]
+    quote = (block.get("indicators") or {}).get("quote", [{}])[0]
+    timestamps = block.get("timestamp") or []
+    if not timestamps or not quote.get("close"):
+        raise ValueError("Yahoo Finance chart payload missing OHLCV series")
+    df = pd.DataFrame(
+        {
+            "Date": pd.to_datetime(timestamps, unit="s"),
+            "Open": quote.get("open"),
+            "High": quote.get("high"),
+            "Low": quote.get("low"),
+            "Close": quote.get("close"),
+            "Volume": quote.get("volume"),
+        }
+    )
+    df = df[df["Date"] >= datetime.utcnow() - pd.Timedelta(days=days)]
+    return MarketData(prepare_ohlcv(df), "Yahoo Finance Chart API")
+
+
 def fetch_stooq_data(symbol: str, days: int) -> MarketData:
     stooq_symbol = SYMBOL_MANAGER.get_api_mapping(symbol, "stooq")
     if not stooq_symbol:
         raise ValueError(f"No Stooq mapping configured for {symbol}")
     r = requests.get(
         f"https://stooq.com/q/d/l/?s={stooq_symbol}&i=d",
-        timeout=HTTP_TIMEOUT_SECONDS,
+        timeout=(5, HTTP_TIMEOUT_SECONDS),
     )
     r.raise_for_status()
     df = pd.read_csv(StringIO(r.text))
@@ -209,7 +242,9 @@ def fetch_yfinance_data(symbol: str, days: int) -> MarketData:
     if yf is None:
         raise ValueError("yfinance is not installed")
     yf_symbol = SYMBOL_MANAGER.get_api_mapping(symbol, "yfinance") or symbol
-    df = yf.download(yf_symbol, period=f"{days}d", interval="1d", auto_adjust=False, progress=False)
+    df = yf.download(
+        yf_symbol, period=f"{days}d", interval="1d", auto_adjust=False, progress=False, threads=False
+    )
     if df.empty:
         raise ValueError("No data received from Yahoo Finance")
     if isinstance(df.columns, pd.MultiIndex):
@@ -222,7 +257,14 @@ def fetch_yfinance_data(symbol: str, days: int) -> MarketData:
 
 def fetch_stock_data(symbol: str, days: int, tracker: ReliabilityTracker) -> MarketData:
     errors = []
-    for name, fn in (("Stooq", fetch_stooq_data), ("Yahoo Finance", fetch_yfinance_data)):
+    providers = (
+        ("Yahoo Finance", fetch_yfinance_data),
+        ("Yahoo Finance Chart API", fetch_yahoo_chart_data),
+        ("Stooq", fetch_stooq_data),
+    )
+    if yf is None:
+        providers = (("Yahoo Finance Chart API", fetch_yahoo_chart_data), ("Stooq", fetch_stooq_data))
+    for name, fn in providers:
         try:
             LOGGER.info("Trying %s for %s", name, symbol)
             t0 = time.time()
