@@ -9,12 +9,20 @@ This repo is designed to be useful in two modes:
 
 The default Docker and GitHub Actions path uses **historical mode** because it makes the backtest/report pipeline useful immediately instead of waiting for hundreds of daily appends.
 
+## What's new
+
+- **Real test suite** with 94 tests across indicators, scoring, guards, storage idempotency, and the backtest engine on synthetic data with known outcomes.
+- **RSI bug fix**: previous version returned `50.0` (neutral) for pure uptrends/downtrends when all rolling returns had the same sign. Now correctly returns `100` in pure uptrends and `0` in pure downtrends.
+- **Symbol catalog cleanup**: removed `MATIC-USD` (Polygon migrated to POL token; Kraken pair dead) and `FTM-USD` (Fantom rebranded to Sonic; similar issue). Fixed Dogecoin Kraken mapping to canonical `XDGUSD`.
+- **CI hardening**: split lint+test job from pipeline job; ruff linting on every PR; concurrency lock; scoped permissions; job timeouts.
+- **Lint passes cleanly** on tests and is silenced for pre-existing legacy style issues in `app/`.
+
 ## Data sources
 
 The tracker uses real market data only. It does not generate mock OHLCV rows.
 
-- **Crypto**: Kraken -> Coinbase -> CoinGecko OHLC -> CoinPaprika fallback chain.
-- **Stocks / ETFs / indices**: Stooq -> Yahoo Finance fallback chain.
+- **Crypto**: Kraken → Coinbase → CoinGecko OHLC → CoinPaprika fallback chain.
+- **Stocks / ETFs / indices**: Stooq → Yahoo Finance fallback chain.
 - **DXY**: configured as `DXY-INDEX` using Yahoo Finance symbol `DX-Y.NYB`.
 
 No API key is required for the primary data path.
@@ -23,14 +31,14 @@ No API key is required for the primary data path.
 
 Generated outputs are written to `data/` locally or uploaded as GitHub Actions artifacts in CI:
 
-- `market_tracker.csv`
-- `series_<SYMBOL>.csv` when `EXPORT_SERIES=true`
-- `backtest_summary.csv`
-- `backtest_trades_<SYMBOL>.csv`
-- `threshold_sweep_<SYMBOL>.csv`
-- `backtest_report.md`
+- `market_tracker.csv` — master CSV with one scored row per (symbol, date)
+- `series_<SYMBOL>.csv` when `EXPORT_SERIES=true` — full indicator series per symbol
+- `backtest_summary.csv` — backtest stats per symbol
+- `backtest_trades_<SYMBOL>.csv` — entry/exit/reversal events per symbol
+- `threshold_sweep_<SYMBOL>.csv` — threshold optimization grid
+- `backtest_report.md` — human-readable Markdown summary
 
-The repository does **not** commit generated CSV data by default. This avoids noisy daily data commits and keeps Git focused on source code. GitHub Actions uploads generated outputs as an artifact instead.
+The repository does **not** commit generated CSV data by default. GitHub Actions uploads generated outputs as an artifact instead.
 
 ## Quick start
 
@@ -57,14 +65,23 @@ docker compose run --rm report
 ls -lh data/
 ```
 
+### Running tests locally without Docker
+
+```bash
+python -m pip install -r app/requirements.txt -r app/requirements-dev.txt
+PYTHONPATH=app pytest
+PYTHONPATH=app pytest tests/test_indicators.py -v
+ruff check .
+```
+
 ## Configuration
 
 Edit `app/config.json` to tune per-asset weights, thresholds, guards, lookbacks, and fees.
 
 Supported config blocks:
 
-- `weights`: `trend`, `momentum`, `strength`, `vol`, `fib`, `pivot`
-- `thresholds`: `long`, `short`
+- `weights`: `trend`, `momentum`, `strength`, `vol`, `fib`, `pivot` (renormalized at score time if any subscore is unavailable)
+- `thresholds`: `long`, `short` (long must exceed short)
 - `lookbacks`: `fib_long`, `fib_short`
 - `guards`: `min_adx_for_signal`, `max_atr_pct`, `require_close_above_ema50_for_long`, `require_close_below_ema50_for_short`
 - `fees`: `bps_per_side`, `slippage_bps_per_side`
@@ -76,8 +93,8 @@ Supported config blocks:
 | `OUTPUT_PATH` | `/data/market_tracker.csv` | Tracker output CSV |
 | `CONFIG_PATH` | `/app/config.json` | Strategy config path |
 | `SYMBOLS_PATH` | `/app/symbols.json` in Docker, repo-local file outside Docker | Symbol catalog path |
-| `DAYS_CRYPTO` | `365` | Crypto history window |
-| `DAYS_EQUITY` | `400d` | Stock/ETF/index history window |
+| `DAYS_CRYPTO` | `730` | Crypto history window |
+| `DAYS_EQUITY` | `800d` | Stock/ETF/index history window |
 | `OUTPUT_MODE` | `historical` | `historical` or `latest` |
 | `WRITE_MODE` | `replace` for historical, `append` for latest | CSV write behavior |
 | `EXPORT_SERIES` | `false` | Write per-symbol indicator series files |
@@ -88,6 +105,8 @@ Supported config blocks:
 | `TRACK_SYMBOLS` | empty | Exact comma-separated symbol override |
 | `MIN_BACKTEST_BARS` | `252` | Minimum rows per symbol for backtesting |
 | `LOG_LEVEL` | `INFO` | Python logging level |
+| `HTTP_TIMEOUT_SECONDS` | `30` | HTTP timeout for data source calls |
+| `REQUEST_DELAY_SECONDS` | `0.5` | Inter-request delay for crypto APIs |
 
 Examples:
 
@@ -124,15 +143,12 @@ python app/symbol_search.py --export symbols_export.json
 
 ## GitHub Actions
 
-The scheduled workflow runs daily and also supports manual `workflow_dispatch` runs. It:
+The workflow has two jobs:
 
-1. Installs dependencies.
-2. Runs the test suite.
-3. Generates historical market data.
-4. Runs summary backtests.
-5. Runs threshold sweeps.
-6. Generates the Markdown report.
-7. Uploads the generated `data/` directory as a workflow artifact.
+1. **lint-and-test** — runs on every PR touching `app/`, `tests/`, the workflow, or `pyproject.toml`. Runs ruff linting and the full pytest suite. Required to pass before the pipeline job runs.
+2. **run-pipeline** — runs daily at 03:07 UTC and on manual `workflow_dispatch`. Generates historical market data, runs backtests + sweeps + report, uploads the `data/` directory as a 30-day artifact.
+
+Concurrency is scoped per ref so overlapping scheduled runs cannot race on the same outputs. Job-level timeouts cap test runs at 10 minutes and pipeline runs at 30 minutes.
 
 Optional S3 upload can be enabled by configuring these repo secrets and uncommenting the S3 upload block in `.github/workflows/market-tracker.yml`:
 
@@ -154,10 +170,25 @@ Optional S3 upload can be enabled by configuring these repo secrets and uncommen
 ## Backtest assumptions
 
 - Signals are generated from composite score thresholds and then filtered through the same guard rules used by the tracker.
-- Execution is modeled using next-bar returns. The final bar cannot open a fresh position because there is no next close available.
-- Transaction cost is `bps_per_side + slippage_bps_per_side` from config.
+- Execution is modeled using next-bar returns: a signal computed at bar `t`'s close earns the close-to-close return from `t` to `t+1`. The final bar cannot open a fresh position because there is no next-bar return.
+- Transaction cost is `bps_per_side + slippage_bps_per_side` from config, applied on each position change.
 - Historical Fibonacci levels are computed from data available up to each row. The backtest does not use future rows to calculate prior Fibonacci levels.
-- `backtest_trades_<SYMBOL>.csv` contains position-change events, including entries, exits, and reversals.
+- Sharpe ratio is `NaN` when there are fewer than 2 returns or when return std-dev is effectively zero — preventing the divide-by-zero blow-ups that produced `-1.2e+12` Sharpe values in earlier reports.
+- `backtest_trades_<SYMBOL>.csv` contains position-change events labeled as `enter_long`, `enter_short`, `exit_long`, `exit_short`, `reverse_long_to_short`, or `reverse_short_to_long`.
+
+## Test suite layout
+
+```
+tests/
+├── conftest.py              # Shared fixtures: synthetic OHLCV (up/down/flat), default config
+├── test_indicators.py       # EMA/SMA/RSI/MACD/ATR/ADX/Bollinger/pivots/fib (24 tests)
+├── test_scoring.py          # Subscores + composite + guards (31 tests)
+├── test_storage.py          # CSV schema + write_rows idempotency (14 tests)
+├── test_backtest.py         # Backtest engine on synthetic data with known outcomes (16 tests)
+└── test_pipeline.py         # End-to-end OHLCV → indicators → scoring → output rows (9 tests)
+```
+
+Total: **94 tests**, all passing.
 
 ## Good next enhancements
 
@@ -168,3 +199,4 @@ This PR-sized foundation intentionally avoids overbuilding. The next valuable la
 3. Walk-forward optimization for thresholds and weights.
 4. Database persistence if CSV artifacts become too limiting.
 5. Provider reliability reporting across runs.
+6. Vectorize `detect_swing` — currently O(N × lookback); fine for 730 days × 30 symbols but worth optimizing if symbol count grows.

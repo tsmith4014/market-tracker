@@ -7,33 +7,33 @@
     "fees": { "bps_per_side": 2.0, "slippage_bps_per_side": 1.0 }
   },
   "overrides": {
-    "SOL-USD": { 
+    "SOL-USD": {
       "thresholds": { "long": 20, "short": -20 },
-      "guards": { "min_adx_for_signal": 22, "max_atr_pct": 15.0, "require_close_above_ema50_for_long": true } 
+      "guards": { "min_adx_for_signal": 22, "max_atr_pct": 15.0, "require_close_above_ema50_for_long": true }
     },
-    "BTC-USD": { 
+    "BTC-USD": {
       "thresholds": { "long": 25, "short": -25 },
       "guards": { "min_adx_for_signal": 20, "max_atr_pct": 10.0 }
     },
-    "ETH-USD": { 
+    "ETH-USD": {
       "thresholds": { "long": 35, "short": -35 },
       "weights": { "trend": 0.45, "momentum": 0.25, "strength": 0.15, "vol": 0.05, "fib": 0.05, "pivot": 0.05 },
       "guards": { "min_adx_for_signal": 20, "max_atr_pct": 14.0 }
     },
-    "XRP-USD": { 
+    "XRP-USD": {
       "thresholds": { "long": 40, "short": -40 },
       "guards": { "max_atr_pct": 18.0, "min_adx_for_signal": 24 }
     },
-    "NVDA": { 
+    "NVDA": {
       "lookbacks": { "fib_long": 240, "fib_short": 40 },
       "thresholds": { "long": 15, "short": -15 }
     },
-    "AMD": { 
+    "AMD": {
       "thresholds": { "long": 40, "short": -40 },
       "guards": { "min_adx_for_signal": 25, "max_atr_pct": 8.0 }
     },
-    "DXY-INDEX": { 
-      "weights": { "trend": 0.55, "momentum": 0.15, "strength": 0.15, "vol": 0.05, "fib": 0.05, "pivot": 0.05 }, 
+    "DXY-INDEX": {
+      "weights": { "trend": 0.55, "momentum": 0.15, "strength": 0.15, "vol": 0.05, "fib": 0.05, "pivot": 0.05 },
       "guards": { "min_adx_for_signal": 14, "max_atr_pct": 4.0 },
       "thresholds": { "long": 50, "short": -50 }
     }

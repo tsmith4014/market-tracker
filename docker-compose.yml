@@ -71,9 +71,12 @@ services:
     build: .
     image: market-tracker:latest
     container_name: market-test
+    working_dir: /workspace
     environment:
-      PYTHONPATH: /app
+      PYTHONPATH: /workspace/app
     volumes:
-      - ./tests:/tests:ro
+      - ./tests:/workspace/tests:ro
+      - ./app:/workspace/app:ro
+      - ./pyproject.toml:/workspace/pyproject.toml:ro
     restart: "no"
-    command: ["python", "-m", "pytest", "/tests"]
+    command: ["python", "-m", "pytest", "/workspace/tests", "-v"]

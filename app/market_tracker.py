@@ -128,8 +128,21 @@ def sma(s: pd.Series, window: int) -> pd.Series: return s.rolling(window, min_pe
 
 def rsi(s: pd.Series, period: int = 14) -> pd.Series:
     d = s.diff(); up = d.clip(lower=0.0); dn = -d.clip(upper=0.0)
-    rs = up.rolling(period, min_periods=period).mean() / dn.rolling(period, min_periods=period).mean().replace(0, np.nan)
-    return (100.0 - (100.0 / (1.0 + rs))).fillna(50.0)
+    up_mean = up.rolling(period, min_periods=period).mean()
+    dn_mean = dn.rolling(period, min_periods=period).mean()
+    # Handle edge cases explicitly:
+    #   no losses (pure uptrend) -> RSI = 100
+    #   no gains (pure downtrend) -> RSI = 0
+    #   both zero (flat) -> RSI = 50
+    rs = up_mean / dn_mean.replace(0, np.nan)
+    out = 100.0 - (100.0 / (1.0 + rs))
+    pure_up = (dn_mean == 0) & (up_mean > 0)
+    pure_down = (up_mean == 0) & (dn_mean > 0)
+    pure_flat = (up_mean == 0) & (dn_mean == 0)
+    out = out.where(~pure_up, 100.0)
+    out = out.where(~pure_down, 0.0)
+    out = out.where(~pure_flat, 50.0)
+    return out
 
 
 def macd(s: pd.Series, fast: int = 12, slow: int = 26, signal: int = 9):
