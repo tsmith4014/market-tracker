@@ -87,7 +87,7 @@ def flat_ohlcv() -> pd.DataFrame:
 @pytest.fixture
 def default_symbol_cfg() -> dict:
     return {
-        "weights": {"trend": 0.50, "momentum": 0.20, "strength": 0.15, "vol": 0.10, "fib": 0.03, "pivot": 0.02},
+        "weights": {"trend": 0.45, "momentum": 0.20, "strength": 0.15, "vol": 0.08, "fib": 0.03, "pivot": 0.02, "volume": 0.07},
         "thresholds": {"long": 30, "short": -30},
         "lookbacks": {"fib_long": 180, "fib_short": 30},
         "guards": {
