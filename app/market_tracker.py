@@ -67,8 +67,14 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger("market_tracker")
 SYMBOL_MANAGER = SymbolManager()
-TRACK_CRYPTO = [x.strip() for x in os.getenv("TRACK_CRYPTO", "major,defi").split(",") if x.strip()]
-TRACK_STOCKS = [x.strip() for x in os.getenv("TRACK_STOCKS", "tech_mega_caps,semiconductors").split(",") if x.strip()]
+_DEFAULT_CRYPTO_CATEGORIES = "major,defi,layer1,layer2,infrastructure,meme"
+_DEFAULT_STOCK_CATEGORIES = (
+    "tech_mega_caps,enterprise_software,semiconductors,finance,healthcare,energy,"
+    "consumer,industrial,staples,communications,materials_mining"
+)
+TRACK_CRYPTO = [x.strip() for x in os.getenv("TRACK_CRYPTO", _DEFAULT_CRYPTO_CATEGORIES).split(",") if x.strip()]
+TRACK_STOCKS = [x.strip() for x in os.getenv("TRACK_STOCKS", _DEFAULT_STOCK_CATEGORIES).split(",") if x.strip()]
+TRACK_ALL = os.getenv("TRACK_ALL", "false").lower() == "true"
 TRACK_INDICES = os.getenv("TRACK_INDICES", "true").lower() == "true"
 TRACK_SYMBOLS = [x.strip().upper() for x in os.getenv("TRACK_SYMBOLS", "").split(",") if x.strip()]
 
@@ -113,6 +119,8 @@ def get_tracking_symbols() -> List[str]:
         if unknown:
             raise ValueError(f"Unknown TRACK_SYMBOLS: {', '.join(unknown)}")
         return dedupe(TRACK_SYMBOLS)
+    if TRACK_ALL:
+        return dedupe(SYMBOL_MANAGER.all_symbols())
     symbols: List[str] = []
     for category in TRACK_CRYPTO:
         symbols.extend(SYMBOL_MANAGER.get_by_category(category))
@@ -167,6 +175,10 @@ def prepare_ohlcv(df: pd.DataFrame) -> pd.DataFrame:
         out[c] = pd.to_numeric(out[c], errors="coerce")
     out = out.dropna(subset=["Date", "Open", "High", "Low", "Close"])
     out = out[out["Close"] > 0]
+    # Some index/FX feeds (e.g. DXY) occasionally publish inconsistent OHLC; clamp to a valid envelope.
+    ohlc = out[["Open", "High", "Low", "Close"]]
+    out["High"] = ohlc.max(axis=1)
+    out["Low"] = ohlc.min(axis=1)
     return out.sort_values("Date").drop_duplicates(subset=["Date"], keep="last").reset_index(drop=True)
 
 

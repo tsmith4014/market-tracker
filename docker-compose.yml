@@ -16,8 +16,9 @@ services:
       EXPORT_SERIES: "true"
       EXPORT_JSON: "true"
       SERIES_DIR: /data
-      TRACK_CRYPTO: major,defi
-      TRACK_STOCKS: tech_mega_caps,semiconductors
+      # Full catalog (~161 symbols): app/symbols.json. Set TRACK_ALL=true for everything listed.
+      TRACK_CRYPTO: major,defi,layer1,layer2,infrastructure,meme
+      TRACK_STOCKS: tech_mega_caps,enterprise_software,semiconductors,finance,healthcare,energy,consumer,industrial,staples,communications,materials_mining
       TRACK_INDICES: "true"
       LOG_LEVEL: INFO
     volumes:
