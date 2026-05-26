@@ -85,8 +85,8 @@ jobs:
           OUTPUT_LATEST_PATH: ./data/latest_signals.json
           CONFIG_PATH: ./app/config.json
           SYMBOLS_PATH: ./app/symbols.json
-          DAYS_CRYPTO: "365"
-          DAYS_EQUITY: 400d
+          DAYS_CRYPTO: "730"
+          DAYS_EQUITY: 800d
           OUTPUT_MODE: historical
           WRITE_MODE: replace
           EXPORT_SERIES: "false"

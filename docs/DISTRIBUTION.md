@@ -26,6 +26,20 @@ Replace `OWNER` and `REPO` with your GitHub org/user and repository name:
 - Latest signals: `https://OWNER.github.io/REPO/latest_signals.json`
 - Co-pilot JSON: `https://OWNER.github.io/REPO/copilot_signals.json`
 
+### GitHub Pages settings (important)
+
+CI publishes to the **`gh-pages` branch** (not `main`). In the repo:
+
+**Settings → Pages → Build and deployment**
+
+1. **Source:** Deploy from a branch  
+2. **Branch:** `gh-pages` / `(root)`  
+3. Click **Save**
+
+The `gh-pages` branch is created automatically on the first successful **`distribute`** job (after **run-pipeline** completes on `main`). Until then, the branch will not appear in the dropdown.
+
+Trigger a run: **Actions → Market Tracker → Run workflow** (branch `main`).
+
 ## Slack
 
 1. Create a Slack [Incoming Webhook](https://api.slack.com/messaging/webhooks).
