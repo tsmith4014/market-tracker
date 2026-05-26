@@ -99,8 +99,11 @@ Supported config blocks:
 | `WRITE_MODE` | `replace` for historical, `append` for latest | CSV write behavior |
 | `EXPORT_SERIES` | `false` | Write per-symbol indicator series files |
 | `SERIES_DIR` | `/data` | Per-symbol series output directory |
-| `TRACK_CRYPTO` | `major,defi` | Crypto categories from `symbols.json` |
-| `TRACK_STOCKS` | `tech_mega_caps,semiconductors` | Stock categories from `symbols.json` |
+| `TRACK_CRYPTO` | `major,defi,layer1,layer2,infrastructure,meme` | Crypto categories from `symbols.json` |
+| `TRACK_STOCKS` | all stock groups in `symbols.json` (see catalog) | Stock categories from `symbols.json` |
+| `OUTPUT_JSON_PATH` | `/data/copilot_signals.json` | Full co-pilot JSON output |
+| `OUTPUT_LATEST_PATH` | `/data/latest_signals.json` | Slim latest-signals JSON |
+| `TRACK_ALL` | `false` | If `true`, track every symbol in `symbols.json` |
 | `TRACK_INDICES` | `true` | Include ETF/index symbols |
 | `TRACK_SYMBOLS` | empty | Exact comma-separated symbol override |
 | `MIN_BACKTEST_BARS` | `252` | Minimum rows per symbol for backtesting |
@@ -143,12 +146,19 @@ python app/symbol_search.py --export symbols_export.json
 
 ## GitHub Actions
 
-The workflow has two jobs:
+The workflow has three jobs (see [docs/DISTRIBUTION.md](docs/DISTRIBUTION.md) for Slack / OpenClaw / Pages):
 
-1. **lint-and-test** — runs on every PR touching `app/`, `tests/`, the workflow, or `pyproject.toml`. Runs ruff linting and the full pytest suite. Required to pass before the pipeline job runs.
-2. **run-pipeline** — runs daily at 03:07 UTC and on manual `workflow_dispatch`. Generates historical market data, runs backtests + sweeps + report, uploads the `data/` directory as a 30-day artifact.
+1. **lint-and-test** — runs on every PR. Ruff + pytest.
+2. **run-pipeline** — daily at **03:07 UTC** and on manual **workflow_dispatch** (not on PRs). Tracks **~161 symbols**, writes CSV + JSON, runs backtest/sweep/report, uploads a **30-day artifact**.
+3. **distribute** — on `main` only: optional **Slack** webhook post, publishes **GitHub Pages** with `latest_signals.json`, `copilot_signals.json`, and `backtest_report.md`.
 
-Concurrency is scoped per ref so overlapping scheduled runs cannot race on the same outputs. Job-level timeouts cap test runs at 10 minutes and pipeline runs at 30 minutes.
+**Setup for downstream consumers:**
+
+| Integration | What to configure |
+|-------------|-------------------|
+| Slack | Repo secret `SLACK_WEBHOOK_URL` |
+| GitHub Pages | Repo → Settings → Pages → source: **Deploy from branch** → branch `gh-pages` (created automatically by CI) |
+| OpenClaw / agents | Poll `https://<user>.github.io/market-tracker/copilot_signals.json` |
 
 Optional S3 upload can be enabled by configuring these repo secrets and uncommenting the S3 upload block in `.github/workflows/market-tracker.yml`:
 
@@ -195,7 +205,7 @@ Total: **94 tests**, all passing.
 This PR-sized foundation intentionally avoids overbuilding. The next valuable layers are:
 
 1. A small dashboard for latest signal, score history, and backtest charts.
-2. Slack/email alerting for signal changes.
+2. ~~Slack alerting~~ — webhook notify added in CI; tune message format as needed.
 3. Walk-forward optimization for thresholds and weights.
 4. Database persistence if CSV artifacts become too limiting.
 5. Provider reliability reporting across runs.

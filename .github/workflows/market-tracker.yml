@@ -8,6 +8,8 @@ on:
     paths:
       - "app/**"
       - "tests/**"
+      - "scripts/**"
+      - "site/**"
       - ".github/workflows/market-tracker.yml"
       - "pyproject.toml"
 
@@ -53,7 +55,7 @@ jobs:
   run-pipeline:
     name: Run market tracker pipeline
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     needs: lint-and-test
     if: github.event_name != 'pull_request'
     permissions:
@@ -87,11 +89,11 @@ jobs:
           DAYS_EQUITY: 400d
           OUTPUT_MODE: historical
           WRITE_MODE: replace
-          EXPORT_SERIES: "true"
+          EXPORT_SERIES: "false"
           EXPORT_JSON: "true"
           SERIES_DIR: ./data
-          TRACK_CRYPTO: major,defi
-          TRACK_STOCKS: tech_mega_caps,semiconductors
+          TRACK_CRYPTO: major,defi,layer1,layer2,infrastructure,meme
+          TRACK_STOCKS: tech_mega_caps,enterprise_software,semiconductors,finance,healthcare,energy,consumer,industrial,staples,communications,materials_mining
           TRACK_INDICES: "true"
           LOG_LEVEL: INFO
         run: |
@@ -99,7 +101,8 @@ jobs:
           python app/market_tracker.py
           test -s data/market_tracker.csv
           test -s data/copilot_signals.json
-          tail -n +2 data/market_tracker.csv | wc -l
+          test -s data/latest_signals.json
+          python -c "import json; p=json.load(open('data/copilot_signals.json')); print('signals', len(p.get('signals',[])))"
 
       - name: Run backtest
         env:
@@ -136,14 +139,42 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
-      # Optional S3 upload. Uncomment after adding AWS_ACCESS_KEY_ID,
-      # AWS_SECRET_ACCESS_KEY, AWS_REGION, and S3_BUCKET repository secrets.
-      # - name: Configure AWS credentials
-      #   uses: aws-actions/configure-aws-credentials@v4
-      #   with:
-      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     aws-region: ${{ secrets.AWS_REGION }}
-      #
-      # - name: Upload report bundle to S3
-      #   run: aws s3 sync data/ "s3://${{ secrets.S3_BUCKET }}/market-tracker/"
+  distribute:
+    name: Slack, Pages, and public JSON
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: run-pipeline
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download pipeline outputs
+        uses: actions/download-artifact@v4
+        with:
+          name: market-tracker-output
+          path: data
+
+      - name: Post summary to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DATA_DIR: data
+        run: python scripts/slack_notify.py
+
+      - name: Build GitHub Pages bundle
+        run: |
+          mkdir -p site-dist
+          cp site/index.html site-dist/
+          cp data/latest_signals.json data/copilot_signals.json data/backtest_report.md site-dist/
+          echo "Published at $(date -u +%Y-%m-%dT%H:%M:%SZ)" > site-dist/build.txt
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site-dist
+          keep_files: false
