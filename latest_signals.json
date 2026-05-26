@@ -1,0 +1,1615 @@
+{
+  "generated_at": "2026-05-26T01:29:08+00:00",
+  "signals": [
+    {
+      "symbol": "BTC-USD",
+      "signal": "SHORT",
+      "score": -42.75,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.445,
+      "close": 76603.7,
+      "atr_pct": 2.49,
+      "rsi14": 34.63
+    },
+    {
+      "symbol": "ETH-USD",
+      "signal": "SHORT",
+      "score": -58.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.547,
+      "close": 2090.9,
+      "atr_pct": 4.18,
+      "rsi14": 27.51
+    },
+    {
+      "symbol": "SOL-USD",
+      "signal": "SHORT",
+      "score": -40.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.504,
+      "close": 84.13,
+      "atr_pct": 4.08,
+      "rsi14": 26.2
+    },
+    {
+      "symbol": "XRP-USD",
+      "signal": "SHORT",
+      "score": -55.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.5,
+      "close": 1.3393,
+      "atr_pct": 3.76,
+      "rsi14": 33.01
+    },
+    {
+      "symbol": "ADA-USD",
+      "signal": "SHORT",
+      "score": -40.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.459,
+      "close": 0.2412,
+      "atr_pct": 4.27,
+      "rsi14": 23.24
+    },
+    {
+      "symbol": "LINK-USD",
+      "signal": "SHORT",
+      "score": -37.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.44,
+      "close": 9.4063,
+      "atr_pct": 4.95,
+      "rsi14": 32.4
+    },
+    {
+      "symbol": "UNI-USD",
+      "signal": "SHORT",
+      "score": -57.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.557,
+      "close": 3.271,
+      "atr_pct": 6.16,
+      "rsi14": 30.61
+    },
+    {
+      "symbol": "AAVE-USD",
+      "signal": "SHORT",
+      "score": -40.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.459,
+      "close": 85.29,
+      "atr_pct": 4.77,
+      "rsi14": 21.07
+    },
+    {
+      "symbol": "AVAX-USD",
+      "signal": "SHORT",
+      "score": -37.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.44,
+      "close": 9.22,
+      "atr_pct": 4.4,
+      "rsi14": 36.91
+    },
+    {
+      "symbol": "LTC-USD",
+      "signal": "SHORT",
+      "score": -63.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.59,
+      "close": 52.33,
+      "atr_pct": 3.46,
+      "rsi14": 22.77
+    },
+    {
+      "symbol": "BCH-USD",
+      "signal": "SHORT",
+      "score": -66.83,
+      "confidence": "HIGH",
+      "confidence_score": 0.66,
+      "close": 347.0,
+      "atr_pct": 5.21,
+      "rsi14": 12.59
+    },
+    {
+      "symbol": "XLM-USD",
+      "signal": "NEUTRAL",
+      "score": -55.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.596,
+      "close": 0.1483,
+      "atr_pct": 4.41,
+      "rsi14": 32.77
+    },
+    {
+      "symbol": "DOT-USD",
+      "signal": "SHORT",
+      "score": -31.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.409,
+      "close": 1.2432,
+      "atr_pct": 5.84,
+      "rsi14": 38.68
+    },
+    {
+      "symbol": "ATOM-USD",
+      "signal": "LONG",
+      "score": 49.42,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.361,
+      "close": 2.1256,
+      "atr_pct": 5.44,
+      "rsi14": 51.34
+    },
+    {
+      "symbol": "SUSHI-USD",
+      "signal": "SHORT",
+      "score": -44.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.532,
+      "close": 0.2027,
+      "atr_pct": 5.18,
+      "rsi14": 26.82
+    },
+    {
+      "symbol": "CRV-USD",
+      "signal": "SHORT",
+      "score": -44.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.532,
+      "close": 0.2198,
+      "atr_pct": 7.1,
+      "rsi14": 26.82
+    },
+    {
+      "symbol": "COMP-USD",
+      "signal": "NEUTRAL",
+      "score": -64.58,
+      "confidence": "HIGH",
+      "confidence_score": 0.698,
+      "close": 19.35,
+      "atr_pct": 6.72,
+      "rsi14": 24.73
+    },
+    {
+      "symbol": "SKY-USD",
+      "signal": "SHORT",
+      "score": -40.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.41,
+      "close": 0.0699,
+      "atr_pct": 3.12,
+      "rsi14": 23.81
+    },
+    {
+      "symbol": "YFI-USD",
+      "signal": "SHORT",
+      "score": -47.67,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.501,
+      "close": 2478.0,
+      "atr_pct": 3.73,
+      "rsi14": 29.28
+    },
+    {
+      "symbol": "SNX-USD",
+      "signal": "SHORT",
+      "score": -39.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.503,
+      "close": 0.315,
+      "atr_pct": 5.44,
+      "rsi14": 37.27
+    },
+    {
+      "symbol": "LDO-USD",
+      "signal": "SHORT",
+      "score": -53.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.583,
+      "close": 0.343,
+      "atr_pct": 5.77,
+      "rsi14": 25.47
+    },
+    {
+      "symbol": "NEAR-USD",
+      "signal": "LONG",
+      "score": 69.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.576,
+      "close": 2.7077,
+      "atr_pct": 7.48,
+      "rsi14": 83.98
+    },
+    {
+      "symbol": "ALGO-USD",
+      "signal": "NEUTRAL",
+      "score": -55.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.598,
+      "close": 0.1113,
+      "atr_pct": 5.56,
+      "rsi14": 36.39
+    },
+    {
+      "symbol": "APT-USD",
+      "signal": "SHORT",
+      "score": -31.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.46,
+      "close": 0.9537,
+      "atr_pct": 7.54,
+      "rsi14": 32.6
+    },
+    {
+      "symbol": "ICP-USD",
+      "signal": "SHORT",
+      "score": -42.67,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.522,
+      "close": 2.631,
+      "atr_pct": 7.28,
+      "rsi14": 29.19
+    },
+    {
+      "symbol": "FIL-USD",
+      "signal": "SHORT",
+      "score": -39.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.503,
+      "close": 0.972,
+      "atr_pct": 6.03,
+      "rsi14": 34.85
+    },
+    {
+      "symbol": "HBAR-USD",
+      "signal": "SHORT",
+      "score": -40.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.462,
+      "close": 0.0872,
+      "atr_pct": 3.75,
+      "rsi14": 29.43
+    },
+    {
+      "symbol": "TRX-USD",
+      "signal": "LONG",
+      "score": 66.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.606,
+      "close": 0.3713,
+      "atr_pct": 1.43,
+      "rsi14": 84.06
+    },
+    {
+      "symbol": "ETC-USD",
+      "signal": "SHORT",
+      "score": -30.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.402,
+      "close": 8.828,
+      "atr_pct": 4.77,
+      "rsi14": 34.37
+    },
+    {
+      "symbol": "ARB-USD",
+      "signal": "SHORT",
+      "score": -53.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.583,
+      "close": 0.1076,
+      "atr_pct": 6.51,
+      "rsi14": 16.55
+    },
+    {
+      "symbol": "OP-USD",
+      "signal": "SHORT",
+      "score": -42.67,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.522,
+      "close": 0.1284,
+      "atr_pct": 6.02,
+      "rsi14": 28.04
+    },
+    {
+      "symbol": "POL-USD",
+      "signal": "SHORT",
+      "score": -35.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.43,
+      "close": 0.092,
+      "atr_pct": 3.76,
+      "rsi14": 31.47
+    },
+    {
+      "symbol": "INJ-USD",
+      "signal": "LONG",
+      "score": 62.17,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.534,
+      "close": 5.735,
+      "atr_pct": 10.71,
+      "rsi14": 64.13
+    },
+    {
+      "symbol": "TIA-USD",
+      "signal": "LONG",
+      "score": 32.33,
+      "confidence": "LOW",
+      "confidence_score": 0.213,
+      "close": 0.4657,
+      "atr_pct": 8.86,
+      "rsi14": 50.7
+    },
+    {
+      "symbol": "GRT-USD",
+      "signal": "NEUTRAL",
+      "score": 17.0,
+      "confidence": "LOW",
+      "confidence_score": 0.15,
+      "close": 0.0269,
+      "atr_pct": 6.29,
+      "rsi14": 41.8
+    },
+    {
+      "symbol": "RENDER-USD",
+      "signal": "NEUTRAL",
+      "score": 62.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.388,
+      "close": 2.175,
+      "atr_pct": 6.51,
+      "rsi14": 68.34
+    },
+    {
+      "symbol": "FET-USD",
+      "signal": "NEUTRAL",
+      "score": 9.42,
+      "confidence": "LOW",
+      "confidence_score": 0.15,
+      "close": 0.2272,
+      "atr_pct": 6.28,
+      "rsi14": 52.0
+    },
+    {
+      "symbol": "ZEC-USD",
+      "signal": "LONG",
+      "score": 39.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.353,
+      "close": 637.54,
+      "atr_pct": 9.33,
+      "rsi14": 56.74
+    },
+    {
+      "symbol": "DASH-USD",
+      "signal": "NEUTRAL",
+      "score": -13.42,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 44.1,
+      "atr_pct": 9.3,
+      "rsi14": 46.68
+    },
+    {
+      "symbol": "DOGE-USD",
+      "signal": "SHORT",
+      "score": -37.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.443,
+      "close": 0.1011,
+      "atr_pct": 4.69,
+      "rsi14": 32.83
+    },
+    {
+      "symbol": "SHIB-USD",
+      "signal": "SHORT",
+      "score": -53.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.583,
+      "close": 0.0,
+      "atr_pct": 5.38,
+      "rsi14": 17.39
+    },
+    {
+      "symbol": "PEPE-USD",
+      "signal": "SHORT",
+      "score": -53.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.583,
+      "close": 0.0,
+      "atr_pct": 5.3,
+      "rsi14": 23.93
+    },
+    {
+      "symbol": "BONK-USD",
+      "signal": "SHORT",
+      "score": -44.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.535,
+      "close": 0.0,
+      "atr_pct": 5.72,
+      "rsi14": 26.37
+    },
+    {
+      "symbol": "WIF-USD",
+      "signal": "SHORT",
+      "score": -41.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.513,
+      "close": 0.1905,
+      "atr_pct": 6.55,
+      "rsi14": 30.5
+    },
+    {
+      "symbol": "AAPL",
+      "signal": "LONG",
+      "score": 64.25,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.646,
+      "close": 308.82,
+      "atr_pct": 1.86,
+      "rsi14": 90.48
+    },
+    {
+      "symbol": "MSFT",
+      "signal": "NEUTRAL",
+      "score": -2.5,
+      "confidence": "LOW",
+      "confidence_score": 0.3,
+      "close": 418.57,
+      "atr_pct": 2.6,
+      "rsi14": 54.28
+    },
+    {
+      "symbol": "GOOGL",
+      "signal": "LONG",
+      "score": 41.92,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.368,
+      "close": 382.97,
+      "atr_pct": 2.58,
+      "rsi14": 49.8
+    },
+    {
+      "symbol": "AMZN",
+      "signal": "LONG",
+      "score": 34.42,
+      "confidence": "LOW",
+      "confidence_score": 0.325,
+      "close": 266.32,
+      "atr_pct": 2.3,
+      "rsi14": 43.33
+    },
+    {
+      "symbol": "TSLA",
+      "signal": "LONG",
+      "score": 51.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.57,
+      "close": 426.01,
+      "atr_pct": 4.27,
+      "rsi14": 61.54
+    },
+    {
+      "symbol": "NVDA",
+      "signal": "LONG",
+      "score": 38.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.511,
+      "close": 215.33,
+      "atr_pct": 3.85,
+      "rsi14": 62.51
+    },
+    {
+      "symbol": "META",
+      "signal": "SHORT",
+      "score": -44.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.433,
+      "close": 610.26,
+      "atr_pct": 2.15,
+      "rsi14": 49.9
+    },
+    {
+      "symbol": "NFLX",
+      "signal": "NEUTRAL",
+      "score": -29.5,
+      "confidence": "LOW",
+      "confidence_score": 0.3,
+      "close": 88.6,
+      "atr_pct": 2.72,
+      "rsi14": 42.16
+    },
+    {
+      "symbol": "CRM",
+      "signal": "NEUTRAL",
+      "score": -25.5,
+      "confidence": "LOW",
+      "confidence_score": 0.3,
+      "close": 180.07,
+      "atr_pct": 4.11,
+      "rsi14": 45.07
+    },
+    {
+      "symbol": "ORCL",
+      "signal": "LONG",
+      "score": 46.75,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.496,
+      "close": 192.08,
+      "atr_pct": 4.6,
+      "rsi14": 60.11
+    },
+    {
+      "symbol": "ADBE",
+      "signal": "NEUTRAL",
+      "score": -35.0,
+      "confidence": "LOW",
+      "confidence_score": 0.329,
+      "close": 244.76,
+      "atr_pct": 3.81,
+      "rsi14": 42.99
+    },
+    {
+      "symbol": "CSCO",
+      "signal": "LONG",
+      "score": 72.08,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.64,
+      "close": 120.41,
+      "atr_pct": 3.6,
+      "rsi14": 82.95
+    },
+    {
+      "symbol": "IBM",
+      "signal": "LONG",
+      "score": 34.92,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.578,
+      "close": 253.84,
+      "atr_pct": 3.09,
+      "rsi14": 68.45
+    },
+    {
+      "symbol": "NOW",
+      "signal": "LONG",
+      "score": 36.58,
+      "confidence": "LOW",
+      "confidence_score": 0.288,
+      "close": 102.13,
+      "atr_pct": 5.5,
+      "rsi14": 62.64
+    },
+    {
+      "symbol": "INTU",
+      "signal": "NEUTRAL",
+      "score": -71.08,
+      "confidence": "HIGH",
+      "confidence_score": 0.785,
+      "close": 319.94,
+      "atr_pct": 7.28,
+      "rsi14": 29.48
+    },
+    {
+      "symbol": "AMD",
+      "signal": "LONG",
+      "score": 52.25,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.432,
+      "close": 467.51,
+      "atr_pct": 6.63,
+      "rsi14": 75.22
+    },
+    {
+      "symbol": "INTC",
+      "signal": "LONG",
+      "score": 46.08,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.442,
+      "close": 119.84,
+      "atr_pct": 8.48,
+      "rsi14": 66.19
+    },
+    {
+      "symbol": "QCOM",
+      "signal": "LONG",
+      "score": 49.25,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.51,
+      "close": 238.16,
+      "atr_pct": 8.36,
+      "rsi14": 70.96
+    },
+    {
+      "symbol": "TXN",
+      "signal": "LONG",
+      "score": 52.92,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.531,
+      "close": 309.21,
+      "atr_pct": 3.45,
+      "rsi14": 70.22
+    },
+    {
+      "symbol": "AVGO",
+      "signal": "NEUTRAL",
+      "score": 12.67,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 414.14,
+      "atr_pct": 3.98,
+      "rsi14": 49.0
+    },
+    {
+      "symbol": "MU",
+      "signal": "LONG",
+      "score": 52.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.429,
+      "close": 751.0,
+      "atr_pct": 7.95,
+      "rsi14": 66.21
+    },
+    {
+      "symbol": "AMAT",
+      "signal": "NEUTRAL",
+      "score": 52.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.53,
+      "close": 432.16,
+      "atr_pct": 4.64,
+      "rsi14": 62.07
+    },
+    {
+      "symbol": "LRCX",
+      "signal": "NEUTRAL",
+      "score": 63.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.54,
+      "close": 305.35,
+      "atr_pct": 5.01,
+      "rsi14": 67.55
+    },
+    {
+      "symbol": "JPM",
+      "signal": "NEUTRAL",
+      "score": 24.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.45,
+      "close": 306.38,
+      "atr_pct": 2.02,
+      "rsi14": 48.8
+    },
+    {
+      "symbol": "BAC",
+      "signal": "NEUTRAL",
+      "score": 14.92,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.4,
+      "close": 51.8,
+      "atr_pct": 2.1,
+      "rsi14": 47.48
+    },
+    {
+      "symbol": "WFC",
+      "signal": "SHORT",
+      "score": -32.42,
+      "confidence": "LOW",
+      "confidence_score": 0.314,
+      "close": 76.4,
+      "atr_pct": 2.37,
+      "rsi14": 40.7
+    },
+    {
+      "symbol": "GS",
+      "signal": "NEUTRAL",
+      "score": 50.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.517,
+      "close": 996.73,
+      "atr_pct": 2.52,
+      "rsi14": 73.74
+    },
+    {
+      "symbol": "MS",
+      "signal": "NEUTRAL",
+      "score": 44.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.485,
+      "close": 201.03,
+      "atr_pct": 2.16,
+      "rsi14": 69.36
+    },
+    {
+      "symbol": "C",
+      "signal": "NEUTRAL",
+      "score": 21.33,
+      "confidence": "LOW",
+      "confidence_score": 0.3,
+      "close": 125.09,
+      "atr_pct": 2.67,
+      "rsi14": 48.77
+    },
+    {
+      "symbol": "BLK",
+      "signal": "NEUTRAL",
+      "score": 26.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.45,
+      "close": 1073.0,
+      "atr_pct": 2.16,
+      "rsi14": 55.47
+    },
+    {
+      "symbol": "SCHW",
+      "signal": "NEUTRAL",
+      "score": -44.17,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.431,
+      "close": 90.15,
+      "atr_pct": 2.41,
+      "rsi14": 45.93
+    },
+    {
+      "symbol": "JNJ",
+      "signal": "NEUTRAL",
+      "score": 58.67,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.564,
+      "close": 234.34,
+      "atr_pct": 1.65,
+      "rsi14": 68.02
+    },
+    {
+      "symbol": "PFE",
+      "signal": "NEUTRAL",
+      "score": -18.75,
+      "confidence": "LOW",
+      "confidence_score": 0.3,
+      "close": 25.9,
+      "atr_pct": 1.93,
+      "rsi14": 42.48
+    },
+    {
+      "symbol": "UNH",
+      "signal": "LONG",
+      "score": 54.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.54,
+      "close": 388.47,
+      "atr_pct": 2.41,
+      "rsi14": 62.87
+    },
+    {
+      "symbol": "ABBV",
+      "signal": "LONG",
+      "score": 68.83,
+      "confidence": "HIGH",
+      "confidence_score": 0.722,
+      "close": 215.7,
+      "atr_pct": 2.28,
+      "rsi14": 64.28
+    },
+    {
+      "symbol": "MRK",
+      "signal": "NEUTRAL",
+      "score": 63.5,
+      "confidence": "HIGH",
+      "confidence_score": 0.691,
+      "close": 122.41,
+      "atr_pct": 2.13,
+      "rsi14": 72.71
+    },
+    {
+      "symbol": "LLY",
+      "signal": "LONG",
+      "score": 74.08,
+      "confidence": "HIGH",
+      "confidence_score": 0.702,
+      "close": 1065.0,
+      "atr_pct": 2.71,
+      "rsi14": 70.37
+    },
+    {
+      "symbol": "TMO",
+      "signal": "NEUTRAL",
+      "score": -22.25,
+      "confidence": "LOW",
+      "confidence_score": 0.3,
+      "close": 448.28,
+      "atr_pct": 3.0,
+      "rsi14": 41.34
+    },
+    {
+      "symbol": "AMGN",
+      "signal": "NEUTRAL",
+      "score": 41.92,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.368,
+      "close": 339.3,
+      "atr_pct": 2.07,
+      "rsi14": 66.15
+    },
+    {
+      "symbol": "XOM",
+      "signal": "NEUTRAL",
+      "score": 55.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.498,
+      "close": 154.92,
+      "atr_pct": 2.78,
+      "rsi14": 51.66
+    },
+    {
+      "symbol": "CVX",
+      "signal": "NEUTRAL",
+      "score": 49.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.511,
+      "close": 191.43,
+      "atr_pct": 2.32,
+      "rsi14": 48.74
+    },
+    {
+      "symbol": "COP",
+      "signal": "NEUTRAL",
+      "score": 2.83,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 120.46,
+      "atr_pct": 2.68,
+      "rsi14": 42.02
+    },
+    {
+      "symbol": "EOG",
+      "signal": "NEUTRAL",
+      "score": 42.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.469,
+      "close": 141.22,
+      "atr_pct": 2.76,
+      "rsi14": 49.38
+    },
+    {
+      "symbol": "SLB",
+      "signal": "NEUTRAL",
+      "score": 57.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.559,
+      "close": 57.28,
+      "atr_pct": 2.47,
+      "rsi14": 58.48
+    },
+    {
+      "symbol": "OXY",
+      "signal": "NEUTRAL",
+      "score": 40.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.407,
+      "close": 58.81,
+      "atr_pct": 3.32,
+      "rsi14": 45.7
+    },
+    {
+      "symbol": "MPC",
+      "signal": "LONG",
+      "score": 45.08,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.486,
+      "close": 254.65,
+      "atr_pct": 3.65,
+      "rsi14": 51.4
+    },
+    {
+      "symbol": "WMT",
+      "signal": "NEUTRAL",
+      "score": -17.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.45,
+      "close": 120.27,
+      "atr_pct": 2.71,
+      "rsi14": 31.31
+    },
+    {
+      "symbol": "COST",
+      "signal": "NEUTRAL",
+      "score": 42.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.373,
+      "close": 1028.24,
+      "atr_pct": 2.22,
+      "rsi14": 53.61
+    },
+    {
+      "symbol": "HD",
+      "signal": "NEUTRAL",
+      "score": -12.08,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 313.07,
+      "atr_pct": 2.6,
+      "rsi14": 50.57
+    },
+    {
+      "symbol": "MCD",
+      "signal": "NEUTRAL",
+      "score": -23.75,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.35,
+      "close": 282.27,
+      "atr_pct": 1.94,
+      "rsi14": 46.84
+    },
+    {
+      "symbol": "NKE",
+      "signal": "NEUTRAL",
+      "score": 13.42,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 44.67,
+      "atr_pct": 2.48,
+      "rsi14": 61.29
+    },
+    {
+      "symbol": "SBUX",
+      "signal": "NEUTRAL",
+      "score": 15.92,
+      "confidence": "LOW",
+      "confidence_score": 0.3,
+      "close": 103.11,
+      "atr_pct": 2.45,
+      "rsi14": 41.9
+    },
+    {
+      "symbol": "DIS",
+      "signal": "NEUTRAL",
+      "score": -34.92,
+      "confidence": "LOW",
+      "confidence_score": 0.328,
+      "close": 103.0,
+      "atr_pct": 2.72,
+      "rsi14": 53.44
+    },
+    {
+      "symbol": "TGT",
+      "signal": "LONG",
+      "score": 32.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.415,
+      "close": 125.6,
+      "atr_pct": 3.93,
+      "rsi14": 47.0
+    },
+    {
+      "symbol": "CAT",
+      "signal": "LONG",
+      "score": 51.08,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.47,
+      "close": 879.89,
+      "atr_pct": 3.33,
+      "rsi14": 51.02
+    },
+    {
+      "symbol": "DE",
+      "signal": "NEUTRAL",
+      "score": -56.83,
+      "confidence": "HIGH",
+      "confidence_score": 0.653,
+      "close": 529.15,
+      "atr_pct": 3.06,
+      "rsi14": 29.44
+    },
+    {
+      "symbol": "BA",
+      "signal": "NEUTRAL",
+      "score": -26.75,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.35,
+      "close": 219.02,
+      "atr_pct": 3.32,
+      "rsi14": 48.04
+    },
+    {
+      "symbol": "UPS",
+      "signal": "NEUTRAL",
+      "score": 13.33,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 101.02,
+      "atr_pct": 2.29,
+      "rsi14": 63.46
+    },
+    {
+      "symbol": "GE",
+      "signal": "NEUTRAL",
+      "score": 57.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.608,
+      "close": 302.84,
+      "atr_pct": 3.12,
+      "rsi14": 64.02
+    },
+    {
+      "symbol": "HON",
+      "signal": "LONG",
+      "score": 64.58,
+      "confidence": "HIGH",
+      "confidence_score": 0.748,
+      "close": 227.92,
+      "atr_pct": 2.22,
+      "rsi14": 73.64
+    },
+    {
+      "symbol": "RTX",
+      "signal": "NEUTRAL",
+      "score": -7.83,
+      "confidence": "LOW",
+      "confidence_score": 0.2,
+      "close": 177.01,
+      "atr_pct": 2.14,
+      "rsi14": 58.6
+    },
+    {
+      "symbol": "PG",
+      "signal": "NEUTRAL",
+      "score": -1.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.35,
+      "close": 144.44,
+      "atr_pct": 1.93,
+      "rsi14": 52.74
+    },
+    {
+      "symbol": "KO",
+      "signal": "LONG",
+      "score": 75.58,
+      "confidence": "HIGH",
+      "confidence_score": 0.71,
+      "close": 81.48,
+      "atr_pct": 1.34,
+      "rsi14": 75.66
+    },
+    {
+      "symbol": "PEP",
+      "signal": "SHORT",
+      "score": -36.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.436,
+      "close": 150.57,
+      "atr_pct": 2.06,
+      "rsi14": 39.56
+    },
+    {
+      "symbol": "PM",
+      "signal": "LONG",
+      "score": 69.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.578,
+      "close": 188.99,
+      "atr_pct": 2.55,
+      "rsi14": 82.18
+    },
+    {
+      "symbol": "CL",
+      "signal": "LONG",
+      "score": 75.25,
+      "confidence": "HIGH",
+      "confidence_score": 0.709,
+      "close": 90.61,
+      "atr_pct": 2.11,
+      "rsi14": 76.52
+    },
+    {
+      "symbol": "VZ",
+      "signal": "NEUTRAL",
+      "score": 61.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.582,
+      "close": 48.35,
+      "atr_pct": 1.69,
+      "rsi14": 57.71
+    },
+    {
+      "symbol": "T",
+      "signal": "SHORT",
+      "score": -36.25,
+      "confidence": "LOW",
+      "confidence_score": 0.336,
+      "close": 25.26,
+      "atr_pct": 2.11,
+      "rsi14": 40.19
+    },
+    {
+      "symbol": "CMCSA",
+      "signal": "NEUTRAL",
+      "score": -21.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.35,
+      "close": 25.21,
+      "atr_pct": 2.6,
+      "rsi14": 23.88
+    },
+    {
+      "symbol": "TMUS",
+      "signal": "NEUTRAL",
+      "score": -44.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.38,
+      "close": 191.47,
+      "atr_pct": 2.23,
+      "rsi14": 44.91
+    },
+    {
+      "symbol": "NEM",
+      "signal": "NEUTRAL",
+      "score": -26.75,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.35,
+      "close": 107.64,
+      "atr_pct": 4.28,
+      "rsi14": 49.06
+    },
+    {
+      "symbol": "FCX",
+      "signal": "LONG",
+      "score": 45.08,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.486,
+      "close": 61.99,
+      "atr_pct": 4.6,
+      "rsi14": 63.08
+    },
+    {
+      "symbol": "LIN",
+      "signal": "NEUTRAL",
+      "score": 64.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.599,
+      "close": 517.58,
+      "atr_pct": 1.87,
+      "rsi14": 68.1
+    },
+    {
+      "symbol": "SPY",
+      "signal": "LONG",
+      "score": 36.42,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.437,
+      "close": 745.64,
+      "atr_pct": 1.01,
+      "rsi14": 71.84
+    },
+    {
+      "symbol": "QQQ",
+      "signal": "LONG",
+      "score": 34.75,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.427,
+      "close": 717.54,
+      "atr_pct": 1.59,
+      "rsi14": 73.52
+    },
+    {
+      "symbol": "IWM",
+      "signal": "NEUTRAL",
+      "score": 47.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.447,
+      "close": 285.12,
+      "atr_pct": 1.79,
+      "rsi14": 58.09
+    },
+    {
+      "symbol": "VTI",
+      "signal": "LONG",
+      "score": 40.25,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.459,
+      "close": 366.79,
+      "atr_pct": 1.03,
+      "rsi14": 69.71
+    },
+    {
+      "symbol": "DIA",
+      "signal": "NEUTRAL",
+      "score": 46.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.491,
+      "close": 506.12,
+      "atr_pct": 1.03,
+      "rsi14": 70.07
+    },
+    {
+      "symbol": "DXY-INDEX",
+      "signal": "NEUTRAL",
+      "score": 59.75,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.378,
+      "close": 99.239,
+      "atr_pct": 0.45,
+      "rsi14": 60.42
+    },
+    {
+      "symbol": "GLD",
+      "signal": "NEUTRAL",
+      "score": 0.25,
+      "confidence": "LOW",
+      "confidence_score": 0.15,
+      "close": 413.82,
+      "atr_pct": 1.73,
+      "rsi14": 49.19
+    },
+    {
+      "symbol": "SLV",
+      "signal": "NEUTRAL",
+      "score": 17.08,
+      "confidence": "LOW",
+      "confidence_score": 0.3,
+      "close": 68.36,
+      "atr_pct": 4.83,
+      "rsi14": 53.86
+    },
+    {
+      "symbol": "USO",
+      "signal": "NEUTRAL",
+      "score": -3.83,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 140.92,
+      "atr_pct": 4.76,
+      "rsi14": 43.57
+    },
+    {
+      "symbol": "TLT",
+      "signal": "SHORT",
+      "score": -44.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.433,
+      "close": 84.68,
+      "atr_pct": 0.85,
+      "rsi14": 47.98
+    },
+    {
+      "symbol": "HYG",
+      "signal": "NEUTRAL",
+      "score": -12.17,
+      "confidence": "LOW",
+      "confidence_score": 0.3,
+      "close": 79.91,
+      "atr_pct": 0.36,
+      "rsi14": 52.17
+    },
+    {
+      "symbol": "EEM",
+      "signal": "NEUTRAL",
+      "score": 35.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.38,
+      "close": 65.88,
+      "atr_pct": 2.26,
+      "rsi14": 56.2
+    },
+    {
+      "symbol": "VNQ",
+      "signal": "NEUTRAL",
+      "score": 51.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.525,
+      "close": 96.77,
+      "atr_pct": 1.2,
+      "rsi14": 57.92
+    },
+    {
+      "symbol": "XLE",
+      "signal": "NEUTRAL",
+      "score": 56.17,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.55,
+      "close": 59.49,
+      "atr_pct": 2.3,
+      "rsi14": 50.42
+    },
+    {
+      "symbol": "XLF",
+      "signal": "NEUTRAL",
+      "score": 39.25,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.503,
+      "close": 51.94,
+      "atr_pct": 1.21,
+      "rsi14": 53.98
+    },
+    {
+      "symbol": "XLK",
+      "signal": "LONG",
+      "score": 43.92,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.48,
+      "close": 180.39,
+      "atr_pct": 2.35,
+      "rsi14": 74.85
+    },
+    {
+      "symbol": "XLV",
+      "signal": "NEUTRAL",
+      "score": 62.08,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.633,
+      "close": 149.89,
+      "atr_pct": 1.37,
+      "rsi14": 69.14
+    },
+    {
+      "symbol": "XLI",
+      "signal": "NEUTRAL",
+      "score": 30.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.355,
+      "close": 171.77,
+      "atr_pct": 1.64,
+      "rsi14": 51.72
+    },
+    {
+      "symbol": "XLP",
+      "signal": "NEUTRAL",
+      "score": 58.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.565,
+      "close": 84.8,
+      "atr_pct": 1.41,
+      "rsi14": 59.08
+    },
+    {
+      "symbol": "XLY",
+      "signal": "NEUTRAL",
+      "score": 28.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.4,
+      "close": 119.18,
+      "atr_pct": 1.62,
+      "rsi14": 55.77
+    },
+    {
+      "symbol": "XLU",
+      "signal": "NEUTRAL",
+      "score": 5.75,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.35,
+      "close": 45.35,
+      "atr_pct": 1.46,
+      "rsi14": 40.52
+    },
+    {
+      "symbol": "XLB",
+      "signal": "NEUTRAL",
+      "score": -10.5,
+      "confidence": "LOW",
+      "confidence_score": 0.2,
+      "close": 50.29,
+      "atr_pct": 1.83,
+      "rsi14": 47.78
+    },
+    {
+      "symbol": "XLC",
+      "signal": "NEUTRAL",
+      "score": -17.67,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 115.46,
+      "atr_pct": 1.22,
+      "rsi14": 46.63
+    },
+    {
+      "symbol": "ARKK",
+      "signal": "NEUTRAL",
+      "score": 10.92,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.35,
+      "close": 76.4,
+      "atr_pct": 3.12,
+      "rsi14": 44.8
+    },
+    {
+      "symbol": "VIXY",
+      "signal": "NEUTRAL",
+      "score": -46.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.544,
+      "close": 25.43,
+      "atr_pct": 3.06,
+      "rsi14": 30.76
+    },
+    {
+      "symbol": "EFA",
+      "signal": "NEUTRAL",
+      "score": 42.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.471,
+      "close": 103.98,
+      "atr_pct": 1.34,
+      "rsi14": 61.02
+    },
+    {
+      "symbol": "EWJ",
+      "signal": "NEUTRAL",
+      "score": 40.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.462,
+      "close": 91.61,
+      "atr_pct": 1.38,
+      "rsi14": 66.05
+    },
+    {
+      "symbol": "FXI",
+      "signal": "NEUTRAL",
+      "score": -63.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.639,
+      "close": 35.52,
+      "atr_pct": 1.79,
+      "rsi14": 40.95
+    },
+    {
+      "symbol": "VEA",
+      "signal": "NEUTRAL",
+      "score": 54.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.539,
+      "close": 70.46,
+      "atr_pct": 1.53,
+      "rsi14": 61.29
+    },
+    {
+      "symbol": "VWO",
+      "signal": "NEUTRAL",
+      "score": 17.5,
+      "confidence": "LOW",
+      "confidence_score": 0.3,
+      "close": 58.98,
+      "atr_pct": 1.48,
+      "rsi14": 51.58
+    },
+    {
+      "symbol": "IEMG",
+      "signal": "NEUTRAL",
+      "score": 35.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.38,
+      "close": 80.57,
+      "atr_pct": 2.17,
+      "rsi14": 55.92
+    },
+    {
+      "symbol": "AGG",
+      "signal": "SHORT",
+      "score": -40.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.41,
+      "close": 98.44,
+      "atr_pct": 0.4,
+      "rsi14": 47.86
+    },
+    {
+      "symbol": "BND",
+      "signal": "SHORT",
+      "score": -40.58,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.41,
+      "close": 73.0,
+      "atr_pct": 0.4,
+      "rsi14": 47.83
+    },
+    {
+      "symbol": "SHY",
+      "signal": "SHORT",
+      "score": -30.83,
+      "confidence": "LOW",
+      "confidence_score": 0.305,
+      "close": 82.12,
+      "atr_pct": 0.12,
+      "rsi14": 48.19
+    },
+    {
+      "symbol": "IEF",
+      "signal": "SHORT",
+      "score": -45.08,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.436,
+      "close": 93.88,
+      "atr_pct": 0.47,
+      "rsi14": 43.24
+    },
+    {
+      "symbol": "GDX",
+      "signal": "NEUTRAL",
+      "score": -16.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.4,
+      "close": 85.02,
+      "atr_pct": 4.59,
+      "rsi14": 48.99
+    },
+    {
+      "symbol": "GDXJ",
+      "signal": "NEUTRAL",
+      "score": -25.5,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.45,
+      "close": 111.62,
+      "atr_pct": 5.14,
+      "rsi14": 48.24
+    },
+    {
+      "symbol": "DBC",
+      "signal": "NEUTRAL",
+      "score": -1.83,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 30.54,
+      "atr_pct": 1.92,
+      "rsi14": 41.54
+    },
+    {
+      "symbol": "IBIT",
+      "signal": "NEUTRAL",
+      "score": -58.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.612,
+      "close": 42.96,
+      "atr_pct": 2.47,
+      "rsi14": 37.08
+    },
+    {
+      "symbol": "BITO",
+      "signal": "NEUTRAL",
+      "score": -58.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.612,
+      "close": 10.35,
+      "atr_pct": 2.53,
+      "rsi14": 36.84
+    },
+    {
+      "symbol": "SOXX",
+      "signal": "LONG",
+      "score": 54.25,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.489,
+      "close": 537.33,
+      "atr_pct": 4.13,
+      "rsi14": 68.26
+    },
+    {
+      "symbol": "SMH",
+      "signal": "LONG",
+      "score": 56.25,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.55,
+      "close": 576.32,
+      "atr_pct": 3.61,
+      "rsi14": 68.52
+    },
+    {
+      "symbol": "ITA",
+      "signal": "LONG",
+      "score": 62.67,
+      "confidence": "HIGH",
+      "confidence_score": 0.687,
+      "close": 225.37,
+      "atr_pct": 2.03,
+      "rsi14": 65.76
+    },
+    {
+      "symbol": "XBI",
+      "signal": "NEUTRAL",
+      "score": 11.0,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 131.66,
+      "atr_pct": 2.9,
+      "rsi14": 46.54
+    }
+  ]
+}

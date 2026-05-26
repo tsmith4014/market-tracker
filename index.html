@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Market Tracker Signals</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #e8e8e8; background: #111; }
+    body { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { font-size: 1.4rem; }
+    .meta { color: #9aa; margin-bottom: 1rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid #333; }
+    th { color: #8cf; }
+    .long { color: #6f6; }
+    .short { color: #f88; }
+    .neutral { color: #cc8; }
+    a { color: #8cf; }
+  </style>
+</head>
+<body>
+  <h1>Market Tracker — Latest Signals</h1>
+  <p class="meta" id="meta">Loading…</p>
+  <p>
+    <a href="latest_signals.json">latest_signals.json</a> ·
+    <a href="copilot_signals.json">copilot_signals.json</a> ·
+    <a href="backtest_report.md">backtest_report.md</a>
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Symbol</th><th>Signal</th><th>Score</th><th>Confidence</th><th>Close</th><th>RSI</th><th>ATR%</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <script>
+    fetch('latest_signals.json')
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('meta').textContent = 'Generated: ' + (data.generated_at || 'unknown');
+        const tbody = document.getElementById('rows');
+        (data.signals || []).sort((a, b) => Math.abs(b.score) - Math.abs(a.score)).forEach(s => {
+          const tr = document.createElement('tr');
+          const cls = (s.signal || '').toLowerCase();
+          tr.innerHTML = `<td>${s.symbol}</td><td class="${cls}">${s.signal}</td><td>${s.score?.toFixed?.(1) ?? s.score}</td><td>${s.confidence} (${(s.confidence_score ?? 0).toFixed(2)})</td><td>${s.close ?? ''}</td><td>${s.rsi14?.toFixed?.(1) ?? ''}</td><td>${s.atr_pct?.toFixed?.(2) ?? ''}</td>`;
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(err => { document.getElementById('meta').textContent = 'Failed to load: ' + err; });
+  </script>
+</body>
+</html>
