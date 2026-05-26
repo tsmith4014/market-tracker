@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T01:29:08+00:00",
+  "generated_at": "2026-05-26T04:50:32+00:00",
   "signals": [
     {
       "symbol": "BTC-USD",
@@ -7,9 +7,9 @@
       "score": -42.75,
       "confidence": "MEDIUM",
       "confidence_score": 0.445,
-      "close": 76603.7,
+      "close": 76691.7,
       "atr_pct": 2.49,
-      "rsi14": 34.63
+      "rsi14": 34.87
     },
     {
       "symbol": "ETH-USD",
@@ -17,19 +17,19 @@
       "score": -58.83,
       "confidence": "MEDIUM",
       "confidence_score": 0.547,
-      "close": 2090.9,
-      "atr_pct": 4.18,
-      "rsi14": 27.51
+      "close": 2093.18,
+      "atr_pct": 4.17,
+      "rsi14": 27.66
     },
     {
       "symbol": "SOL-USD",
       "signal": "SHORT",
-      "score": -40.83,
+      "score": -40.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.504,
-      "close": 84.13,
-      "atr_pct": 4.08,
-      "rsi14": 26.2
+      "confidence_score": 0.502,
+      "close": 84.4,
+      "atr_pct": 4.07,
+      "rsi14": 26.53
     },
     {
       "symbol": "XRP-USD",
@@ -37,9 +37,9 @@
       "score": -55.0,
       "confidence": "MEDIUM",
       "confidence_score": 0.5,
-      "close": 1.3393,
-      "atr_pct": 3.76,
-      "rsi14": 33.01
+      "close": 1.3445,
+      "atr_pct": 3.75,
+      "rsi14": 33.62
     },
     {
       "symbol": "ADA-USD",
@@ -47,9 +47,9 @@
       "score": -40.33,
       "confidence": "MEDIUM",
       "confidence_score": 0.459,
-      "close": 0.2412,
-      "atr_pct": 4.27,
-      "rsi14": 23.24
+      "close": 0.2414,
+      "atr_pct": 4.3,
+      "rsi14": 23.35
     },
     {
       "symbol": "LINK-USD",
@@ -57,19 +57,19 @@
       "score": -37.0,
       "confidence": "MEDIUM",
       "confidence_score": 0.44,
-      "close": 9.4063,
+      "close": 9.4571,
       "atr_pct": 4.95,
-      "rsi14": 32.4
+      "rsi14": 33.07
     },
     {
       "symbol": "UNI-USD",
       "signal": "SHORT",
-      "score": -57.5,
+      "score": -57.0,
       "confidence": "MEDIUM",
-      "confidence_score": 0.557,
-      "close": 3.271,
-      "atr_pct": 6.16,
-      "rsi14": 30.61
+      "confidence_score": 0.554,
+      "close": 3.3,
+      "atr_pct": 6.11,
+      "rsi14": 31.32
     },
     {
       "symbol": "AAVE-USD",
@@ -77,9 +77,9 @@
       "score": -40.33,
       "confidence": "MEDIUM",
       "confidence_score": 0.459,
-      "close": 85.29,
-      "atr_pct": 4.77,
-      "rsi14": 21.07
+      "close": 86.02,
+      "atr_pct": 4.75,
+      "rsi14": 21.88
     },
     {
       "symbol": "AVAX-USD",
@@ -87,19 +87,19 @@
       "score": -37.0,
       "confidence": "MEDIUM",
       "confidence_score": 0.44,
-      "close": 9.22,
+      "close": 9.27,
       "atr_pct": 4.4,
-      "rsi14": 36.91
+      "rsi14": 37.72
     },
     {
       "symbol": "LTC-USD",
       "signal": "SHORT",
-      "score": -63.33,
+      "score": -62.83,
       "confidence": "MEDIUM",
-      "confidence_score": 0.59,
-      "close": 52.33,
-      "atr_pct": 3.46,
-      "rsi14": 22.77
+      "confidence_score": 0.588,
+      "close": 52.47,
+      "atr_pct": 3.48,
+      "rsi14": 23.07
     },
     {
       "symbol": "BCH-USD",
@@ -107,9 +107,9 @@
       "score": -66.83,
       "confidence": "HIGH",
       "confidence_score": 0.66,
-      "close": 347.0,
-      "atr_pct": 5.21,
-      "rsi14": 12.59
+      "close": 348.76,
+      "atr_pct": 5.24,
+      "rsi14": 12.77
     },
     {
       "symbol": "XLM-USD",
@@ -117,9 +117,9 @@
       "score": -55.58,
       "confidence": "MEDIUM",
       "confidence_score": 0.596,
-      "close": 0.1483,
-      "atr_pct": 4.41,
-      "rsi14": 32.77
+      "close": 0.1482,
+      "atr_pct": 4.44,
+      "rsi14": 32.69
     },
     {
       "symbol": "DOT-USD",
@@ -127,9 +127,9 @@
       "score": -31.5,
       "confidence": "MEDIUM",
       "confidence_score": 0.409,
-      "close": 1.2432,
+      "close": 1.2508,
       "atr_pct": 5.84,
-      "rsi14": 38.68
+      "rsi14": 39.42
     },
     {
       "symbol": "ATOM-USD",
@@ -137,9 +137,9 @@
       "score": 49.42,
       "confidence": "MEDIUM",
       "confidence_score": 0.361,
-      "close": 2.1256,
-      "atr_pct": 5.44,
-      "rsi14": 51.34
+      "close": 2.1654,
+      "atr_pct": 5.43,
+      "rsi14": 54.02
     },
     {
       "symbol": "SUSHI-USD",
@@ -147,9 +147,9 @@
       "score": -44.33,
       "confidence": "MEDIUM",
       "confidence_score": 0.532,
-      "close": 0.2027,
-      "atr_pct": 5.18,
-      "rsi14": 26.82
+      "close": 0.2049,
+      "atr_pct": 5.15,
+      "rsi14": 27.56
     },
     {
       "symbol": "CRV-USD",
@@ -157,9 +157,9 @@
       "score": -44.33,
       "confidence": "MEDIUM",
       "confidence_score": 0.532,
-      "close": 0.2198,
-      "atr_pct": 7.1,
-      "rsi14": 26.82
+      "close": 0.2204,
+      "atr_pct": 7.16,
+      "rsi14": 26.95
     },
     {
       "symbol": "COMP-USD",
@@ -167,9 +167,9 @@
       "score": -64.58,
       "confidence": "HIGH",
       "confidence_score": 0.698,
-      "close": 19.35,
-      "atr_pct": 6.72,
-      "rsi14": 24.73
+      "close": 19.04,
+      "atr_pct": 7.03,
+      "rsi14": 23.84
     },
     {
       "symbol": "SKY-USD",
@@ -177,29 +177,29 @@
       "score": -40.58,
       "confidence": "MEDIUM",
       "confidence_score": 0.41,
-      "close": 0.0699,
-      "atr_pct": 3.12,
-      "rsi14": 23.81
+      "close": 0.0698,
+      "atr_pct": 3.15,
+      "rsi14": 23.54
     },
     {
       "symbol": "YFI-USD",
       "signal": "SHORT",
-      "score": -47.67,
+      "score": -44.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.501,
-      "close": 2478.0,
-      "atr_pct": 3.73,
-      "rsi14": 29.28
+      "confidence_score": 0.482,
+      "close": 2501.0,
+      "atr_pct": 3.7,
+      "rsi14": 30.3
     },
     {
       "symbol": "SNX-USD",
       "signal": "SHORT",
-      "score": -39.33,
+      "score": -37.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.503,
-      "close": 0.315,
-      "atr_pct": 5.44,
-      "rsi14": 37.27
+      "confidence_score": 0.442,
+      "close": 0.3163,
+      "atr_pct": 5.45,
+      "rsi14": 37.66
     },
     {
       "symbol": "LDO-USD",
@@ -208,7 +208,7 @@
       "confidence": "MEDIUM",
       "confidence_score": 0.583,
       "close": 0.343,
-      "atr_pct": 5.77,
+      "atr_pct": 5.81,
       "rsi14": 25.47
     },
     {
@@ -217,9 +217,9 @@
       "score": 69.5,
       "confidence": "MEDIUM",
       "confidence_score": 0.576,
-      "close": 2.7077,
-      "atr_pct": 7.48,
-      "rsi14": 83.98
+      "close": 2.7857,
+      "atr_pct": 7.37,
+      "rsi14": 87.49
     },
     {
       "symbol": "ALGO-USD",
@@ -227,69 +227,69 @@
       "score": -55.83,
       "confidence": "MEDIUM",
       "confidence_score": 0.598,
-      "close": 0.1113,
+      "close": 0.1119,
       "atr_pct": 5.56,
-      "rsi14": 36.39
+      "rsi14": 36.93
     },
     {
       "symbol": "APT-USD",
-      "signal": "SHORT",
-      "score": -31.83,
+      "signal": "NEUTRAL",
+      "score": -29.83,
       "confidence": "MEDIUM",
-      "confidence_score": 0.46,
-      "close": 0.9537,
-      "atr_pct": 7.54,
-      "rsi14": 32.6
+      "confidence_score": 0.4,
+      "close": 0.9668,
+      "atr_pct": 7.46,
+      "rsi14": 33.8
     },
     {
       "symbol": "ICP-USD",
-      "signal": "SHORT",
-      "score": -42.67,
+      "signal": "NEUTRAL",
+      "score": -24.67,
       "confidence": "MEDIUM",
-      "confidence_score": 0.522,
-      "close": 2.631,
-      "atr_pct": 7.28,
-      "rsi14": 29.19
+      "confidence_score": 0.45,
+      "close": 2.647,
+      "atr_pct": 7.29,
+      "rsi14": 29.55
     },
     {
       "symbol": "FIL-USD",
-      "signal": "SHORT",
-      "score": -39.33,
+      "signal": "NEUTRAL",
+      "score": -15.58,
       "confidence": "MEDIUM",
-      "confidence_score": 0.503,
-      "close": 0.972,
-      "atr_pct": 6.03,
-      "rsi14": 34.85
+      "confidence_score": 0.35,
+      "close": 0.983,
+      "atr_pct": 5.99,
+      "rsi14": 35.92
     },
     {
       "symbol": "HBAR-USD",
       "signal": "SHORT",
-      "score": -40.83,
+      "score": -37.0,
       "confidence": "MEDIUM",
-      "confidence_score": 0.462,
-      "close": 0.0872,
-      "atr_pct": 3.75,
-      "rsi14": 29.43
+      "confidence_score": 0.44,
+      "close": 0.0876,
+      "atr_pct": 3.77,
+      "rsi14": 30.2
     },
     {
       "symbol": "TRX-USD",
       "signal": "LONG",
-      "score": 66.0,
+      "score": 70.5,
       "confidence": "MEDIUM",
-      "confidence_score": 0.606,
-      "close": 0.3713,
-      "atr_pct": 1.43,
-      "rsi14": 84.06
+      "confidence_score": 0.631,
+      "close": 0.375,
+      "atr_pct": 1.47,
+      "rsi14": 86.07
     },
     {
       "symbol": "ETC-USD",
       "signal": "SHORT",
-      "score": -30.33,
+      "score": -30.83,
       "confidence": "MEDIUM",
-      "confidence_score": 0.402,
-      "close": 8.828,
-      "atr_pct": 4.77,
-      "rsi14": 34.37
+      "confidence_score": 0.405,
+      "close": 8.821,
+      "atr_pct": 4.81,
+      "rsi14": 34.24
     },
     {
       "symbol": "ARB-USD",
@@ -297,9 +297,9 @@
       "score": -53.33,
       "confidence": "MEDIUM",
       "confidence_score": 0.583,
-      "close": 0.1076,
-      "atr_pct": 6.51,
-      "rsi14": 16.55
+      "close": 0.1074,
+      "atr_pct": 6.54,
+      "rsi14": 16.47
     },
     {
       "symbol": "OP-USD",
@@ -307,19 +307,19 @@
       "score": -42.67,
       "confidence": "MEDIUM",
       "confidence_score": 0.522,
-      "close": 0.1284,
-      "atr_pct": 6.02,
-      "rsi14": 28.04
+      "close": 0.1285,
+      "atr_pct": 6.06,
+      "rsi14": 28.1
     },
     {
       "symbol": "POL-USD",
       "signal": "SHORT",
-      "score": -35.33,
+      "score": -33.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.43,
-      "close": 0.092,
+      "confidence_score": 0.369,
+      "close": 0.0926,
       "atr_pct": 3.76,
-      "rsi14": 31.47
+      "rsi14": 32.57
     },
     {
       "symbol": "INJ-USD",
@@ -327,9 +327,9 @@
       "score": 62.17,
       "confidence": "MEDIUM",
       "confidence_score": 0.534,
-      "close": 5.735,
-      "atr_pct": 10.71,
-      "rsi14": 64.13
+      "close": 5.714,
+      "atr_pct": 10.89,
+      "rsi14": 63.91
     },
     {
       "symbol": "TIA-USD",
@@ -337,49 +337,49 @@
       "score": 32.33,
       "confidence": "LOW",
       "confidence_score": 0.213,
-      "close": 0.4657,
-      "atr_pct": 8.86,
-      "rsi14": 50.7
+      "close": 0.4696,
+      "atr_pct": 8.78,
+      "rsi14": 51.4
     },
     {
       "symbol": "GRT-USD",
       "signal": "NEUTRAL",
-      "score": 17.0,
+      "score": 24.17,
       "confidence": "LOW",
-      "confidence_score": 0.15,
-      "close": 0.0269,
-      "atr_pct": 6.29,
-      "rsi14": 41.8
+      "confidence_score": 0.2,
+      "close": 0.0275,
+      "atr_pct": 6.19,
+      "rsi14": 44.06
     },
     {
       "symbol": "RENDER-USD",
       "signal": "NEUTRAL",
-      "score": 62.83,
+      "score": 61.25,
       "confidence": "MEDIUM",
-      "confidence_score": 0.388,
-      "close": 2.175,
-      "atr_pct": 6.51,
-      "rsi14": 68.34
+      "confidence_score": 0.429,
+      "close": 2.253,
+      "atr_pct": 6.56,
+      "rsi14": 71.84
     },
     {
       "symbol": "FET-USD",
       "signal": "NEUTRAL",
-      "score": 9.42,
+      "score": 17.75,
       "confidence": "LOW",
       "confidence_score": 0.15,
-      "close": 0.2272,
-      "atr_pct": 6.28,
-      "rsi14": 52.0
+      "close": 0.2355,
+      "atr_pct": 6.15,
+      "rsi14": 56.78
     },
     {
       "symbol": "ZEC-USD",
-      "signal": "LONG",
-      "score": 39.33,
-      "confidence": "MEDIUM",
-      "confidence_score": 0.353,
-      "close": 637.54,
-      "atr_pct": 9.33,
-      "rsi14": 56.74
+      "signal": "NEUTRAL",
+      "score": 25.5,
+      "confidence": "LOW",
+      "confidence_score": 0.25,
+      "close": 621.58,
+      "atr_pct": 9.75,
+      "rsi14": 54.95
     },
     {
       "symbol": "DASH-USD",
@@ -388,28 +388,28 @@
       "confidence": "LOW",
       "confidence_score": 0.25,
       "close": 44.1,
-      "atr_pct": 9.3,
+      "atr_pct": 9.33,
       "rsi14": 46.68
     },
     {
       "symbol": "DOGE-USD",
       "signal": "SHORT",
-      "score": -37.5,
+      "score": -37.0,
       "confidence": "MEDIUM",
-      "confidence_score": 0.443,
-      "close": 0.1011,
+      "confidence_score": 0.44,
+      "close": 0.1014,
       "atr_pct": 4.69,
-      "rsi14": 32.83
+      "rsi14": 33.15
     },
     {
       "symbol": "SHIB-USD",
       "signal": "SHORT",
-      "score": -53.33,
+      "score": -51.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.583,
+      "confidence_score": 0.522,
       "close": 0.0,
       "atr_pct": 5.38,
-      "rsi14": 17.39
+      "rsi14": 17.78
     },
     {
       "symbol": "PEPE-USD",
@@ -418,18 +418,18 @@
       "confidence": "MEDIUM",
       "confidence_score": 0.583,
       "close": 0.0,
-      "atr_pct": 5.3,
-      "rsi14": 23.93
+      "atr_pct": 5.33,
+      "rsi14": 23.89
     },
     {
       "symbol": "BONK-USD",
       "signal": "SHORT",
-      "score": -44.83,
+      "score": -44.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.535,
+      "confidence_score": 0.532,
       "close": 0.0,
-      "atr_pct": 5.72,
-      "rsi14": 26.37
+      "atr_pct": 5.73,
+      "rsi14": 26.66
     },
     {
       "symbol": "WIF-USD",
@@ -437,9 +437,9 @@
       "score": -41.0,
       "confidence": "MEDIUM",
       "confidence_score": 0.513,
-      "close": 0.1905,
+      "close": 0.1918,
       "atr_pct": 6.55,
-      "rsi14": 30.5
+      "rsi14": 31.01
     },
     {
       "symbol": "AAPL",
@@ -1224,12 +1224,12 @@
     {
       "symbol": "DXY-INDEX",
       "signal": "NEUTRAL",
-      "score": 59.75,
+      "score": 61.5,
       "confidence": "MEDIUM",
-      "confidence_score": 0.378,
-      "close": 99.239,
-      "atr_pct": 0.45,
-      "rsi14": 60.42
+      "confidence_score": 0.442,
+      "close": 99.059,
+      "atr_pct": 0.46,
+      "rsi14": 57.58
     },
     {
       "symbol": "GLD",
