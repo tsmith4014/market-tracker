@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -10,6 +11,7 @@ import pytest
 
 from copilot_output import (
     CopilotEncoder,
+    assess_bar_recency,
     build_copilot_payload,
     build_signal_payload,
     write_copilot_json,
@@ -130,3 +132,48 @@ class TestWriteLatestSignalsJson:
         assert len(loaded["signals"]) == 1
         assert loaded["signals"][0]["symbol"] == "BTC-USD"
         assert loaded["signals"][0]["confidence"] == "HIGH"
+
+
+class TestAssessBarRecency:
+    def test_yesterday_bar_is_complete(self):
+        now = datetime(2025, 1, 15, 12, 0, tzinfo=timezone.utc)
+        r = assess_bar_recency("2025-01-14", "crypto", now)
+        assert r["bar_complete"] is True
+        assert r["bar_age_days"] == 1
+        assert r["stale"] is False
+
+    def test_today_bar_is_incomplete(self):
+        now = datetime(2025, 1, 15, 12, 0, tzinfo=timezone.utc)
+        r = assess_bar_recency("2025-01-15", "crypto", now)
+        assert r["bar_complete"] is False
+        assert r["bar_age_days"] == 0
+
+    def test_old_crypto_bar_is_stale(self):
+        now = datetime(2025, 1, 15, 12, 0, tzinfo=timezone.utc)
+        r = assess_bar_recency("2025-01-10", "crypto", now)
+        assert r["stale"] is True
+
+    def test_weekend_equity_bar_not_stale(self):
+        # Friday bar viewed Monday: 3 days old, under the 4-day equity threshold
+        now = datetime(2025, 1, 13, 12, 0, tzinfo=timezone.utc)  # Monday
+        r = assess_bar_recency("2025-01-10", "stock", now)  # Friday
+        assert r["stale"] is False
+
+    def test_none_date_safe(self):
+        r = assess_bar_recency(None, "crypto")
+        assert r["bar_complete"] is None
+        assert r["bar_age_days"] is None
+
+
+class TestSignalPayloadRecency:
+    def test_payload_meta_carries_recency(self):
+        now = datetime(2025, 1, 15, 12, 0, tzinfo=timezone.utc)
+        row = {"close": 100.0, "signal": "LONG", "date": "2025-01-15"}
+        payload = build_signal_payload(
+            symbol="BTC-USD", row=row,
+            confidence_level="HIGH", confidence_score=0.8,
+            quality_grade="A", source="Kraken API",
+            asset_type="crypto", now=now,
+        )
+        assert payload["meta"]["bar_complete"] is False
+        assert payload["meta"]["bar_age_days"] == 0

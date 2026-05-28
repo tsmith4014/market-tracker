@@ -244,3 +244,51 @@ class TestMaxDrawdown:
         equity = pd.Series([1.0, 1.5, 1.2, 1.0, 1.4])
         # Peak at 1.5, then trough at 1.0 -> drawdown = (1.0 - 1.5) / 1.5 = -0.333
         assert bt.max_drawdown(equity) == pytest.approx(-1 / 3, abs=1e-6)
+
+
+class TestCalibrateSignals:
+    def _frame(self, prices, signals, confidences, symbol="TEST"):
+        n = len(prices)
+        return pd.DataFrame({
+            "symbol": [symbol] * n,
+            "date": pd.date_range("2023-01-01", periods=n, freq="D"),
+            "close": prices,
+            "signal": signals,
+            "confidence_level": confidences,
+        })
+
+    def test_long_in_uptrend_has_positive_directional_return(self):
+        prices = list(np.linspace(100, 200, 60))
+        df = self._frame(prices, ["LONG"] * 60, ["HIGH"] * 60)
+        calib = bt.calibrate_signals(df, horizons=(5,))
+        high = calib[(calib["confidence_level"] == "HIGH") & (calib["horizon"] == 5)]
+        assert not high.empty
+        assert high["mean_return"].iloc[0] > 0
+        assert high["win_rate"].iloc[0] > 0.9
+
+    def test_short_in_uptrend_has_negative_directional_return(self):
+        prices = list(np.linspace(100, 200, 60))
+        df = self._frame(prices, ["SHORT"] * 60, ["LOW"] * 60)
+        calib = bt.calibrate_signals(df, horizons=(5,))
+        low = calib[(calib["confidence_level"] == "LOW") & (calib["horizon"] == 5)]
+        assert not low.empty
+        # Shorting a rising market loses -> directional return negative
+        assert low["mean_return"].iloc[0] < 0
+
+    def test_neutral_signals_excluded(self):
+        prices = list(np.linspace(100, 200, 40))
+        df = self._frame(prices, ["NEUTRAL"] * 40, ["LOW"] * 40)
+        calib = bt.calibrate_signals(df, horizons=(5,))
+        assert calib.empty
+
+    def test_all_bucket_present(self):
+        prices = list(np.linspace(100, 200, 60))
+        df = self._frame(prices, ["LONG"] * 60, ["HIGH"] * 60)
+        calib = bt.calibrate_signals(df, horizons=(5,))
+        assert "ALL" in set(calib["confidence_level"])
+
+    def test_missing_confidence_column_defaults_to_all(self):
+        prices = list(np.linspace(100, 200, 60))
+        df = self._frame(prices, ["LONG"] * 60, ["HIGH"] * 60).drop(columns="confidence_level")
+        calib = bt.calibrate_signals(df, horizons=(5,))
+        assert set(calib["confidence_level"]) <= {"ALL"}

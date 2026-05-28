@@ -210,6 +210,32 @@ class TestCompositeAndSubscores:
         assert -100.0 <= score <= 100.0
 
 
+class TestRenormalization:
+    def test_missing_volume_excluded_not_diluting(self, default_symbol_cfg):
+        """A symbol with no volume data should score the same as one whose volume
+        subscore happens to be neutral — because the missing subscore is dropped and
+        the remaining weights renormalized, not folded in as a 0 vote."""
+        base = {
+            "close": 200, "ema20": 195, "ema50": 190, "ema200": 150,
+            "sma20": 192, "sma50": 185, "sma200": 140,
+            "rsi14": 60, "macd": 2.0, "macd_signal": 1.0,
+            "adx14": 35, "plus_di14": 40, "minus_di14": 15,
+            "atr14": 1.5, "bb_width": 0.05,
+            "pivot": 195, "r1": 198, "s1": 192,
+            "fib_long_low": 100, "fib_long_high": 250,
+            "stoch_rsi": 70, "mom_divergence": 0,
+            "weekly_trend": 1.0,
+        }
+        with_vol = {**base, "rvol": 1.5, "vwap": 190, "roc10": 5.0}
+        without_vol = {**base, "rvol": None, "vwap": None, "roc10": None}
+        score_with, _ = composite_and_subscores(with_vol, default_symbol_cfg["weights"])
+        score_without, _ = composite_and_subscores(without_vol, default_symbol_cfg["weights"])
+        # Both finite; the missing-volume case is renormalized over the other 6 subscores.
+        assert np.isfinite(score_with) and np.isfinite(score_without)
+        # Renormalization keeps the bullish score strong rather than dragging it down.
+        assert score_without > 50
+
+
 class TestComputeConfidence:
     def test_high_confidence_for_strong_signal(self):
         subs = {"trend_s": 5.0, "momentum_s": 3.0, "strength_s": 2.0, "vol_s": 1.0, "fib_s": 1.0, "pivot_s": 1.0, "volume_s": 1.0}
