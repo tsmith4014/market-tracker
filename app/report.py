@@ -54,6 +54,70 @@ def data_freshness_summary(market: pd.DataFrame | None) -> list[str]:
     ]
 
 
+def edge_summary_section(summary: pd.DataFrame | None) -> list[str]:
+    """Aggregate verdict: does the strategy carry an edge over buy-and-hold?"""
+    lines = ["## Edge Summary", ""]
+    if summary is None or summary.empty or "return" not in summary.columns:
+        lines.extend(["No backtest summary available to evaluate edge.", ""])
+        return lines
+
+    df = summary.copy()
+    for col in ["return", "benchmark_return", "sharpe", "exposure", "trades"]:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    traded = df[df["trades"].fillna(0) > 0] if "trades" in df.columns else df
+    evaluated = len(traded)
+    if evaluated == 0:
+        lines.extend(["No symbols generated trades; edge cannot be evaluated.", ""])
+        return lines
+
+    beat = (traded["return"] > traded["benchmark_return"]).mean() if "benchmark_return" in traded.columns else float("nan")
+    positive = (traded["return"] > 0).mean()
+    excess = (traded["return"] - traded["benchmark_return"]) if "benchmark_return" in traded.columns else traded["return"]
+
+    lines.extend([
+        f"- Symbols with trades: **{evaluated}** of {len(df)}",
+        f"- Beat buy-and-hold: **{percent(beat)}** of traded symbols",
+        f"- Positive return: **{percent(positive)}** of traded symbols",
+        f"- Median strategy return: **{percent(traded['return'].median())}** "
+        f"(benchmark **{percent(traded['benchmark_return'].median()) if 'benchmark_return' in traded.columns else 'n/a'}**)",
+        f"- Median excess vs benchmark: **{percent(excess.median())}**",
+        f"- Median Sharpe: **{number(traded['sharpe'].median()) if 'sharpe' in traded.columns else 'n/a'}**",
+        f"- Median exposure: **{percent(traded['exposure'].median()) if 'exposure' in traded.columns else 'n/a'}**",
+        "",
+        "> Edge is real only if both _beat buy-and-hold_ and _median excess_ are "
+        "convincingly positive across many symbols. Treat a single high-return symbol as noise.",
+        "",
+    ])
+    return lines
+
+
+def calibration_section() -> list[str]:
+    """Does higher confidence actually predict better forward returns?"""
+    calib = load_csv(OUT_DIR / "signal_calibration.csv")
+    lines = ["## Signal Calibration", ""]
+    if calib is None or calib.empty:
+        lines.extend(["No calibration data was generated.", ""])
+        return lines
+    display = calib.copy()
+    for col in ["mean_return", "median_return", "win_rate"]:
+        if col in display.columns:
+            display[col] = display[col].apply(percent)
+    order = {"HIGH": 0, "MEDIUM": 1, "LOW": 2, "ALL": 3}
+    if "confidence_level" in display.columns:
+        display["_o"] = display["confidence_level"].map(order).fillna(9)
+        display = display.sort_values(["horizon", "_o"]).drop(columns="_o")
+    lines.extend([
+        "Realized forward return in the signal's direction, grouped by confidence. "
+        "HIGH should outrank LOW for the confidence score to be meaningful.",
+        "",
+        display.to_markdown(index=False),
+        "",
+    ])
+    return lines
+
+
 def summary_section(summary: pd.DataFrame | None) -> list[str]:
     lines = ["## Backtest Summary", ""]
     if summary is None or summary.empty:
@@ -123,6 +187,8 @@ def main() -> None:
         latest_signal_table(market),
         "",
     ]
+    lines.extend(edge_summary_section(summary))
+    lines.extend(calibration_section())
     lines.extend(summary_section(summary))
     lines.extend(sweep_sections(summary))
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)

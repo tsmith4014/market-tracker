@@ -206,7 +206,26 @@ def composite_and_subscores(latest: Dict[str, float], weights: dict) -> Tuple[fl
         "vol_s": "vol", "fib_s": "fib", "pivot_s": "pivot", "volume_s": "volume",
     }
 
-    valid = {k: v for k, v in subs.items() if np.isfinite(v)}
+    # A subscore always returns a finite value (0.0 when inputs are missing), so we
+    # track availability from the underlying inputs. Unavailable subscores are dropped
+    # and the remaining weights renormalized, rather than letting a missing indicator
+    # cast a diluting "neutral" vote.
+    rvol = finite_or_none(latest.get("rvol"))
+    vwap = finite_or_none(latest.get("vwap"))
+    available = {
+        "trend_s": close is not None and any(x is not None for x in (ema20, ema50, ema200)),
+        "momentum_s": finite_or_none(latest.get("rsi14")) is not None or finite_or_none(latest.get("macd")) is not None,
+        "strength_s": finite_or_none(latest.get("adx14")) is not None,
+        "vol_s": (finite_or_none(latest.get("atr14")) is not None and close is not None)
+        or finite_or_none(latest.get("bb_width")) is not None,
+        "fib_s": close is not None
+        and finite_or_none(latest.get("fib_long_low")) is not None
+        and finite_or_none(latest.get("fib_long_high")) is not None,
+        "pivot_s": close is not None and finite_or_none(latest.get("pivot")) is not None,
+        "volume_s": rvol is not None or (close is not None and vwap is not None),
+    }
+
+    valid = {k: v for k, v in subs.items() if np.isfinite(v) and available[k]}
     total = sum(float(weights.get(wm[k], 0)) for k in valid)
     if not valid or total <= 0:
         return np.nan, subs

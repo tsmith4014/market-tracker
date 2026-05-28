@@ -636,6 +636,7 @@ def main() -> None:
                 confidence_score=float(conf_score) if conf_score else 0.0,
                 quality_grade=dq.quality_grade,
                 source=md.source,
+                asset_type=info.asset_type,
             )
             copilot_signals.append(sig_payload)
 

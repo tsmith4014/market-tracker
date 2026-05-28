@@ -195,9 +195,66 @@ def run_sweep(df: pd.DataFrame, cfg: dict, out_dir: str, grid: range) -> None:
         pd.DataFrame(records).to_csv(Path(out_dir) / f"threshold_sweep_{symbol}.csv", index=False)
 
 
+def calibrate_signals(df: pd.DataFrame, horizons: Tuple[int, ...] = (5, 10, 20)) -> pd.DataFrame:
+    """Measure whether signals (and confidence buckets) actually predict forward returns.
+
+    For each non-NEUTRAL signal we compute the realized forward return over each
+    horizon in the signal's own direction (LONG = +ret, SHORT = -ret). Grouping the
+    directional returns by confidence level reveals whether HIGH-confidence calls
+    outperform LOW ones — the core test of whether the score carries information.
+
+    Returns a tidy frame: one row per (confidence_level, horizon) plus an ALL row.
+    """
+    dir_map = {"LONG": 1, "SHORT": -1, "NEUTRAL": 0}
+    has_confidence = "confidence_level" in df.columns
+    frames = []
+    for symbol in df["symbol"].unique():
+        d = df[df["symbol"] == symbol].sort_values("date").copy()
+        d["dir"] = d["signal"].map(dir_map).fillna(0)
+        for h in horizons:
+            fwd = d["close"].shift(-h) / d["close"] - 1.0
+            sub = pd.DataFrame({
+                "horizon": h,
+                "confidence_level": d["confidence_level"] if has_confidence else "ALL",
+                "dir": d["dir"],
+                "directional_return": fwd * d["dir"],
+            })
+            frames.append(sub[(sub["dir"] != 0) & sub["directional_return"].notna()])
+
+    if not frames:
+        return pd.DataFrame(columns=["confidence_level", "horizon", "n", "mean_return", "median_return", "win_rate"])
+
+    events = pd.concat(frames, ignore_index=True)
+
+    def _agg(group: pd.DataFrame) -> dict:
+        return {
+            "n": int(len(group)),
+            "mean_return": float(group["directional_return"].mean()),
+            "median_return": float(group["directional_return"].median()),
+            "win_rate": float((group["directional_return"] > 0).mean()),
+        }
+
+    rows = []
+    for h in horizons:
+        h_events = events[events["horizon"] == h]
+        for level in ["HIGH", "MEDIUM", "LOW", "ALL"]:
+            bucket = h_events if level == "ALL" else h_events[h_events["confidence_level"] == level]
+            if bucket.empty:
+                continue
+            rows.append({"confidence_level": level, "horizon": h, **_agg(bucket)})
+    return pd.DataFrame(rows)
+
+
+def run_calibration(df: pd.DataFrame, out_dir: str, horizons: Tuple[int, ...] = (5, 10, 20)) -> pd.DataFrame:
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
+    calib = calibrate_signals(df, horizons)
+    calib.to_csv(Path(out_dir) / "signal_calibration.csv", index=False)
+    return calib
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=["summary", "sweep", "both"], default="summary")
+    parser.add_argument("--mode", choices=["summary", "sweep", "calibrate", "both"], default="summary")
     parser.add_argument("--min", type=int, default=15)
     parser.add_argument("--max", type=int, default=50)
     parser.add_argument("--step", type=int, default=5)
@@ -208,8 +265,11 @@ def main() -> None:
         raise ValueError(f"No symbols with at least {MIN_BACKTEST_BARS} rows were found in {CSV_PATH}")
     if args.mode in ("summary", "both"):
         run_summary(df, cfg, OUT_DIR)
+        run_calibration(df, OUT_DIR)
     if args.mode in ("sweep", "both"):
         run_sweep(df, cfg, OUT_DIR, range(args.min, args.max + 1, args.step))
+    if args.mode == "calibrate":
+        run_calibration(df, OUT_DIR)
     print(f"Outputs in {OUT_DIR}")
 
 

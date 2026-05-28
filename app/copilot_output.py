@@ -13,9 +13,49 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Optional
+from zoneinfo import ZoneInfo
 
 import numpy as np
 import pandas as pd
+
+# Reference timezones for deciding whether a daily bar has settled.
+_CRYPTO_TZ = ZoneInfo("UTC")
+_EQUITY_TZ = ZoneInfo("America/New_York")
+# A bar older than this many days is considered stale (accounts for weekends/holidays).
+_STALE_DAYS = {"crypto": 2, "stock": 4, "index": 4}
+
+
+def assess_bar_recency(
+    bar_date: str | None,
+    asset_type: str,
+    now: datetime | None = None,
+) -> dict:
+    """Decide whether the latest daily bar is settled and how stale it is.
+
+    Crypto days settle at 00:00 UTC; equities settle on the US/Eastern calendar.
+    A bar dated today (in the reference timezone) is still in progress, so any
+    signal computed from it can change before the day closes.
+    """
+    now = now or datetime.now(timezone.utc)
+    tz = _CRYPTO_TZ if asset_type == "crypto" else _EQUITY_TZ
+    today_ref = now.astimezone(tz).date()
+
+    if not bar_date:
+        return {"bar_date": None, "bar_age_days": None, "bar_complete": None, "stale": None}
+
+    try:
+        parsed = datetime.fromisoformat(str(bar_date)).date()
+    except (ValueError, TypeError):
+        return {"bar_date": bar_date, "bar_age_days": None, "bar_complete": None, "stale": None}
+
+    age_days = (today_ref - parsed).days
+    stale_threshold = _STALE_DAYS.get(asset_type, 4)
+    return {
+        "bar_date": parsed.isoformat(),
+        "bar_age_days": age_days,
+        "bar_complete": age_days >= 1,
+        "stale": age_days > stale_threshold,
+    }
 
 
 class CopilotEncoder(json.JSONEncoder):
@@ -64,8 +104,12 @@ def build_signal_payload(
     confidence_score: float,
     quality_grade: str,
     source: str,
+    asset_type: str = "crypto",
+    now: datetime | None = None,
 ) -> dict:
     """Build a single symbol's signal payload for the co-pilot."""
+
+    recency = assess_bar_recency(row.get("date"), asset_type, now)
 
     close = row.get("close")
     ema20 = row.get("ema20")
@@ -138,6 +182,9 @@ def build_signal_payload(
             "data_source": source,
             "quality_grade": quality_grade,
             "date": row.get("date"),
+            "bar_complete": recency["bar_complete"],
+            "bar_age_days": recency["bar_age_days"],
+            "stale": recency["stale"],
         },
     }
 
@@ -157,6 +204,9 @@ def build_copilot_payload(
     high_conf_longs = [s for s in longs if s["confidence"]["level"] == "HIGH"]
     high_conf_shorts = [s for s in shorts if s["confidence"]["level"] == "HIGH"]
 
+    partial_bar = [s["symbol"] for s in signals if s.get("meta", {}).get("bar_complete") is False]
+    stale = [s["symbol"] for s in signals if s.get("meta", {}).get("stale") is True]
+
     summary = {
         "total_symbols": len(signals),
         "long_signals": len(longs),
@@ -164,6 +214,8 @@ def build_copilot_payload(
         "neutral_signals": len(signals) - len(longs) - len(shorts),
         "high_confidence_longs": [s["symbol"] for s in high_conf_longs],
         "high_confidence_shorts": [s["symbol"] for s in high_conf_shorts],
+        "partial_bar_symbols": partial_bar,
+        "stale_symbols": stale,
         "regime": regime.get("regime", "UNKNOWN"),
         "regime_risk_score": regime.get("risk_score", 0),
     }
@@ -199,6 +251,8 @@ def write_latest_signals_json(signals: List[dict], path: str) -> None:
             "close": s["price"]["close"],
             "atr_pct": s["indicators"]["atr_pct"],
             "rsi14": s["indicators"]["rsi14"],
+            "bar_complete": s.get("meta", {}).get("bar_complete"),
+            "stale": s.get("meta", {}).get("stale"),
         })
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
