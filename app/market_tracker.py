@@ -41,8 +41,10 @@ from scoring import (
     compute_confidence,
     compute_market_regime,
     enforce_guards,
+    finite_or_none,
     latest_dict,
 )
+from strategies import raw_signal
 from symbol_manager import SymbolInfo, SymbolManager
 
 # --- Configuration ---
@@ -156,6 +158,7 @@ def apply_overrides(symbol: str, cfg: dict) -> dict:
         "lookbacks": {**d.get("lookbacks", {}), **o.get("lookbacks", {})},
         "guards": {**d.get("guards", {}), **o.get("guards", {})},
         "fees": {**d.get("fees", {}), **o.get("fees", {})},
+        "strategy": o.get("strategy", d.get("strategy", "trend")),
     }
     if merged["thresholds"]["long"] <= merged["thresholds"]["short"]:
         raise ValueError(f"Invalid thresholds for {symbol}")
@@ -443,10 +446,20 @@ def process_df(df: pd.DataFrame, symbol_cfg: dict) -> pd.DataFrame:
         if not np.isfinite(score):
             continue
 
-        raw = "LONG" if score >= float(symbol_cfg["thresholds"]["long"]) else (
-            "SHORT" if score <= float(symbol_cfg["thresholds"]["short"]) else "NEUTRAL"
+        strategy = symbol_cfg.get("strategy", "trend")
+        raw = raw_signal(
+            strategy,
+            score=score,
+            long_th=float(symbol_cfg["thresholds"]["long"]),
+            short_th=float(symbol_cfg["thresholds"]["short"]),
+            close=finite_or_none(ld.get("close")),
+            rsi14=finite_or_none(ld.get("rsi14")),
+            bb_lower20=finite_or_none(row.get("BB_LOWER20")),
+            bb_upper20=finite_or_none(row.get("BB_UPPER20")),
+            ema200=finite_or_none(ld.get("ema200")),
+            adx14=finite_or_none(ld.get("adx14")),
         )
-        signal = enforce_guards(symbol_cfg, ld, raw)
+        signal = enforce_guards(symbol_cfg, ld, raw, strategy)
         conf_level, conf_score = compute_confidence(score, subs, ld, symbol_cfg["thresholds"], signal)
 
         for k, v in subs.items():

@@ -232,7 +232,7 @@ def composite_and_subscores(latest: Dict[str, float], weights: dict) -> Tuple[fl
     return sum((valid[k] / caps[k]) * (float(weights.get(wm[k], 0)) / total) for k in valid) * 100.0, subs
 
 
-def enforce_guards(scfg: dict, latest: dict, raw_signal: str) -> str:
+def enforce_guards(scfg: dict, latest: dict, raw_signal: str, strategy: str = "trend") -> str:
     if raw_signal == "NEUTRAL":
         return raw_signal
     adx14 = finite_or_none(latest.get("adx14"))
@@ -240,9 +240,15 @@ def enforce_guards(scfg: dict, latest: dict, raw_signal: str) -> str:
     close = finite_or_none(latest.get("close"))
     ema50 = finite_or_none(latest.get("ema50"))
 
-    if adx14 is None or adx14 < float(scfg["guards"].get("min_adx_for_signal", 0)):
-        return "NEUTRAL"
+    # Extreme-volatility guard applies to every strategy.
     if close and atr14 and 100.0 * atr14 / close > float(scfg["guards"].get("max_atr_pct", 999)):
+        return "NEUTRAL"
+    # Trend-style guards (ADX floor, EMA proximity) gate only trend-driven rows.
+    # Mean-reversion deliberately fires in low-ADX chop, so they must not apply.
+    trend_guarded = strategy == "trend" or (strategy == "regime_adaptive" and adx14 is not None and adx14 >= 25.0)
+    if not trend_guarded:
+        return raw_signal
+    if adx14 is None or adx14 < float(scfg["guards"].get("min_adx_for_signal", 0)):
         return "NEUTRAL"
     if scfg["guards"].get("require_close_above_ema50_for_long", False) and raw_signal == "LONG":
         if close is None or ema50 is None or close <= ema50:
