@@ -256,6 +256,30 @@ class TestComputeConfidence:
         assert level == "LOW"
         assert score == 0.0
 
+    def test_neutral_signal_collapses_confidence(self):
+        """A guarded-to-NEUTRAL signal must not report HIGH confidence."""
+        subs = {"trend_s": 5.0, "momentum_s": 3.0, "strength_s": 2.0, "vol_s": 1.0, "fib_s": 1.0, "pivot_s": 1.0, "volume_s": 1.0}
+        latest = {"weekly_trend": 1.0, "rvol": 2.0, "rsi14": 60}
+        level, score = compute_confidence(80.0, subs, latest, {"long": 30, "short": -30}, signal="NEUTRAL")
+        assert level == "LOW"
+        assert score == 0.0
+
+    def test_stretched_long_is_penalized(self):
+        subs = {"trend_s": 5.0, "momentum_s": 3.0, "strength_s": 2.0, "vol_s": 1.0, "fib_s": 1.0, "pivot_s": 1.0, "volume_s": 1.0}
+        latest = {"weekly_trend": 1.0, "rvol": 2.0, "rsi14": 88}
+        not_stretched = {**latest, "rsi14": 60}
+        _, stretched_score = compute_confidence(80.0, subs, latest, {"long": 30, "short": -30}, signal="LONG")
+        _, normal_score = compute_confidence(80.0, subs, not_stretched, {"long": 30, "short": -30}, signal="LONG")
+        assert stretched_score < normal_score
+
+    def test_stretched_short_is_penalized(self):
+        subs = {"trend_s": -5.0, "momentum_s": -3.0, "strength_s": -2.0, "vol_s": -1.0, "fib_s": -1.0, "pivot_s": -1.0, "volume_s": -1.0}
+        latest = {"weekly_trend": -1.0, "rvol": 2.0, "rsi14": 12}
+        not_stretched = {**latest, "rsi14": 40}
+        _, stretched_score = compute_confidence(-80.0, subs, latest, {"long": 30, "short": -30}, signal="SHORT")
+        _, normal_score = compute_confidence(-80.0, subs, not_stretched, {"long": 30, "short": -30}, signal="SHORT")
+        assert stretched_score < normal_score
+
 
 class TestComputeMarketRegime:
     def test_risk_on(self):

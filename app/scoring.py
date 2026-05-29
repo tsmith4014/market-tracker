@@ -258,6 +258,7 @@ def compute_confidence(
     subs: Dict[str, float],
     latest: Dict[str, float],
     thresholds: dict,
+    signal: str | None = None,
 ) -> Tuple[str, float]:
     """Compute signal confidence level and numeric confidence score.
 
@@ -267,10 +268,17 @@ def compute_confidence(
     - Whether weekly trend aligns with the signal
     - Volume confirmation
 
+    A penalty is applied for "stretched" entries (going LONG when already very
+    overbought, or SHORT when already very oversold) because those chase a move
+    that has mostly happened. If the guarded signal is NEUTRAL there is nothing
+    actionable, so confidence collapses to LOW/0.
+
     Returns:
         (level, numeric) where level is HIGH/MEDIUM/LOW and numeric is 0.0 to 1.0
     """
     if not np.isfinite(score):
+        return "LOW", 0.0
+    if signal == "NEUTRAL":
         return "LOW", 0.0
 
     long_th = float(thresholds.get("long", 30))
@@ -284,8 +292,15 @@ def compute_confidence(
     else:
         margin = 0.0
 
+    # Direction comes from the actionable signal when available, else the score.
+    if signal == "LONG":
+        signal_dir = 1
+    elif signal == "SHORT":
+        signal_dir = -1
+    else:
+        signal_dir = 1 if score > 0 else -1
+
     # Confluence: count how many subscores agree with the signal direction
-    signal_dir = 1 if score > 0 else -1
     agreeing = sum(1 for v in subs.values() if np.isfinite(v) and np.sign(v) == signal_dir)
     total_subs = sum(1 for v in subs.values() if np.isfinite(v))
     confluence = agreeing / max(total_subs, 1)
@@ -298,7 +313,13 @@ def compute_confidence(
     rvol = finite_or_none(latest.get("rvol"))
     vol_bonus = 0.1 if rvol is not None and rvol > 1.2 else 0.0
 
-    numeric = min(1.0, margin * 0.4 + confluence * 0.35 + weekly_bonus + vol_bonus)
+    # Stretched-entry penalty: longing into extreme overbought or shorting into
+    # extreme oversold chases a move that has largely played out.
+    rsi = finite_or_none(latest.get("rsi14"))
+    stretched = rsi is not None and ((signal_dir > 0 and rsi >= 80) or (signal_dir < 0 and rsi <= 20))
+    stretched_penalty = 0.2 if stretched else 0.0
+
+    numeric = max(0.0, min(1.0, margin * 0.4 + confluence * 0.35 + weekly_bonus + vol_bonus - stretched_penalty))
 
     if numeric >= 0.65:
         level = "HIGH"

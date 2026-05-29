@@ -11,12 +11,34 @@ import pytest
 
 from copilot_output import (
     CopilotEncoder,
+    _round_price,
     assess_bar_recency,
     build_copilot_payload,
     build_signal_payload,
     write_copilot_json,
     write_latest_signals_json,
 )
+
+
+class TestRoundPrice:
+    def test_large_price_four_decimals(self):
+        assert _round_price(72968.812345) == 72968.8123
+
+    def test_sub_cent_keeps_significant_figures(self):
+        # SHIB-like price must not collapse to 0.0
+        r = _round_price(5.3e-06)
+        assert r is not None and r > 0
+
+    def test_micro_price_preserves_value(self):
+        r = _round_price(3.361e-06)
+        assert r == pytest.approx(3.361e-06, rel=1e-3)
+
+    def test_none_and_nan_safe(self):
+        assert _round_price(None) is None
+        assert _round_price(float("nan")) is None
+
+    def test_zero(self):
+        assert _round_price(0.0) == 0.0
 
 
 class TestCopilotEncoder:
