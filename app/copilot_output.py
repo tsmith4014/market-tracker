@@ -13,7 +13,7 @@ import json
 import math
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import List, Optional
+from typing import List
 from zoneinfo import ZoneInfo
 
 import numpy as np
@@ -266,7 +266,7 @@ def write_latest_signals_json(signals: List[dict], path: str) -> None:
     p.write_text(json.dumps(payload, indent=2, cls=CopilotEncoder), encoding="utf-8")
 
 
-def _safe_round(val, digits: int) -> Optional[float]:
+def _safe_round(val, digits: int) -> float | None:
     if val is None or (isinstance(val, float) and not np.isfinite(val)):
         return None
     try:
@@ -275,7 +275,7 @@ def _safe_round(val, digits: int) -> Optional[float]:
         return None
 
 
-def _round_price(val) -> Optional[float]:
+def _round_price(val) -> float | None:
     """Round a price with precision scaled to its magnitude.
 
     Fixed 4-decimal rounding collapses sub-cent assets (SHIB, PEPE, BONK) to
@@ -300,7 +300,7 @@ def _round_price(val) -> Optional[float]:
     return round(v, digits)
 
 
-def _weekly_label(val) -> Optional[str]:
+def _weekly_label(val) -> str | None:
     if val is None or (isinstance(val, float) and not np.isfinite(val)):
         return None
     if val > 0:

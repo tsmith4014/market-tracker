@@ -35,6 +35,9 @@ local-test:
 local-lint:
 	ruff check .
 
+local-daily:
+	./scripts/local_daily.sh
+
 help:
 	@echo "Available commands:"
 	@echo "  make build          - Build Docker image"
@@ -49,4 +52,5 @@ help:
 	@echo "  make all            - Run full pipeline"
 	@echo "  make search ARGS=   - Search symbols (e.g., ARGS='--search bitcoin')"
 	@echo "  make symbols        - Show symbol statistics"
+	@echo "  make local-daily    - OpenClaw heartbeat + full tracker + Slack"
 	@echo "  make help           - Show this help"

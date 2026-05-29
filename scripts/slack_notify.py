@@ -13,7 +13,10 @@ import urllib.request
 from pathlib import Path
 
 # Make app/ importable so we can reuse the enrichment module.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "app"))
+_APP_DIR = Path(__file__).resolve().parent.parent / "app"
+sys.path.insert(0, str(_APP_DIR))
+from env_loader import load_openclaw_env  # noqa: E402
+
 try:
     import options_enrichment as oe
 except ImportError:  # pragma: no cover
@@ -87,6 +90,11 @@ def post_slack(webhook: str, text: str) -> None:
 
 
 def main() -> int:
+    # Pick up SLACK_WEBHOOK_URL from ~/.openclaw/.env when not already exported.
+    if not os.getenv("SLACK_WEBHOOK_URL"):
+        n = load_openclaw_env()
+        if n:
+            print(f"Loaded {n} keys from OpenClaw env (~/.openclaw/.env)")
     webhook = os.getenv("SLACK_WEBHOOK_URL", "").strip()
     if not webhook:
         print("SLACK_WEBHOOK_URL not set; skipping Slack notification")
