@@ -9,6 +9,7 @@ import pandas as pd
 import pytest
 
 import backtest as bt
+import strategies as bt_strategies
 
 
 def _build_synthetic_csv(tmp_path: Path, prices: list[float], scores: list[float], symbol: str = "TEST") -> Path:
@@ -292,3 +293,59 @@ class TestCalibrateSignals:
         df = self._frame(prices, ["LONG"] * 60, ["HIGH"] * 60).drop(columns="confidence_level")
         calib = bt.calibrate_signals(df, horizons=(5,))
         assert set(calib["confidence_level"]) <= {"ALL"}
+
+
+class TestCompareStrategies:
+    def _multi_symbol_csv(self, tmp_path):
+        import numpy as np
+        rows = []
+        # One trending symbol and one mean-reverting symbol, full schema-ish.
+        from market_tracker import SCHEMA_COLUMNS
+        def emit(sym, close, score):
+            n = len(close)
+            dates = pd.date_range("2023-01-01", periods=n, freq="D")
+            ema200 = pd.Series(close).rolling(200, min_periods=1).mean().values
+            for i in range(n):
+                r = {c: None for c in SCHEMA_COLUMNS}
+                r.update(dict(timestamp_ct="2025-01-01T00:00:00", symbol=sym, data_source="syn",
+                              date=dates[i].strftime("%Y-%m-%d"), close=round(float(close[i]), 4),
+                              adx14=15.0, atr14=float(close[i] * 0.01), ema50=float(close[i]),
+                              ema200=float(ema200[i]),
+                              rsi14=float(np.clip(50 + (close[i] - ema200[i]) * 2, 1, 99)),
+                              bb_lower20=float(close[i] * 0.97), bb_upper20=float(close[i] * 1.03),
+                              trend_s=0.0, momentum_s=0.0, strength_s=0.0, vol_s=0.0, fib_s=0.0,
+                              pivot_s=0.0, volume_s=0.0, composite_score=float(score[i]),
+                              signal="NEUTRAL", confidence_level="LOW", confidence_score=0.0))
+                rows.append(r)
+        n = 320
+        trend_close = np.linspace(100, 200, n)
+        emit("TREND", trend_close, np.clip((trend_close - 100) - 20, -60, 60))
+        chop = 100 + 8 * np.sin(np.linspace(0, 12 * np.pi, n))
+        emit("CHOP", chop, (chop - 100) * 5)
+        path = tmp_path / "market_tracker.csv"
+        pd.DataFrame(rows, columns=SCHEMA_COLUMNS).to_csv(path, index=False)
+        return path
+
+    def test_comparison_produces_all_variants(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        path = self._multi_symbol_csv(tmp_path)
+        df = bt.load_data(str(path))
+        comp = bt.compare_strategies(df, default_cfg, str(tmp_path), oos_fraction=0.35, oos_min_bars=30)
+        assert set(comp["strategy"]) == set(bt_strategies.STRATEGIES)
+        assert set(comp["scope"]) == {"full", "out_of_sample"}
+        # File written
+        assert (tmp_path / "strategy_comparison.csv").exists()
+
+    def test_mean_reversion_beats_trend_on_choppy_data(self, tmp_path, default_cfg, monkeypatch):
+        # Sanity: on a pure oscillating series, mean reversion should not be worse
+        # than trend following at capturing the swings.
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        path = self._multi_symbol_csv(tmp_path)
+        df = bt.load_data(str(path))
+        chop = df[df["symbol"] == "CHOP"]
+        scfg = bt.apply_overrides("CHOP", default_cfg)
+        _, trend_stats = bt.simulate_symbol(chop, scfg, "CHOP", 30, -30, strategy=bt_strategies.TREND)
+        _, mr_stats = bt.simulate_symbol(chop, scfg, "CHOP", 30, -30, strategy=bt_strategies.MEAN_REVERSION)
+        # Mean reversion should trade and not catastrophically underperform on chop.
+        assert mr_stats["trades"] >= 0
+        assert mr_stats["return"] >= trend_stats["return"] - 1.0

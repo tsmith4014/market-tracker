@@ -93,6 +93,31 @@ def edge_summary_section(summary: pd.DataFrame | None) -> list[str]:
     return lines
 
 
+def strategy_comparison_section() -> list[str]:
+    """Which decision rule actually beats buy-and-hold, in- and out-of-sample?"""
+    comp = load_csv(OUT_DIR / "strategy_comparison.csv")
+    lines = ["## Strategy Comparison", ""]
+    if comp is None or comp.empty:
+        lines.extend(["No strategy comparison was generated.", ""])
+        return lines
+    display = comp.copy()
+    for col in ["beat_benchmark_pct", "positive_pct", "median_return", "median_benchmark", "median_excess"]:
+        if col in display.columns:
+            display[col] = display[col].apply(percent)
+    if "median_sharpe" in display.columns:
+        display["median_sharpe"] = display["median_sharpe"].apply(number)
+    lines.extend([
+        "Each decision rule backtested over the same data. `out_of_sample` is the "
+        "most recent ~35% of each symbol's history (unseen tail). A rule has real "
+        "edge only if `median_excess` and `beat_benchmark_pct` stay positive "
+        "out-of-sample, not just full-sample.",
+        "",
+        display.to_markdown(index=False),
+        "",
+    ])
+    return lines
+
+
 def calibration_section() -> list[str]:
     """Does higher confidence actually predict better forward returns?"""
     calib = load_csv(OUT_DIR / "signal_calibration.csv")
@@ -188,6 +213,7 @@ def main() -> None:
         "",
     ]
     lines.extend(edge_summary_section(summary))
+    lines.extend(strategy_comparison_section())
     lines.extend(calibration_section())
     lines.extend(summary_section(summary))
     lines.extend(sweep_sections(summary))

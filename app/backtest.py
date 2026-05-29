@@ -11,6 +11,8 @@ from typing import Tuple
 import numpy as np
 import pandas as pd
 
+import strategies
+
 CONFIG_PATH = os.getenv("CONFIG_PATH", "/app/config.json")
 CSV_PATH = os.getenv("CSV_PATH", "/data/market_tracker.csv")
 OUT_DIR = os.getenv("OUT_DIR", "/data")
@@ -50,7 +52,10 @@ def load_data(csv_path: str) -> pd.DataFrame:
     if missing:
         raise ValueError(f"CSV missing required columns: {sorted(missing)}")
     df["date"] = pd.to_datetime(df["date"])
-    for col in ["close", "composite_score", "adx14", "atr14", "ema50", "trend_s", "momentum_s", "strength_s", "vol_s", "fib_s", "pivot_s"]:
+    numeric_cols = ["close", "composite_score", "adx14", "atr14", "ema50", "trend_s", "momentum_s", "strength_s", "vol_s", "fib_s", "pivot_s"]
+    # Columns needed by the mean-reversion / adaptive strategies (optional in older CSVs).
+    numeric_cols += [c for c in ["rsi14", "bb_lower20", "bb_upper20", "ema200"] if c in df.columns]
+    for col in numeric_cols:
         df[col] = pd.to_numeric(df[col], errors="coerce")
     df = df.dropna(subset=["symbol", "date", "close", "composite_score"])
     df = df.sort_values(["symbol", "date", "timestamp_ct"]).drop_duplicates(subset=["symbol", "date"], keep="last")
@@ -59,15 +64,20 @@ def load_data(csv_path: str) -> pd.DataFrame:
     return df[df["symbol"].isin(valid_symbols)].sort_values(["symbol", "date"]).reset_index(drop=True)
 
 
-def apply_guards_row(row: pd.Series, cfg: SymbolCfg, raw_signal: str) -> str:
+def apply_guards_row(row: pd.Series, cfg: SymbolCfg, raw_signal: str, strategy: str = strategies.TREND) -> str:
     if raw_signal == "NEUTRAL":
         return "NEUTRAL"
-    min_adx = float(cfg.guards.get("min_adx_for_signal", 0))
     max_atr_pct = float(cfg.guards.get("max_atr_pct", 999))
     adx14 = row.get("adx14"); atr14 = row.get("atr14"); close = row.get("close"); ema50 = row.get("ema50")
-    if pd.isna(adx14) or adx14 < min_adx:
-        return "NEUTRAL"
+    # The extreme-volatility guard applies to every strategy.
     if not pd.isna(close) and not pd.isna(atr14) and 100.0 * atr14 / close > max_atr_pct:
+        return "NEUTRAL"
+    # Trend-style guards (ADX floor, EMA proximity) only gate trend-driven rows.
+    adx_val = None if pd.isna(adx14) else float(adx14)
+    if not strategies.uses_trend_guards(strategy, adx_val):
+        return raw_signal
+    min_adx = float(cfg.guards.get("min_adx_for_signal", 0))
+    if pd.isna(adx14) or adx14 < min_adx:
         return "NEUTRAL"
     if cfg.guards.get("require_close_above_ema50_for_long", False) and raw_signal == "LONG" and (pd.isna(close) or pd.isna(ema50) or close <= ema50):
         return "NEUTRAL"
@@ -119,20 +129,36 @@ def build_trade_events(d: pd.DataFrame, symbol: str, cost_per_side: float) -> pd
     })
 
 
-def simulate_symbol(df: pd.DataFrame, sym_cfg: SymbolCfg, symbol: str, long_th: float, short_th: float) -> Tuple[pd.DataFrame, dict]:
+def _row_raw_signal(row: pd.Series, strategy: str, long_th: float, short_th: float) -> str:
+    return strategies.raw_signal(
+        strategy,
+        score=strategies._f(row.get("composite_score")),
+        long_th=long_th,
+        short_th=short_th,
+        close=strategies._f(row.get("close")),
+        rsi14=strategies._f(row.get("rsi14")),
+        bb_lower20=strategies._f(row.get("bb_lower20")),
+        bb_upper20=strategies._f(row.get("bb_upper20")),
+        ema200=strategies._f(row.get("ema200")),
+        adx14=strategies._f(row.get("adx14")),
+    )
+
+
+def simulate_symbol(df: pd.DataFrame, sym_cfg: SymbolCfg, symbol: str, long_th: float, short_th: float, strategy: str = strategies.TREND, min_bars: int | None = None) -> Tuple[pd.DataFrame, dict]:
+    min_bars = MIN_BACKTEST_BARS if min_bars is None else min_bars
     d = df[df["symbol"] == symbol].copy().reset_index(drop=True)
     empty_stats = {"symbol": symbol, "trades": 0, "return": 0.0, "benchmark_return": 0.0, "mdd": 0.0, "sharpe": np.nan, "exposure": 0.0}
     if d.empty:
         return pd.DataFrame(), {**empty_stats, "skipped_reason": "no_data"}
-    if len(d) < MIN_BACKTEST_BARS:
+    if len(d) < min_bars:
         return pd.DataFrame(), {**empty_stats, "skipped_reason": "insufficient_bars"}
 
     fee = float(sym_cfg.fees.get("bps_per_side", 1.0)) / 10000.0
     slip = float(sym_cfg.fees.get("slippage_bps_per_side", 1.0)) / 10000.0
     cost_per_side = fee + slip
 
-    d["raw_signal_name"] = np.where(d["composite_score"] >= long_th, "LONG", np.where(d["composite_score"] <= short_th, "SHORT", "NEUTRAL"))
-    d["guarded_signal_name"] = [apply_guards_row(row, sym_cfg, row["raw_signal_name"]) for _, row in d.iterrows()]
+    d["raw_signal_name"] = [_row_raw_signal(row, strategy, long_th, short_th) for _, row in d.iterrows()]
+    d["guarded_signal_name"] = [apply_guards_row(row, sym_cfg, row["raw_signal_name"], strategy) for _, row in d.iterrows()]
     d["signal_numeric"] = d["guarded_signal_name"].map({"LONG": 1, "SHORT": -1, "NEUTRAL": 0}).fillna(0).astype(int)
     d.loc[d.index[-1], "signal_numeric"] = 0
     d["position"] = d["signal_numeric"]
@@ -252,9 +278,70 @@ def run_calibration(df: pd.DataFrame, out_dir: str, horizons: Tuple[int, ...] = 
     return calib
 
 
+def _aggregate_edge(stats_rows: list, strategy: str, scope: str) -> dict:
+    """Roll up per-symbol stats into one edge verdict for a strategy/scope."""
+    traded = [s for s in stats_rows if s.get("trades", 0) > 0 and np.isfinite(s.get("return", np.nan))]
+    n = len(traded)
+    if n == 0:
+        return {"strategy": strategy, "scope": scope, "symbols": 0, "beat_benchmark_pct": np.nan,
+                "positive_pct": np.nan, "median_return": np.nan, "median_benchmark": np.nan,
+                "median_excess": np.nan, "median_sharpe": np.nan, "total_trades": 0}
+    ret = np.array([s["return"] for s in traded])
+    bench = np.array([s["benchmark_return"] for s in traded])
+    sharpe = np.array([s["sharpe"] for s in traded], dtype=float)
+    return {
+        "strategy": strategy,
+        "scope": scope,
+        "symbols": n,
+        "beat_benchmark_pct": float(np.mean(ret > bench)),
+        "positive_pct": float(np.mean(ret > 0)),
+        "median_return": float(np.median(ret)),
+        "median_benchmark": float(np.median(bench)),
+        "median_excess": float(np.median(ret - bench)),
+        "median_sharpe": float(np.nanmedian(sharpe)),
+        "total_trades": int(sum(s["trades"] for s in traded)),
+    }
+
+
+def _oos_slice(df: pd.DataFrame, oos_fraction: float) -> pd.DataFrame:
+    """Take the most recent `oos_fraction` of each symbol's history (unseen tail)."""
+    parts = []
+    for _symbol, g in df.groupby("symbol", sort=False):
+        g = g.sort_values("date")
+        k = max(1, int(round(len(g) * oos_fraction)))
+        parts.append(g.tail(k))
+    return pd.concat(parts, ignore_index=True) if parts else df.iloc[0:0]
+
+
+def compare_strategies(df: pd.DataFrame, cfg: dict, out_dir: str, oos_fraction: float = 0.35, oos_min_bars: int = 60) -> pd.DataFrame:
+    """Backtest every strategy variant and report which carries edge.
+
+    Reports both the full sample and an out-of-sample tail so a variant that
+    only looks good in-sample is exposed. Returns the comparison frame.
+    """
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
+    oos_df = _oos_slice(df, oos_fraction)
+    symbols = sorted(df["symbol"].unique())
+    records = []
+    for strategy in strategies.STRATEGIES:
+        full_stats, oos_stats = [], []
+        for symbol in symbols:
+            scfg = apply_overrides(symbol, cfg)
+            lo, sh = float(scfg.thresholds["long"]), float(scfg.thresholds["short"])
+            _, fs = simulate_symbol(df, scfg, symbol, lo, sh, strategy=strategy)
+            full_stats.append(fs)
+            _, os_ = simulate_symbol(oos_df, scfg, symbol, lo, sh, strategy=strategy, min_bars=oos_min_bars)
+            oos_stats.append(os_)
+        records.append(_aggregate_edge(full_stats, strategy, "full"))
+        records.append(_aggregate_edge(oos_stats, strategy, "out_of_sample"))
+    comparison = pd.DataFrame(records)
+    comparison.to_csv(Path(out_dir) / "strategy_comparison.csv", index=False)
+    return comparison
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=["summary", "sweep", "calibrate", "both"], default="summary")
+    parser.add_argument("--mode", choices=["summary", "sweep", "calibrate", "compare", "both"], default="summary")
     parser.add_argument("--min", type=int, default=15)
     parser.add_argument("--max", type=int, default=50)
     parser.add_argument("--step", type=int, default=5)
@@ -266,10 +353,13 @@ def main() -> None:
     if args.mode in ("summary", "both"):
         run_summary(df, cfg, OUT_DIR)
         run_calibration(df, OUT_DIR)
+        compare_strategies(df, cfg, OUT_DIR)
     if args.mode in ("sweep", "both"):
         run_sweep(df, cfg, OUT_DIR, range(args.min, args.max + 1, args.step))
     if args.mode == "calibrate":
         run_calibration(df, OUT_DIR)
+    if args.mode == "compare":
+        compare_strategies(df, cfg, OUT_DIR)
     print(f"Outputs in {OUT_DIR}")
 
 

@@ -127,3 +127,27 @@ class TestRowToOutput:
         assert "confidence_level" in row
         assert "confidence_score" in row
         assert "volume_s" in row
+
+
+class TestStrategySwitch:
+    def test_mean_reversion_strategy_runs(self, trending_up_ohlcv, default_cfg):
+        cfg = {**default_cfg, "strategy": "mean_reversion"}
+        out = process_df(trending_up_ohlcv, cfg)
+        scored = out[out["composite_score"].notna()]
+        assert not scored.empty
+        assert scored["signal"].isin(["LONG", "SHORT", "NEUTRAL"]).all()
+
+    def test_regime_adaptive_strategy_runs(self, trending_up_ohlcv, default_cfg):
+        cfg = {**default_cfg, "strategy": "regime_adaptive"}
+        out = process_df(trending_up_ohlcv, cfg)
+        scored = out[out["composite_score"].notna()]
+        assert not scored.empty
+        # Strong uptrend under adaptive logic should still surface LONGs.
+        assert (scored["signal"] == "LONG").any()
+
+    def test_default_is_trend(self, trending_up_ohlcv, default_cfg):
+        # No strategy key -> behaves as trend (LONG-heavy in a clean uptrend)
+        out = process_df(trending_up_ohlcv, default_cfg)
+        recent = out.tail(20)
+        scored = recent[recent["composite_score"].notna()]
+        assert (scored["signal"] == "LONG").sum() >= 5
