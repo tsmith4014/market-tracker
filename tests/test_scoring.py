@@ -11,6 +11,7 @@ from scoring import (
     composite_and_subscores,
     compute_confidence,
     compute_market_regime,
+    compute_positioning,
     enforce_guards,
     score_fib,
     score_momentum,
@@ -339,3 +340,34 @@ class TestEnforceGuards:
     def test_missing_adx_blocks_signal(self, default_symbol_cfg):
         latest = {"adx14": None, "atr14": 1.0, "close": 100, "ema50": 95}
         assert enforce_guards(default_symbol_cfg, latest, "LONG") == "NEUTRAL"
+
+
+class TestComputePositioning:
+    def _sig(self, symbol, signal, level):
+        return {"symbol": symbol, "signal": signal, "confidence": {"level": level}}
+
+    def test_risk_on_surfaces_long_tilt(self):
+        signals = [self._sig("NVDA", "LONG", "HIGH"), self._sig("AMD", "LONG", "MEDIUM")]
+        pos = compute_positioning({"regime": "RISK_ON"}, signals)
+        assert pos["stance"] == "core_plus_long_tilt"
+        assert pos["tilt_long_candidates"] == ["NVDA"]  # only HIGH
+        assert pos["is_trade_engine"] is False
+
+    def test_risk_off_is_defensive_with_short_context(self):
+        signals = [self._sig("BTC-USD", "SHORT", "HIGH")]
+        pos = compute_positioning({"regime": "RISK_OFF"}, signals)
+        assert pos["stance"] == "defensive_core"
+        assert pos["tilt_short_candidates"] == ["BTC-USD"]
+        assert pos["tilt_long_candidates"] == []
+
+    def test_mixed_regime_is_core_only(self):
+        signals = [self._sig("NVDA", "LONG", "HIGH")]
+        pos = compute_positioning({"regime": "MIXED"}, signals)
+        assert pos["stance"] == "core_only"
+        assert pos["tilt_long_candidates"] == []
+        assert pos["tilt_short_candidates"] == []
+
+    def test_always_recommends_index_core(self):
+        pos = compute_positioning({"regime": "RISK_ON"}, [])
+        assert "index" in pos["core_recommendation"].lower()
+        assert pos["is_trade_engine"] is False
