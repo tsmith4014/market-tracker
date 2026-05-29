@@ -11,7 +11,6 @@ limit overfitting across the 161-symbol universe.
 """
 from __future__ import annotations
 
-from typing import Optional
 
 import numpy as np
 
@@ -27,7 +26,7 @@ MR_RSI_LOW = 30.0
 MR_RSI_HIGH = 70.0
 
 
-def _f(x) -> Optional[float]:
+def _f(x) -> float | None:
     try:
         v = float(x)
     except (TypeError, ValueError):
@@ -35,7 +34,7 @@ def _f(x) -> Optional[float]:
     return v if np.isfinite(v) else None
 
 
-def trend_signal(score: Optional[float], long_th: float, short_th: float) -> str:
+def trend_signal(score: float | None, long_th: float, short_th: float) -> str:
     """Breakout/trend rule: act in the direction of a strong composite score."""
     if score is None:
         return "NEUTRAL"
@@ -47,11 +46,11 @@ def trend_signal(score: Optional[float], long_th: float, short_th: float) -> str
 
 
 def mean_reversion_signal(
-    close: Optional[float],
-    rsi14: Optional[float],
-    bb_lower20: Optional[float],
-    bb_upper20: Optional[float],
-    ema200: Optional[float],
+    close: float | None,
+    rsi14: float | None,
+    bb_lower20: float | None,
+    bb_upper20: float | None,
+    ema200: float | None,
     rsi_low: float = MR_RSI_LOW,
     rsi_high: float = MR_RSI_HIGH,
 ) -> str:
@@ -76,15 +75,15 @@ def mean_reversion_signal(
 def raw_signal(
     strategy: str,
     *,
-    score: Optional[float],
+    score: float | None,
     long_th: float,
     short_th: float,
-    close: Optional[float],
-    rsi14: Optional[float],
-    bb_lower20: Optional[float],
-    bb_upper20: Optional[float],
-    ema200: Optional[float],
-    adx14: Optional[float],
+    close: float | None,
+    rsi14: float | None,
+    bb_lower20: float | None,
+    bb_upper20: float | None,
+    ema200: float | None,
+    adx14: float | None,
 ) -> str:
     """Dispatch to the configured strategy and return LONG/SHORT/NEUTRAL."""
     if strategy == TREND:
@@ -99,7 +98,7 @@ def raw_signal(
     raise ValueError(f"Unknown strategy: {strategy}")
 
 
-def uses_trend_guards(strategy: str, adx14: Optional[float]) -> bool:
+def uses_trend_guards(strategy: str, adx14: float | None) -> bool:
     """Whether trend-style guards (ADX floor, EMA proximity) apply to a row.
 
     Mean-reversion deliberately fires in low-ADX chop, so the trend ADX floor

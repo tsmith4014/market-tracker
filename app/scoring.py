@@ -5,13 +5,13 @@ confidence levels for downstream consumption by trade co-pilots.
 """
 from __future__ import annotations
 
-from typing import Dict, Optional, Tuple
+from typing import Dict, Tuple
 
 import numpy as np
 import pandas as pd
 
 
-def finite_or_none(x) -> Optional[float]:
+def finite_or_none(x) -> float | None:
     if x is None or pd.isna(x) or not np.isfinite(x):
         return None
     return float(x)

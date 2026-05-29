@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 import pandas as pd
 
@@ -154,7 +154,7 @@ class SourceReliability:
     successes: int = 0
     failures: int = 0
     avg_latency_ms: float = 0.0
-    last_failure_reason: Optional[str] = None
+    last_failure_reason: str | None = None
 
     @property
     def success_rate(self) -> float:

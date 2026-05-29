@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 import json
 import os
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Tuple
 
 DEFAULT_SYMBOLS_FILE = Path(__file__).resolve().with_name("symbols.json")
 
@@ -16,12 +16,12 @@ class SymbolInfo:
     name: str
     category: str
     asset_type: str
-    sector: Optional[str] = None
+    sector: str | None = None
     api_mappings: Dict[str, str] = field(default_factory=dict)
 
 
 class SymbolManager:
-    def __init__(self, symbols_file: Optional[str] = None):
+    def __init__(self, symbols_file: str | None = None):
         configured_path = symbols_file or os.getenv("SYMBOLS_PATH")
         self.symbols_file = Path(configured_path) if configured_path else DEFAULT_SYMBOLS_FILE
         self.symbols_data = self._load_symbols()
@@ -91,10 +91,10 @@ class SymbolManager:
         self._asset_type_index.setdefault(info.asset_type, []).append(info.symbol)
         self._name_index[info.name.lower()] = info.symbol
 
-    def get_symbol_info(self, symbol: str) -> Optional[SymbolInfo]:
+    def get_symbol_info(self, symbol: str) -> SymbolInfo | None:
         return self._symbol_to_info.get(symbol)
 
-    def get_asset_type(self, symbol: str) -> Optional[str]:
+    def get_asset_type(self, symbol: str) -> str | None:
         info = self.get_symbol_info(symbol)
         return info.asset_type if info else None
 
@@ -120,7 +120,7 @@ class SymbolManager:
     def get_all_indices(self) -> List[str]:
         return list(self._asset_type_index.get("index", []))
 
-    def get_api_mapping(self, symbol: str, api: str) -> Optional[str]:
+    def get_api_mapping(self, symbol: str, api: str) -> str | None:
         info = self.get_symbol_info(symbol)
         if not info:
             return None

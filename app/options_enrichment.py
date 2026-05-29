@@ -21,7 +21,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 # Confluence verdicts, strongest agreement first.
 CONFLUENT_BULLISH = "CONFLUENT_BULLISH"
@@ -82,7 +82,7 @@ def index_signals(copilot_payload: dict) -> Dict[str, dict]:
     return out
 
 
-def _confluence(flow_dir: str, tracker_signal: Optional[str]) -> str:
+def _confluence(flow_dir: str, tracker_signal: str | None) -> str:
     if tracker_signal is None:
         return NO_TRACKER_DATA
     if flow_dir == "bullish":
@@ -141,7 +141,7 @@ def enrich(options_feed: dict, copilot_payload: dict) -> dict:
     }
 
 
-def _paper_idea(alert: dict, tracker: Optional[dict], verdict: str, regime_agrees: bool) -> str:
+def _paper_idea(alert: dict, tracker: dict | None, verdict: str, regime_agrees: bool) -> str:
     """A short, clearly-framed PAPER-TRADING note. Not financial advice."""
     sym = alert["symbol"]
     if verdict in (CONFLUENT_BULLISH, CONFLUENT_BEARISH):
@@ -193,7 +193,7 @@ def _normalize_direction(raw: dict) -> str:
     return "unknown"
 
 
-def _num(x) -> Optional[float]:
+def _num(x) -> float | None:
     try:
         return float(x)
     except (TypeError, ValueError):
