@@ -339,9 +339,108 @@ def compare_strategies(df: pd.DataFrame, cfg: dict, out_dir: str, oos_fraction: 
     return comparison
 
 
+# --- Portfolio backtest -----------------------------------------------------
+#
+# Everything above evaluates each symbol in isolation. Real deployment is a
+# *portfolio*: capital is split across many names at once. Cross-sectional
+# construction (rank the universe, hold the best, short the worst) is where the
+# most robust edge tends to live, and a market-neutral book can earn a positive
+# Sharpe regardless of market direction. This compares deployable portfolios
+# against an equal-weight buy-and-hold benchmark, full-sample and out-of-sample.
+
+HIGH_CONF_THRESHOLD = 0.65
+
+
+def _portfolio_metrics(port: pd.Series) -> dict:
+    clean = port.dropna()
+    if len(clean) < 2:
+        return {"ann_return": np.nan, "ann_vol": np.nan, "sharpe": np.nan, "max_drawdown": np.nan, "total_return": np.nan}
+    ann_return = float(clean.mean() * 252)
+    ann_vol = float(clean.std() * np.sqrt(252))
+    sharpe = float(ann_return / ann_vol) if ann_vol > 1e-9 else np.nan
+    equity = (1 + clean).cumprod()
+    return {
+        "ann_return": ann_return,
+        "ann_vol": ann_vol,
+        "sharpe": sharpe,
+        "max_drawdown": max_drawdown(equity),
+        "total_return": float(equity.iloc[-1] - 1.0),
+    }
+
+
+def _gross_normalize(raw: pd.DataFrame) -> pd.DataFrame:
+    gross = raw.abs().sum(axis=1)
+    return raw.div(gross.where(gross > 0, np.nan), axis=0).fillna(0.0)
+
+
+def _conviction_ls_weights(signed: pd.DataFrame, avail: pd.DataFrame, top_quantile: float) -> pd.DataFrame:
+    """Market-neutral book: long the highest signed conviction, short the lowest."""
+    rows = []
+    for dt in signed.index:
+        row = signed.loc[dt].where(avail.loc[dt], 0.0)
+        row = row[row != 0]
+        w = pd.Series(0.0, index=signed.columns)
+        if not row.empty:
+            k = max(1, int(round(top_quantile * int(avail.loc[dt].sum()))))
+            longs = row[row > 0].nlargest(k).index
+            shorts = row[row < 0].nsmallest(k).index
+            if len(longs):
+                w[longs] = 0.5 / len(longs)
+            if len(shorts):
+                w[shorts] = -0.5 / len(shorts)
+        rows.append(w)
+    return pd.DataFrame(rows, index=signed.index)
+
+
+def portfolio_backtest(df: pd.DataFrame, cfg: dict, out_dir: str, top_quantile: float = 0.1, oos_fraction: float = 0.35) -> pd.DataFrame:
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
+    d = df.copy()
+    d["signal_dir"] = d["signal"].map({"LONG": 1, "SHORT": -1, "NEUTRAL": 0}).fillna(0)
+    d["conf"] = pd.to_numeric(d.get("confidence_score"), errors="coerce").fillna(0.0)
+
+    close = d.pivot_table(index="date", columns="symbol", values="close", aggfunc="last").sort_index()
+    if close.shape[0] < 30 or close.shape[1] < 3:
+        empty = pd.DataFrame(columns=["strategy", "scope", "ann_return", "ann_vol", "sharpe", "max_drawdown", "total_return", "avg_gross_exposure"])
+        empty.to_csv(Path(out_dir) / "portfolio_comparison.csv", index=False)
+        return empty
+
+    sig = d.pivot_table(index="date", columns="symbol", values="signal_dir", aggfunc="last").reindex(index=close.index, columns=close.columns).fillna(0.0)
+    conf = d.pivot_table(index="date", columns="symbol", values="conf", aggfunc="last").reindex(index=close.index, columns=close.columns).fillna(0.0)
+    avail = close.notna()
+    fwd = close.pct_change().shift(-1)  # return realized from t to t+1 (no look-ahead)
+
+    fees = cfg.get("defaults", {}).get("fees", {})
+    cost = (float(fees.get("bps_per_side", 1.0)) + float(fees.get("slippage_bps_per_side", 1.0))) / 10000.0
+
+    # Weight books (decided at close t).
+    ew_long = avail.div(avail.sum(axis=1).where(lambda s: s > 0, np.nan), axis=0).fillna(0.0)
+    books = {
+        "equal_weight_buyhold": ew_long,
+        "all_signals_ew": _gross_normalize(sig),
+        "high_conf_ew": _gross_normalize(sig.where(conf >= HIGH_CONF_THRESHOLD, 0.0)),
+        "conviction_long_short": _conviction_ls_weights(sig * conf, avail, top_quantile),
+    }
+
+    dates = close.index
+    oos_start = dates[int(len(dates) * (1 - oos_fraction))]
+    records = []
+    for name, W in books.items():
+        W = W.reindex(index=close.index, columns=close.columns).fillna(0.0)
+        gross_ret = (W * fwd).sum(axis=1)
+        turnover = (W - W.shift(1).fillna(0.0)).abs().sum(axis=1)
+        port = (gross_ret - turnover * cost).replace([np.inf, -np.inf], np.nan)
+        gross_exposure = float(W.abs().sum(axis=1).mean())
+        for scope, series in (("full", port), ("out_of_sample", port.loc[oos_start:])):
+            records.append({"strategy": name, "scope": scope, **_portfolio_metrics(series), "avg_gross_exposure": round(gross_exposure, 3)})
+
+    comparison = pd.DataFrame(records)
+    comparison.to_csv(Path(out_dir) / "portfolio_comparison.csv", index=False)
+    return comparison
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=["summary", "sweep", "calibrate", "compare", "both"], default="summary")
+    parser.add_argument("--mode", choices=["summary", "sweep", "calibrate", "compare", "portfolio", "both"], default="summary")
     parser.add_argument("--min", type=int, default=15)
     parser.add_argument("--max", type=int, default=50)
     parser.add_argument("--step", type=int, default=5)
@@ -354,12 +453,15 @@ def main() -> None:
         run_summary(df, cfg, OUT_DIR)
         run_calibration(df, OUT_DIR)
         compare_strategies(df, cfg, OUT_DIR)
+        portfolio_backtest(df, cfg, OUT_DIR)
     if args.mode in ("sweep", "both"):
         run_sweep(df, cfg, OUT_DIR, range(args.min, args.max + 1, args.step))
     if args.mode == "calibrate":
         run_calibration(df, OUT_DIR)
     if args.mode == "compare":
         compare_strategies(df, cfg, OUT_DIR)
+    if args.mode == "portfolio":
+        portfolio_backtest(df, cfg, OUT_DIR)
     print(f"Outputs in {OUT_DIR}")
 
 
