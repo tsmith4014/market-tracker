@@ -1,11 +1,11 @@
 {
   "version": "2.0",
-  "generated_at": "2026-05-29T04:27:26+00:00",
+  "generated_at": "2026-05-29T05:16:07+00:00",
   "summary": {
     "total_symbols": 161,
-    "long_signals": 40,
+    "long_signals": 41,
     "short_signals": 30,
-    "neutral_signals": 91,
+    "neutral_signals": 90,
     "high_confidence_longs": [
       "IBM",
       "ABBV",
@@ -78,25 +78,25 @@
     {
       "symbol": "BTC-USD",
       "signal": "SHORT",
-      "composite_score": -49.33,
+      "composite_score": -47.33,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.53
+        "score": 0.469
       },
       "price": {
-        "close": 73229.2,
+        "close": 73502.2,
         "change_pct_1d": -0.0,
-        "change_pct_10d": -4.6,
-        "range_position": 0.34
+        "change_pct_10d": -4.24,
+        "range_position": 0.348
       },
       "indicators": {
-        "rsi14": 23.58,
-        "macd_hist": -630.2094,
+        "rsi14": 24.18,
+        "macd_hist": -612.7872,
         "adx14": 40.39,
-        "atr_pct": 2.36,
-        "bb_width": 0.1298,
-        "rvol": 0.07,
-        "stoch_rsi": 11.48,
+        "atr_pct": 2.35,
+        "bb_width": 0.1285,
+        "rvol": 0.09,
+        "stoch_rsi": 13.64,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -106,23 +106,23 @@
         "strength": 0.5,
         "volatility": 0.25,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 69769.6429,
-        "atr_stop_short": 76688.7571,
-        "atr_target_1r": 76688.7571,
-        "atr_target_2r": 80148.3143,
+        "atr_stop_long": 70042.6429,
+        "atr_stop_short": 76961.7571,
+        "atr_target_1r": 76961.7571,
+        "atr_target_2r": 80421.3143,
         "pivot": 73484.2667,
         "r1": 74498.5333,
         "s1": 72501.4333
       },
       "moving_averages": {
-        "ema20": 76598.8896,
-        "ema50": 76379.7034,
-        "ema200": 81206.2219,
-        "vwap20": 77728.9021
+        "ema20": 76624.8896,
+        "ema50": 76390.4093,
+        "ema200": 81208.9383,
+        "vwap20": 77725.9265
       },
       "meta": {
         "data_source": "Kraken API",
@@ -136,51 +136,51 @@
     {
       "symbol": "ETH-USD",
       "signal": "SHORT",
-      "composite_score": -60.67,
+      "composite_score": -55.83,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.558
+        "score": 0.478
       },
       "price": {
-        "close": 1999.57,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -5.23,
-        "range_position": 0.15
+        "close": 2009.46,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -4.76,
+        "range_position": 0.155
       },
       "indicators": {
-        "rsi14": 21.92,
-        "macd_hist": -14.1631,
+        "rsi14": 22.82,
+        "macd_hist": -13.5319,
         "adx14": 76.71,
-        "atr_pct": 4.2,
-        "bb_width": 0.1989,
-        "rvol": 0.15,
-        "stoch_rsi": 16.93,
+        "atr_pct": 4.18,
+        "bb_width": 0.1975,
+        "rvol": 0.16,
+        "stoch_rsi": 23.03,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -5.0,
-        "momentum": -2.75,
+        "momentum": -2.5,
         "strength": 0.5,
         "volatility": 0.25,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 1831.5829,
-        "atr_stop_short": 2167.5571,
-        "atr_target_1r": 2167.5571,
-        "atr_target_2r": 2335.5443,
+        "atr_stop_long": 1841.4729,
+        "atr_stop_short": 2177.4471,
+        "atr_target_1r": 2177.4471,
+        "atr_target_2r": 2345.4343,
         "pivot": 1999.57,
         "r1": 2034.8,
         "s1": 1971.73
       },
       "moving_averages": {
-        "ema20": 2129.1416,
-        "ema50": 2192.1374,
-        "ema200": 2509.5342,
-        "vwap20": 2153.377
+        "ema20": 2130.0835,
+        "ema50": 2192.5252,
+        "ema200": 2509.6327,
+        "vwap20": 2153.3369
       },
       "meta": {
         "data_source": "Kraken API",
@@ -194,25 +194,25 @@
     {
       "symbol": "SOL-USD",
       "signal": "SHORT",
-      "composite_score": -40.33,
+      "composite_score": -38.33,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.502
+        "score": 0.442
       },
       "price": {
-        "close": 81.51,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -3.23,
-        "range_position": 0.174
+        "close": 81.97,
+        "change_pct_1d": -0.0,
+        "change_pct_10d": -2.68,
+        "range_position": 0.179
       },
       "indicators": {
-        "rsi14": 27.04,
-        "macd_hist": -0.7115,
+        "rsi14": 27.8,
+        "macd_hist": -0.6822,
         "adx14": 38.55,
-        "atr_pct": 3.76,
-        "bb_width": 0.2148,
-        "rvol": 0.2,
-        "stoch_rsi": 11.22,
+        "atr_pct": 3.74,
+        "bb_width": 0.2134,
+        "rvol": 0.25,
+        "stoch_rsi": 13.73,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -222,23 +222,23 @@
         "strength": 0.5,
         "volatility": 0.25,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 75.3729,
-        "atr_stop_short": 87.6471,
-        "atr_target_1r": 87.6471,
-        "atr_target_2r": 93.7843,
+        "atr_stop_long": 75.8329,
+        "atr_stop_short": 88.1071,
+        "atr_target_1r": 88.1071,
+        "atr_target_2r": 94.2443,
         "pivot": 81.5733,
         "r1": 83.3167,
         "s1": 80.2767
       },
       "moving_averages": {
-        "ema20": 85.408,
-        "ema50": 86.5616,
-        "ema200": 107.4141,
-        "vwap20": 88.8577
+        "ema20": 85.4518,
+        "ema50": 86.5796,
+        "ema200": 107.4187,
+        "vwap20": 88.8411
       },
       "meta": {
         "data_source": "Kraken API",
@@ -258,19 +258,19 @@
         "score": 0.399
       },
       "price": {
-        "close": 1.3054,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -4.04,
-        "range_position": 0.149
+        "close": 1.3109,
+        "change_pct_1d": -0.0,
+        "change_pct_10d": -3.64,
+        "range_position": 0.154
       },
       "indicators": {
-        "rsi14": 20.37,
-        "macd_hist": -0.0092,
+        "rsi14": 20.89,
+        "macd_hist": -0.0089,
         "adx14": 33.36,
-        "atr_pct": 3.25,
-        "bb_width": 0.1657,
-        "rvol": 0.08,
-        "stoch_rsi": 9.51,
+        "atr_pct": 3.24,
+        "bb_width": 0.1646,
+        "rvol": 0.09,
+        "stoch_rsi": 10.98,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -284,18 +284,18 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 1.2205,
-        "atr_stop_short": 1.3904,
-        "atr_target_1r": 1.3904,
-        "atr_target_2r": 1.4753,
+        "atr_stop_long": 1.2259,
+        "atr_stop_short": 1.3958,
+        "atr_target_1r": 1.3958,
+        "atr_target_2r": 1.4807,
         "pivot": 1.3052,
         "r1": 1.3445,
         "s1": 1.2742
       },
       "moving_averages": {
-        "ema20": 1.3619,
-        "ema50": 1.3881,
-        "ema200": 1.6609,
+        "ema20": 1.3624,
+        "ema50": 1.3883,
+        "ema200": 1.661,
         "vwap20": 1.4031
       },
       "meta": {
@@ -310,25 +310,25 @@
     {
       "symbol": "ADA-USD",
       "signal": "SHORT",
-      "composite_score": -40.33,
+      "composite_score": -38.33,
       "confidence": {
         "level": "LOW",
-        "score": 0.259
+        "score": 0.198
       },
       "price": {
-        "close": 0.233214,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -5.99,
-        "range_position": 0.046
+        "close": 0.234721,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -5.38,
+        "range_position": 0.052
       },
       "indicators": {
-        "rsi14": 16.71,
-        "macd_hist": -0.0024,
+        "rsi14": 17.42,
+        "macd_hist": -0.0023,
         "adx14": 44.23,
-        "atr_pct": 3.73,
-        "bb_width": 0.2304,
+        "atr_pct": 3.71,
+        "bb_width": 0.2287,
         "rvol": 0.07,
-        "stoch_rsi": 6.32,
+        "stoch_rsi": 8.16,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -338,23 +338,23 @@
         "strength": 0.5,
         "volatility": 0.25,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.215816,
-        "atr_stop_short": 0.250612,
-        "atr_target_1r": 0.250612,
-        "atr_target_2r": 0.268011,
+        "atr_stop_long": 0.217323,
+        "atr_stop_short": 0.252119,
+        "atr_target_1r": 0.252119,
+        "atr_target_2r": 0.269518,
         "pivot": 0.233448,
         "r1": 0.239291,
         "s1": 0.228816
       },
       "moving_averages": {
-        "ema20": 0.247197,
-        "ema50": 0.253306,
-        "ema200": 0.345177,
-        "vwap20": 0.255803
+        "ema20": 0.24734,
+        "ema50": 0.253365,
+        "ema200": 0.345192,
+        "vwap20": 0.2558
       },
       "meta": {
         "data_source": "Kraken API",
@@ -368,25 +368,25 @@
     {
       "symbol": "LINK-USD",
       "signal": "SHORT",
-      "composite_score": -49.33,
+      "composite_score": -47.33,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.51
+        "score": 0.449
       },
       "price": {
-        "close": 8.929,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -5.43,
-        "range_position": 0.223
+        "close": 8.9846,
+        "change_pct_1d": -0.0,
+        "change_pct_10d": -4.84,
+        "range_position": 0.23
       },
       "indicators": {
-        "rsi14": 24.49,
-        "macd_hist": -0.1112,
+        "rsi14": 25.11,
+        "macd_hist": -0.1076,
         "adx14": 25.99,
-        "atr_pct": 4.49,
-        "bb_width": 0.2117,
-        "rvol": 0.05,
-        "stoch_rsi": 8.98,
+        "atr_pct": 4.46,
+        "bb_width": 0.2099,
+        "rvol": 0.06,
+        "stoch_rsi": 10.69,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -396,23 +396,23 @@
         "strength": 0.5,
         "volatility": 0.25,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 8.1277,
-        "atr_stop_short": 9.7304,
-        "atr_target_1r": 9.7304,
-        "atr_target_2r": 10.5317,
+        "atr_stop_long": 8.1832,
+        "atr_stop_short": 9.7859,
+        "atr_target_1r": 9.7859,
+        "atr_target_2r": 10.5872,
         "pivot": 8.9631,
         "r1": 9.1686,
         "s1": 8.7848
       },
       "moving_averages": {
-        "ema20": 9.4857,
-        "ema50": 9.5051,
-        "ema200": 11.1499,
-        "vwap20": 9.8622
+        "ema20": 9.491,
+        "ema50": 9.5072,
+        "ema200": 11.1505,
+        "vwap20": 9.8619
       },
       "meta": {
         "data_source": "Kraken API",
@@ -426,25 +426,25 @@
     {
       "symbol": "UNI-USD",
       "signal": "SHORT",
-      "composite_score": -44.33,
+      "composite_score": -42.33,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.532
+        "score": 0.47
       },
       "price": {
-        "close": 3.02,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -12.69,
-        "range_position": 0.1
+        "close": 3.051,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -11.8,
+        "range_position": 0.118
       },
       "indicators": {
-        "rsi14": 24.89,
-        "macd_hist": -0.0693,
+        "rsi14": 25.62,
+        "macd_hist": -0.0673,
         "adx14": 45.69,
-        "atr_pct": 6.19,
-        "bb_width": 0.2989,
-        "rvol": 0.16,
-        "stoch_rsi": 5.31,
+        "atr_pct": 6.13,
+        "bb_width": 0.2955,
+        "rvol": 0.17,
+        "stoch_rsi": 7.36,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -454,23 +454,23 @@
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 2.6459,
-        "atr_stop_short": 3.3941,
-        "atr_target_1r": 3.3941,
-        "atr_target_2r": 3.7683,
+        "atr_stop_long": 2.6769,
+        "atr_stop_short": 3.4251,
+        "atr_target_1r": 3.4251,
+        "atr_target_2r": 3.7993,
         "pivot": 3.042,
         "r1": 3.116,
         "s1": 2.976
       },
       "moving_averages": {
-        "ema20": 3.3603,
-        "ema50": 3.4272,
-        "ema200": 4.4521,
-        "vwap20": 3.5008
+        "ema20": 3.3632,
+        "ema50": 3.4284,
+        "ema200": 4.4524,
+        "vwap20": 3.5007
       },
       "meta": {
         "data_source": "Kraken API",
@@ -484,25 +484,25 @@
     {
       "symbol": "AAVE-USD",
       "signal": "SHORT",
-      "composite_score": -51.33,
+      "composite_score": -49.33,
       "confidence": {
         "level": "LOW",
-        "score": 0.322
+        "score": 0.26
       },
       "price": {
-        "close": 80.15,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -8.24,
-        "range_position": 0.017
+        "close": 81.04,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -7.22,
+        "range_position": 0.024
       },
       "indicators": {
-        "rsi14": 12.89,
-        "macd_hist": -0.7869,
+        "rsi14": 14.72,
+        "macd_hist": -0.7301,
         "adx14": 39.98,
-        "atr_pct": 4.62,
-        "bb_width": 0.2816,
-        "rvol": 0.31,
-        "stoch_rsi": 8.08,
+        "atr_pct": 4.57,
+        "bb_width": 0.2784,
+        "rvol": 0.32,
+        "stoch_rsi": 13.28,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -512,23 +512,23 @@
         "strength": 0.5,
         "volatility": 0.0,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 72.7386,
-        "atr_stop_short": 87.5614,
-        "atr_target_1r": 87.5614,
-        "atr_target_2r": 94.9729,
+        "atr_stop_long": 73.6286,
+        "atr_stop_short": 88.4514,
+        "atr_target_1r": 88.4514,
+        "atr_target_2r": 95.8629,
         "pivot": 80.72,
         "r1": 83.44,
         "s1": 78.06
       },
       "moving_averages": {
-        "ema20": 87.7663,
-        "ema50": 93.3878,
-        "ema200": 133.0665,
-        "vwap20": 92.4319
+        "ema20": 87.8511,
+        "ema50": 93.4227,
+        "ema200": 133.0754,
+        "vwap20": 92.4326
       },
       "meta": {
         "data_source": "Kraken API",
@@ -542,51 +542,51 @@
     {
       "symbol": "AVAX-USD",
       "signal": "SHORT",
-      "composite_score": -46.0,
+      "composite_score": -42.33,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.491
+        "score": 0.42
       },
       "price": {
-        "close": 8.84,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -2.75,
-        "range_position": 0.175
+        "close": 8.91,
+        "change_pct_1d": -0.0,
+        "change_pct_10d": -1.98,
+        "range_position": 0.184
       },
       "indicators": {
-        "rsi14": 33.8,
-        "macd_hist": -0.0635,
+        "rsi14": 34.93,
+        "macd_hist": -0.059,
         "adx14": 35.67,
-        "atr_pct": 4.08,
-        "bb_width": 0.1643,
-        "rvol": 0.09,
-        "stoch_rsi": 16.9,
+        "atr_pct": 4.05,
+        "bb_width": 0.1621,
+        "rvol": 0.11,
+        "stoch_rsi": 22.0,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.25,
+        "momentum": -2.0,
         "strength": 0.5,
         "volatility": 0.25,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 8.1186,
-        "atr_stop_short": 9.5614,
-        "atr_target_1r": 9.5614,
-        "atr_target_2r": 10.2829,
+        "atr_stop_long": 8.1886,
+        "atr_stop_short": 9.6314,
+        "atr_target_1r": 9.6314,
+        "atr_target_2r": 10.3529,
         "pivot": 8.8933,
         "r1": 9.0867,
         "s1": 8.7267
       },
       "moving_averages": {
-        "ema20": 9.2539,
-        "ema50": 9.3611,
-        "ema200": 11.9282,
-        "vwap20": 9.5471
+        "ema20": 9.2605,
+        "ema50": 9.3639,
+        "ema200": 11.9289,
+        "vwap20": 9.5465
       },
       "meta": {
         "data_source": "Kraken API",
@@ -606,19 +606,19 @@
         "score": 0.249
       },
       "price": {
-        "close": 51.37,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -5.66,
-        "range_position": 0.149
+        "close": 51.62,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -5.2,
+        "range_position": 0.154
       },
       "indicators": {
-        "rsi14": 14.37,
-        "macd_hist": -0.3918,
+        "rsi14": 14.8,
+        "macd_hist": -0.3759,
         "adx14": 50.16,
-        "atr_pct": 3.08,
-        "bb_width": 0.1961,
+        "atr_pct": 3.07,
+        "bb_width": 0.1949,
         "rvol": 0.12,
-        "stoch_rsi": 1.99,
+        "stoch_rsi": 3.09,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -632,19 +632,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 48.2014,
-        "atr_stop_short": 54.5386,
-        "atr_target_1r": 54.5386,
-        "atr_target_2r": 57.7071,
+        "atr_stop_long": 48.4514,
+        "atr_stop_short": 54.7886,
+        "atr_target_1r": 54.7886,
+        "atr_target_2r": 57.9571,
         "pivot": 51.3233,
         "r1": 52.3567,
         "s1": 50.5867
       },
       "moving_averages": {
-        "ema20": 53.8229,
-        "ema50": 54.9605,
-        "ema200": 65.424,
-        "vwap20": 55.7424
+        "ema20": 53.8467,
+        "ema50": 54.9703,
+        "ema200": 65.4265,
+        "vwap20": 55.7414
       },
       "meta": {
         "data_source": "Kraken API",
@@ -664,19 +664,19 @@
         "score": 0.46
       },
       "price": {
-        "close": 302.3,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -18.34,
-        "range_position": 0.024
+        "close": 305.38,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -17.5,
+        "range_position": 0.033
       },
       "indicators": {
-        "rsi14": 10.99,
-        "macd_hist": -7.7229,
+        "rsi14": 12.68,
+        "macd_hist": -7.5263,
         "adx14": 66.64,
-        "atr_pct": 6.76,
-        "bb_width": 0.5036,
-        "rvol": 0.17,
-        "stoch_rsi": 10.57,
+        "atr_pct": 6.75,
+        "bb_width": 0.5006,
+        "rvol": 0.19,
+        "stoch_rsi": 16.65,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -690,19 +690,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 261.4443,
-        "atr_stop_short": 343.1557,
-        "atr_target_1r": 343.1557,
-        "atr_target_2r": 384.0114,
+        "atr_stop_long": 264.1543,
+        "atr_stop_short": 346.6057,
+        "atr_target_1r": 346.6057,
+        "atr_target_2r": 387.8314,
         "pivot": 309.5,
         "r1": 325.83,
         "s1": 283.35
       },
       "moving_averages": {
-        "ema20": 370.6944,
-        "ema50": 410.2601,
-        "ema200": 475.6507,
-        "vwap20": 367.9097
+        "ema20": 370.9877,
+        "ema50": 410.3809,
+        "ema200": 475.6813,
+        "vwap20": 367.8784
       },
       "meta": {
         "data_source": "Kraken API",
@@ -722,18 +722,18 @@
         "score": 0.636
       },
       "price": {
-        "close": 0.20178,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": 40.73,
-        "range_position": 0.81
+        "close": 0.202767,
+        "change_pct_1d": -0.0,
+        "change_pct_10d": 41.42,
+        "range_position": 0.822
       },
       "indicators": {
-        "rsi14": 77.79,
-        "macd_hist": 0.006,
+        "rsi14": 78.71,
+        "macd_hist": 0.0061,
         "adx14": 27.19,
-        "atr_pct": 5.55,
-        "bb_width": 0.4378,
-        "rvol": 0.54,
+        "atr_pct": 5.52,
+        "bb_width": 0.441,
+        "rvol": 0.61,
         "stoch_rsi": 100.0,
         "mom_divergence": 0.0,
         "weekly_trend": "BULLISH"
@@ -748,19 +748,19 @@
         "volume": 0.25
       },
       "levels": {
-        "atr_stop_long": 0.179377,
-        "atr_stop_short": 0.224183,
-        "atr_target_1r": 0.224183,
-        "atr_target_2r": 0.246586,
+        "atr_stop_long": 0.180364,
+        "atr_stop_short": 0.22517,
+        "atr_target_1r": 0.22517,
+        "atr_target_2r": 0.247573,
         "pivot": 0.194873,
         "r1": 0.225844,
         "s1": 0.172518
       },
       "moving_averages": {
-        "ema20": 0.162196,
-        "ema50": 0.161656,
-        "ema200": 0.196655,
-        "vwap20": 0.164508
+        "ema20": 0.16229,
+        "ema50": 0.161694,
+        "ema200": 0.196665,
+        "vwap20": 0.164653
       },
       "meta": {
         "data_source": "Kraken API",
@@ -774,25 +774,25 @@
     {
       "symbol": "DOT-USD",
       "signal": "NEUTRAL",
-      "composite_score": -50.25,
+      "composite_score": -48.25,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 1.201,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -1.9,
-        "range_position": 0.149
+        "close": 1.2093,
+        "change_pct_1d": -0.0,
+        "change_pct_10d": -1.22,
+        "range_position": 0.162
       },
       "indicators": {
-        "rsi14": 33.81,
-        "macd_hist": -0.0086,
+        "rsi14": 34.62,
+        "macd_hist": -0.0081,
         "adx14": 19.18,
-        "atr_pct": 5.32,
-        "bb_width": 0.1665,
-        "rvol": 0.05,
-        "stoch_rsi": 13.14,
+        "atr_pct": 5.29,
+        "bb_width": 0.1645,
+        "rvol": 0.06,
+        "stoch_rsi": 16.54,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -802,22 +802,22 @@
         "strength": -1.0,
         "volatility": 0.0,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 1.0731,
-        "atr_stop_short": 1.3289,
-        "atr_target_1r": 1.3289,
-        "atr_target_2r": 1.4568,
+        "atr_stop_long": 1.0814,
+        "atr_stop_short": 1.3372,
+        "atr_target_1r": 1.3372,
+        "atr_target_2r": 1.4651,
         "pivot": 1.2065,
         "r1": 1.2388,
         "s1": 1.1801
       },
       "moving_averages": {
-        "ema20": 1.2584,
-        "ema50": 1.286,
-        "ema200": 1.8004,
+        "ema20": 1.2592,
+        "ema50": 1.2863,
+        "ema200": 1.8005,
         "vwap20": 1.2991
       },
       "meta": {
@@ -832,30 +832,30 @@
     {
       "symbol": "ATOM-USD",
       "signal": "NEUTRAL",
-      "composite_score": 8.58,
+      "composite_score": 26.58,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 2.0503,
+        "close": 2.0539,
         "change_pct_1d": -0.0,
-        "change_pct_10d": 0.49,
-        "range_position": 0.464
+        "change_pct_10d": 0.66,
+        "range_position": 0.468
       },
       "indicators": {
-        "rsi14": 58.1,
-        "macd_hist": -0.004,
+        "rsi14": 58.38,
+        "macd_hist": -0.0037,
         "adx14": 36.83,
-        "atr_pct": 5.89,
-        "bb_width": 0.1147,
-        "rvol": 0.17,
-        "stoch_rsi": 53.92,
+        "atr_pct": 5.88,
+        "bb_width": 0.1146,
+        "rvol": 0.18,
+        "stoch_rsi": 55.95,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
-        "trend": -0.5,
+        "trend": 1.5,
         "momentum": 0.5,
         "strength": 1.5,
         "volatility": 0.0,
@@ -864,17 +864,17 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 1.8086,
-        "atr_stop_short": 2.292,
-        "atr_target_1r": 2.292,
-        "atr_target_2r": 2.5337,
+        "atr_stop_long": 1.8122,
+        "atr_stop_short": 2.2956,
+        "atr_target_1r": 2.2956,
+        "atr_target_2r": 2.5373,
         "pivot": 2.0663,
         "r1": 2.1282,
         "s1": 1.9975
       },
       "moving_averages": {
-        "ema20": 2.0518,
-        "ema50": 1.98,
+        "ema20": 2.0521,
+        "ema50": 1.9802,
         "ema200": 2.2946,
         "vwap20": 2.0819
       },
@@ -896,19 +896,19 @@
         "score": 0.493
       },
       "price": {
-        "close": 0.1912,
+        "close": 0.1925,
         "change_pct_1d": -0.01,
-        "change_pct_10d": -7.23,
-        "range_position": 0.102
+        "change_pct_10d": -6.6,
+        "range_position": 0.108
       },
       "indicators": {
-        "rsi14": 30.87,
-        "macd_hist": -0.0027,
+        "rsi14": 31.44,
+        "macd_hist": -0.0026,
         "adx14": 44.35,
-        "atr_pct": 4.81,
-        "bb_width": 0.3367,
+        "atr_pct": 4.78,
+        "bb_width": 0.335,
         "rvol": 0.23,
-        "stoch_rsi": 37.21,
+        "stoch_rsi": 39.35,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -922,19 +922,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.172814,
-        "atr_stop_short": 0.209586,
-        "atr_target_1r": 0.209586,
-        "atr_target_2r": 0.227971,
+        "atr_stop_long": 0.174114,
+        "atr_stop_short": 0.210886,
+        "atr_target_1r": 0.210886,
+        "atr_target_2r": 0.229271,
         "pivot": 0.1947,
         "r1": 0.1999,
         "s1": 0.1889
       },
       "moving_averages": {
-        "ema20": 0.208457,
-        "ema50": 0.212918,
-        "ema200": 0.297417,
-        "vwap20": 0.219812
+        "ema20": 0.208581,
+        "ema50": 0.212969,
+        "ema200": 0.29743,
+        "vwap20": 0.219813
       },
       "meta": {
         "data_source": "Kraken API",
@@ -954,19 +954,19 @@
         "score": 0.532
       },
       "price": {
-        "close": 0.2094,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -9.35,
-        "range_position": 0.03
+        "close": 0.2111,
+        "change_pct_1d": -0.0,
+        "change_pct_10d": -8.61,
+        "range_position": 0.037
       },
       "indicators": {
-        "rsi14": 24.84,
-        "macd_hist": -0.0041,
+        "rsi14": 25.31,
+        "macd_hist": -0.004,
         "adx14": 37.91,
-        "atr_pct": 5.99,
-        "bb_width": 0.3692,
+        "atr_pct": 5.94,
+        "bb_width": 0.3671,
         "rvol": 0.04,
-        "stoch_rsi": 13.8,
+        "stoch_rsi": 15.34,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -980,19 +980,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.184329,
-        "atr_stop_short": 0.234471,
-        "atr_target_1r": 0.234471,
-        "atr_target_2r": 0.259543,
+        "atr_stop_long": 0.186029,
+        "atr_stop_short": 0.236171,
+        "atr_target_1r": 0.236171,
+        "atr_target_2r": 0.261243,
         "pivot": 0.2116,
         "r1": 0.2156,
         "s1": 0.208
       },
       "moving_averages": {
-        "ema20": 0.230483,
-        "ema50": 0.235237,
-        "ema200": 0.320246,
-        "vwap20": 0.253993
+        "ema20": 0.230645,
+        "ema50": 0.235303,
+        "ema200": 0.320263,
+        "vwap20": 0.253991
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1012,19 +1012,19 @@
         "score": 0.0
       },
       "price": {
-        "close": 17.74,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": -22.23,
-        "range_position": 0.198
+        "close": 17.86,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": -21.7,
+        "range_position": 0.206
       },
       "indicators": {
-        "rsi14": 24.38,
-        "macd_hist": -0.4735,
+        "rsi14": 25.44,
+        "macd_hist": -0.4658,
         "adx14": 23.31,
-        "atr_pct": 6.84,
-        "bb_width": 0.3787,
+        "atr_pct": 6.81,
+        "bb_width": 0.3766,
         "rvol": 0.03,
-        "stoch_rsi": 9.68,
+        "stoch_rsi": 13.74,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1038,19 +1038,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 15.3143,
-        "atr_stop_short": 20.1657,
-        "atr_target_1r": 20.1657,
-        "atr_target_2r": 22.5914,
+        "atr_stop_long": 15.4257,
+        "atr_stop_short": 20.2943,
+        "atr_target_1r": 20.2943,
+        "atr_target_2r": 22.7286,
         "pivot": 17.5767,
         "r1": 18.2633,
         "s1": 16.9733
       },
       "moving_averages": {
-        "ema20": 20.5017,
-        "ema50": 21.1936,
-        "ema200": 24.7395,
-        "vwap20": 21.3845
+        "ema20": 20.5131,
+        "ema50": 21.1983,
+        "ema200": 24.7407,
+        "vwap20": 21.3834
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1070,19 +1070,19 @@
         "score": 0.178
       },
       "price": {
-        "close": 0.06481,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -6.09,
-        "range_position": 0.393
+        "close": 0.06498,
+        "change_pct_1d": -0.0,
+        "change_pct_10d": -5.84,
+        "range_position": 0.397
       },
       "indicators": {
-        "rsi14": 18.91,
+        "rsi14": 19.23,
         "macd_hist": -0.0004,
         "adx14": 55.82,
         "atr_pct": 3.22,
-        "bb_width": 0.1898,
-        "rvol": 0.1,
-        "stoch_rsi": 56.96,
+        "bb_width": 0.1889,
+        "rvol": 0.11,
+        "stoch_rsi": 60.6,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1096,18 +1096,18 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.06063,
-        "atr_stop_short": 0.06899,
-        "atr_target_1r": 0.06899,
-        "atr_target_2r": 0.07317,
+        "atr_stop_long": 0.0608,
+        "atr_stop_short": 0.06916,
+        "atr_target_1r": 0.06916,
+        "atr_target_2r": 0.07334,
         "pivot": 0.065173,
         "r1": 0.066507,
         "s1": 0.063897
       },
       "moving_averages": {
-        "ema20": 0.070549,
-        "ema50": 0.073578,
-        "ema200": 0.070394,
+        "ema20": 0.070565,
+        "ema50": 0.073584,
+        "ema200": 0.070396,
         "vwap20": 0.070324
       },
       "meta": {
@@ -1128,19 +1128,19 @@
         "score": 0.512
       },
       "price": {
-        "close": 2259.0,
+        "close": 2260.0,
         "change_pct_1d": -0.0,
-        "change_pct_10d": -8.39,
-        "range_position": 0.001
+        "change_pct_10d": -8.35,
+        "range_position": 0.002
       },
       "indicators": {
-        "rsi14": 25.92,
-        "macd_hist": -26.6005,
+        "rsi14": 25.95,
+        "macd_hist": -26.5366,
         "adx14": 55.66,
         "atr_pct": 3.99,
-        "bb_width": 0.2545,
-        "rvol": 0.43,
-        "stoch_rsi": 23.86,
+        "bb_width": 0.2544,
+        "rvol": 0.48,
+        "stoch_rsi": 24.03,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1154,19 +1154,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 2078.5714,
-        "atr_stop_short": 2439.4286,
-        "atr_target_1r": 2439.4286,
-        "atr_target_2r": 2619.8571,
+        "atr_stop_long": 2079.5714,
+        "atr_stop_short": 2440.4286,
+        "atr_target_1r": 2440.4286,
+        "atr_target_2r": 2620.8571,
         "pivot": 2304.3333,
         "r1": 2352.6667,
         "s1": 2218.6667
       },
       "moving_averages": {
-        "ema20": 2488.818,
-        "ema50": 2581.9534,
-        "ema200": 3163.711,
-        "vwap20": 2529.8402
+        "ema20": 2488.9133,
+        "ema50": 2581.9926,
+        "ema200": 3163.721,
+        "vwap20": 2529.2898
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1180,25 +1180,25 @@
     {
       "symbol": "SNX-USD",
       "signal": "SHORT",
-      "composite_score": -35.67,
+      "composite_score": -31.92,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.432
+        "score": 0.361
       },
       "price": {
-        "close": 0.3059,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": 0.76,
-        "range_position": 0.304
+        "close": 0.307,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": 1.12,
+        "range_position": 0.31
       },
       "indicators": {
-        "rsi14": 43.04,
-        "macd_hist": -0.0016,
+        "rsi14": 43.49,
+        "macd_hist": -0.0015,
         "adx14": 33.56,
-        "atr_pct": 5.23,
-        "bb_width": 0.2275,
-        "rvol": 0.45,
-        "stoch_rsi": 84.35,
+        "atr_pct": 5.21,
+        "bb_width": 0.227,
+        "rvol": 0.81,
+        "stoch_rsi": 86.07,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1208,23 +1208,23 @@
         "strength": 0.5,
         "volatility": 0.0,
         "fibonacci": -0.25,
-        "pivot": -0.5,
-        "volume": -0.5
+        "pivot": 0.5,
+        "volume": -0.25
       },
       "levels": {
-        "atr_stop_long": 0.273886,
-        "atr_stop_short": 0.337914,
-        "atr_target_1r": 0.337914,
-        "atr_target_2r": 0.369929,
+        "atr_stop_long": 0.274986,
+        "atr_stop_short": 0.339014,
+        "atr_target_1r": 0.339014,
+        "atr_target_2r": 0.371029,
         "pivot": 0.3068,
         "r1": 0.3212,
         "s1": 0.2926
       },
       "moving_averages": {
-        "ema20": 0.314053,
-        "ema50": 0.315414,
-        "ema200": 0.427502,
-        "vwap20": 0.323651
+        "ema20": 0.314158,
+        "ema50": 0.315457,
+        "ema200": 0.427513,
+        "vwap20": 0.323345
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1244,19 +1244,19 @@
         "score": 0.512
       },
       "price": {
-        "close": 0.323,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -8.24,
-        "range_position": 0.261
+        "close": 0.325,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -7.67,
+        "range_position": 0.271
       },
       "indicators": {
-        "rsi14": 27.96,
-        "macd_hist": -0.0041,
+        "rsi14": 28.57,
+        "macd_hist": -0.004,
         "adx14": 40.28,
-        "atr_pct": 5.35,
-        "bb_width": 0.2954,
+        "atr_pct": 5.32,
+        "bb_width": 0.2937,
         "rvol": 0.04,
-        "stoch_rsi": 34.58,
+        "stoch_rsi": 37.09,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1270,19 +1270,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.288429,
-        "atr_stop_short": 0.357571,
-        "atr_target_1r": 0.357571,
-        "atr_target_2r": 0.392143,
+        "atr_stop_long": 0.290429,
+        "atr_stop_short": 0.359571,
+        "atr_target_1r": 0.359571,
+        "atr_target_2r": 0.394143,
         "pivot": 0.322667,
         "r1": 0.333333,
         "s1": 0.314333
       },
       "moving_averages": {
-        "ema20": 0.351749,
-        "ema50": 0.359362,
-        "ema200": 0.486213,
-        "vwap20": 0.389282
+        "ema20": 0.35194,
+        "ema50": 0.359441,
+        "ema200": 0.486232,
+        "vwap20": 0.389271
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1302,19 +1302,19 @@
         "score": 0.543
       },
       "price": {
-        "close": 2.4716,
-        "change_pct_1d": 0.02,
-        "change_pct_10d": 54.64,
-        "range_position": 0.764
+        "close": 2.4898,
+        "change_pct_1d": 0.03,
+        "change_pct_10d": 55.78,
+        "range_position": 0.773
       },
       "indicators": {
-        "rsi14": 74.48,
-        "macd_hist": 0.0589,
+        "rsi14": 74.72,
+        "macd_hist": 0.06,
         "adx14": 72.88,
-        "atr_pct": 10.18,
-        "bb_width": 0.9254,
-        "rvol": 0.32,
-        "stoch_rsi": 40.42,
+        "atr_pct": 10.11,
+        "bb_width": 0.9273,
+        "rvol": 0.35,
+        "stoch_rsi": 41.5,
         "mom_divergence": 0.0,
         "weekly_trend": "BULLISH"
       },
@@ -1328,19 +1328,19 @@
         "volume": 0.0
       },
       "levels": {
-        "atr_stop_long": 1.9683,
-        "atr_stop_short": 2.9749,
-        "atr_target_1r": 2.9749,
-        "atr_target_2r": 3.4783,
+        "atr_stop_long": 1.9865,
+        "atr_stop_short": 2.9931,
+        "atr_target_1r": 2.9931,
+        "atr_target_2r": 3.4965,
         "pivot": 2.3936,
         "r1": 2.5272,
         "s1": 2.2841
       },
       "moving_averages": {
-        "ema20": 2.0597,
-        "ema50": 1.7275,
-        "ema200": 1.669,
-        "vwap20": 2.1657
+        "ema20": 2.0614,
+        "ema50": 1.7282,
+        "ema200": 1.6692,
+        "vwap20": 2.1664
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1354,51 +1354,51 @@
     {
       "symbol": "ALGO-USD",
       "signal": "NEUTRAL",
-      "composite_score": 1.75,
+      "composite_score": 1.5,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 0.11462,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": 1.68,
-        "range_position": 0.613
+        "close": 0.11637,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": 3.23,
+        "range_position": 0.643
       },
       "indicators": {
-        "rsi14": 51.49,
-        "macd_hist": -0.0003,
+        "rsi14": 53.4,
+        "macd_hist": -0.0002,
         "adx14": 22.43,
-        "atr_pct": 5.69,
-        "bb_width": 0.199,
-        "rvol": 0.6,
+        "atr_pct": 5.61,
+        "bb_width": 0.1994,
+        "rvol": 0.62,
         "stoch_rsi": 100.0,
         "mom_divergence": -1.0,
-        "weekly_trend": "BEARISH"
+        "weekly_trend": "BULLISH"
       },
       "subscores": {
         "trend": 0.5,
         "momentum": -0.75,
         "strength": 0.0,
         "volatility": 0.0,
-        "fibonacci": 1.0,
+        "fibonacci": -0.25,
         "pivot": 0.5,
-        "volume": -0.25
+        "volume": 0.25
       },
       "levels": {
-        "atr_stop_long": 0.101569,
-        "atr_stop_short": 0.127671,
-        "atr_target_1r": 0.127671,
-        "atr_target_2r": 0.140723,
+        "atr_stop_long": 0.103319,
+        "atr_stop_short": 0.129421,
+        "atr_target_1r": 0.129421,
+        "atr_target_2r": 0.142473,
         "pivot": 0.111343,
         "r1": 0.119767,
         "s1": 0.107067
       },
       "moving_averages": {
-        "ema20": 0.113577,
-        "ema50": 0.111958,
-        "ema200": 0.124339,
-        "vwap20": 0.115131
+        "ema20": 0.113744,
+        "ema50": 0.112027,
+        "ema200": 0.124357,
+        "vwap20": 0.11515
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1412,25 +1412,25 @@
     {
       "symbol": "APT-USD",
       "signal": "SHORT",
-      "composite_score": -39.33,
+      "composite_score": -37.33,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.503
+        "score": 0.442
       },
       "price": {
-        "close": 0.9204,
-        "change_pct_1d": -0.02,
-        "change_pct_10d": -0.95,
-        "range_position": 0.202
+        "close": 0.9317,
+        "change_pct_1d": -0.01,
+        "change_pct_10d": 0.27,
+        "range_position": 0.22
       },
       "indicators": {
-        "rsi14": 39.08,
-        "macd_hist": -0.0064,
+        "rsi14": 40.58,
+        "macd_hist": -0.0056,
         "adx14": 40.88,
-        "atr_pct": 5.54,
-        "bb_width": 0.2779,
+        "atr_pct": 5.48,
+        "bb_width": 0.2756,
         "rvol": 0.13,
-        "stoch_rsi": 62.35,
+        "stoch_rsi": 68.59,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1440,22 +1440,22 @@
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.818329,
-        "atr_stop_short": 1.0225,
-        "atr_target_1r": 1.0225,
-        "atr_target_2r": 1.1245,
+        "atr_stop_long": 0.829629,
+        "atr_stop_short": 1.0338,
+        "atr_target_1r": 1.0338,
+        "atr_target_2r": 1.1358,
         "pivot": 0.930467,
         "r1": 0.960933,
         "s1": 0.909333
       },
       "moving_averages": {
-        "ema20": 0.968043,
-        "ema50": 0.97863,
-        "ema200": 1.6148,
+        "ema20": 0.969119,
+        "ema50": 0.979073,
+        "ema200": 1.6149,
         "vwap20": 1.0259
       },
       "meta": {
@@ -1469,32 +1469,32 @@
     },
     {
       "symbol": "ICP-USD",
-      "signal": "NEUTRAL",
-      "composite_score": 27.83,
+      "signal": "LONG",
+      "composite_score": 31.17,
       "confidence": {
         "level": "LOW",
-        "score": 0.0
+        "score": 0.207
       },
       "price": {
-        "close": 2.721,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": 10.16,
-        "range_position": 0.354
+        "close": 2.731,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": 10.57,
+        "range_position": 0.359
       },
       "indicators": {
-        "rsi14": 55.06,
-        "macd_hist": 0.0013,
+        "rsi14": 55.52,
+        "macd_hist": 0.0019,
         "adx14": 29.3,
-        "atr_pct": 7.29,
-        "bb_width": 0.3971,
+        "atr_pct": 7.27,
+        "bb_width": 0.397,
         "rvol": 0.13,
         "stoch_rsi": 100.0,
-        "mom_divergence": -1.0,
+        "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": 1.5,
-        "momentum": 1.25,
+        "momentum": 1.75,
         "strength": 1.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
@@ -1502,18 +1502,18 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 2.3241,
-        "atr_stop_short": 3.1179,
-        "atr_target_1r": 3.1179,
-        "atr_target_2r": 3.5147,
+        "atr_stop_long": 2.3341,
+        "atr_stop_short": 3.1279,
+        "atr_target_1r": 3.1279,
+        "atr_target_2r": 3.5247,
         "pivot": 2.717,
         "r1": 2.86,
         "s1": 2.582
       },
       "moving_averages": {
-        "ema20": 2.696,
-        "ema50": 2.6591,
-        "ema200": 3.078,
+        "ema20": 2.697,
+        "ema50": 2.6595,
+        "ema200": 3.0781,
         "vwap20": 2.788
       },
       "meta": {
@@ -1534,19 +1534,19 @@
         "score": 0.0
       },
       "price": {
-        "close": 0.961,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": 2.56,
-        "range_position": 0.342
+        "close": 0.964,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": 2.88,
+        "range_position": 0.348
       },
       "indicators": {
-        "rsi14": 43.75,
-        "macd_hist": -0.0054,
+        "rsi14": 44.15,
+        "macd_hist": -0.0052,
         "adx14": 24.94,
-        "atr_pct": 7.14,
-        "bb_width": 0.243,
-        "rvol": 0.26,
-        "stoch_rsi": 74.14,
+        "atr_pct": 7.11,
+        "bb_width": 0.2425,
+        "rvol": 0.31,
+        "stoch_rsi": 75.31,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1560,19 +1560,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.823857,
-        "atr_stop_short": 1.0981,
-        "atr_target_1r": 1.0981,
-        "atr_target_2r": 1.2353,
+        "atr_stop_long": 0.826857,
+        "atr_stop_short": 1.1011,
+        "atr_target_1r": 1.1011,
+        "atr_target_2r": 1.2383,
         "pivot": 0.982,
         "r1": 1.034,
         "s1": 0.907
       },
       "moving_averages": {
-        "ema20": 0.991859,
-        "ema50": 0.983038,
+        "ema20": 0.992145,
+        "ema50": 0.983155,
         "ema200": 1.2437,
-        "vwap20": 1.0235
+        "vwap20": 1.0234
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1586,51 +1586,51 @@
     {
       "symbol": "HBAR-USD",
       "signal": "NEUTRAL",
-      "composite_score": -24.83,
+      "composite_score": -3.33,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 0.09015,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": 1.95,
-        "range_position": 0.233
+        "close": 0.09188,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": 3.9,
+        "range_position": 0.255
       },
       "indicators": {
-        "rsi14": 43.15,
-        "macd_hist": -0.0001,
+        "rsi14": 47.57,
+        "macd_hist": -0.0,
         "adx14": 24.41,
-        "atr_pct": 3.87,
-        "bb_width": 0.1427,
-        "rvol": 0.9,
-        "stoch_rsi": 57.74,
+        "atr_pct": 3.8,
+        "bb_width": 0.1429,
+        "rvol": 1.07,
+        "stoch_rsi": 72.41,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
-        "trend": -0.5,
+        "trend": 1.5,
         "momentum": -2.0,
         "strength": -1.0,
         "volatility": 0.25,
         "fibonacci": -0.25,
         "pivot": 0.5,
-        "volume": -0.25
+        "volume": 0.25
       },
       "levels": {
-        "atr_stop_long": 0.083164,
-        "atr_stop_short": 0.097136,
-        "atr_target_1r": 0.097136,
-        "atr_target_2r": 0.104121,
+        "atr_stop_long": 0.084894,
+        "atr_stop_short": 0.098866,
+        "atr_target_1r": 0.098866,
+        "atr_target_2r": 0.105851,
         "pivot": 0.08837,
         "r1": 0.09496,
         "s1": 0.0843
       },
       "moving_averages": {
-        "ema20": 0.08961,
-        "ema50": 0.090517,
-        "ema200": 0.112414,
-        "vwap20": 0.091259
+        "ema20": 0.089775,
+        "ema50": 0.090585,
+        "ema200": 0.112431,
+        "vwap20": 0.091285
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1650,18 +1650,18 @@
         "score": 0.0
       },
       "price": {
-        "close": 0.349651,
+        "close": 0.350501,
         "change_pct_1d": -0.01,
-        "change_pct_10d": -1.75,
-        "range_position": 0.752
+        "change_pct_10d": -1.52,
+        "range_position": 0.76
       },
       "indicators": {
-        "rsi14": 47.88,
-        "macd_hist": -0.0018,
+        "rsi14": 48.63,
+        "macd_hist": -0.0017,
         "adx14": 47.93,
         "atr_pct": 1.97,
-        "bb_width": 0.0865,
-        "rvol": 0.13,
+        "bb_width": 0.086,
+        "rvol": 0.14,
         "stoch_rsi": 0.0,
         "mom_divergence": 0.0,
         "weekly_trend": "BULLISH"
@@ -1676,19 +1676,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.335871,
-        "atr_stop_short": 0.363431,
-        "atr_target_1r": 0.363431,
-        "atr_target_2r": 0.377211,
+        "atr_stop_long": 0.33671,
+        "atr_stop_short": 0.364292,
+        "atr_target_1r": 0.364292,
+        "atr_target_2r": 0.378083,
         "pivot": 0.35603,
         "r1": 0.364604,
         "s1": 0.343949
       },
       "moving_averages": {
-        "ema20": 0.356646,
-        "ema50": 0.343347,
-        "ema200": 0.314929,
-        "vwap20": 0.357369
+        "ema20": 0.356727,
+        "ema50": 0.34338,
+        "ema200": 0.314937,
+        "vwap20": 0.357366
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1708,19 +1708,19 @@
         "score": 0.0
       },
       "price": {
-        "close": 8.146,
+        "close": 8.212,
         "change_pct_1d": -0.01,
-        "change_pct_10d": -9.18,
-        "range_position": 0.134
+        "change_pct_10d": -8.44,
+        "range_position": 0.144
       },
       "indicators": {
-        "rsi14": 20.66,
-        "macd_hist": -0.1222,
+        "rsi14": 21.41,
+        "macd_hist": -0.118,
         "adx14": 23.85,
-        "atr_pct": 4.74,
-        "bb_width": 0.2012,
-        "rvol": 0.36,
-        "stoch_rsi": 3.48,
+        "atr_pct": 4.71,
+        "bb_width": 0.1983,
+        "rvol": 0.38,
+        "stoch_rsi": 5.45,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1734,19 +1734,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 7.373,
-        "atr_stop_short": 8.919,
-        "atr_target_1r": 8.919,
-        "atr_target_2r": 9.692,
+        "atr_stop_long": 7.439,
+        "atr_stop_short": 8.985,
+        "atr_target_1r": 8.985,
+        "atr_target_2r": 9.758,
         "pivot": 8.2607,
         "r1": 8.4563,
         "s1": 8.0623
       },
       "moving_averages": {
-        "ema20": 8.7903,
-        "ema50": 8.8138,
-        "ema200": 10.7328,
-        "vwap20": 9.0369
+        "ema20": 8.7966,
+        "ema50": 8.8164,
+        "ema200": 10.7334,
+        "vwap20": 9.0362
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1760,25 +1760,25 @@
     {
       "symbol": "ARB-USD",
       "signal": "SHORT",
-      "composite_score": -51.67,
+      "composite_score": -49.67,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.574
+        "score": 0.512
       },
       "price": {
-        "close": 0.1036,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -8.8,
-        "range_position": 0.277
+        "close": 0.1043,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -8.19,
+        "range_position": 0.288
       },
       "indicators": {
-        "rsi14": 21.2,
+        "rsi14": 21.76,
         "macd_hist": -0.0015,
         "adx14": 47.45,
-        "atr_pct": 5.96,
-        "bb_width": 0.4337,
-        "rvol": 0.06,
-        "stoch_rsi": 28.42,
+        "atr_pct": 5.92,
+        "bb_width": 0.4322,
+        "rvol": 0.07,
+        "stoch_rsi": 29.78,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1788,23 +1788,23 @@
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.091243,
-        "atr_stop_short": 0.115957,
-        "atr_target_1r": 0.115957,
-        "atr_target_2r": 0.128314,
+        "atr_stop_long": 0.091943,
+        "atr_stop_short": 0.116657,
+        "atr_target_1r": 0.116657,
+        "atr_target_2r": 0.129014,
         "pivot": 0.104,
         "r1": 0.1075,
         "s1": 0.1007
       },
       "moving_averages": {
-        "ema20": 0.113799,
-        "ema50": 0.117095,
-        "ema200": 0.168683,
-        "vwap20": 0.11998
+        "ema20": 0.113866,
+        "ema50": 0.117122,
+        "ema200": 0.16869,
+        "vwap20": 0.119975
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1824,19 +1824,19 @@
         "score": 0.503
       },
       "price": {
-        "close": 0.1172,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -7.06,
-        "range_position": 0.225
+        "close": 0.1183,
+        "change_pct_1d": -0.0,
+        "change_pct_10d": -6.19,
+        "range_position": 0.238
       },
       "indicators": {
-        "rsi14": 30.52,
-        "macd_hist": -0.0023,
+        "rsi14": 31.21,
+        "macd_hist": -0.0022,
         "adx14": 40.73,
-        "atr_pct": 6.34,
-        "bb_width": 0.3742,
-        "rvol": 0.26,
-        "stoch_rsi": 42.08,
+        "atr_pct": 6.28,
+        "bb_width": 0.3718,
+        "rvol": 0.27,
+        "stoch_rsi": 43.77,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1850,19 +1850,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.102343,
-        "atr_stop_short": 0.132057,
-        "atr_target_1r": 0.132057,
-        "atr_target_2r": 0.146914,
+        "atr_stop_long": 0.103443,
+        "atr_stop_short": 0.133157,
+        "atr_target_1r": 0.133157,
+        "atr_target_2r": 0.148014,
         "pivot": 0.118667,
         "r1": 0.123633,
         "s1": 0.113433
       },
       "moving_averages": {
-        "ema20": 0.129244,
-        "ema50": 0.131254,
-        "ema200": 0.240363,
-        "vwap20": 0.136856
+        "ema20": 0.129349,
+        "ema50": 0.131297,
+        "ema200": 0.240374,
+        "vwap20": 0.136853
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1882,19 +1882,19 @@
         "score": 0.421
       },
       "price": {
-        "close": 0.0869,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -2.79,
-        "range_position": -0.113
+        "close": 0.08763,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -1.97,
+        "range_position": -0.106
       },
       "indicators": {
-        "rsi14": 36.98,
-        "macd_hist": -0.0006,
+        "rsi14": 39.29,
+        "macd_hist": -0.0005,
         "adx14": 43.71,
-        "atr_pct": 3.57,
-        "bb_width": 0.2011,
-        "rvol": 0.08,
-        "stoch_rsi": 83.77,
+        "atr_pct": 3.54,
+        "bb_width": 0.1991,
+        "rvol": 0.09,
+        "stoch_rsi": 92.97,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1908,19 +1908,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.080703,
-        "atr_stop_short": 0.093097,
-        "atr_target_1r": 0.093097,
-        "atr_target_2r": 0.099294,
+        "atr_stop_long": 0.081433,
+        "atr_stop_short": 0.093827,
+        "atr_target_1r": 0.093827,
+        "atr_target_2r": 0.100024,
         "pivot": 0.088,
         "r1": 0.08962,
         "s1": 0.08569
       },
       "moving_averages": {
-        "ema20": 0.091609,
-        "ema50": 0.093352,
-        "ema200": 0.119761,
-        "vwap20": 0.093102
+        "ema20": 0.091679,
+        "ema50": 0.093381,
+        "ema200": 0.119769,
+        "vwap20": 0.093101
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1940,19 +1940,19 @@
         "score": 0.52
       },
       "price": {
-        "close": 5.65,
-        "change_pct_1d": 0.03,
-        "change_pct_10d": 14.81,
-        "range_position": 0.788
+        "close": 5.815,
+        "change_pct_1d": 0.06,
+        "change_pct_10d": 18.17,
+        "range_position": 0.831
       },
       "indicators": {
-        "rsi14": 62.52,
-        "macd_hist": 0.0081,
-        "adx14": 51.94,
-        "atr_pct": 9.65,
-        "bb_width": 0.3073,
-        "rvol": 0.12,
-        "stoch_rsi": 36.36,
+        "rsi14": 64.44,
+        "macd_hist": 0.0187,
+        "adx14": 52.1,
+        "atr_pct": 9.49,
+        "bb_width": 0.3176,
+        "rvol": 0.14,
+        "stoch_rsi": 45.54,
         "mom_divergence": -1.0,
         "weekly_trend": "BULLISH"
       },
@@ -1966,19 +1966,19 @@
         "volume": 0.0
       },
       "levels": {
-        "atr_stop_long": 4.5594,
-        "atr_stop_short": 6.7406,
-        "atr_target_1r": 6.7406,
-        "atr_target_2r": 7.8311,
+        "atr_stop_long": 4.7116,
+        "atr_stop_short": 6.9184,
+        "atr_target_1r": 6.9184,
+        "atr_target_2r": 8.0219,
         "pivot": 5.45,
         "r1": 5.649,
         "s1": 5.271
       },
       "moving_averages": {
-        "ema20": 5.0542,
-        "ema50": 4.3917,
-        "ema200": 5.0965,
-        "vwap20": 5.1697
+        "ema20": 5.0699,
+        "ema50": 4.3982,
+        "ema200": 5.0981,
+        "vwap20": 5.1707
       },
       "meta": {
         "data_source": "Kraken API",
@@ -1998,19 +1998,19 @@
         "score": 0.0
       },
       "price": {
-        "close": 0.4103,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": 6.52,
-        "range_position": 0.562
+        "close": 0.4146,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": 7.63,
+        "range_position": 0.579
       },
       "indicators": {
-        "rsi14": 48.21,
-        "macd_hist": -0.0029,
+        "rsi14": 48.97,
+        "macd_hist": -0.0026,
         "adx14": 19.96,
-        "atr_pct": 9.21,
-        "bb_width": 0.266,
-        "rvol": 0.05,
-        "stoch_rsi": 39.67,
+        "atr_pct": 9.12,
+        "bb_width": 0.2647,
+        "rvol": 0.06,
+        "stoch_rsi": 44.26,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -2024,19 +2024,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.334714,
-        "atr_stop_short": 0.485886,
-        "atr_target_1r": 0.485886,
-        "atr_target_2r": 0.561471,
+        "atr_stop_long": 0.339014,
+        "atr_stop_short": 0.490186,
+        "atr_target_1r": 0.490186,
+        "atr_target_2r": 0.565771,
         "pivot": 0.419233,
         "r1": 0.434067,
         "s1": 0.398167
       },
       "moving_averages": {
-        "ema20": 0.420028,
-        "ema50": 0.395816,
-        "ema200": 0.604633,
-        "vwap20": 0.439128
+        "ema20": 0.420437,
+        "ema50": 0.395985,
+        "ema200": 0.604676,
+        "vwap20": 0.439119
       },
       "meta": {
         "data_source": "Kraken API",
@@ -2056,19 +2056,19 @@
         "score": 0.0
       },
       "price": {
-        "close": 0.02617,
-        "change_pct_1d": -0.02,
-        "change_pct_10d": 6.21,
-        "range_position": 0.127
+        "close": 0.02623,
+        "change_pct_1d": -0.01,
+        "change_pct_10d": 6.45,
+        "range_position": 0.129
       },
       "indicators": {
-        "rsi14": 46.8,
+        "rsi14": 47.06,
         "macd_hist": 0.0,
         "adx14": 17.46,
-        "atr_pct": 6.88,
-        "bb_width": 0.2052,
-        "rvol": 0.1,
-        "stoch_rsi": 62.71,
+        "atr_pct": 6.87,
+        "bb_width": 0.205,
+        "rvol": 0.11,
+        "stoch_rsi": 64.28,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -2082,17 +2082,17 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.022567,
-        "atr_stop_short": 0.029773,
-        "atr_target_1r": 0.029773,
-        "atr_target_2r": 0.033376,
+        "atr_stop_long": 0.022627,
+        "atr_stop_short": 0.029833,
+        "atr_target_1r": 0.029833,
+        "atr_target_2r": 0.033436,
         "pivot": 0.026533,
         "r1": 0.027347,
         "s1": 0.025797
       },
       "moving_averages": {
-        "ema20": 0.026398,
-        "ema50": 0.026081,
+        "ema20": 0.026403,
+        "ema50": 0.026083,
         "ema200": 0.03757,
         "vwap20": 0.027239
       },
@@ -2114,19 +2114,19 @@
         "score": 0.0
       },
       "price": {
-        "close": 1.996,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": 9.79,
-        "range_position": 0.45
+        "close": 2.007,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": 10.4,
+        "range_position": 0.456
       },
       "indicators": {
-        "rsi14": 55.44,
-        "macd_hist": 0.0119,
+        "rsi14": 55.9,
+        "macd_hist": 0.0126,
         "adx14": 21.24,
-        "atr_pct": 8.53,
-        "bb_width": 0.2637,
-        "rvol": 0.19,
-        "stoch_rsi": 56.9,
+        "atr_pct": 8.48,
+        "bb_width": 0.2641,
+        "rvol": 0.21,
+        "stoch_rsi": 58.02,
         "mom_divergence": -1.0,
         "weekly_trend": "BULLISH"
       },
@@ -2140,19 +2140,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 1.6556,
-        "atr_stop_short": 2.3364,
-        "atr_target_1r": 2.3364,
-        "atr_target_2r": 2.6769,
+        "atr_stop_long": 1.6666,
+        "atr_stop_short": 2.3474,
+        "atr_target_1r": 2.3474,
+        "atr_target_2r": 2.6879,
         "pivot": 2.0163,
         "r1": 2.1077,
         "s1": 1.9037
       },
       "moving_averages": {
-        "ema20": 1.9742,
-        "ema50": 1.896,
-        "ema200": 2.0178,
-        "vwap20": 2.0399
+        "ema20": 1.9752,
+        "ema50": 1.8964,
+        "ema200": 2.0179,
+        "vwap20": 2.04
       },
       "meta": {
         "data_source": "Kraken API",
@@ -2172,18 +2172,18 @@
         "score": 0.0
       },
       "price": {
-        "close": 0.2376,
-        "change_pct_1d": 0.03,
-        "change_pct_10d": 25.78,
-        "range_position": 0.77
+        "close": 0.2383,
+        "change_pct_1d": 0.04,
+        "change_pct_10d": 26.15,
+        "range_position": 0.775
       },
       "indicators": {
-        "rsi14": 65.75,
-        "macd_hist": 0.0046,
+        "rsi14": 65.97,
+        "macd_hist": 0.0047,
         "adx14": 21.19,
-        "atr_pct": 7.64,
-        "bb_width": 0.3756,
-        "rvol": 0.24,
+        "atr_pct": 7.62,
+        "bb_width": 0.3763,
+        "rvol": 0.28,
         "stoch_rsi": 100.0,
         "mom_divergence": 0.0,
         "weekly_trend": "BULLISH"
@@ -2198,19 +2198,19 @@
         "volume": 0.0
       },
       "levels": {
-        "atr_stop_long": 0.201271,
-        "atr_stop_short": 0.273929,
-        "atr_target_1r": 0.273929,
-        "atr_target_2r": 0.310257,
+        "atr_stop_long": 0.201971,
+        "atr_stop_short": 0.274629,
+        "atr_target_1r": 0.274629,
+        "atr_target_2r": 0.310957,
         "pivot": 0.230033,
         "r1": 0.243667,
         "s1": 0.216067
       },
       "moving_averages": {
-        "ema20": 0.218629,
-        "ema50": 0.215426,
-        "ema200": 0.266802,
-        "vwap20": 0.221379
+        "ema20": 0.218695,
+        "ema50": 0.215453,
+        "ema200": 0.266809,
+        "vwap20": 0.22141
       },
       "meta": {
         "data_source": "Kraken API",
@@ -2230,19 +2230,19 @@
         "score": 0.0
       },
       "price": {
-        "close": 533.49,
-        "change_pct_1d": -0.03,
-        "change_pct_10d": -6.98,
-        "range_position": 0.692
+        "close": 535.57,
+        "change_pct_1d": -0.02,
+        "change_pct_10d": -6.62,
+        "range_position": 0.696
       },
       "indicators": {
-        "rsi14": 51.92,
-        "macd_hist": -16.1689,
+        "rsi14": 52.15,
+        "macd_hist": -16.0362,
         "adx14": 21.77,
-        "atr_pct": 11.18,
-        "bb_width": 0.3567,
-        "rvol": 0.27,
-        "stoch_rsi": 28.41,
+        "atr_pct": 11.14,
+        "bb_width": 0.356,
+        "rvol": 0.28,
+        "stoch_rsi": 29.59,
         "mom_divergence": -1.0,
         "weekly_trend": "BULLISH"
       },
@@ -2256,19 +2256,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 414.18,
-        "atr_stop_short": 652.8,
-        "atr_target_1r": 652.8,
-        "atr_target_2r": 772.11,
+        "atr_stop_long": 416.26,
+        "atr_stop_short": 654.88,
+        "atr_target_1r": 654.88,
+        "atr_target_2r": 774.19,
         "pivot": 544.07,
         "r1": 568.58,
         "s1": 523.17
       },
       "moving_averages": {
-        "ema20": 562.3592,
-        "ema50": 483.87,
-        "ema200": 355.3222,
-        "vwap20": 584.8265
+        "ema20": 562.5573,
+        "ema50": 483.9516,
+        "ema200": 355.3429,
+        "vwap20": 584.81
       },
       "meta": {
         "data_source": "Kraken API",
@@ -2288,19 +2288,19 @@
         "score": 0.0
       },
       "price": {
-        "close": 39.851,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -5.44,
-        "range_position": 0.077
+        "close": 40.09,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -4.88,
+        "range_position": 0.081
       },
       "indicators": {
-        "rsi14": 44.3,
-        "macd_hist": -0.8973,
+        "rsi14": 44.7,
+        "macd_hist": -0.882,
         "adx14": 10.43,
-        "atr_pct": 9.82,
-        "bb_width": 0.2669,
+        "atr_pct": 9.76,
+        "bb_width": 0.2651,
         "rvol": 0.15,
-        "stoch_rsi": 44.96,
+        "stoch_rsi": 46.7,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -2314,19 +2314,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 32.0239,
-        "atr_stop_short": 47.6781,
-        "atr_target_1r": 47.6781,
-        "atr_target_2r": 55.5053,
+        "atr_stop_long": 32.2629,
+        "atr_stop_short": 47.9171,
+        "atr_target_1r": 47.9171,
+        "atr_target_2r": 55.7443,
         "pivot": 40.3163,
         "r1": 42.2347,
         "s1": 38.0227
       },
       "moving_averages": {
-        "ema20": 43.4606,
-        "ema50": 41.7594,
-        "ema200": 40.6056,
-        "vwap20": 45.5532
+        "ema20": 43.4834,
+        "ema50": 41.7688,
+        "ema200": 40.608,
+        "vwap20": 45.5521
       },
       "meta": {
         "data_source": "Kraken API",
@@ -2340,25 +2340,25 @@
     {
       "symbol": "DOGE-USD",
       "signal": "SHORT",
-      "composite_score": -40.33,
+      "composite_score": -38.33,
       "confidence": {
         "level": "LOW",
-        "score": 0.259
+        "score": 0.198
       },
       "price": {
-        "close": 0.098811,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -3.98,
-        "range_position": 0.246
+        "close": 0.0993,
+        "change_pct_1d": -0.0,
+        "change_pct_10d": -3.5,
+        "range_position": 0.252
       },
       "indicators": {
-        "rsi14": 15.83,
-        "macd_hist": -0.0012,
+        "rsi14": 16.2,
+        "macd_hist": -0.0011,
         "adx14": 36.69,
-        "atr_pct": 4.32,
-        "bb_width": 0.1965,
-        "rvol": 0.01,
-        "stoch_rsi": 2.65,
+        "atr_pct": 4.3,
+        "bb_width": 0.1952,
+        "rvol": 0.02,
+        "stoch_rsi": 3.67,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -2368,23 +2368,23 @@
         "strength": 0.5,
         "volatility": 0.25,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.090276,
-        "atr_stop_short": 0.107346,
-        "atr_target_1r": 0.107346,
-        "atr_target_2r": 0.115881,
+        "atr_stop_long": 0.090765,
+        "atr_stop_short": 0.107835,
+        "atr_target_1r": 0.107835,
+        "atr_target_2r": 0.11637,
         "pivot": 0.098843,
         "r1": 0.101285,
         "s1": 0.097015
       },
       "moving_averages": {
-        "ema20": 0.103665,
-        "ema50": 0.103096,
-        "ema200": 0.121329,
-        "vwap20": 0.1087
+        "ema20": 0.103712,
+        "ema50": 0.103115,
+        "ema200": 0.121334,
+        "vwap20": 0.108699
       },
       "meta": {
         "data_source": "Kraken API",
@@ -2398,25 +2398,25 @@
     {
       "symbol": "SHIB-USD",
       "signal": "SHORT",
-      "composite_score": -53.33,
+      "composite_score": -49.33,
       "confidence": {
-        "level": "MEDIUM",
-        "score": 0.383
+        "level": "LOW",
+        "score": 0.26
       },
       "price": {
-        "close": 5.34e-06,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -6.15,
-        "range_position": 0.114
+        "close": 5.36e-06,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -5.8,
+        "range_position": 0.117
       },
       "indicators": {
-        "rsi14": 15.04,
+        "rsi14": 15.93,
         "macd_hist": -0.0,
         "adx14": 71.82,
-        "atr_pct": 5.0,
-        "bb_width": 0.2728,
-        "rvol": 0.1,
-        "stoch_rsi": 9.02,
+        "atr_pct": 4.98,
+        "bb_width": 0.2718,
+        "rvol": 0.12,
+        "stoch_rsi": 12.4,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -2424,25 +2424,25 @@
         "trend": -3.5,
         "momentum": -2.75,
         "strength": 0.5,
-        "volatility": -0.25,
+        "volatility": 0.0,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 4.8057e-06,
-        "atr_stop_short": 5.8743e-06,
-        "atr_target_1r": 5.8743e-06,
-        "atr_target_2r": 6.4086e-06,
+        "atr_stop_long": 4.8257e-06,
+        "atr_stop_short": 5.8943e-06,
+        "atr_target_1r": 5.8943e-06,
+        "atr_target_2r": 6.4286e-06,
         "pivot": 5.3467e-06,
         "r1": 5.4533e-06,
         "s1": 5.2433e-06
       },
       "moving_averages": {
-        "ema20": 5.7451e-06,
-        "ema50": 5.9465e-06,
-        "ema200": 7.2499e-06,
-        "vwap20": 5.8617e-06
+        "ema20": 5.747e-06,
+        "ema50": 5.9473e-06,
+        "ema200": 7.2501e-06,
+        "vwap20": 5.8614e-06
       },
       "meta": {
         "data_source": "Kraken API",
@@ -2456,25 +2456,25 @@
     {
       "symbol": "PEPE-USD",
       "signal": "SHORT",
-      "composite_score": -51.67,
+      "composite_score": -47.67,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.574
+        "score": 0.451
       },
       "price": {
-        "close": 3.369e-06,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -7.39,
-        "range_position": -0.074
+        "close": 3.393e-06,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -6.73,
+        "range_position": -0.067
       },
       "indicators": {
-        "rsi14": 23.58,
+        "rsi14": 24.8,
         "macd_hist": -0.0,
         "adx14": 47.88,
-        "atr_pct": 5.04,
-        "bb_width": 0.3164,
-        "rvol": 0.04,
-        "stoch_rsi": 20.87,
+        "atr_pct": 5.0,
+        "bb_width": 0.3146,
+        "rvol": 0.05,
+        "stoch_rsi": 26.3,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -2482,25 +2482,25 @@
         "trend": -3.5,
         "momentum": -2.5,
         "strength": 0.5,
-        "volatility": -0.25,
+        "volatility": 0.0,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 3.0297e-06,
-        "atr_stop_short": 3.7083e-06,
-        "atr_target_1r": 3.7083e-06,
-        "atr_target_2r": 4.0476e-06,
+        "atr_stop_long": 3.0537e-06,
+        "atr_stop_short": 3.7323e-06,
+        "atr_target_1r": 3.7323e-06,
+        "atr_target_2r": 4.0716e-06,
         "pivot": 3.374e-06,
         "r1": 3.479e-06,
         "s1": 3.275e-06
       },
       "moving_averages": {
-        "ema20": 3.6775e-06,
-        "ema50": 3.7679e-06,
-        "ema200": 4.7499e-06,
-        "vwap20": 3.8629e-06
+        "ema20": 3.6798e-06,
+        "ema50": 3.7688e-06,
+        "ema200": 4.7501e-06,
+        "vwap20": 3.8626e-06
       },
       "meta": {
         "data_source": "Kraken API",
@@ -2520,19 +2520,19 @@
         "score": 0.583
       },
       "price": {
-        "close": 5.398e-06,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -8.83,
-        "range_position": -0.339
+        "close": 5.459e-06,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -7.8,
+        "range_position": -0.329
       },
       "indicators": {
-        "rsi14": 24.98,
+        "rsi14": 25.71,
         "macd_hist": -0.0,
         "adx14": 38.87,
-        "atr_pct": 5.78,
-        "bb_width": 0.399,
-        "rvol": 0.19,
-        "stoch_rsi": 17.39,
+        "atr_pct": 5.71,
+        "bb_width": 0.3959,
+        "rvol": 0.22,
+        "stoch_rsi": 19.91,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -2546,19 +2546,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 4.7744e-06,
-        "atr_stop_short": 6.0216e-06,
-        "atr_target_1r": 6.0216e-06,
-        "atr_target_2r": 6.6451e-06,
+        "atr_stop_long": 4.8354e-06,
+        "atr_stop_short": 6.0826e-06,
+        "atr_target_1r": 6.0826e-06,
+        "atr_target_2r": 6.7061e-06,
         "pivot": 5.5003e-06,
         "r1": 5.7157e-06,
         "s1": 5.2417e-06
       },
       "moving_averages": {
-        "ema20": 6.079e-06,
-        "ema50": 6.2373e-06,
-        "ema200": 8.5537e-06,
-        "vwap20": 6.6081e-06
+        "ema20": 6.0848e-06,
+        "ema50": 6.2397e-06,
+        "ema200": 8.5543e-06,
+        "vwap20": 6.6069e-06
       },
       "meta": {
         "data_source": "Kraken API",
@@ -2578,19 +2578,19 @@
         "score": 0.493
       },
       "price": {
-        "close": 0.1836,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -2.86,
-        "range_position": -0.321
+        "close": 0.1848,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": -2.22,
+        "range_position": -0.316
       },
       "indicators": {
-        "rsi14": 33.54,
+        "rsi14": 34.73,
         "macd_hist": -0.0021,
         "adx14": 46.71,
-        "atr_pct": 6.02,
-        "bb_width": 0.3075,
-        "rvol": 0.16,
-        "stoch_rsi": 34.38,
+        "atr_pct": 6.0,
+        "bb_width": 0.3061,
+        "rvol": 0.18,
+        "stoch_rsi": 38.14,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -2604,19 +2604,19 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.161486,
-        "atr_stop_short": 0.205714,
-        "atr_target_1r": 0.205714,
-        "atr_target_2r": 0.227829,
+        "atr_stop_long": 0.162629,
+        "atr_stop_short": 0.206971,
+        "atr_target_1r": 0.206971,
+        "atr_target_2r": 0.229143,
         "pivot": 0.181133,
         "r1": 0.189767,
         "s1": 0.175067
       },
       "moving_averages": {
-        "ema20": 0.194643,
-        "ema50": 0.197511,
-        "ema200": 0.309894,
-        "vwap20": 0.199874
+        "ema20": 0.194757,
+        "ema50": 0.197558,
+        "ema200": 0.309906,
+        "vwap20": 0.199865
       },
       "meta": {
         "data_source": "Kraken API",
@@ -7154,23 +7154,23 @@
     {
       "symbol": "DXY-INDEX",
       "signal": "LONG",
-      "composite_score": 73.66,
+      "composite_score": 77.69,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.539
+        "score": 0.622
       },
       "price": {
-        "close": 99.095,
+        "close": 99.05,
         "change_pct_1d": 0.0,
-        "change_pct_10d": 0.22,
-        "range_position": 0.696
+        "change_pct_10d": 0.17,
+        "range_position": 0.688
       },
       "indicators": {
-        "rsi14": 71.53,
-        "macd_hist": 0.0541,
+        "rsi14": 71.08,
+        "macd_hist": 0.0512,
         "adx14": 28.2,
         "atr_pct": 0.4,
-        "bb_width": 0.0205,
+        "bb_width": 0.0204,
         "rvol": null,
         "stoch_rsi": 100.0,
         "mom_divergence": 0.0,
@@ -7181,23 +7181,23 @@
         "momentum": 2.25,
         "strength": 1.5,
         "volatility": 0.75,
-        "fibonacci": -0.25,
+        "fibonacci": 0.5,
         "pivot": -0.5,
         "volume": 0.0
       },
       "levels": {
-        "atr_stop_long": 98.2987,
-        "atr_stop_short": 99.8913,
-        "atr_target_1r": 99.8913,
-        "atr_target_2r": 100.6876,
+        "atr_stop_long": 98.2527,
+        "atr_stop_short": 99.8473,
+        "atr_target_1r": 99.8473,
+        "atr_target_2r": 100.6446,
         "pivot": 99.17,
         "r1": 99.39,
         "s1": 98.8
       },
       "moving_averages": {
-        "ema20": 98.8959,
-        "ema50": 98.7829,
-        "ema200": 99.0344,
+        "ema20": 98.8916,
+        "ema50": 98.7811,
+        "ema200": 99.0339,
         "vwap20": null
       },
       "meta": {
@@ -9421,7 +9421,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9433,7 +9433,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9445,7 +9445,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9457,7 +9457,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9469,7 +9469,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9481,7 +9481,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9493,7 +9493,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9505,7 +9505,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9517,7 +9517,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9529,7 +9529,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9541,7 +9541,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9553,7 +9553,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9565,7 +9565,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9577,7 +9577,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9589,7 +9589,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9601,7 +9601,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9613,7 +9613,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9625,7 +9625,7 @@
       "bars_received": 605,
       "bars_expected": 730,
       "completeness": 0.8288,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9637,7 +9637,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9649,7 +9649,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9661,7 +9661,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9673,7 +9673,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9685,7 +9685,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9697,7 +9697,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9709,7 +9709,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9721,7 +9721,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9733,7 +9733,7 @@
       "bars_received": 324,
       "bars_expected": 730,
       "completeness": 0.4438,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9745,7 +9745,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9757,7 +9757,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9769,7 +9769,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9781,7 +9781,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9793,7 +9793,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9805,7 +9805,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9817,7 +9817,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9829,7 +9829,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9841,7 +9841,7 @@
       "bars_received": 662,
       "bars_expected": 730,
       "completeness": 0.9068,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9853,7 +9853,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9865,7 +9865,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9877,7 +9877,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9889,7 +9889,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9901,7 +9901,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9913,7 +9913,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9925,7 +9925,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9937,7 +9937,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 4.5,
+      "freshness_hours": 5.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9949,7 +9949,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9961,7 +9961,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9973,7 +9973,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9985,7 +9985,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9997,7 +9997,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10009,7 +10009,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10021,7 +10021,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10033,7 +10033,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10045,7 +10045,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10057,7 +10057,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10069,7 +10069,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10081,7 +10081,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10093,7 +10093,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10105,7 +10105,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10117,7 +10117,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.3,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10129,7 +10129,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10141,7 +10141,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10153,7 +10153,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10165,7 +10165,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10177,7 +10177,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10189,7 +10189,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10201,7 +10201,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.5,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10213,7 +10213,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10225,7 +10225,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10237,7 +10237,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10249,7 +10249,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10261,7 +10261,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10273,7 +10273,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10285,7 +10285,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10297,7 +10297,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10309,7 +10309,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10321,7 +10321,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10333,7 +10333,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10345,7 +10345,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10357,7 +10357,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10369,7 +10369,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10381,7 +10381,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10393,7 +10393,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10405,7 +10405,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10417,7 +10417,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10429,7 +10429,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10441,7 +10441,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10453,7 +10453,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10465,7 +10465,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10477,7 +10477,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10489,7 +10489,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10501,7 +10501,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10513,7 +10513,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10525,7 +10525,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10537,7 +10537,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10549,7 +10549,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10561,7 +10561,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10573,7 +10573,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10585,7 +10585,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10597,7 +10597,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10609,7 +10609,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10621,7 +10621,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10633,7 +10633,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10645,7 +10645,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10657,7 +10657,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10669,7 +10669,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10681,7 +10681,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10693,7 +10693,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10705,7 +10705,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10717,7 +10717,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10729,7 +10729,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10741,7 +10741,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10753,7 +10753,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10765,7 +10765,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10777,7 +10777,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10789,7 +10789,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10801,7 +10801,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10813,7 +10813,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10825,7 +10825,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10837,7 +10837,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10849,7 +10849,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10861,7 +10861,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10873,7 +10873,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10885,7 +10885,7 @@
       "bars_received": 660,
       "bars_expected": 800,
       "completeness": 0.825,
-      "freshness_hours": 4.6,
+      "freshness_hours": 5.4,
       "has_volume": false,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10897,7 +10897,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10909,7 +10909,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10921,7 +10921,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10933,7 +10933,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10945,7 +10945,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.4,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10957,7 +10957,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10969,7 +10969,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10981,7 +10981,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10993,7 +10993,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11005,7 +11005,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11017,7 +11017,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.6,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11029,7 +11029,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11041,7 +11041,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11053,7 +11053,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11065,7 +11065,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11077,7 +11077,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11089,7 +11089,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11101,7 +11101,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11113,7 +11113,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11125,7 +11125,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11137,7 +11137,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11149,7 +11149,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11161,7 +11161,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11173,7 +11173,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11185,7 +11185,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11197,7 +11197,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11209,7 +11209,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11221,7 +11221,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11233,7 +11233,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11245,7 +11245,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11257,7 +11257,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11269,7 +11269,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11281,7 +11281,7 @@
       "bars_received": 596,
       "bars_expected": 800,
       "completeness": 0.745,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11293,7 +11293,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11305,7 +11305,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11317,7 +11317,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11329,7 +11329,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11341,7 +11341,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 28.7,
+      "freshness_hours": 29.5,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11355,7 +11355,7 @@
       "successes": 44,
       "failures": 0,
       "success_rate": 1.0,
-      "avg_latency_ms": 244.3,
+      "avg_latency_ms": 179.0,
       "last_failure_reason": null
     },
     {
@@ -11364,7 +11364,7 @@
       "successes": 117,
       "failures": 0,
       "success_rate": 1.0,
-      "avg_latency_ms": 362.6,
+      "avg_latency_ms": 208.8,
       "last_failure_reason": null
     }
   ]
