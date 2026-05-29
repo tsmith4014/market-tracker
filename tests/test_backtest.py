@@ -349,3 +349,71 @@ class TestCompareStrategies:
         # Mean reversion should trade and not catastrophically underperform on chop.
         assert mr_stats["trades"] >= 0
         assert mr_stats["return"] >= trend_stats["return"] - 1.0
+
+
+class TestPortfolioBacktest:
+    def _panel_csv(self, tmp_path, n=300, n_sym=30):
+        from market_tracker import SCHEMA_COLUMNS
+        rng = np.random.default_rng(3)
+        dates = pd.date_range("2023-01-01", periods=n, freq="D")
+        rows = []
+        for k in range(n_sym):
+            drift = (k - n_sym / 2) * 0.0008
+            close = 100 * np.exp(np.cumsum(rng.normal(drift, 0.02, n)))
+            # Score spans the full [-90, 90] band so HIGH-confidence cells exist.
+            score = 90 * np.sin(np.linspace(0, (k % 5 + 3) * np.pi, n)) + rng.normal(0, 5, n)
+            score = np.clip(score, -90, 90)
+            for i in range(n):
+                sig = "LONG" if score[i] >= 30 else ("SHORT" if score[i] <= -30 else "NEUTRAL")
+                conf = min(abs(score[i]) / 100, 0.95)
+                r = {c: None for c in SCHEMA_COLUMNS}
+                r.update(dict(timestamp_ct="t", symbol=f"S{k}", data_source="syn",
+                              date=dates[i].strftime("%Y-%m-%d"), close=round(float(close[i]), 4),
+                              adx14=30.0, atr14=float(close[i] * 0.01), ema50=float(close[i] * 0.98),
+                              trend_s=0.0, momentum_s=0.0, strength_s=0.0, vol_s=0.0, fib_s=0.0,
+                              pivot_s=0.0, volume_s=0.0, composite_score=float(score[i]),
+                              signal=sig, confidence_level=("HIGH" if conf >= 0.65 else "MEDIUM" if conf >= 0.35 else "LOW"),
+                              confidence_score=round(float(conf), 3)))
+                rows.append(r)
+        path = tmp_path / "market_tracker.csv"
+        pd.DataFrame(rows, columns=SCHEMA_COLUMNS).to_csv(path, index=False)
+        return path
+
+    def test_portfolio_produces_all_books_and_scopes(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        df = bt.load_data(str(self._panel_csv(tmp_path)))
+        comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
+        assert set(comp["strategy"]) == {"equal_weight_buyhold", "all_signals_ew", "high_conf_ew", "conviction_long_short"}
+        assert set(comp["scope"]) == {"full", "out_of_sample"}
+        assert (tmp_path / "portfolio_comparison.csv").exists()
+
+    def test_buyhold_is_fully_invested(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        df = bt.load_data(str(self._panel_csv(tmp_path)))
+        comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
+        bh = comp[comp["strategy"] == "equal_weight_buyhold"].iloc[0]
+        assert bh["avg_gross_exposure"] == pytest.approx(1.0, abs=1e-6)
+
+    def test_long_short_book_gross_is_capped(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        df = bt.load_data(str(self._panel_csv(tmp_path)))
+        comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
+        ls = comp[comp["strategy"] == "conviction_long_short"].iloc[0]
+        # Long+short legs sum to gross <= 1.0 (0.5 per side).
+        assert ls["avg_gross_exposure"] <= 1.0 + 1e-9
+
+    def test_high_conf_book_trades(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        df = bt.load_data(str(self._panel_csv(tmp_path)))
+        comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
+        hc = comp[(comp["strategy"] == "high_conf_ew") & (comp["scope"] == "full")].iloc[0]
+        # With HIGH cells present, the book deploys capital and Sharpe is finite.
+        assert hc["avg_gross_exposure"] > 0
+        assert np.isfinite(hc["sharpe"])
+
+    def test_handles_tiny_universe_gracefully(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        df = bt.load_data(str(self._panel_csv(tmp_path)))
+        df = df[df["symbol"] == "S0"]  # single symbol -> below the 3-symbol floor
+        comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
+        assert comp.empty

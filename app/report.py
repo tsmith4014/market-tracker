@@ -93,6 +93,32 @@ def edge_summary_section(summary: pd.DataFrame | None) -> list[str]:
     return lines
 
 
+def portfolio_section() -> list[str]:
+    """Deployable portfolios vs an equal-weight buy-and-hold benchmark."""
+    comp = load_csv(OUT_DIR / "portfolio_comparison.csv")
+    lines = ["## Portfolio Backtest", ""]
+    if comp is None or comp.empty:
+        lines.extend(["No portfolio backtest was generated.", ""])
+        return lines
+    display = comp.copy()
+    for col in ["ann_return", "ann_vol", "max_drawdown", "total_return"]:
+        if col in display.columns:
+            display[col] = display[col].apply(percent)
+    for col in ["sharpe", "avg_gross_exposure"]:
+        if col in display.columns:
+            display[col] = display[col].apply(number)
+    lines.extend([
+        "Actual capital-allocation books (not per-symbol averages). "
+        "`equal_weight_buyhold` is the benchmark; `conviction_long_short` is market-neutral. "
+        "Judge on **Sharpe** and **max_drawdown** out-of-sample, not raw return: a "
+        "fully-invested long book wins on return in a bull market but carries all the risk.",
+        "",
+        display.to_markdown(index=False),
+        "",
+    ])
+    return lines
+
+
 def strategy_comparison_section() -> list[str]:
     """Which decision rule actually beats buy-and-hold, in- and out-of-sample?"""
     comp = load_csv(OUT_DIR / "strategy_comparison.csv")
@@ -213,6 +239,7 @@ def main() -> None:
         "",
     ]
     lines.extend(edge_summary_section(summary))
+    lines.extend(portfolio_section())
     lines.extend(strategy_comparison_section())
     lines.extend(calibration_section())
     lines.extend(summary_section(summary))
