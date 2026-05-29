@@ -383,7 +383,11 @@ class TestPortfolioBacktest:
         monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
         df = bt.load_data(str(self._panel_csv(tmp_path)))
         comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
-        assert set(comp["strategy"]) == {"equal_weight_buyhold", "all_signals_ew", "high_conf_ew", "conviction_long_short"}
+        # SPY/AGG aren't in this synthetic universe, so benchmark books are skipped.
+        assert set(comp["strategy"]) == {
+            "equal_weight_buyhold", "all_signals_ew", "high_conf_ew",
+            "high_conf_voltarget", "conviction_long_short",
+        }
         assert set(comp["scope"]) == {"full", "out_of_sample"}
         assert (tmp_path / "portfolio_comparison.csv").exists()
 
@@ -417,3 +421,97 @@ class TestPortfolioBacktest:
         df = df[df["symbol"] == "S0"]  # single symbol -> below the 3-symbol floor
         comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
         assert comp.empty
+
+    def _panel_with_benchmarks(self, tmp_path, n=300):
+        """Synthetic panel that includes SPY and AGG so benchmark books appear."""
+        from market_tracker import SCHEMA_COLUMNS
+        rng = np.random.default_rng(9)
+        dates = pd.date_range("2023-01-01", periods=n, freq="D")
+        rows = []
+        names = [f"S{k}" for k in range(8)] + ["SPY", "AGG"]
+        for k, sym in enumerate(names):
+            vol = 0.005 if sym == "AGG" else (0.01 if sym == "SPY" else 0.02 + 0.002 * k)
+            close = 100 * np.exp(np.cumsum(rng.normal(0.0003, vol, n)))
+            score = 90 * np.sin(np.linspace(0, (k % 5 + 3) * np.pi, n)) + rng.normal(0, 5, n)
+            score = np.clip(score, -90, 90)
+            for i in range(n):
+                s = "LONG" if score[i] >= 30 else ("SHORT" if score[i] <= -30 else "NEUTRAL")
+                conf = min(abs(score[i]) / 100, 0.95)
+                r = {c: None for c in SCHEMA_COLUMNS}
+                r.update(dict(timestamp_ct="t", symbol=sym, data_source="syn",
+                              date=dates[i].strftime("%Y-%m-%d"), close=round(float(close[i]), 4),
+                              adx14=30.0, atr14=float(close[i] * vol), ema50=float(close[i] * 0.98),
+                              trend_s=0.0, momentum_s=0.0, strength_s=0.0, vol_s=0.0, fib_s=0.0,
+                              pivot_s=0.0, volume_s=0.0, composite_score=float(score[i]),
+                              signal=s, confidence_level=("HIGH" if conf >= 0.65 else "MEDIUM" if conf >= 0.35 else "LOW"),
+                              confidence_score=round(float(conf), 3)))
+                rows.append(r)
+        path = tmp_path / "market_tracker.csv"
+        pd.DataFrame(rows, columns=SCHEMA_COLUMNS).to_csv(path, index=False)
+        return path
+
+    def test_voltarget_book_present_and_normalized(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        df = bt.load_data(str(self._panel_csv(tmp_path)))
+        comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
+        vt = comp[comp["strategy"] == "high_conf_voltarget"].iloc[0]
+        assert vt["avg_gross_exposure"] <= 1.0 + 1e-9
+        assert np.isfinite(vt["sharpe"])
+
+    def test_voltarget_reduces_vol_vs_equal_weight(self, tmp_path, default_cfg, monkeypatch):
+        # Inverse-vol weighting should not run hotter than naive equal-weight on
+        # a universe with very different per-name volatilities.
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        df = bt.load_data(str(self._panel_with_benchmarks(tmp_path)))
+        comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
+        ew = comp[(comp["strategy"] == "high_conf_ew") & (comp["scope"] == "full")].iloc[0]
+        vt = comp[(comp["strategy"] == "high_conf_voltarget") & (comp["scope"] == "full")].iloc[0]
+        assert vt["ann_vol"] <= ew["ann_vol"] + 1e-9
+
+    def test_benchmark_books_appear_when_symbols_present(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        df = bt.load_data(str(self._panel_with_benchmarks(tmp_path)))
+        comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
+        assert "spy_buyhold" in set(comp["strategy"])
+        assert "sixty_forty" in set(comp["strategy"])
+
+    def test_sixty_forty_less_volatile_than_spy(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        df = bt.load_data(str(self._panel_with_benchmarks(tmp_path)))
+        comp = bt.portfolio_backtest(df, default_cfg, str(tmp_path))
+        spy = comp[(comp["strategy"] == "spy_buyhold") & (comp["scope"] == "full")].iloc[0]
+        sf = comp[(comp["strategy"] == "sixty_forty") & (comp["scope"] == "full")].iloc[0]
+        # Blending in 40% bonds (lower-vol AGG) should reduce portfolio vol.
+        assert sf["ann_vol"] < spy["ann_vol"]
+
+
+class TestWalkForward:
+    def test_walk_forward_produces_rows_and_folds(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        path = TestPortfolioBacktest()._panel_csv(tmp_path)
+        df = bt.load_data(str(path))
+        wf = bt.walk_forward_portfolio(df, default_cfg, str(tmp_path), n_folds=5)
+        assert (tmp_path / "walk_forward.csv").exists()
+        assert not wf.empty
+        # Every book reports up to the requested number of folds.
+        assert (wf["n_folds"] <= 5).all()
+        assert (wf["n_folds"] >= 1).all()
+
+    def test_walk_forward_metrics_finite_and_bounded(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        path = TestPortfolioBacktest()._panel_csv(tmp_path)
+        df = bt.load_data(str(path))
+        wf = bt.walk_forward_portfolio(df, default_cfg, str(tmp_path), n_folds=4)
+        pos = wf["pct_positive_folds"].dropna()
+        assert ((pos >= 0) & (pos <= 1)).all()
+        # min_sharpe should never exceed mean_sharpe.
+        valid = wf.dropna(subset=["mean_sharpe", "min_sharpe"])
+        assert (valid["min_sharpe"] <= valid["mean_sharpe"] + 1e-9).all()
+
+    def test_walk_forward_empty_on_tiny_universe(self, tmp_path, default_cfg, monkeypatch):
+        monkeypatch.setattr(bt, "MIN_BACKTEST_BARS", 50)
+        path = TestPortfolioBacktest()._panel_csv(tmp_path)
+        df = bt.load_data(str(path))
+        df = df[df["symbol"] == "S0"]
+        wf = bt.walk_forward_portfolio(df, default_cfg, str(tmp_path))
+        assert wf.empty

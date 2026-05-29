@@ -392,50 +392,159 @@ def _conviction_ls_weights(signed: pd.DataFrame, avail: pd.DataFrame, top_quanti
     return pd.DataFrame(rows, index=signed.index)
 
 
-def portfolio_backtest(df: pd.DataFrame, cfg: dict, out_dir: str, top_quantile: float = 0.1, oos_fraction: float = 0.35) -> pd.DataFrame:
-    Path(out_dir).mkdir(parents=True, exist_ok=True)
-    d = df.copy()
-    d["signal_dir"] = d["signal"].map({"LONG": 1, "SHORT": -1, "NEUTRAL": 0}).fillna(0)
-    d["conf"] = pd.to_numeric(d.get("confidence_score"), errors="coerce").fillna(0.0)
+def _inverse_vol_weights(selected: pd.DataFrame, atr_pct: pd.DataFrame, vol_floor: float = 0.5) -> pd.DataFrame:
+    """Inverse-volatility (risk-parity-style) weighting of a selected signed book.
 
-    close = d.pivot_table(index="date", columns="symbol", values="close", aggfunc="last").sort_index()
-    if close.shape[0] < 30 or close.shape[1] < 3:
-        empty = pd.DataFrame(columns=["strategy", "scope", "ann_return", "ann_vol", "sharpe", "max_drawdown", "total_return", "avg_gross_exposure"])
-        empty.to_csv(Path(out_dir) / "portfolio_comparison.csv", index=False)
-        return empty
+    Each held name is sized by 1/volatility so a single high-ATR name (a meme
+    coin at 8% daily) can't dominate a calm name (an ETF at 1%). ATR% is known
+    at close t, so this introduces no look-ahead. Gross is normalized to 1.
+    """
+    inv = 1.0 / atr_pct.clip(lower=vol_floor)
+    raw = selected * inv.reindex_like(selected).fillna(0.0)
+    return _gross_normalize(raw)
 
-    sig = d.pivot_table(index="date", columns="symbol", values="signal_dir", aggfunc="last").reindex(index=close.index, columns=close.columns).fillna(0.0)
-    conf = d.pivot_table(index="date", columns="symbol", values="conf", aggfunc="last").reindex(index=close.index, columns=close.columns).fillna(0.0)
-    avail = close.notna()
-    fwd = close.pct_change().shift(-1)  # return realized from t to t+1 (no look-ahead)
 
-    fees = cfg.get("defaults", {}).get("fees", {})
-    cost = (float(fees.get("bps_per_side", 1.0)) + float(fees.get("slippage_bps_per_side", 1.0))) / 10000.0
+def _benchmark_weights(close: pd.DataFrame, legs: dict) -> pd.DataFrame | None:
+    """Static-weight benchmark (e.g. 100% SPY, or 60/40 SPY/AGG).
 
-    # Weight books (decided at close t).
+    Returns None if any required symbol is absent from the universe, so the
+    benchmark is simply skipped rather than silently mis-stated.
+    """
+    if any(sym not in close.columns for sym in legs):
+        return None
+    w = pd.DataFrame(0.0, index=close.index, columns=close.columns)
+    for sym, weight in legs.items():
+        # Only allocate on days the symbol actually has data.
+        w[sym] = np.where(close[sym].notna(), weight, 0.0)
+    return w
+
+
+def _build_books(close: pd.DataFrame, sig: pd.DataFrame, conf: pd.DataFrame, atr_pct: pd.DataFrame, avail: pd.DataFrame, top_quantile: float) -> dict:
+    """Construct every portfolio weight matrix (decided at close t)."""
     ew_long = avail.div(avail.sum(axis=1).where(lambda s: s > 0, np.nan), axis=0).fillna(0.0)
+    high_conf_sel = sig.where(conf >= HIGH_CONF_THRESHOLD, 0.0)
     books = {
         "equal_weight_buyhold": ew_long,
         "all_signals_ew": _gross_normalize(sig),
-        "high_conf_ew": _gross_normalize(sig.where(conf >= HIGH_CONF_THRESHOLD, 0.0)),
+        "high_conf_ew": _gross_normalize(high_conf_sel),
+        "high_conf_voltarget": _inverse_vol_weights(high_conf_sel, atr_pct),
         "conviction_long_short": _conviction_ls_weights(sig * conf, avail, top_quantile),
     }
+    # Real-world benchmarks (skipped if their symbols aren't tracked).
+    spy = _benchmark_weights(close, {"SPY": 1.0})
+    if spy is not None:
+        books["spy_buyhold"] = spy
+    sixty_forty = _benchmark_weights(close, {"SPY": 0.6, "AGG": 0.4})
+    if sixty_forty is not None:
+        books["sixty_forty"] = sixty_forty
+    return books
 
+
+def _book_returns(W: pd.DataFrame, fwd: pd.DataFrame, close: pd.DataFrame, cost: float) -> pd.Series:
+    """Net daily return series for a weight matrix (turnover costs applied)."""
+    W = W.reindex(index=close.index, columns=close.columns).fillna(0.0)
+    gross_ret = (W * fwd).sum(axis=1)
+    turnover = (W - W.shift(1).fillna(0.0)).abs().sum(axis=1)
+    return (gross_ret - turnover * cost).replace([np.inf, -np.inf], np.nan)
+
+
+def _portfolio_inputs(df: pd.DataFrame, cfg: dict):
+    """Shared pivots for portfolio construction. Returns None if too sparse."""
+    d = df.copy()
+    d["signal_dir"] = d["signal"].map({"LONG": 1, "SHORT": -1, "NEUTRAL": 0}).fillna(0)
+    d["conf"] = pd.to_numeric(d.get("confidence_score"), errors="coerce").fillna(0.0)
+    if "atr14" in d.columns:
+        d["atr_pct"] = 100.0 * pd.to_numeric(d["atr14"], errors="coerce") / d["close"]
+    else:
+        d["atr_pct"] = np.nan
+
+    close = d.pivot_table(index="date", columns="symbol", values="close", aggfunc="last").sort_index()
+    if close.shape[0] < 30 or close.shape[1] < 3:
+        return None
+
+    def piv(col):
+        return d.pivot_table(index="date", columns="symbol", values=col, aggfunc="last").reindex(index=close.index, columns=close.columns)
+
+    sig = piv("signal_dir").fillna(0.0)
+    conf = piv("conf").fillna(0.0)
+    atr_pct = piv("atr_pct").ffill().fillna(3.0)  # sensible default if missing
+    avail = close.notna()
+    fwd = close.pct_change().shift(-1)  # realized t -> t+1 (no look-ahead)
+    fees = cfg.get("defaults", {}).get("fees", {})
+    cost = (float(fees.get("bps_per_side", 1.0)) + float(fees.get("slippage_bps_per_side", 1.0))) / 10000.0
+    return close, sig, conf, atr_pct, avail, fwd, cost
+
+
+def portfolio_backtest(df: pd.DataFrame, cfg: dict, out_dir: str, top_quantile: float = 0.1, oos_fraction: float = 0.35) -> pd.DataFrame:
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
+    cols = ["strategy", "scope", "ann_return", "ann_vol", "sharpe", "max_drawdown", "total_return", "avg_gross_exposure"]
+    inputs = _portfolio_inputs(df, cfg)
+    if inputs is None:
+        empty = pd.DataFrame(columns=cols)
+        empty.to_csv(Path(out_dir) / "portfolio_comparison.csv", index=False)
+        return empty
+    close, sig, conf, atr_pct, avail, fwd, cost = inputs
+
+    books = _build_books(close, sig, conf, atr_pct, avail, top_quantile)
     dates = close.index
     oos_start = dates[int(len(dates) * (1 - oos_fraction))]
     records = []
     for name, W in books.items():
-        W = W.reindex(index=close.index, columns=close.columns).fillna(0.0)
-        gross_ret = (W * fwd).sum(axis=1)
-        turnover = (W - W.shift(1).fillna(0.0)).abs().sum(axis=1)
-        port = (gross_ret - turnover * cost).replace([np.inf, -np.inf], np.nan)
-        gross_exposure = float(W.abs().sum(axis=1).mean())
+        port = _book_returns(W, fwd, close, cost)
+        gross_exposure = float(W.reindex(index=close.index, columns=close.columns).fillna(0.0).abs().sum(axis=1).mean())
         for scope, series in (("full", port), ("out_of_sample", port.loc[oos_start:])):
             records.append({"strategy": name, "scope": scope, **_portfolio_metrics(series), "avg_gross_exposure": round(gross_exposure, 3)})
 
     comparison = pd.DataFrame(records)
     comparison.to_csv(Path(out_dir) / "portfolio_comparison.csv", index=False)
     return comparison
+
+
+def walk_forward_portfolio(df: pd.DataFrame, cfg: dict, out_dir: str, n_folds: int = 5, top_quantile: float = 0.1) -> pd.DataFrame:
+    """Split the timeline into `n_folds` contiguous windows and measure each book
+    in every window. A rule-based strategy has no fit step, so each fold is a
+    genuinely different regime — robust edge should hold across most of them,
+    not just the most recent tail. Reports mean/min Sharpe and % positive folds.
+    """
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
+    cols = ["strategy", "n_folds", "mean_sharpe", "median_sharpe", "min_sharpe", "pct_positive_folds", "mean_return", "fold_sharpes"]
+    inputs = _portfolio_inputs(df, cfg)
+    if inputs is None:
+        empty = pd.DataFrame(columns=cols)
+        empty.to_csv(Path(out_dir) / "walk_forward.csv", index=False)
+        return empty
+    close, sig, conf, atr_pct, avail, fwd, cost = inputs
+
+    books = _build_books(close, sig, conf, atr_pct, avail, top_quantile)
+    dates = close.index
+    bounds = np.linspace(0, len(dates), n_folds + 1).astype(int)
+    folds = [(dates[bounds[i]], dates[bounds[i + 1] - 1]) for i in range(n_folds) if bounds[i + 1] > bounds[i]]
+
+    records = []
+    for name, W in books.items():
+        port = _book_returns(W, fwd, close, cost)
+        fold_sharpes = []
+        fold_returns = []
+        for start, end in folds:
+            seg = port.loc[start:end]
+            m = _portfolio_metrics(seg)
+            fold_sharpes.append(m["sharpe"])
+            fold_returns.append(m["total_return"])
+        valid = [s for s in fold_sharpes if s is not None and np.isfinite(s)]
+        valid_ret = [r for r in fold_returns if r is not None and np.isfinite(r)]
+        records.append({
+            "strategy": name,
+            "n_folds": len(valid),
+            "mean_sharpe": float(np.mean(valid)) if valid else np.nan,
+            "median_sharpe": float(np.median(valid)) if valid else np.nan,
+            "min_sharpe": float(np.min(valid)) if valid else np.nan,
+            "pct_positive_folds": float(np.mean([s > 0 for s in valid])) if valid else np.nan,
+            "mean_return": float(np.mean(valid_ret)) if valid_ret else np.nan,
+            "fold_sharpes": ";".join(f"{s:.2f}" for s in valid),
+        })
+    wf = pd.DataFrame(records)
+    wf.to_csv(Path(out_dir) / "walk_forward.csv", index=False)
+    return wf
 
 
 def main() -> None:
@@ -454,6 +563,7 @@ def main() -> None:
         run_calibration(df, OUT_DIR)
         compare_strategies(df, cfg, OUT_DIR)
         portfolio_backtest(df, cfg, OUT_DIR)
+        walk_forward_portfolio(df, cfg, OUT_DIR)
     if args.mode in ("sweep", "both"):
         run_sweep(df, cfg, OUT_DIR, range(args.min, args.max + 1, args.step))
     if args.mode == "calibrate":
@@ -462,6 +572,7 @@ def main() -> None:
         compare_strategies(df, cfg, OUT_DIR)
     if args.mode == "portfolio":
         portfolio_backtest(df, cfg, OUT_DIR)
+        walk_forward_portfolio(df, cfg, OUT_DIR)
     print(f"Outputs in {OUT_DIR}")
 
 

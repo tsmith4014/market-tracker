@@ -108,10 +108,39 @@ def portfolio_section() -> list[str]:
         if col in display.columns:
             display[col] = display[col].apply(number)
     lines.extend([
-        "Actual capital-allocation books (not per-symbol averages). "
-        "`equal_weight_buyhold` is the benchmark; `conviction_long_short` is market-neutral. "
+        "Actual capital-allocation books (not per-symbol averages). Benchmarks: "
+        "`equal_weight_buyhold` (whole tracked universe), `spy_buyhold` (100% SPY), and "
+        "`sixty_forty` (60% SPY / 40% AGG). `high_conf_voltarget` inverse-vol-weights the "
+        "HIGH-confidence book; `conviction_long_short` is market-neutral. "
         "Judge on **Sharpe** and **max_drawdown** out-of-sample, not raw return: a "
         "fully-invested long book wins on return in a bull market but carries all the risk.",
+        "",
+        display.to_markdown(index=False),
+        "",
+    ])
+    return lines
+
+
+def walk_forward_section() -> list[str]:
+    """Is the edge robust across regimes, or just the most recent window?"""
+    wf = load_csv(OUT_DIR / "walk_forward.csv")
+    lines = ["## Walk-Forward Robustness", ""]
+    if wf is None or wf.empty:
+        lines.extend(["No walk-forward analysis was generated.", ""])
+        return lines
+    display = wf.copy()
+    for col in ["mean_sharpe", "median_sharpe", "min_sharpe"]:
+        if col in display.columns:
+            display[col] = display[col].apply(number)
+    if "pct_positive_folds" in display.columns:
+        display["pct_positive_folds"] = display["pct_positive_folds"].apply(percent)
+    if "mean_return" in display.columns:
+        display["mean_return"] = display["mean_return"].apply(percent)
+    lines.extend([
+        "Each book measured across contiguous time folds (each a different regime). "
+        "A book has durable edge only if `mean_sharpe` is positive, `min_sharpe` isn't "
+        "deeply negative, and `pct_positive_folds` is high — a single great fold doesn't count. "
+        "`fold_sharpes` lists each fold oldest-to-newest.",
         "",
         display.to_markdown(index=False),
         "",
@@ -240,6 +269,7 @@ def main() -> None:
     ]
     lines.extend(edge_summary_section(summary))
     lines.extend(portfolio_section())
+    lines.extend(walk_forward_section())
     lines.extend(strategy_comparison_section())
     lines.extend(calibration_section())
     lines.extend(summary_section(summary))
