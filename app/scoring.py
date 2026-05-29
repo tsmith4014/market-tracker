@@ -369,3 +369,49 @@ def compute_market_regime(scores: Dict[str, float]) -> Dict[str, str]:
         "risk_score": round(float(risk_avg), 2),
         "dxy_signal": dxy_signal,
     }
+
+
+def compute_positioning(regime: dict, signals: list) -> dict:
+    """Translate the regime + HIGH-confidence signals into *context* for a co-pilot.
+
+    IMPORTANT — this is positioning CONTEXT, not a trade engine. Walk-forward
+    testing showed the directional signal does not beat a simple SPY / 60-40
+    buy-and-hold across regimes, so the validated stance is:
+
+        - Core: own a diversified index (SPY / 60-40) as the default.
+        - Tilt: only when the macro regime agrees, surface the HIGH-confidence
+          names as a small risk-on/risk-off *tilt*, never as the whole book.
+
+    Returns a dict the JSON payload exposes so downstream consumers (and humans)
+    see the suggested posture and the named tilt candidates, clearly framed.
+    """
+    regime_label = regime.get("regime", "MIXED")
+    high_long = [s for s in signals if s.get("signal") == "LONG" and s.get("confidence", {}).get("level") == "HIGH"]
+    high_short = [s for s in signals if s.get("signal") == "SHORT" and s.get("confidence", {}).get("level") == "HIGH"]
+
+    if regime_label == "RISK_ON":
+        stance = "core_plus_long_tilt"
+        rationale = "Risk-on regime: hold the index core; a small tilt toward HIGH-confidence longs is supported."
+        tilt_longs = [s["symbol"] for s in high_long]
+        tilt_shorts = []
+    elif regime_label == "RISK_OFF":
+        stance = "defensive_core"
+        rationale = "Risk-off regime: favor the defensive core (more bonds); treat HIGH-confidence shorts as hedge context only."
+        tilt_longs = []
+        tilt_shorts = [s["symbol"] for s in high_short]
+    else:
+        stance = "core_only"
+        rationale = "Mixed regime: no edge in tilting. Hold the index core; use signals as risk context, not trades."
+        tilt_longs = []
+        tilt_shorts = []
+
+    return {
+        "is_trade_engine": False,
+        "core_recommendation": "index_buy_and_hold (SPY / 60-40) — validated baseline",
+        "stance": stance,
+        "rationale": rationale,
+        "tilt_long_candidates": tilt_longs,
+        "tilt_short_candidates": tilt_shorts,
+        "note": "Positioning CONTEXT only. Walk-forward showed the directional signal does not beat buy-and-hold across regimes.",
+    }
+

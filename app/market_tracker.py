@@ -40,6 +40,7 @@ from scoring import (
     composite_and_subscores,
     compute_confidence,
     compute_market_regime,
+    compute_positioning,
     enforce_guards,
     finite_or_none,
     latest_dict,
@@ -670,12 +671,14 @@ def main() -> None:
     # Write JSON co-pilot output
     if EXPORT_JSON and copilot_signals:
         regime = compute_market_regime(latest_scores)
+        positioning = compute_positioning(regime, copilot_signals)
         payload = build_copilot_payload(
             signals=copilot_signals,
             regime=regime,
             quality_reports=quality_reports,
             source_reliability=tracker.summary(),
             run_timestamp=run_timestamp,
+            positioning=positioning,
         )
         write_copilot_json(payload, OUT_JSON)
         write_latest_signals_json(copilot_signals, OUT_LATEST)

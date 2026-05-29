@@ -9,6 +9,26 @@ This repo is designed to be useful in two modes:
 
 The default Docker and GitHub Actions path uses **historical mode** because it makes the backtest/report pipeline useful immediately instead of waiting for hundreds of daily appends.
 
+## Research findings & honest positioning
+
+We rigorously tested whether the composite signal produces a *tradeable edge*. It does not, and that conclusion is itself the most valuable result. Use this tool for what the evidence supports — **risk context and confidence-ranked watchlists**, not as a standalone alpha engine.
+
+**What we tested.** Multiple decision rules (trend-following, mean-reversion, regime-adaptive), a per-symbol backtest, a calibration study, deployable portfolio books (equal-weight, HIGH-confidence-only, inverse-vol-targeted, market-neutral long/short), against **real benchmarks** (100% SPY and 60/40 SPY/AGG), validated with **walk-forward** across multiple regime folds.
+
+**What we found (2024–2026 data):**
+
+- **No durable directional edge.** Across walk-forward folds, plain `spy_buyhold` (mean Sharpe ≈ 0.87, positive in 4/5 folds) and `sixty_forty` (≈ 0.76, 4/5) **beat every signal book**. The HIGH-confidence book looked good on a single out-of-sample tail (Sharpe ≈ 0.69) but was positive in only **2 of 5** regimes — its median fold was negative. That is the signature of a non-robust strategy, and the walk-forward is what exposed it. Don't deploy the signal as a return engine.
+- **The confidence score *is* calibrated.** Forward returns are cleanly monotonic by bucket (HIGH > MEDIUM > LOW, ~+0.85% vs −0.57% mean over 20 days; HIGH win-rate ~54% vs LOW ~47%), and this held across runs. The score carries real *information* even though it isn't standalone alpha.
+- **Engineering worked; it just can't manufacture edge.** Inverse-vol targeting (`high_conf_voltarget`) cut volatility and drawdown vs naive equal weight exactly as designed. The market-neutral book failed — the (weak) edge is selective and directional, not cross-sectional.
+
+**Validated positioning (what to actually do):**
+
+1. **Core:** own a diversified index (SPY / 60-40) as the default — that is the robust baseline.
+2. **Tilt (context only):** when the macro regime agrees, treat HIGH-confidence names as a *small* risk-on/off tilt — never the whole book. This is surfaced in `copilot_signals.json` under `positioning` and is explicitly flagged `is_trade_engine: false`.
+3. **Feed, not oracle:** the highest-value output is a co-pilot feed — regime, calibrated conviction, ATR-based levels, data-quality flags — plus drawdown-aware risk overlay. See `docs/OPTIONS_INTEGRATION.md` for combining it with an external unusual-options-activity scanner for paper-trading analysis.
+
+The backtest report regenerates the **Portfolio Backtest**, **Walk-Forward Robustness**, **Strategy Comparison**, and **Signal Calibration** sections every run, so these claims stay falsifiable against fresh data.
+
 ## What's new
 
 - **Real test suite** with 94 tests across indicators, scoring, guards, storage idempotency, and the backtest engine on synthetic data with known outcomes.

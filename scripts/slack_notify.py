@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Post a compact market-tracker summary to Slack via incoming webhook."""
+"""Post a compact market-tracker summary to Slack via incoming webhook.
+
+Optionally enriches the post with unusual-options-activity confluence when an
+OPTIONS_JSON feed is present (see docs/OPTIONS_INTEGRATION.md).
+"""
 from __future__ import annotations
 
 import json
@@ -7,6 +11,13 @@ import os
 import sys
 import urllib.request
 from pathlib import Path
+
+# Make app/ importable so we can reuse the enrichment module.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "app"))
+try:
+    import options_enrichment as oe
+except ImportError:  # pragma: no cover
+    oe = None
 
 
 def load_json(path: Path) -> dict:
@@ -43,7 +54,23 @@ def build_message(copilot: dict, latest: dict) -> str:
     hc_short = summary.get("high_confidence_shorts") or []
     if hc_long or hc_short:
         lines.append(f"High confidence — LONG: {', '.join(hc_long) or 'none'} | SHORT: {', '.join(hc_short) or 'none'}")
+
+    pos = copilot.get("positioning") or {}
+    if pos.get("stance"):
+        lines.append(f"Posture: *{pos['stance']}* — {pos.get('rationale', '')}")
+
     return "\n".join(lines)
+
+
+def build_options_lines(copilot: dict, options_path: Path) -> list[str]:
+    """Append unusual-options × tracker confluence if a feed is available."""
+    if oe is None or not options_path.is_file():
+        return []
+    feed = oe.load_options_activity(options_path)
+    if not feed.get("alerts"):
+        return []
+    enriched = oe.enrich(feed, copilot)
+    return oe.to_slack_lines(enriched)
 
 
 def post_slack(webhook: str, text: str) -> None:
@@ -68,6 +95,7 @@ def main() -> int:
     data_dir = Path(os.getenv("DATA_DIR", "data"))
     copilot_path = Path(os.getenv("COPILOT_JSON", data_dir / "copilot_signals.json"))
     latest_path = Path(os.getenv("LATEST_JSON", data_dir / "latest_signals.json"))
+    options_path = Path(os.getenv("OPTIONS_JSON", data_dir / "options_activity.json"))
 
     try:
         copilot = load_json(copilot_path)
@@ -77,6 +105,9 @@ def main() -> int:
         return 1
 
     text = build_message(copilot, latest)
+    options_lines = build_options_lines(copilot, options_path)
+    if options_lines:
+        text = text + "\n" + "\n".join(options_lines)
     post_slack(webhook, text)
     print("Posted market summary to Slack")
     return 0

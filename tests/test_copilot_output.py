@@ -116,7 +116,8 @@ class TestBuildCopilotPayload:
             source_reliability=[],
             run_timestamp="2025-01-15T12:00:00Z",
         )
-        assert payload["version"] == "2.0"
+        assert payload["version"] == "2.1"
+        assert "positioning" in payload
         assert payload["summary"]["long_signals"] == 1
         assert payload["market_regime"]["regime"] == "RISK_ON"
         assert len(payload["signals"]) == 1

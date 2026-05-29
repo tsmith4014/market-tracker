@@ -196,6 +196,7 @@ def build_copilot_payload(
     quality_reports: List[dict],
     source_reliability: List[dict],
     run_timestamp: str,
+    positioning: dict | None = None,
 ) -> dict:
     """Build the complete co-pilot JSON payload."""
 
@@ -222,10 +223,11 @@ def build_copilot_payload(
     }
 
     return {
-        "version": "2.0",
+        "version": "2.1",
         "generated_at": run_timestamp,
         "summary": summary,
         "market_regime": regime,
+        "positioning": positioning or {},
         "signals": signals,
         "data_quality": quality_reports,
         "source_reliability": source_reliability,
