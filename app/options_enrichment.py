@@ -118,7 +118,7 @@ def enrich(options_feed: dict, copilot_payload: dict) -> dict:
             "symbol": a["symbol"],
             "flow_direction": a["direction"],
             "premium_usd": a["premium_usd"],
-            "notes": a["notes"],
+            "notes": a.get("notes"),
             "tracker_signal": tracker_signal,
             "tracker_confidence": tracker["confidence"] if tracker else None,
             "tracker_score": tracker["composite_score"] if tracker else None,

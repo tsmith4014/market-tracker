@@ -60,6 +60,26 @@ JSON file** the UOA app drops where the tracker's notifier can read it.
 
 Unknown fields are ignored; missing optional fields are tolerated.
 
+## OpenClaw `~/.openclaw/.env`
+
+OpenClaw stores **local secrets and config** in `~/.openclaw/.env` (dotenv format).
+The gateway and skills read this file; it is **not** committed to git.
+
+`scripts/slack_notify.py` and `scripts/local_daily.sh` automatically load
+`~/.openclaw/.env` when `SLACK_WEBHOOK_URL` is not already set in your shell.
+Existing shell exports win (we do not override).
+
+Typical keys (names only):
+
+- `SLACK_WEBHOOK_URL` — incoming webhook used by `slack_notify.py`
+- `SLACK_BOT_TOKEN` / `SLACK_APP_TOKEN` — used by OpenClaw’s Slack gateway (separate)
+
+Convert heartbeat → tracker feed:
+
+```bash
+python3 scripts/openclaw_to_options_activity.py
+```
+
 ## Wiring it up
 
 Point the notifier at the file with `OPTIONS_JSON` (defaults to

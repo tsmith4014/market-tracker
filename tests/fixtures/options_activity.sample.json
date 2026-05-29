@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-05-29T12:00:00Z",
+  "source": "openclaw-uoa",
+  "alerts": [
+    {
+      "symbol": "NVDA",
+      "direction": "bullish",
+      "type": "call",
+      "premium_usd": 2400000,
+      "sentiment_score": 0.82,
+      "strike": 220.0,
+      "expiry": "2026-06-20",
+      "notes": "repeated ask-side call sweeps"
+    },
+    {
+      "symbol": "META",
+      "direction": "bearish",
+      "type": "put",
+      "premium_usd": 1100000,
+      "notes": "large put block"
+    }
+  ]
+}
