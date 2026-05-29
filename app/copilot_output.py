@@ -10,6 +10,7 @@ Generates a machine-readable JSON payload with:
 from __future__ import annotations
 
 import json
+import math
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Optional
@@ -120,15 +121,15 @@ def build_signal_payload(
     # Compute key levels for trade planning
     levels = {}
     if close and atr14 and np.isfinite(atr14):
-        levels["atr_stop_long"] = round(close - 2.0 * atr14, 4)
-        levels["atr_stop_short"] = round(close + 2.0 * atr14, 4)
-        levels["atr_target_1r"] = round(close + 2.0 * atr14, 4)
-        levels["atr_target_2r"] = round(close + 4.0 * atr14, 4)
+        levels["atr_stop_long"] = _round_price(close - 2.0 * atr14)
+        levels["atr_stop_short"] = _round_price(close + 2.0 * atr14)
+        levels["atr_target_1r"] = _round_price(close + 2.0 * atr14)
+        levels["atr_target_2r"] = _round_price(close + 4.0 * atr14)
 
     if row.get("pivot") and np.isfinite(row.get("pivot", np.nan)):
-        levels["pivot"] = round(row["pivot"], 4)
-        levels["r1"] = round(row.get("r1", 0), 4) if row.get("r1") and np.isfinite(row.get("r1", np.nan)) else None
-        levels["s1"] = round(row.get("s1", 0), 4) if row.get("s1") and np.isfinite(row.get("s1", np.nan)) else None
+        levels["pivot"] = _round_price(row["pivot"])
+        levels["r1"] = _round_price(row.get("r1")) if row.get("r1") and np.isfinite(row.get("r1", np.nan)) else None
+        levels["s1"] = _round_price(row.get("s1")) if row.get("s1") and np.isfinite(row.get("s1", np.nan)) else None
 
     # Position in range (0=at support, 1=at resistance)
     fib_low = row.get("fib_long_low")
@@ -146,7 +147,7 @@ def build_signal_payload(
             "score": confidence_score,
         },
         "price": {
-            "close": _safe_round(close, 4),
+            "close": _round_price(close),
             "change_pct_1d": _safe_round(row.get("roc1"), 2),
             "change_pct_10d": _safe_round(row.get("roc10"), 2),
             "range_position": range_position,
@@ -173,10 +174,10 @@ def build_signal_payload(
         },
         "levels": levels,
         "moving_averages": {
-            "ema20": _safe_round(ema20, 4),
-            "ema50": _safe_round(ema50, 4),
-            "ema200": _safe_round(ema200, 4),
-            "vwap20": _safe_round(row.get("vwap"), 4),
+            "ema20": _round_price(ema20),
+            "ema50": _round_price(ema50),
+            "ema200": _round_price(ema200),
+            "vwap20": _round_price(row.get("vwap")),
         },
         "meta": {
             "data_source": source,
@@ -270,6 +271,31 @@ def _safe_round(val, digits: int) -> Optional[float]:
         return round(float(val), digits)
     except (TypeError, ValueError):
         return None
+
+
+def _round_price(val) -> Optional[float]:
+    """Round a price with precision scaled to its magnitude.
+
+    Fixed 4-decimal rounding collapses sub-cent assets (SHIB, PEPE, BONK) to
+    0.0. Scale the precision so micro-priced tokens keep meaningful digits.
+    """
+    if val is None or (isinstance(val, float) and not np.isfinite(val)):
+        return None
+    try:
+        v = float(val)
+    except (TypeError, ValueError):
+        return None
+    a = abs(v)
+    if a == 0:
+        return 0.0
+    if a >= 1:
+        digits = 4
+    elif a >= 0.01:
+        digits = 6
+    else:
+        # Keep ~5 significant figures for very small prices.
+        digits = min(15, 4 - int(math.floor(math.log10(a))))
+    return round(v, digits)
 
 
 def _weekly_label(val) -> Optional[str]:

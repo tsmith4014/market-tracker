@@ -447,7 +447,7 @@ def process_df(df: pd.DataFrame, symbol_cfg: dict) -> pd.DataFrame:
             "SHORT" if score <= float(symbol_cfg["thresholds"]["short"]) else "NEUTRAL"
         )
         signal = enforce_guards(symbol_cfg, ld, raw)
-        conf_level, conf_score = compute_confidence(score, subs, ld, symbol_cfg["thresholds"])
+        conf_level, conf_score = compute_confidence(score, subs, ld, symbol_cfg["thresholds"], signal)
 
         for k, v in subs.items():
             out.loc[idx, k] = v
