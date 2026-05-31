@@ -9,6 +9,8 @@ services:
       OUTPUT_LATEST_PATH: /data/latest_signals.json
       CONFIG_PATH: /app/config.json
       SYMBOLS_PATH: /app/symbols.json
+      # Auto-track whatever the unusual-options feed flags (set TRACK_OPTIONS_SYMBOLS=false to disable).
+      OPTIONS_ACTIVITY_PATH: /data/options_activity.json
       DAYS_CRYPTO: "730"
       DAYS_EQUITY: 800d
       OUTPUT_MODE: historical

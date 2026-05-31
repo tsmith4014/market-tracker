@@ -85,6 +85,30 @@ class SymbolManager:
                 },
             ))
 
+    def add_stock_symbol(
+        self,
+        symbol: str,
+        name: str | None = None,
+        sector: str = "options_watch",
+    ) -> bool:
+        """Register an ad-hoc stock at runtime (e.g. an unusual-options name not in
+        the catalog). Derives default Stooq/yfinance mappings. Returns False if the
+        symbol is already known."""
+        symbol = symbol.upper()
+        if symbol in self._symbol_to_info:
+            return False
+        info = SymbolInfo(
+            symbol=symbol,
+            name=name or symbol,
+            category="options_watch",
+            asset_type="stock",
+            sector=sector,
+            api_mappings={"stooq": f"{symbol.lower()}.us", "yfinance": symbol},
+        )
+        self._add_symbol(info)
+        self._sector_index.setdefault(sector, []).append(symbol)
+        return True
+
     def _add_symbol(self, info: SymbolInfo) -> None:
         self._symbol_to_info[info.symbol] = info
         self._category_index.setdefault(info.category, []).append(info.symbol)

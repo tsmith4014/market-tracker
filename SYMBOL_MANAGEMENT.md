@@ -210,6 +210,21 @@ services:
 - **Stocks**: Stooq → Yahoo Finance
 - **Indices**: Stooq → Yahoo Finance
 
+## Auto-tracking Unusual-Options Symbols
+
+The daily pipeline reads `data/options_activity.json` (produced from the OpenClaw
+heartbeat). Any equity flagged there that is **not** already in `symbols.json` is
+registered at run time with derived mappings (`stooq: <sym>.us`, `yfinance: <sym>`)
+and scored alongside the catalog, so those names get a real confluence verdict
+instead of `NO_TRACKER_DATA`.
+
+- Controlled by `TRACK_OPTIONS_SYMBOLS` (default `true`; set `false` to disable).
+- Feed path is `OPTIONS_ACTIVITY_PATH` (default `data/options_activity.json`; `/data/options_activity.json` in Docker).
+- Crypto-style tickers (`*-USD`) in the feed are skipped — the options feed is equities/ETFs.
+
+This adds a few symbols to each run, so runs take slightly longer but the
+Unusual Options × Tracker section becomes fully populated.
+
 ## Adding New Symbols
 
 ### 1. Edit `symbols.json`

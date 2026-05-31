@@ -45,6 +45,7 @@ from scoring import (
     finite_or_none,
     latest_dict,
 )
+from options_enrichment import load_options_activity
 from strategies import raw_signal
 from symbol_manager import SymbolInfo, SymbolManager
 
@@ -80,6 +81,10 @@ TRACK_STOCKS = [x.strip() for x in os.getenv("TRACK_STOCKS", _DEFAULT_STOCK_CATE
 TRACK_ALL = os.getenv("TRACK_ALL", "false").lower() == "true"
 TRACK_INDICES = os.getenv("TRACK_INDICES", "true").lower() == "true"
 TRACK_SYMBOLS = [x.strip().upper() for x in os.getenv("TRACK_SYMBOLS", "").split(",") if x.strip()]
+# Auto-include whatever the unusual-options feed flags, so those names get real
+# tracker signals (confluence) instead of NO_TRACKER_DATA. Disable with "false".
+TRACK_OPTIONS_SYMBOLS = os.getenv("TRACK_OPTIONS_SYMBOLS", "true").lower() == "true"
+OPTIONS_ACTIVITY_PATH = os.getenv("OPTIONS_ACTIVITY_PATH", "data/options_activity.json")
 
 SCHEMA_COLUMNS = [
     "timestamp_ct", "symbol", "data_source", "date", "open", "high", "low", "close", "volume",
@@ -116,6 +121,23 @@ def dedupe(items: Iterable[str]) -> List[str]:
     return result
 
 
+def options_activity_symbols() -> List[str]:
+    """Symbols from the unusual-options feed, registering any equities not already
+    in the catalog so the tracker can score them. Crypto-style names (``*-USD``)
+    are skipped since the UOA feed is equities/ETFs."""
+    feed = load_options_activity(OPTIONS_ACTIVITY_PATH)
+    included: List[str] = []
+    for alert in feed.get("alerts", []):
+        sym = alert["symbol"]
+        if sym.endswith("-USD"):
+            continue
+        if SYMBOL_MANAGER.get_symbol_info(sym) is None:
+            SYMBOL_MANAGER.add_stock_symbol(sym)
+            LOGGER.info("Auto-added options-activity symbol to universe: %s", sym)
+        included.append(sym)
+    return included
+
+
 def get_tracking_symbols() -> List[str]:
     if TRACK_SYMBOLS:
         unknown = [s for s in TRACK_SYMBOLS if SYMBOL_MANAGER.get_symbol_info(s) is None]
@@ -123,14 +145,17 @@ def get_tracking_symbols() -> List[str]:
             raise ValueError(f"Unknown TRACK_SYMBOLS: {', '.join(unknown)}")
         return dedupe(TRACK_SYMBOLS)
     if TRACK_ALL:
-        return dedupe(SYMBOL_MANAGER.all_symbols())
-    symbols: List[str] = []
-    for category in TRACK_CRYPTO:
-        symbols.extend(SYMBOL_MANAGER.get_by_category(category))
-    for category in TRACK_STOCKS:
-        symbols.extend(SYMBOL_MANAGER.get_by_category(category))
-    if TRACK_INDICES:
-        symbols.extend(SYMBOL_MANAGER.get_all_indices())
+        symbols = list(SYMBOL_MANAGER.all_symbols())
+    else:
+        symbols = []
+        for category in TRACK_CRYPTO:
+            symbols.extend(SYMBOL_MANAGER.get_by_category(category))
+        for category in TRACK_STOCKS:
+            symbols.extend(SYMBOL_MANAGER.get_by_category(category))
+        if TRACK_INDICES:
+            symbols.extend(SYMBOL_MANAGER.get_all_indices())
+    if TRACK_OPTIONS_SYMBOLS:
+        symbols.extend(options_activity_symbols())
     return dedupe(symbols)
 
 
