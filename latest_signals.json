@@ -1,531 +1,531 @@
 {
-  "generated_at": "2026-05-29T21:13:32+00:00",
+  "generated_at": "2026-06-01T01:41:42+00:00",
   "signals": [
     {
       "symbol": "BTC-USD",
       "signal": "SHORT",
-      "score": -45.58,
+      "score": -44.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.46,
-      "close": 73567.7,
-      "atr_pct": 2.46,
-      "rsi14": 24.57,
+      "confidence_score": 0.503,
+      "close": 73536.2,
+      "atr_pct": 2.18,
+      "rsi14": 31.83,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "ETH-USD",
       "signal": "SHORT",
-      "score": -54.08,
+      "score": -37.67,
       "confidence": "MEDIUM",
-      "confidence_score": 0.567,
-      "close": 2015.59,
-      "atr_pct": 4.34,
-      "rsi14": 24.0,
+      "confidence_score": 0.416,
+      "close": 2004.64,
+      "atr_pct": 3.15,
+      "rsi14": 30.88,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "SOL-USD",
       "signal": "SHORT",
-      "score": -36.58,
+      "score": -42.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.433,
-      "close": 82.09,
-      "atr_pct": 3.89,
-      "rsi14": 28.2,
+      "confidence_score": 0.462,
+      "close": 82.27,
+      "atr_pct": 3.36,
+      "rsi14": 38.48,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "XRP-USD",
       "signal": "SHORT",
-      "score": -45.58,
+      "score": -44.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.487,
-      "close": 1.321,
-      "atr_pct": 3.33,
-      "rsi14": 23.88,
+      "confidence_score": 0.429,
+      "close": 1.328,
+      "atr_pct": 2.99,
+      "rsi14": 34.65,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "ADA-USD",
       "signal": "SHORT",
-      "score": -38.58,
-      "confidence": "LOW",
-      "confidence_score": 0.249,
-      "close": 0.232524,
-      "atr_pct": 3.89,
-      "rsi14": 16.44,
+      "score": -47.67,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.501,
+      "close": 0.235001,
+      "atr_pct": 3.43,
+      "rsi14": 27.52,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "LINK-USD",
-      "signal": "SHORT",
-      "score": -45.58,
-      "confidence": "MEDIUM",
-      "confidence_score": 0.439,
-      "close": 8.9904,
-      "atr_pct": 4.62,
-      "rsi14": 25.18,
+      "signal": "NEUTRAL",
+      "score": -55.58,
+      "confidence": "LOW",
+      "confidence_score": 0.0,
+      "close": 9.12,
+      "atr_pct": 4.05,
+      "rsi14": 37.07,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "UNI-USD",
       "signal": "SHORT",
-      "score": -44.33,
+      "score": -42.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.632,
-      "close": 3.011,
-      "atr_pct": 6.39,
-      "rsi14": 24.7,
+      "confidence_score": 0.47,
+      "close": 3.015,
+      "atr_pct": 5.54,
+      "rsi14": 24.19,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "AAVE-USD",
       "signal": "SHORT",
-      "score": -45.92,
+      "score": -45.67,
       "confidence": "MEDIUM",
-      "confidence_score": 0.441,
-      "close": 82.3,
-      "atr_pct": 4.71,
-      "rsi14": 20.68,
+      "confidence_score": 0.44,
+      "close": 82.17,
+      "atr_pct": 4.05,
+      "rsi14": 26.42,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "AVAX-USD",
       "signal": "SHORT",
-      "score": -44.25,
+      "score": -42.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.481,
-      "close": 8.81,
-      "atr_pct": 4.26,
-      "rsi14": 33.33,
+      "confidence_score": 0.42,
+      "close": 8.96,
+      "atr_pct": 3.79,
+      "rsi14": 42.56,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "LTC-USD",
       "signal": "SHORT",
-      "score": -45.58,
-      "confidence": "LOW",
-      "confidence_score": 0.239,
-      "close": 51.85,
-      "atr_pct": 3.15,
-      "rsi14": 17.1,
+      "score": -44.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.482,
+      "close": 51.93,
+      "atr_pct": 2.66,
+      "rsi14": 31.25,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "BCH-USD",
       "signal": "SHORT",
-      "score": -66.83,
+      "score": -65.17,
       "confidence": "MEDIUM",
-      "confidence_score": 0.56,
-      "close": 304.74,
-      "atr_pct": 6.95,
-      "rsi14": 12.33,
+      "confidence_score": 0.451,
+      "close": 300.21,
+      "atr_pct": 5.48,
+      "rsi14": 16.09,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "XLM-USD",
       "signal": "LONG",
-      "score": 75.25,
+      "score": 65.5,
       "confidence": "MEDIUM",
-      "confidence_score": 0.559,
-      "close": 0.240512,
-      "atr_pct": 5.77,
-      "rsi14": 85.74,
+      "confidence_score": 0.553,
+      "close": 0.257942,
+      "atr_pct": 8.84,
+      "rsi14": 78.61,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "DOT-USD",
       "signal": "NEUTRAL",
-      "score": -48.5,
+      "score": -44.58,
       "confidence": "LOW",
       "confidence_score": 0.0,
-      "close": 1.1909,
-      "atr_pct": 5.52,
-      "rsi14": 32.88,
+      "close": 1.1848,
+      "atr_pct": 4.95,
+      "rsi14": 39.5,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "ATOM-USD",
       "signal": "NEUTRAL",
-      "score": 10.33,
+      "score": -24.83,
       "confidence": "LOW",
       "confidence_score": 0.0,
-      "close": 2.0345,
-      "atr_pct": 6.2,
-      "rsi14": 56.91,
+      "close": 1.9615,
+      "atr_pct": 5.66,
+      "rsi14": 41.72,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "SUSHI-USD",
-      "signal": "SHORT",
-      "score": -44.58,
-      "confidence": "MEDIUM",
-      "confidence_score": 0.483,
-      "close": 0.1934,
-      "atr_pct": 4.95,
-      "rsi14": 31.84,
+      "signal": "NEUTRAL",
+      "score": -13.58,
+      "confidence": "LOW",
+      "confidence_score": 0.0,
+      "close": 0.2114,
+      "atr_pct": 4.29,
+      "rsi14": 49.64,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "CRV-USD",
       "signal": "SHORT",
-      "score": -40.58,
+      "score": -44.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.46,
-      "close": 0.2124,
-      "atr_pct": 6.08,
-      "rsi14": 25.9,
+      "confidence_score": 0.432,
+      "close": 0.2154,
+      "atr_pct": 4.83,
+      "rsi14": 30.91,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "COMP-USD",
-      "signal": "NEUTRAL",
-      "score": -62.58,
-      "confidence": "LOW",
-      "confidence_score": 0.0,
-      "close": 17.82,
-      "atr_pct": 6.91,
-      "rsi14": 25.09,
+      "signal": "SHORT",
+      "score": -43.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.474,
+      "close": 18.51,
+      "atr_pct": 6.21,
+      "rsi14": 30.34,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "SKY-USD",
-      "signal": "SHORT",
-      "score": -31.17,
+      "signal": "NEUTRAL",
+      "score": -11.25,
       "confidence": "LOW",
-      "confidence_score": 0.307,
-      "close": 0.06532,
-      "atr_pct": 3.27,
-      "rsi14": 20.47,
+      "confidence_score": 0.0,
+      "close": 0.06849,
+      "atr_pct": 3.06,
+      "rsi14": 45.72,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "YFI-USD",
       "signal": "SHORT",
-      "score": -49.67,
+      "score": -40.67,
       "confidence": "MEDIUM",
-      "confidence_score": 0.612,
-      "close": 2260.0,
-      "atr_pct": 4.12,
-      "rsi14": 25.95,
+      "confidence_score": 0.411,
+      "close": 2318.0,
+      "atr_pct": 3.33,
+      "rsi14": 35.01,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "SNX-USD",
       "signal": "SHORT",
-      "score": -37.33,
+      "score": -42.67,
       "confidence": "MEDIUM",
-      "confidence_score": 0.542,
-      "close": 0.3007,
-      "atr_pct": 5.52,
-      "rsi14": 41.06,
+      "confidence_score": 0.472,
+      "close": 0.2936,
+      "atr_pct": 4.86,
+      "rsi14": 41.84,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "LDO-USD",
       "signal": "SHORT",
-      "score": -51.67,
+      "score": -42.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.574,
-      "close": 0.321,
-      "atr_pct": 5.61,
-      "rsi14": 27.37,
+      "confidence_score": 0.42,
+      "close": 0.326,
+      "atr_pct": 4.86,
+      "rsi14": 32.53,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "NEAR-USD",
-      "signal": "LONG",
-      "score": 65.58,
-      "confidence": "HIGH",
-      "confidence_score": 0.703,
-      "close": 2.495,
-      "atr_pct": 11.81,
-      "rsi14": 74.79,
+      "signal": "NEUTRAL",
+      "score": 46.83,
+      "confidence": "LOW",
+      "confidence_score": 0.0,
+      "close": 2.2785,
+      "atr_pct": 13.54,
+      "rsi14": 66.65,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "ALGO-USD",
-      "signal": "NEUTRAL",
-      "score": 8.33,
-      "confidence": "LOW",
-      "confidence_score": 0.0,
-      "close": 0.11876,
-      "atr_pct": 5.63,
-      "rsi14": 55.71,
+      "signal": "LONG",
+      "score": 68.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.519,
+      "close": 0.12585,
+      "atr_pct": 6.34,
+      "rsi14": 66.32,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "APT-USD",
       "signal": "SHORT",
-      "score": -32.08,
+      "score": -30.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.462,
-      "close": 0.9351,
-      "atr_pct": 5.73,
-      "rsi14": 41.05,
+      "confidence_score": 0.352,
+      "close": 0.9443,
+      "atr_pct": 5.17,
+      "rsi14": 49.32,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "ICP-USD",
-      "signal": "NEUTRAL",
-      "score": -3.75,
+      "signal": "LONG",
+      "score": 45.67,
       "confidence": "LOW",
-      "confidence_score": 0.0,
-      "close": 2.663,
-      "atr_pct": 7.68,
-      "rsi14": 52.17,
+      "confidence_score": 0.29,
+      "close": 2.73,
+      "atr_pct": 7.02,
+      "rsi14": 56.04,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "FIL-USD",
       "signal": "NEUTRAL",
-      "score": -39.33,
+      "score": -28.17,
       "confidence": "LOW",
       "confidence_score": 0.0,
-      "close": 0.959,
-      "atr_pct": 7.39,
-      "rsi14": 43.48,
+      "close": 0.938,
+      "atr_pct": 7.38,
+      "rsi14": 47.19,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "HBAR-USD",
-      "signal": "NEUTRAL",
-      "score": 29.33,
+      "signal": "LONG",
+      "score": 54.08,
       "confidence": "LOW",
-      "confidence_score": 0.0,
-      "close": 0.09305,
-      "atr_pct": 4.04,
-      "rsi14": 50.47,
+      "confidence_score": 0.338,
+      "close": 0.09481,
+      "atr_pct": 5.41,
+      "rsi14": 57.41,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "TRX-USD",
       "signal": "NEUTRAL",
-      "score": 14.67,
+      "score": 16.67,
       "confidence": "LOW",
       "confidence_score": 0.0,
-      "close": 0.343965,
-      "atr_pct": 2.21,
-      "rsi14": 43.41,
+      "close": 0.351308,
+      "atr_pct": 2.16,
+      "rsi14": 46.86,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "ETC-USD",
       "signal": "NEUTRAL",
-      "score": -49.83,
+      "score": -60.58,
       "confidence": "LOW",
       "confidence_score": 0.0,
-      "close": 8.196,
-      "atr_pct": 4.83,
-      "rsi14": 21.22,
+      "close": 8.157,
+      "atr_pct": 4.0,
+      "rsi14": 21.71,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "ARB-USD",
       "signal": "SHORT",
-      "score": -49.92,
+      "score": -51.67,
       "confidence": "MEDIUM",
-      "confidence_score": 0.564,
-      "close": 0.1031,
-      "atr_pct": 6.32,
-      "rsi14": 20.91,
+      "confidence_score": 0.574,
+      "close": 0.1023,
+      "atr_pct": 5.67,
+      "rsi14": 23.96,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "OP-USD",
       "signal": "SHORT",
-      "score": -35.58,
+      "score": -37.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.432,
-      "close": 0.1193,
-      "atr_pct": 6.56,
-      "rsi14": 32.53,
+      "confidence_score": 0.442,
+      "close": 0.1186,
+      "atr_pct": 5.98,
+      "rsi14": 36.82,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "POL-USD",
       "signal": "NEUTRAL",
-      "score": -26.58,
+      "score": 22.17,
       "confidence": "LOW",
       "confidence_score": 0.0,
-      "close": 0.08893,
-      "atr_pct": 3.6,
-      "rsi14": 44.06,
+      "close": 0.09242,
+      "atr_pct": 3.18,
+      "rsi14": 53.62,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "INJ-USD",
       "signal": "LONG",
-      "score": 61.75,
-      "confidence": "HIGH",
-      "confidence_score": 0.681,
-      "close": 6.483,
-      "atr_pct": 9.69,
-      "rsi14": 70.53,
+      "score": 61.83,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.482,
+      "close": 6.431,
+      "atr_pct": 9.55,
+      "rsi14": 69.87,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "TIA-USD",
       "signal": "NEUTRAL",
-      "score": -24.42,
+      "score": -18.67,
       "confidence": "LOW",
       "confidence_score": 0.0,
-      "close": 0.4142,
-      "atr_pct": 9.47,
-      "rsi14": 48.9,
+      "close": 0.3969,
+      "atr_pct": 9.07,
+      "rsi14": 49.92,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "GRT-USD",
       "signal": "NEUTRAL",
-      "score": -32.67,
+      "score": -11.75,
       "confidence": "LOW",
       "confidence_score": 0.0,
-      "close": 0.026,
-      "atr_pct": 7.17,
-      "rsi14": 46.06,
+      "close": 0.02593,
+      "atr_pct": 6.77,
+      "rsi14": 53.6,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "RENDER-USD",
-      "signal": "NEUTRAL",
-      "score": 30.08,
-      "confidence": "LOW",
-      "confidence_score": 0.0,
-      "close": 2.011,
-      "atr_pct": 8.68,
-      "rsi14": 56.06,
+      "signal": "LONG",
+      "score": 70.92,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.634,
+      "close": 2.087,
+      "atr_pct": 9.64,
+      "rsi14": 61.85,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "FET-USD",
-      "signal": "NEUTRAL",
-      "score": 35.83,
-      "confidence": "LOW",
-      "confidence_score": 0.0,
-      "close": 0.251,
-      "atr_pct": 7.67,
-      "rsi14": 69.5,
+      "signal": "LONG",
+      "score": 41.0,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.363,
+      "close": 0.265,
+      "atr_pct": 8.6,
+      "rsi14": 73.84,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "ZEC-USD",
       "signal": "NEUTRAL",
-      "score": -12.5,
+      "score": 5.75,
       "confidence": "LOW",
       "confidence_score": 0.0,
-      "close": 536.38,
-      "atr_pct": 11.21,
-      "rsi14": 52.24,
+      "close": 579.88,
+      "atr_pct": 9.96,
+      "rsi14": 51.72,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "DASH-USD",
       "signal": "NEUTRAL",
-      "score": -70.83,
+      "score": -31.08,
       "confidence": "LOW",
       "confidence_score": 0.0,
-      "close": 39.591,
-      "atr_pct": 10.02,
-      "rsi14": 43.94,
+      "close": 40.626,
+      "atr_pct": 9.09,
+      "rsi14": 46.31,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "DOGE-USD",
       "signal": "SHORT",
-      "score": -38.33,
-      "confidence": "LOW",
-      "confidence_score": 0.198,
-      "close": 0.09995,
-      "atr_pct": 4.45,
-      "rsi14": 18.28,
+      "score": -42.33,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.42,
+      "close": 0.10044,
+      "atr_pct": 3.45,
+      "rsi14": 34.1,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "SHIB-USD",
       "signal": "SHORT",
-      "score": -47.92,
+      "score": -40.67,
       "confidence": "MEDIUM",
-      "confidence_score": 0.502,
-      "close": 5.42e-06,
-      "atr_pct": 5.09,
-      "rsi14": 20.17,
+      "confidence_score": 0.411,
+      "close": 5.52e-06,
+      "atr_pct": 3.2,
+      "rsi14": 37.5,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "PEPE-USD",
       "signal": "SHORT",
-      "score": -47.92,
+      "score": -42.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.502,
-      "close": 3.39e-06,
-      "atr_pct": 5.2,
-      "rsi14": 24.58,
+      "confidence_score": 0.42,
+      "close": 3.409e-06,
+      "atr_pct": 4.44,
+      "rsi14": 32.21,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "BONK-USD",
       "signal": "SHORT",
-      "score": -49.92,
+      "score": -46.33,
       "confidence": "MEDIUM",
-      "confidence_score": 0.564,
-      "close": 5.462e-06,
-      "atr_pct": 5.95,
-      "rsi14": 25.81,
+      "confidence_score": 0.493,
+      "close": 5.516e-06,
+      "atr_pct": 5.03,
+      "rsi14": 36.54,
       "bar_complete": false,
       "stale": false
     },
     {
       "symbol": "WIF-USD",
       "signal": "SHORT",
-      "score": -44.58,
+      "score": -42.67,
       "confidence": "MEDIUM",
-      "confidence_score": 0.483,
-      "close": 0.1879,
-      "atr_pct": 6.24,
-      "rsi14": 37.72,
+      "confidence_score": 0.422,
+      "close": 0.1921,
+      "atr_pct": 5.56,
+      "rsi14": 49.23,
       "bar_complete": false,
       "stale": false
     },
@@ -534,11 +534,11 @@
       "signal": "LONG",
       "score": 62.08,
       "confidence": "MEDIUM",
-      "confidence_score": 0.433,
+      "confidence_score": 0.533,
       "close": 312.06,
       "atr_pct": 1.59,
       "rsi14": 83.46,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -550,7 +550,7 @@
       "close": 450.24,
       "atr_pct": 2.59,
       "rsi14": 70.91,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -562,7 +562,7 @@
       "close": 380.34,
       "atr_pct": 2.58,
       "rsi14": 35.01,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -574,7 +574,7 @@
       "close": 270.64,
       "atr_pct": 2.37,
       "rsi14": 47.86,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -584,21 +584,21 @@
       "confidence": "MEDIUM",
       "confidence_score": 0.568,
       "close": 435.79,
-      "atr_pct": 3.77,
+      "atr_pct": 3.78,
       "rsi14": 52.96,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "NVDA",
       "signal": "NEUTRAL",
-      "score": 5.42,
+      "score": 3.67,
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 211.14,
       "atr_pct": 3.7,
       "rsi14": 46.25,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -610,7 +610,7 @@
       "close": 632.51,
       "atr_pct": 2.13,
       "rsi14": 64.02,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -622,7 +622,7 @@
       "close": 86.02,
       "atr_pct": 2.64,
       "rsi14": 44.65,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -634,7 +634,7 @@
       "close": 191.1,
       "atr_pct": 4.24,
       "rsi14": 58.18,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -646,7 +646,7 @@
       "close": 225.78,
       "atr_pct": 4.23,
       "rsi14": 68.51,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -658,7 +658,7 @@
       "close": 259.21,
       "atr_pct": 3.74,
       "rsi14": 54.05,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -670,7 +670,7 @@
       "close": 120.42,
       "atr_pct": 3.79,
       "rsi14": 80.48,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -682,7 +682,7 @@
       "close": 297.8,
       "atr_pct": 3.73,
       "rsi14": 82.27,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -694,7 +694,7 @@
       "close": 124.37,
       "atr_pct": 5.44,
       "rsi14": 79.17,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -706,7 +706,7 @@
       "close": 331.53,
       "atr_pct": 6.78,
       "rsi14": 34.41,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -718,19 +718,19 @@
       "close": 516.1,
       "atr_pct": 5.36,
       "rsi14": 66.97,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "INTC",
       "signal": "LONG",
-      "score": 36.92,
-      "confidence": "LOW",
-      "confidence_score": 0.34,
+      "score": 33.42,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.37,
       "close": 114.68,
       "atr_pct": 8.14,
       "rsi14": 39.94,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -742,7 +742,7 @@
       "close": 251.02,
       "atr_pct": 7.55,
       "rsi14": 60.01,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -754,7 +754,7 @@
       "close": 305.68,
       "atr_pct": 4.02,
       "rsi14": 59.98,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -766,7 +766,7 @@
       "close": 446.77,
       "atr_pct": 3.62,
       "rsi14": 57.75,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -778,7 +778,7 @@
       "close": 971.0,
       "atr_pct": 6.68,
       "rsi14": 70.09,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -790,7 +790,7 @@
       "close": 450.06,
       "atr_pct": 4.21,
       "rsi14": 56.09,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -802,31 +802,31 @@
       "close": 318.18,
       "atr_pct": 4.58,
       "rsi14": 62.23,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "JPM",
       "signal": "NEUTRAL",
-      "score": -15.58,
+      "score": -17.33,
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 299.31,
-      "atr_pct": 1.96,
+      "atr_pct": 1.97,
       "rsi14": 46.94,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "BAC",
       "signal": "LONG",
-      "score": 48.17,
+      "score": 51.67,
       "confidence": "HIGH",
-      "confidence_score": 0.704,
+      "confidence_score": 0.724,
       "close": 51.6,
       "atr_pct": 1.95,
       "rsi14": 52.16,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -838,7 +838,7 @@
       "close": 77.54,
       "atr_pct": 2.23,
       "rsi14": 57.38,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -850,7 +850,7 @@
       "close": 1025.5601,
       "atr_pct": 2.65,
       "rsi14": 75.61,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -862,55 +862,55 @@
       "close": 208.0,
       "atr_pct": 2.18,
       "rsi14": 75.31,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "C",
       "signal": "NEUTRAL",
-      "score": 19.5,
+      "score": 26.5,
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 125.9,
       "atr_pct": 2.27,
       "rsi14": 50.9,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "BLK",
       "signal": "NEUTRAL",
-      "score": -54.08,
+      "score": -55.83,
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 1046.88,
       "atr_pct": 2.12,
       "rsi14": 39.11,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "SCHW",
       "signal": "NEUTRAL",
-      "score": -61.5,
+      "score": -63.25,
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 87.35,
       "atr_pct": 2.63,
       "rsi14": 46.58,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "JNJ",
       "signal": "NEUTRAL",
-      "score": 7.0,
+      "score": 5.25,
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 225.33,
       "atr_pct": 1.9,
       "rsi14": 55.93,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -920,9 +920,9 @@
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 26.18,
-      "atr_pct": 1.59,
+      "atr_pct": 1.6,
       "rsi14": 61.9,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -934,55 +934,55 @@
       "close": 380.31,
       "atr_pct": 2.5,
       "rsi14": 50.24,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "ABBV",
       "signal": "LONG",
       "score": 63.5,
-      "confidence": "MEDIUM",
-      "confidence_score": 0.641,
+      "confidence": "HIGH",
+      "confidence_score": 0.741,
       "close": 217.72,
       "atr_pct": 2.38,
       "rsi14": 78.08,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "MRK",
       "signal": "LONG",
-      "score": 69.92,
-      "confidence": "MEDIUM",
-      "confidence_score": 0.628,
+      "score": 73.42,
+      "confidence": "HIGH",
+      "confidence_score": 0.748,
       "close": 118.72,
       "atr_pct": 2.41,
       "rsi14": 66.25,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "LLY",
       "signal": "LONG",
       "score": 73.25,
-      "confidence": "MEDIUM",
-      "confidence_score": 0.647,
+      "confidence": "HIGH",
+      "confidence_score": 0.747,
       "close": 1105.0,
-      "atr_pct": 3.0,
+      "atr_pct": 3.03,
       "rsi14": 79.98,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "TMO",
       "signal": "NEUTRAL",
-      "score": 22.42,
+      "score": 25.92,
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 492.51,
-      "atr_pct": 2.89,
+      "atr_pct": 2.9,
       "rsi14": 63.0,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -994,19 +994,19 @@
       "close": 336.79,
       "atr_pct": 2.08,
       "rsi14": 56.34,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "XOM",
       "signal": "NEUTRAL",
-      "score": -6.08,
+      "score": -7.83,
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 145.26,
       "atr_pct": 2.83,
       "rsi14": 50.98,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1018,7 +1018,7 @@
       "close": 182.46,
       "atr_pct": 2.32,
       "rsi14": 51.29,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1030,19 +1030,19 @@
       "close": 113.98,
       "atr_pct": 2.64,
       "rsi14": 50.24,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "EOG",
       "signal": "NEUTRAL",
-      "score": -3.17,
+      "score": -4.92,
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 133.38,
       "atr_pct": 2.68,
       "rsi14": 55.93,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1054,7 +1054,7 @@
       "close": 54.55,
       "atr_pct": 2.68,
       "rsi14": 56.26,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1066,7 +1066,7 @@
       "close": 56.63,
       "atr_pct": 3.14,
       "rsi14": 64.08,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1078,7 +1078,7 @@
       "close": 248.77,
       "atr_pct": 3.27,
       "rsi14": 53.21,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1090,7 +1090,7 @@
       "close": 115.75,
       "atr_pct": 3.09,
       "rsi14": 26.04,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1100,9 +1100,9 @@
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 956.32,
-      "atr_pct": 2.74,
+      "atr_pct": 2.75,
       "rsi14": 39.23,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1114,7 +1114,7 @@
       "close": 317.14,
       "atr_pct": 2.58,
       "rsi14": 49.73,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1126,7 +1126,7 @@
       "close": 279.2,
       "atr_pct": 1.57,
       "rsi14": 56.31,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1138,7 +1138,7 @@
       "close": 46.23,
       "atr_pct": 2.8,
       "rsi14": 61.37,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1150,7 +1150,7 @@
       "close": 99.16,
       "atr_pct": 2.59,
       "rsi14": 26.75,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1162,7 +1162,7 @@
       "close": 101.83,
       "atr_pct": 2.14,
       "rsi14": 33.21,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1174,7 +1174,7 @@
       "close": 127.07,
       "atr_pct": 3.78,
       "rsi14": 52.71,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1186,7 +1186,7 @@
       "close": 875.87,
       "atr_pct": 3.19,
       "rsi14": 45.29,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1198,7 +1198,7 @@
       "close": 542.18,
       "atr_pct": 2.8,
       "rsi14": 33.26,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1210,19 +1210,19 @@
       "close": 231.15,
       "atr_pct": 3.12,
       "rsi14": 44.3,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "UPS",
       "signal": "LONG",
-      "score": 82.33,
+      "score": 85.83,
       "confidence": "HIGH",
-      "confidence_score": 0.799,
+      "confidence_score": 0.919,
       "close": 106.69,
       "atr_pct": 2.35,
       "rsi14": 65.81,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1234,7 +1234,7 @@
       "close": 323.76,
       "atr_pct": 2.69,
       "rsi14": 70.0,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1246,7 +1246,7 @@
       "close": 237.86,
       "atr_pct": 2.29,
       "rsi14": 83.45,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1258,7 +1258,7 @@
       "close": 179.66,
       "atr_pct": 2.15,
       "rsi14": 56.69,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1270,7 +1270,7 @@
       "close": 143.56,
       "atr_pct": 2.08,
       "rsi14": 43.46,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1282,43 +1282,43 @@
       "close": 79.01,
       "atr_pct": 1.59,
       "rsi14": 53.16,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "PEP",
       "signal": "SHORT",
-      "score": -44.75,
+      "score": -46.5,
       "confidence": "MEDIUM",
-      "confidence_score": 0.584,
+      "confidence_score": 0.594,
       "close": 144.19,
       "atr_pct": 2.31,
       "rsi14": 30.24,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "PM",
       "signal": "LONG",
       "score": 30.58,
-      "confidence": "LOW",
-      "confidence_score": 0.303,
+      "confidence": "MEDIUM",
+      "confidence_score": 0.403,
       "close": 177.38,
       "atr_pct": 3.11,
       "rsi14": 57.73,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "CL",
       "signal": "LONG",
       "score": 72.75,
-      "confidence": "MEDIUM",
-      "confidence_score": 0.644,
+      "confidence": "HIGH",
+      "confidence_score": 0.744,
       "close": 90.13,
       "atr_pct": 2.03,
       "rsi14": 62.65,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1330,7 +1330,7 @@
       "close": 47.81,
       "atr_pct": 1.83,
       "rsi14": 55.82,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1342,19 +1342,19 @@
       "close": 24.8,
       "atr_pct": 2.19,
       "rsi14": 45.26,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "CMCSA",
       "signal": "NEUTRAL",
-      "score": -15.75,
+      "score": -17.5,
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 24.87,
       "atr_pct": 2.42,
       "rsi14": 38.82,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1366,7 +1366,7 @@
       "close": 187.53,
       "atr_pct": 2.42,
       "rsi14": 39.84,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1378,7 +1378,7 @@
       "close": 109.81,
       "atr_pct": 4.07,
       "rsi14": 40.74,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1388,9 +1388,9 @@
       "confidence": "HIGH",
       "confidence_score": 0.718,
       "close": 65.71,
-      "atr_pct": 4.35,
+      "atr_pct": 4.37,
       "rsi14": 58.68,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1402,7 +1402,7 @@
       "close": 497.69,
       "atr_pct": 1.87,
       "rsi14": 53.27,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1414,7 +1414,7 @@
       "close": 756.48,
       "atr_pct": 0.89,
       "rsi14": 68.77,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1426,7 +1426,7 @@
       "close": 738.31,
       "atr_pct": 1.43,
       "rsi14": 67.5,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1438,7 +1438,7 @@
       "close": 290.43,
       "atr_pct": 1.7,
       "rsi14": 58.2,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1450,7 +1450,7 @@
       "close": 372.54,
       "atr_pct": 0.92,
       "rsi14": 68.43,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1462,18 +1462,18 @@
       "close": 510.78,
       "atr_pct": 0.95,
       "rsi14": 71.04,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
       "symbol": "DXY-INDEX",
-      "signal": "NEUTRAL",
-      "score": 48.12,
-      "confidence": "LOW",
-      "confidence_score": 0.0,
-      "close": 98.941,
-      "atr_pct": 0.42,
-      "rsi14": 68.86,
+      "signal": "LONG",
+      "score": 83.6,
+      "confidence": "HIGH",
+      "confidence_score": 0.719,
+      "close": 99.058,
+      "atr_pct": 0.41,
+      "rsi14": 68.65,
       "bar_complete": false,
       "stale": false
     },
@@ -1486,7 +1486,7 @@
       "close": 417.12,
       "atr_pct": 1.7,
       "rsi14": 33.39,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1498,7 +1498,7 @@
       "close": 68.33,
       "atr_pct": 4.48,
       "rsi14": 41.85,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1510,7 +1510,7 @@
       "close": 129.09,
       "atr_pct": 4.82,
       "rsi14": 45.29,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1522,7 +1522,7 @@
       "close": 85.76,
       "atr_pct": 0.79,
       "rsi14": 47.35,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1534,7 +1534,7 @@
       "close": 80.31,
       "atr_pct": 0.32,
       "rsi14": 54.07,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1546,7 +1546,7 @@
       "close": 68.6,
       "atr_pct": 2.1,
       "rsi14": 52.87,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1558,7 +1558,7 @@
       "close": 95.7,
       "atr_pct": 1.16,
       "rsi14": 44.01,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1570,7 +1570,7 @@
       "close": 56.29,
       "atr_pct": 2.28,
       "rsi14": 52.61,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1582,7 +1582,7 @@
       "close": 51.58,
       "atr_pct": 1.22,
       "rsi14": 53.66,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1594,7 +1594,7 @@
       "close": 191.02,
       "atr_pct": 2.23,
       "rsi14": 72.27,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1606,7 +1606,7 @@
       "close": 149.47,
       "atr_pct": 1.48,
       "rsi14": 68.62,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1618,7 +1618,7 @@
       "close": 173.13,
       "atr_pct": 1.42,
       "rsi14": 49.79,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1630,7 +1630,7 @@
       "close": 82.91,
       "atr_pct": 1.55,
       "rsi14": 43.36,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1642,7 +1642,7 @@
       "close": 120.87,
       "atr_pct": 1.59,
       "rsi14": 52.35,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1654,7 +1654,7 @@
       "close": 44.42,
       "atr_pct": 1.35,
       "rsi14": 46.78,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1666,7 +1666,7 @@
       "close": 51.15,
       "atr_pct": 1.58,
       "rsi14": 46.57,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1678,7 +1678,7 @@
       "close": 115.69,
       "atr_pct": 1.26,
       "rsi14": 43.08,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1690,7 +1690,7 @@
       "close": 81.95,
       "atr_pct": 2.83,
       "rsi14": 59.04,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1702,7 +1702,7 @@
       "close": 23.29,
       "atr_pct": 3.44,
       "rsi14": 23.22,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1714,7 +1714,7 @@
       "close": 104.8,
       "atr_pct": 1.08,
       "rsi14": 54.43,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1724,9 +1724,9 @@
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 92.96,
-      "atr_pct": 1.22,
+      "atr_pct": 1.21,
       "rsi14": 54.65,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1738,7 +1738,7 @@
       "close": 35.05,
       "atr_pct": 1.77,
       "rsi14": 29.46,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1750,7 +1750,7 @@
       "close": 71.77,
       "atr_pct": 1.27,
       "rsi14": 55.86,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1762,7 +1762,7 @@
       "close": 59.88,
       "atr_pct": 1.4,
       "rsi14": 45.09,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1774,7 +1774,7 @@
       "close": 83.47,
       "atr_pct": 2.04,
       "rsi14": 51.7,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1786,7 +1786,7 @@
       "close": 99.06,
       "atr_pct": 0.37,
       "rsi14": 48.04,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1798,7 +1798,7 @@
       "close": 73.46,
       "atr_pct": 0.37,
       "rsi14": 47.93,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1810,7 +1810,7 @@
       "close": 82.3,
       "atr_pct": 0.11,
       "rsi14": 50.0,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1822,7 +1822,7 @@
       "close": 94.65,
       "atr_pct": 0.44,
       "rsi14": 45.43,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1832,9 +1832,9 @@
       "confidence": "LOW",
       "confidence_score": 0.0,
       "close": 89.49,
-      "atr_pct": 4.17,
+      "atr_pct": 4.18,
       "rsi14": 41.86,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1846,7 +1846,7 @@
       "close": 119.29,
       "atr_pct": 4.56,
       "rsi14": 42.61,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1858,7 +1858,7 @@
       "close": 29.48,
       "atr_pct": 1.89,
       "rsi14": 41.77,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1870,7 +1870,7 @@
       "close": 41.63,
       "atr_pct": 2.8,
       "rsi14": 29.15,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1882,7 +1882,7 @@
       "close": 10.02,
       "atr_pct": 2.86,
       "rsi14": 28.83,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1894,7 +1894,7 @@
       "close": 569.08,
       "atr_pct": 4.04,
       "rsi14": 64.9,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1904,9 +1904,9 @@
       "confidence": "HIGH",
       "confidence_score": 0.664,
       "close": 598.93,
-      "atr_pct": 3.47,
+      "atr_pct": 3.48,
       "rsi14": 61.07,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1918,7 +1918,7 @@
       "close": 235.44,
       "atr_pct": 1.94,
       "rsi14": 67.38,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     },
     {
@@ -1930,7 +1930,7 @@
       "close": 136.69,
       "atr_pct": 2.44,
       "rsi14": 54.43,
-      "bar_complete": false,
+      "bar_complete": true,
       "stale": false
     }
   ]
