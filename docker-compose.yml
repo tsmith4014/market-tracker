@@ -15,7 +15,7 @@ services:
       DAYS_EQUITY: 800d
       OUTPUT_MODE: historical
       WRITE_MODE: replace
-      EXPORT_SERIES: "true"
+      EXPORT_SERIES: "false"
       EXPORT_JSON: "true"
       SERIES_DIR: /data
       # Full catalog (~161 symbols): app/symbols.json. Set TRACK_ALL=true for everything listed.
