@@ -1,6 +1,6 @@
 # Market Tracker Backtest Report
 
-_Generated: 2026-07-03T04:16:03+00:00_
+_Generated: 2026-07-06T04:42:18+00:00_
 
 ## Data Sources
 
@@ -10,24 +10,25 @@ _Generated: 2026-07-03T04:16:03+00:00_
 
 ## Data Freshness
 
-- Rows: **92,459**
+- Rows: **92,466**
 - Symbols: **161**
-- Date range: **2024-02-08** to **2026-07-03**
+- Date range: **2024-02-08** to **2026-07-06**
 
 ## Latest Signals
 
 | symbol     | date                |         close |   composite_score | signal   | data_source   |
 |:-----------|:--------------------|--------------:|------------------:|:---------|:--------------|
 | AAPL       | 2026-07-02 00:00:00 |   308.63      |          40.9167  | LONG     | Yahoo Finance |
-| AAVE-USD   | 2026-07-03 00:00:00 |    86.1       |          43.6667  | LONG     | Kraken API    |
+| AAVE-USD   | 2026-07-06 00:00:00 |    88.25      |          43.3333  | LONG     | Kraken API    |
 | ABBV       | 2026-07-02 00:00:00 |   261.07      |          62.25    | LONG     | Yahoo Finance |
+| ADA-USD    | 2026-07-06 00:00:00 |     0.187845  |          32.6667  | LONG     | Kraken API    |
 | AMAT       | 2026-07-02 00:00:00 |   603.04      |          61.4167  | LONG     | Yahoo Finance |
 | AMZN       | 2026-07-02 00:00:00 |   242.67      |          53.1667  | LONG     | Yahoo Finance |
 | BAC        | 2026-07-02 00:00:00 |    58.73      |          56.75    | LONG     | Yahoo Finance |
 | C          | 2026-07-02 00:00:00 |   139.97      |          50.5833  | LONG     | Yahoo Finance |
 | CAT        | 2026-07-02 00:00:00 |   963.53      |          33.4167  | LONG     | Yahoo Finance |
 | DE         | 2026-07-02 00:00:00 |   621.27      |          71.5833  | LONG     | Yahoo Finance |
-| DXY-INDEX  | 2026-07-03 00:00:00 |   100.803     |          69.6237  | LONG     | Yahoo Finance |
+| DXY-INDEX  | 2026-07-06 00:00:00 |   100.944     |          69.6237  | LONG     | Yahoo Finance |
 | GE         | 2026-07-02 00:00:00 |   377.52      |          62.25    | LONG     | Yahoo Finance |
 | HD         | 2026-07-02 00:00:00 |   357.9       |          62.25    | LONG     | Yahoo Finance |
 | IBM        | 2026-07-02 00:00:00 |   289.52      |          56.0833  | LONG     | Yahoo Finance |
@@ -41,96 +42,105 @@ _Generated: 2026-07-03T04:16:03+00:00_
 | SPY        | 2026-07-02 00:00:00 |   744.78      |          35.5833  | LONG     | Yahoo Finance |
 | TMO        | 2026-07-02 00:00:00 |   523.44      |          66       | LONG     | Yahoo Finance |
 | UNH        | 2026-07-02 00:00:00 |   425.36      |          60.0833  | LONG     | Yahoo Finance |
-| UNI-USD    | 2026-07-03 00:00:00 |     3.2068    |          38.3333  | LONG     | Kraken API    |
+| UNI-USD    | 2026-07-06 00:00:00 |     3.1662    |          43.75    | LONG     | Kraken API    |
 | VTI        | 2026-07-02 00:00:00 |   368.76      |          35.5833  | LONG     | Yahoo Finance |
 | WFC        | 2026-07-02 00:00:00 |    85.51      |          54.8333  | LONG     | Yahoo Finance |
 | XBI        | 2026-07-02 00:00:00 |   160.46      |          73.75    | LONG     | Yahoo Finance |
 | XLF        | 2026-07-02 00:00:00 |    55.62      |          64.25    | LONG     | Yahoo Finance |
 | XLI        | 2026-07-02 00:00:00 |   183.91      |          78.9167  | LONG     | Yahoo Finance |
 | XLU        | 2026-07-02 00:00:00 |    45.76      |          65.9167  | LONG     | Yahoo Finance |
-| ADA-USD    | 2026-07-03 00:00:00 |     0.166741  |          17.1667  | NEUTRAL  | Kraken API    |
 | ADBE       | 2026-07-02 00:00:00 |   219.72      |          -4.58333 | NEUTRAL  | Yahoo Finance |
 | AGG        | 2026-07-02 00:00:00 |    98.61      |         -40.0833  | NEUTRAL  | Yahoo Finance |
-| ALGO-USD   | 2026-07-03 00:00:00 |     0.0869    |         -40.5     | NEUTRAL  | Kraken API    |
+| ALGO-USD   | 2026-07-06 00:00:00 |     0.08955   |         -22.75    | NEUTRAL  | Kraken API    |
 | AMD        | 2026-07-02 00:00:00 |   517.82      |          22       | NEUTRAL  | Yahoo Finance |
 | AMGN       | 2026-07-02 00:00:00 |   374.15      |          67.8333  | NEUTRAL  | Yahoo Finance |
-| APT-USD    | 2026-07-03 00:00:00 |     0.6166    |         -29.9167  | NEUTRAL  | Kraken API    |
-| ARB-USD    | 2026-07-03 00:00:00 |     0.078     |         -42.25    | NEUTRAL  | Kraken API    |
+| APT-USD    | 2026-07-06 00:00:00 |     0.6262    |         -31.75    | NEUTRAL  | Kraken API    |
+| ARB-USD    | 2026-07-06 00:00:00 |     0.0798    |         -28.0833  | NEUTRAL  | Kraken API    |
 | ARKK       | 2026-07-02 00:00:00 |    81.25      |          41.1667  | NEUTRAL  | Yahoo Finance |
-| AVAX-USD   | 2026-07-03 00:00:00 |     6.844     |           4.08333 | NEUTRAL  | Kraken API    |
+| AVAX-USD   | 2026-07-06 00:00:00 |     6.919     |          18.6667  | NEUTRAL  | Kraken API    |
 | AVGO       | 2026-07-02 00:00:00 |   360.45      |         -25.0833  | NEUTRAL  | Yahoo Finance |
 | BA         | 2026-07-02 00:00:00 |   226.49      |          37       | NEUTRAL  | Yahoo Finance |
-| BCH-USD    | 2026-07-03 00:00:00 |   220.9       |         -10.5833  | NEUTRAL  | Kraken API    |
+| BCH-USD    | 2026-07-06 00:00:00 |   243.17      |           4.33333 | NEUTRAL  | Kraken API    |
 | BLK        | 2026-07-02 00:00:00 |   995.73      |         -61.5     | NEUTRAL  | Yahoo Finance |
 | BND        | 2026-07-02 00:00:00 |    73.11      |         -40.5833  | NEUTRAL  | Yahoo Finance |
-| BONK-USD   | 2026-07-03 00:00:00 |     4.399e-06 |         -42.25    | NEUTRAL  | Kraken API    |
+| BONK-USD   | 2026-07-06 00:00:00 |     4.834e-06 |          12.4167  | NEUTRAL  | Kraken API    |
+| BTC-USD    | 2026-07-06 00:00:00 | 63260.2       |          -0.5     | NEUTRAL  | Kraken API    |
 | CL         | 2026-07-02 00:00:00 |    95.13      |          66.5     | NEUTRAL  | Yahoo Finance |
 | CMCSA      | 2026-07-02 00:00:00 |    23.79      |          12.0833  | NEUTRAL  | Yahoo Finance |
+| COMP-USD   | 2026-07-06 00:00:00 |    16.75      |           2.5     | NEUTRAL  | Kraken API    |
 | COST       | 2026-07-02 00:00:00 |   951.67      |         -44.25    | NEUTRAL  | Yahoo Finance |
 | CRM        | 2026-07-02 00:00:00 |   166.11      |         -20.25    | NEUTRAL  | Yahoo Finance |
-| CRV-USD    | 2026-07-03 00:00:00 |     0.20843   |         -15       | NEUTRAL  | Kraken API    |
+| CRV-USD    | 2026-07-06 00:00:00 |     0.21389   |          16.8333  | NEUTRAL  | Kraken API    |
 | CSCO       | 2026-07-02 00:00:00 |   112.69      |           6.91667 | NEUTRAL  | Yahoo Finance |
-| DASH-USD   | 2026-07-03 00:00:00 |    35.247     |         -34.75    | NEUTRAL  | Kraken API    |
+| DASH-USD   | 2026-07-06 00:00:00 |    35.115     |         -12.5833  | NEUTRAL  | Kraken API    |
 | DBC        | 2026-07-02 00:00:00 |    26.57      |         -11.1667  | NEUTRAL  | Yahoo Finance |
 | DIA        | 2026-07-02 00:00:00 |   527.88      |          55       | NEUTRAL  | Yahoo Finance |
 | DIS        | 2026-07-02 00:00:00 |    99.5       |         -57       | NEUTRAL  | Yahoo Finance |
+| DOGE-USD   | 2026-07-06 00:00:00 |     0.0772673 |         -14.8333  | NEUTRAL  | Kraken API    |
+| DOT-USD    | 2026-07-06 00:00:00 |     0.8721    |         -26       | NEUTRAL  | Kraken API    |
 | EEM        | 2026-07-02 00:00:00 |    65.7       |         -22.3333  | NEUTRAL  | Yahoo Finance |
 | EFA        | 2026-07-02 00:00:00 |   104.37      |          24.3333  | NEUTRAL  | Yahoo Finance |
 | EOG        | 2026-07-02 00:00:00 |   130.78      |          -9.33333 | NEUTRAL  | Yahoo Finance |
-| ETC-USD    | 2026-07-03 00:00:00 |     7.046     |         -43.9167  | NEUTRAL  | Kraken API    |
-| ETH-USD    | 2026-07-03 00:00:00 |  1705.01      |         -25.75    | NEUTRAL  | Kraken API    |
+| ETC-USD    | 2026-07-06 00:00:00 |     7.103     |         -33.25    | NEUTRAL  | Kraken API    |
+| ETH-USD    | 2026-07-06 00:00:00 |  1779.87      |           3.08333 | NEUTRAL  | Kraken API    |
 | EWJ        | 2026-07-02 00:00:00 |    93.14      |          52.3333  | NEUTRAL  | Yahoo Finance |
 | FCX        | 2026-07-02 00:00:00 |    60.97      |         -19.5     | NEUTRAL  | Yahoo Finance |
-| FIL-USD    | 2026-07-03 00:00:00 |     0.78      |          -0.5     | NEUTRAL  | Kraken API    |
+| FET-USD    | 2026-07-06 00:00:00 |     0.1727    |         -21.1667  | NEUTRAL  | Kraken API    |
+| FIL-USD    | 2026-07-06 00:00:00 |     0.791     |          -5.41667 | NEUTRAL  | Kraken API    |
 | GDX        | 2026-07-02 00:00:00 |    78.43      |         -41.1667  | NEUTRAL  | Yahoo Finance |
 | GDXJ       | 2026-07-02 00:00:00 |   102.91      |         -27.8333  | NEUTRAL  | Yahoo Finance |
 | GOOGL      | 2026-07-02 00:00:00 |   359.91      |          28.6667  | NEUTRAL  | Yahoo Finance |
-| GRT-USD    | 2026-07-03 00:00:00 |     0.01879   |         -32.75    | NEUTRAL  | Kraken API    |
+| GRT-USD    | 2026-07-06 00:00:00 |     0.01881   |         -28.0833  | NEUTRAL  | Kraken API    |
 | GS         | 2026-07-02 00:00:00 |  1021         |          -3.33333 | NEUTRAL  | Yahoo Finance |
-| HON        | 2026-07-02 00:00:00 |   229.86      |          67.8333  | NEUTRAL  | Yahoo Finance |
+| HBAR-USD   | 2026-07-06 00:00:00 |     0.07556   |           4.5     | NEUTRAL  | Kraken API    |
+| HON        | 2026-07-02 00:00:00 |   229.86      |          14.9167  | NEUTRAL  | Yahoo Finance |
 | HYG        | 2026-07-02 00:00:00 |    79.71      |         -54.25    | NEUTRAL  | Yahoo Finance |
-| ICP-USD    | 2026-07-03 00:00:00 |     2.212     |         -31.5833  | NEUTRAL  | Kraken API    |
+| ICP-USD    | 2026-07-06 00:00:00 |     2.208     |         -28.25    | NEUTRAL  | Kraken API    |
 | IEF        | 2026-07-02 00:00:00 |    94.12      |         -29.5     | NEUTRAL  | Yahoo Finance |
 | IEMG       | 2026-07-02 00:00:00 |    79.84      |         -29       | NEUTRAL  | Yahoo Finance |
-| INJ-USD    | 2026-07-03 00:00:00 |     4.75      |         -40.5     | NEUTRAL  | Kraken API    |
+| INJ-USD    | 2026-07-06 00:00:00 |     4.844     |           9.16667 | NEUTRAL  | Kraken API    |
 | INTC       | 2026-07-02 00:00:00 |   120.35      |          15.8333  | NEUTRAL  | Yahoo Finance |
 | INTU       | 2026-07-02 00:00:00 |   275.35      |         -23.25    | NEUTRAL  | Yahoo Finance |
 | IWM        | 2026-07-02 00:00:00 |   297.58      |          60.6667  | NEUTRAL  | Yahoo Finance |
 | KO         | 2026-07-02 00:00:00 |    84.14      |          68.1667  | NEUTRAL  | Yahoo Finance |
-| LDO-USD    | 2026-07-03 00:00:00 |     0.261     |         -24.25    | NEUTRAL  | Kraken API    |
+| LDO-USD    | 2026-07-06 00:00:00 |     0.27      |          -2.08333 | NEUTRAL  | Kraken API    |
 | LIN        | 2026-07-02 00:00:00 |   546.64      |          67.8333  | NEUTRAL  | Yahoo Finance |
-| LINK-USD   | 2026-07-03 00:00:00 |     7.75683   |         -18.75    | NEUTRAL  | Kraken API    |
+| LINK-USD   | 2026-07-06 00:00:00 |     7.99467   |           7.41667 | NEUTRAL  | Kraken API    |
 | LLY        | 2026-07-02 00:00:00 |  1213.91      |          39.8333  | NEUTRAL  | Yahoo Finance |
 | LRCX       | 2026-07-02 00:00:00 |   351.41      |          24.4167  | NEUTRAL  | Yahoo Finance |
-| LTC-USD    | 2026-07-03 00:00:00 |    43.17      |         -16.75    | NEUTRAL  | Kraken API    |
+| LTC-USD    | 2026-07-06 00:00:00 |    45.21      |          -3.41667 | NEUTRAL  | Kraken API    |
 | MCD        | 2026-07-02 00:00:00 |   280.63      |         -25.5     | NEUTRAL  | Yahoo Finance |
 | META       | 2026-07-02 00:00:00 |   582.9       |         -11       | NEUTRAL  | Yahoo Finance |
 | MPC        | 2026-07-02 00:00:00 |   266.35      |          50.5     | NEUTRAL  | Yahoo Finance |
 | MRK        | 2026-07-02 00:00:00 |   129.56      |          67.8333  | NEUTRAL  | Yahoo Finance |
 | MSFT       | 2026-07-02 00:00:00 |   390.49      |         -11.5833  | NEUTRAL  | Yahoo Finance |
 | MU         | 2026-07-02 00:00:00 |   975.56      |          -3.33333 | NEUTRAL  | Yahoo Finance |
-| NEAR-USD   | 2026-07-03 00:00:00 |     1.9596    |         -15.5833  | NEUTRAL  | Kraken API    |
+| NEAR-USD   | 2026-07-06 00:00:00 |     1.9905    |          34.6667  | NEUTRAL  | Kraken API    |
 | NEM        | 2026-07-02 00:00:00 |    97.04      |         -47.8333  | NEUTRAL  | Yahoo Finance |
 | NFLX       | 2026-07-02 00:00:00 |    77.65      |         -18.25    | NEUTRAL  | Yahoo Finance |
 | NKE        | 2026-07-02 00:00:00 |    44.09      |         -39.3333  | NEUTRAL  | Yahoo Finance |
 | NOW        | 2026-07-02 00:00:00 |   106.32      |          24.1667  | NEUTRAL  | Yahoo Finance |
-| OP-USD     | 2026-07-03 00:00:00 |     0.1011    |         -34.75    | NEUTRAL  | Kraken API    |
+| OP-USD     | 2026-07-06 00:00:00 |     0.1078    |           7.41667 | NEUTRAL  | Kraken API    |
 | PEP        | 2026-07-02 00:00:00 |   144.22      |         -13.8333  | NEUTRAL  | Yahoo Finance |
+| PEPE-USD   | 2026-07-06 00:00:00 |     2.718e-06 |          -2.83333 | NEUTRAL  | Kraken API    |
 | PM         | 2026-07-02 00:00:00 |   182.27      |          40.8333  | NEUTRAL  | Yahoo Finance |
-| POL-USD    | 2026-07-03 00:00:00 |     0.07331   |         -47.25    | NEUTRAL  | Kraken API    |
+| POL-USD    | 2026-07-06 00:00:00 |     0.0736    |         -33.25    | NEUTRAL  | Kraken API    |
 | QCOM       | 2026-07-02 00:00:00 |   176.25      |         -24.0833  | NEUTRAL  | Yahoo Finance |
 | QQQ        | 2026-07-02 00:00:00 |   712.6       |          -2.66667 | NEUTRAL  | Yahoo Finance |
+| RENDER-USD | 2026-07-06 00:00:00 |     1.612     |         -18.5     | NEUTRAL  | Kraken API    |
 | SBUX       | 2026-07-02 00:00:00 |   104.27      |          61.1667  | NEUTRAL  | Yahoo Finance |
+| SHIB-USD   | 2026-07-06 00:00:00 |     4.374e-06 |         -20.3333  | NEUTRAL  | Kraken API    |
 | SHY        | 2026-07-02 00:00:00 |    81.94      |         -31.75    | NEUTRAL  | Yahoo Finance |
-| SKY-USD    | 2026-07-03 00:00:00 |     0.06      |         -10.5833  | NEUTRAL  | Kraken API    |
+| SKY-USD    | 2026-07-06 00:00:00 |     0.05736   |         -31.75    | NEUTRAL  | Kraken API    |
 | SMH        | 2026-07-02 00:00:00 |   592.29      |          -8.08333 | NEUTRAL  | Yahoo Finance |
-| SNX-USD    | 2026-07-03 00:00:00 |     0.2366    |         -19.25    | NEUTRAL  | Kraken API    |
-| SOL-USD    | 2026-07-03 00:00:00 |    80.64      |          41.0833  | NEUTRAL  | Kraken API    |
+| SNX-USD    | 2026-07-06 00:00:00 |     0.2293    |         -30.25    | NEUTRAL  | Kraken API    |
+| SOL-USD    | 2026-07-06 00:00:00 |    80.86      |          37.0833  | NEUTRAL  | Kraken API    |
 | SOXX       | 2026-07-02 00:00:00 |   566.32      |          -6.33333 | NEUTRAL  | Yahoo Finance |
+| SUSHI-USD  | 2026-07-06 00:00:00 |     0.1597    |         -26.5     | NEUTRAL  | Kraken API    |
 | TGT        | 2026-07-02 00:00:00 |   130.21      |          18.4167  | NEUTRAL  | Yahoo Finance |
-| TIA-USD    | 2026-07-03 00:00:00 |     0.3699    |         -26.5833  | NEUTRAL  | Kraken API    |
+| TIA-USD    | 2026-07-06 00:00:00 |     0.3952    |          17.8333  | NEUTRAL  | Kraken API    |
 | TLT        | 2026-07-02 00:00:00 |    85.51      |         -37.3333  | NEUTRAL  | Yahoo Finance |
-| TRX-USD    | 2026-07-03 00:00:00 |     0.317243  |         -40.5     | NEUTRAL  | Kraken API    |
+| TRX-USD    | 2026-07-06 00:00:00 |     0.32844   |          39.3333  | NEUTRAL  | Kraken API    |
 | TSLA       | 2026-07-02 00:00:00 |   393.45      |         -24.1667  | NEUTRAL  | Yahoo Finance |
 | TXN        | 2026-07-02 00:00:00 |   293.08      |          -4.66667 | NEUTRAL  | Yahoo Finance |
 | UPS        | 2026-07-02 00:00:00 |   110.66      |          57.8333  | NEUTRAL  | Yahoo Finance |
@@ -139,40 +149,30 @@ _Generated: 2026-07-03T04:16:03+00:00_
 | VIXY       | 2026-07-02 00:00:00 |    21.23      |         -42.6667  | NEUTRAL  | Yahoo Finance |
 | VNQ        | 2026-07-02 00:00:00 |    98.02      |          32.5     | NEUTRAL  | Yahoo Finance |
 | VWO        | 2026-07-02 00:00:00 |    59.04      |         -16.3333  | NEUTRAL  | Yahoo Finance |
-| WIF-USD    | 2026-07-03 00:00:00 |     0.1719    |          -1.91667 | NEUTRAL  | Kraken API    |
+| WIF-USD    | 2026-07-06 00:00:00 |     0.1781    |          41.0833  | NEUTRAL  | Kraken API    |
 | XLB        | 2026-07-02 00:00:00 |    52.01      |          47       | NEUTRAL  | Yahoo Finance |
 | XLE        | 2026-07-02 00:00:00 |    53.22      |         -13.1667  | NEUTRAL  | Yahoo Finance |
 | XLK        | 2026-07-02 00:00:00 |   180.59      |           4.83333 | NEUTRAL  | Yahoo Finance |
-| XLM-USD    | 2026-07-03 00:00:00 |     0.197224  |         -14.5833  | NEUTRAL  | Kraken API    |
+| XLM-USD    | 2026-07-06 00:00:00 |     0.201176  |          39.8333  | NEUTRAL  | Kraken API    |
 | XLP        | 2026-07-02 00:00:00 |    84.99      |          23.8333  | NEUTRAL  | Yahoo Finance |
 | XLV        | 2026-07-02 00:00:00 |   163.74      |          53       | NEUTRAL  | Yahoo Finance |
 | XLY        | 2026-07-02 00:00:00 |   117.12      |          36.5     | NEUTRAL  | Yahoo Finance |
-| XRP-USD    | 2026-07-03 00:00:00 |     1.08973   |         -40.25    | NEUTRAL  | Kraken API    |
-| YFI-USD    | 2026-07-03 00:00:00 |  1772.9       |         -22.25    | NEUTRAL  | Kraken API    |
-| ZEC-USD    | 2026-07-03 00:00:00 |   426.83      |         -15.5     | NEUTRAL  | Kraken API    |
-| ATOM-USD   | 2026-07-03 00:00:00 |     1.5622    |         -47.6667  | SHORT    | Kraken API    |
+| XRP-USD    | 2026-07-06 00:00:00 |     1.14713   |           7.41667 | NEUTRAL  | Kraken API    |
+| YFI-USD    | 2026-07-06 00:00:00 |  1936         |           9.66667 | NEUTRAL  | Kraken API    |
+| ZEC-USD    | 2026-07-06 00:00:00 |   453.78      |          52.1667  | NEUTRAL  | Kraken API    |
+| ATOM-USD   | 2026-07-06 00:00:00 |     1.5804    |         -34.3333  | SHORT    | Kraken API    |
 | BITO       | 2026-07-02 00:00:00 |     8.34      |         -30.75    | SHORT    | Yahoo Finance |
-| BTC-USD    | 2026-07-03 00:00:00 | 61384         |         -29       | SHORT    | Kraken API    |
-| COMP-USD   | 2026-07-03 00:00:00 |    16.17      |         -31       | SHORT    | Kraken API    |
 | COP        | 2026-07-02 00:00:00 |   104.73      |         -43.4167  | SHORT    | Yahoo Finance |
 | CVX        | 2026-07-02 00:00:00 |   169.2       |         -43.4167  | SHORT    | Yahoo Finance |
-| DOGE-USD   | 2026-07-03 00:00:00 |     0.0747061 |         -34.3333  | SHORT    | Kraken API    |
-| DOT-USD    | 2026-07-03 00:00:00 |     0.8515    |         -36.3333  | SHORT    | Kraken API    |
-| FET-USD    | 2026-07-03 00:00:00 |     0.1845    |         -31.3333  | SHORT    | Kraken API    |
 | FXI        | 2026-07-02 00:00:00 |    31.91      |         -57.0833  | SHORT    | Yahoo Finance |
 | GLD        | 2026-07-02 00:00:00 |   378.13      |         -30.75    | SHORT    | Yahoo Finance |
-| HBAR-USD   | 2026-07-03 00:00:00 |     0.07145   |         -47.6667  | SHORT    | Kraken API    |
 | IBIT       | 2026-07-02 00:00:00 |    34.87      |         -30.75    | SHORT    | Yahoo Finance |
 | NVDA       | 2026-07-02 00:00:00 |   194.83      |         -26.5     | SHORT    | Yahoo Finance |
 | ORCL       | 2026-07-02 00:00:00 |   140.27      |         -65.5833  | SHORT    | Yahoo Finance |
 | OXY        | 2026-07-02 00:00:00 |    48.91      |         -45.4167  | SHORT    | Yahoo Finance |
-| PEPE-USD   | 2026-07-03 00:00:00 |     2.46e-06  |         -36.3333  | SHORT    | Kraken API    |
 | PFE        | 2026-07-02 00:00:00 |    24.32      |         -45.0833  | SHORT    | Yahoo Finance |
-| RENDER-USD | 2026-07-03 00:00:00 |     1.595     |         -31       | SHORT    | Kraken API    |
-| SHIB-USD   | 2026-07-03 00:00:00 |     4.253e-06 |         -36.3333  | SHORT    | Kraken API    |
 | SLB        | 2026-07-02 00:00:00 |    45.13      |         -45.8333  | SHORT    | Yahoo Finance |
 | SLV        | 2026-07-02 00:00:00 |    55.02      |         -52.25    | SHORT    | Yahoo Finance |
-| SUSHI-USD  | 2026-07-03 00:00:00 |     0.1599    |         -33       | SHORT    | Kraken API    |
 | T          | 2026-07-02 00:00:00 |    20.58      |         -50       | SHORT    | Yahoo Finance |
 | TMUS       | 2026-07-02 00:00:00 |   177.52      |         -50.25    | SHORT    | Yahoo Finance |
 | VZ         | 2026-07-02 00:00:00 |    42.56      |         -44       | SHORT    | Yahoo Finance |
@@ -184,10 +184,10 @@ _Generated: 2026-07-03T04:16:03+00:00_
 
 - Symbols with trades: **160** of 160
 - Beat buy-and-hold: **33.12%** of traded symbols
-- Positive return: **35.00%** of traded symbols
-- Median strategy return: **-10.12%** (benchmark **15.43%**)
-- Median excess vs benchmark: **-28.18%**
-- Median Sharpe: **-0.09**
+- Positive return: **35.62%** of traded symbols
+- Median strategy return: **-9.25%** (benchmark **15.43%**)
+- Median excess vs benchmark: **-27.86%**
+- Median Sharpe: **-0.07**
 - Median exposure: **44.51%**
 
 > Edge is real only if both _beat buy-and-hold_ and _median excess_ are convincingly positive across many symbols. Treat a single high-return symbol as noise.
@@ -198,20 +198,20 @@ Actual capital-allocation books (not per-symbol averages). Benchmarks: `equal_we
 
 | strategy              | scope         | ann_return   | ann_vol   |   sharpe | max_drawdown   | total_return   |   avg_gross_exposure |
 |:----------------------|:--------------|:-------------|:----------|---------:|:---------------|:---------------|---------------------:|
-| equal_weight_buyhold  | full          | -6.65%       | 33.35%    |    -0.2  | -52.54%        | -31.13%        |                 1    |
-| equal_weight_buyhold  | out_of_sample | -12.74%      | 34.09%    |    -0.37 | -39.63%        | -17.90%        |                 1    |
-| all_signals_ew        | full          | -11.41%      | 28.27%    |    -0.4  | -59.95%        | -37.42%        |                 1    |
-| all_signals_ew        | out_of_sample | 8.99%        | 28.59%    |     0.31 | -19.08%        | 5.39%          |                 1    |
-| high_conf_ew          | full          | 4.33%        | 32.35%    |     0.13 | -44.36%        | -2.49%         |                 0.89 |
-| high_conf_ew          | out_of_sample | 9.09%        | 35.22%    |     0.26 | -17.35%        | 3.28%          |                 0.89 |
-| high_conf_voltarget   | full          | 5.98%        | 29.90%    |     0.2  | -36.50%        | 4.98%          |                 0.89 |
-| high_conf_voltarget   | out_of_sample | 5.85%        | 32.84%    |     0.18 | -16.94%        | 0.64%          |                 0.89 |
-| conviction_long_short | full          | -13.83%      | 23.53%    |    -0.59 | -42.00%        | -39.65%        |                 0.97 |
-| conviction_long_short | out_of_sample | -11.22%      | 26.87%    |    -0.42 | -20.87%        | -14.61%        |                 0.97 |
-| spy_buyhold           | full          | 6.63%        | 13.40%    |     0.49 | -17.81%        | 19.03%         |                 0.79 |
-| spy_buyhold           | out_of_sample | -4.77%       | 10.12%    |    -0.47 | -13.27%        | -5.46%         |                 0.79 |
-| sixty_forty           | full          | 3.96%        | 8.49%     |     0.47 | -10.80%        | 11.55%         |                 0.79 |
-| sixty_forty           | out_of_sample | -3.89%       | 6.57%     |    -0.59 | -9.26%         | -4.27%         |                 0.79 |
+| equal_weight_buyhold  | full          | -7.20%       | 33.28%    |    -0.22 | -52.66%        | -32.33%        |                 1    |
+| equal_weight_buyhold  | out_of_sample | -5.63%       | 33.40%    |    -0.17 | -39.63%        | -11.25%        |                 1    |
+| all_signals_ew        | full          | -12.69%      | 28.35%    |    -0.45 | -61.52%        | -39.98%        |                 1    |
+| all_signals_ew        | out_of_sample | 10.43%       | 28.37%    |     0.37 | -15.10%        | 7.11%          |                 1    |
+| high_conf_ew          | full          | 7.61%        | 31.61%    |     0.24 | -40.95%        | 8.60%          |                 0.88 |
+| high_conf_ew          | out_of_sample | 13.02%       | 34.94%    |     0.37 | -17.35%        | 7.83%          |                 0.88 |
+| high_conf_voltarget   | full          | 9.56%        | 29.10%    |     0.33 | -34.95%        | 18.00%         |                 0.88 |
+| high_conf_voltarget   | out_of_sample | 9.23%        | 32.61%    |     0.28 | -16.94%        | 4.43%          |                 0.88 |
+| conviction_long_short | full          | -13.89%      | 23.46%    |    -0.59 | -41.51%        | -39.85%        |                 0.97 |
+| conviction_long_short | out_of_sample | -13.63%      | 26.79%    |    -0.51 | -20.69%        | -16.81%        |                 0.97 |
+| spy_buyhold           | full          | 6.60%        | 13.37%    |     0.49 | -17.81%        | 19.03%         |                 0.78 |
+| spy_buyhold           | out_of_sample | -2.22%       | 9.75%     |    -0.23 | -13.27%        | -2.83%         |                 0.78 |
+| sixty_forty           | full          | 3.94%        | 8.47%     |     0.47 | -10.80%        | 11.55%         |                 0.78 |
+| sixty_forty           | out_of_sample | -2.51%       | 6.41%     |    -0.39 | -9.26%         | -2.86%         |                 0.78 |
 
 ## Walk-Forward Robustness
 
@@ -219,13 +219,13 @@ Each book measured across contiguous time folds (each a different regime). A boo
 
 | strategy              |   n_folds |   mean_sharpe |   median_sharpe |   min_sharpe | pct_positive_folds   | mean_return   | fold_sharpes                  |
 |:----------------------|----------:|--------------:|----------------:|-------------:|:---------------------|:--------------|:------------------------------|
-| equal_weight_buyhold  |         5 |          0.08 |            0.4  |        -1.26 | 60.00%               | -5.71%        | 1.54;-1.26;0.42;-0.70;0.40    |
-| all_signals_ew        |         5 |         -0.35 |           -0.13 |        -1.27 | 20.00%               | -8.43%        | -0.07;0.06;-1.27;-0.37;-0.13  |
-| high_conf_ew          |         5 |          0.29 |            0.54 |        -0.99 | 80.00%               | 0.45%         | 1.11;0.61;-0.99;0.54;0.14     |
-| high_conf_voltarget   |         5 |          0.46 |            0.58 |        -1.11 | 60.00%               | 2.09%         | 1.98;0.89;-1.11;0.58;-0.05    |
-| conviction_long_short |         5 |         -0.66 |           -0.53 |        -1.57 | 0.00%                | -9.46%        | -1.57;-0.31;-0.53;-0.01;-0.88 |
-| spy_buyhold           |         5 |          0.43 |            0.37 |        -0.26 | 60.00%               | 3.68%         | 1.57;0.37;0.62;-0.17;-0.26    |
-| sixty_forty           |         5 |          0.39 |            0.14 |        -0.45 | 60.00%               | 2.29%         | 1.74;0.14;0.64;-0.13;-0.45    |
+| equal_weight_buyhold  |         5 |          0.06 |            0.27 |        -1.4  | 60.00%               | -5.73%        | 1.54;-1.40;0.63;-0.75;0.27    |
+| all_signals_ew        |         5 |         -0.39 |           -0.12 |        -1.38 | 0.00%                | -9.13%        | -0.07;-0.05;-1.38;-0.34;-0.12 |
+| high_conf_ew          |         5 |          0.44 |            0.45 |        -1.06 | 80.00%               | 3.09%         | 1.11;1.43;-1.06;0.45;0.26     |
+| high_conf_voltarget   |         5 |          0.65 |            0.46 |        -1.16 | 80.00%               | 4.95%         | 1.98;1.80;-1.16;0.46;0.15     |
+| conviction_long_short |         5 |         -0.66 |           -0.64 |        -1.57 | 0.00%                | -9.48%        | -1.57;-0.09;-0.64;-0.02;-0.97 |
+| spy_buyhold           |         5 |          0.42 |            0.45 |        -0.36 | 60.00%               | 3.68%         | 1.57;0.45;0.57;-0.36;-0.13    |
+| sixty_forty           |         5 |          0.38 |            0.21 |        -0.33 | 60.00%               | 2.29%         | 1.74;0.21;0.60;-0.32;-0.33    |
 
 ## Strategy Comparison
 
@@ -233,12 +233,12 @@ Each decision rule backtested over the same data. `out_of_sample` is the most re
 
 | strategy        | scope         |   symbols | beat_benchmark_pct   | positive_pct   | median_return   | median_benchmark   | median_excess   |   median_sharpe |   total_trades |
 |:----------------|:--------------|----------:|:---------------------|:---------------|:----------------|:-------------------|:----------------|----------------:|---------------:|
-| trend           | full          |       160 | 33.12%               | 35.00%         | -10.12%         | 15.43%             | -28.18%         |           -0.09 |          11251 |
-| trend           | out_of_sample |       160 | 40.00%               | 51.88%         | 1.74%           | 4.17%              | -6.30%          |            0.24 |           3898 |
-| mean_reversion  | full          |       157 | 40.13%               | 50.32%         | 0.01%           | 15.18%             | -16.96%         |            0.01 |           1260 |
-| mean_reversion  | out_of_sample |       127 | 47.24%               | 58.27%         | 0.33%           | 1.19%              | -2.11%          |            0.65 |            474 |
-| regime_adaptive | full          |       160 | 33.12%               | 36.25%         | -10.60%         | 15.43%             | -29.06%         |           -0.11 |          11520 |
-| regime_adaptive | out_of_sample |       160 | 38.75%               | 51.88%         | 1.99%           | 4.17%              | -6.88%          |            0.24 |           3995 |
+| trend           | full          |       160 | 33.12%               | 35.62%         | -9.25%          | 15.43%             | -27.86%         |           -0.07 |          11238 |
+| trend           | out_of_sample |       160 | 40.00%               | 51.25%         | 1.15%           | 4.17%              | -6.30%          |            0.23 |           3899 |
+| mean_reversion  | full          |       157 | 40.76%               | 50.32%         | 0.01%           | 15.18%             | -16.96%         |            0.01 |           1266 |
+| mean_reversion  | out_of_sample |       128 | 48.44%               | 60.16%         | 0.35%           | 0.49%              | -1.69%          |            0.7  |            480 |
+| regime_adaptive | full          |       160 | 33.12%               | 35.62%         | -10.12%         | 15.43%             | -28.13%         |           -0.1  |          11511 |
+| regime_adaptive | out_of_sample |       160 | 40.00%               | 51.25%         | 1.53%           | 4.17%              | -6.85%          |            0.22 |           3999 |
 
 ## Signal Calibration
 
@@ -246,18 +246,18 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 | confidence_level   |   horizon |     n | mean_return   | median_return   | win_rate   |
 |:-------------------|----------:|------:|:--------------|:----------------|:-----------|
-| HIGH               |         5 |  8008 | 0.17%         | 0.13%           | 52.17%     |
-| MEDIUM             |         5 | 29269 | 0.08%         | 0.10%           | 51.15%     |
-| LOW                |         5 |  3293 | -0.61%        | -0.53%          | 44.79%     |
-| ALL                |         5 | 40570 | 0.04%         | 0.06%           | 50.83%     |
-| HIGH               |        10 |  7967 | 0.47%         | 0.17%           | 52.00%     |
-| MEDIUM             |        10 | 29060 | 0.25%         | 0.17%           | 51.40%     |
-| LOW                |        10 |  3271 | -0.87%        | -0.73%          | 45.31%     |
-| ALL                |        10 | 40298 | 0.20%         | 0.12%           | 51.02%     |
-| HIGH               |        20 |  7893 | 0.83%         | 0.41%           | 53.26%     |
-| MEDIUM             |        20 | 28694 | 0.91%         | 0.66%           | 53.78%     |
-| LOW                |        20 |  3238 | -0.58%        | -0.46%          | 47.47%     |
-| ALL                |        20 | 39825 | 0.78%         | 0.53%           | 53.17%     |
+| HIGH               |         5 |  8006 | 0.17%         | 0.13%           | 52.17%     |
+| MEDIUM             |         5 | 29240 | 0.05%         | 0.09%           | 51.04%     |
+| LOW                |         5 |  3296 | -0.61%        | -0.53%          | 44.72%     |
+| ALL                |         5 | 40542 | 0.02%         | 0.06%           | 50.75%     |
+| HIGH               |        10 |  7964 | 0.47%         | 0.17%           | 52.01%     |
+| MEDIUM             |        10 | 29029 | 0.22%         | 0.16%           | 51.31%     |
+| LOW                |        10 |  3268 | -0.91%        | -0.73%          | 45.26%     |
+| ALL                |        10 | 40261 | 0.18%         | 0.11%           | 50.96%     |
+| HIGH               |        20 |  7890 | 0.83%         | 0.41%           | 53.23%     |
+| MEDIUM             |        20 | 28672 | 0.88%         | 0.64%           | 53.70%     |
+| LOW                |        20 |  3246 | -0.63%        | -0.48%          | 47.32%     |
+| ALL                |        20 | 39808 | 0.75%         | 0.52%           | 53.08%     |
 
 ## Backtest Summary
 
@@ -268,75 +268,75 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 | symbol     |   trades | return   | benchmark_return   | mdd     |   sharpe | exposure   | skipped_reason   |
 |:-----------|---------:|:---------|:-------------------|:--------|---------:|:-----------|:-----------------|
 | AAPL       |       63 | 12.75%   | 63.89%             | -20.65% |     0.35 | 48.25%     | ok               |
-| AAVE-USD   |       74 | -53.44%  | -69.71%            | -68.26% |    -0.53 | 36.97%     | ok               |
+| AAVE-USD   |       74 | -52.28%  | -73.46%            | -68.26% |    -0.5  | 37.55%     | ok               |
 | ABBV       |       66 | -16.01%  | 49.36%             | -30.55% |    -0.31 | 47.25%     | ok               |
-| ADA-USD    |       86 | -83.24%  | -81.80%            | -89.69% |    -0.68 | 46.36%     | ok               |
+| ADA-USD    |       88 | -83.61%  | -80.06%            | -89.69% |    -0.7  | 46.74%     | ok               |
 | ADBE       |       68 | -30.13%  | -64.32%            | -37.38% |    -0.37 | 57.24%     | ok               |
 | AGG        |       69 | -6.61%   | 0.97%              | -10.16% |    -1.1  | 31.11%     | ok               |
-| ALGO-USD   |       86 | -50.43%  | -76.08%            | -53.13% |    -0.57 | 38.12%     | ok               |
+| ALGO-USD   |       86 | -50.43%  | -76.33%            | -53.13% |    -0.57 | 38.12%     | ok               |
 | AMAT       |       69 | -19.88%  | 246.79%            | -57.21% |    -0.07 | 53.41%     | ok               |
 | AMD        |       56 | 5.94%    | 205.77%            | -44.76% |     0.27 | 36.44%     | ok               |
 | AMGN       |       69 | -15.57%  | 26.90%             | -34.14% |    -0.29 | 46.42%     | ok               |
 | AMZN       |       80 | -37.03%  | 42.88%             | -42.48% |    -1.1  | 38.27%     | ok               |
-| APT-USD    |       76 | -34.35%  | -91.44%            | -69.96% |    -0.11 | 43.68%     | ok               |
-| ARB-USD    |       68 | -11.79%  | -86.82%            | -62.67% |     0.12 | 38.89%     | ok               |
+| APT-USD    |       76 | -28.55%  | -91.98%            | -69.96% |    -0.03 | 43.10%     | ok               |
+| ARB-USD    |       68 | -4.40%   | -87.52%            | -62.67% |     0.2  | 38.31%     | ok               |
 | ARKK       |       83 | -32.73%  | 67.73%             | -35.25% |    -0.56 | 39.77%     | ok               |
-| ATOM-USD   |       92 | -67.78%  | -72.48%            | -73.96% |    -1.12 | 45.59%     | ok               |
-| AVAX-USD   |       74 | -34.19%  | -78.65%            | -60.45% |    -0.24 | 39.66%     | ok               |
+| ATOM-USD   |       90 | -67.72%  | -74.61%            | -73.94% |    -1.11 | 45.98%     | ok               |
+| AVAX-USD   |       68 | -14.34%  | -79.90%            | -53.72% |     0.04 | 38.89%     | ok               |
 | AVGO       |       62 | 22.35%   | 182.76%            | -35.76% |     0.41 | 43.93%     | ok               |
 | BA         |       67 | 7.60%    | 8.25%              | -30.56% |     0.25 | 49.25%     | ok               |
 | BAC        |       78 | -11.23%  | 77.32%             | -27.64% |    -0.23 | 48.42%     | ok               |
-| BCH-USD    |       76 | 3.75%    | -46.18%            | -53.87% |     0.25 | 48.85%     | ok               |
+| BCH-USD    |       76 | 3.82%    | -42.36%            | -53.87% |     0.25 | 49.23%     | ok               |
 | BITO       |       78 | 9.21%    | -61.35%            | -42.82% |     0.28 | 42.10%     | ok               |
 | BLK        |       77 | -10.03%  | 25.53%             | -24.29% |    -0.24 | 42.93%     | ok               |
 | BND        |       65 | -7.32%   | 0.94%              | -9.89%  |    -1.18 | 32.28%     | ok               |
-| BONK-USD   |       68 | 69.11%   | -80.92%            | -43.77% |     0.72 | 41.95%     | ok               |
-| BTC-USD    |       74 | 5.62%    | -39.40%            | -23.38% |     0.24 | 52.30%     | ok               |
+| BONK-USD   |       72 | 45.25%   | -80.52%            | -45.22% |     0.6  | 41.57%     | ok               |
+| BTC-USD    |       74 | -2.02%   | -38.23%            | -23.38% |     0.12 | 52.68%     | ok               |
 | C          |       83 | -27.37%  | 157.82%            | -38.66% |    -0.53 | 51.75%     | ok               |
 | CAT        |       72 | 25.61%   | 199.23%            | -21.02% |     0.5  | 57.07%     | ok               |
 | CL         |       60 | 13.07%   | 12.90%             | -14.32% |     0.47 | 46.42%     | ok               |
 | CMCSA      |       82 | -39.41%  | -38.46%            | -38.49% |    -1.04 | 43.76%     | ok               |
-| COMP-USD   |       91 | -39.06%  | -75.76%            | -58.43% |    -0.24 | 46.55%     | ok               |
+| COMP-USD   |       91 | -42.58%  | -75.95%            | -59.19% |    -0.3  | 46.36%     | ok               |
 | COP        |       73 | -21.41%  | -8.05%             | -43.96% |    -0.38 | 40.93%     | ok               |
 | COST       |       60 | 0.19%    | 31.42%             | -29.73% |     0.08 | 45.09%     | ok               |
 | CRM        |       67 | -42.85%  | -43.10%            | -42.70% |    -0.93 | 43.76%     | ok               |
-| CRV-USD    |       64 | -6.87%   | -69.21%            | -39.89% |     0.16 | 35.63%     | ok               |
+| CRV-USD    |       66 | -7.30%   | -72.65%            | -39.89% |     0.16 | 35.82%     | ok               |
 | CSCO       |       59 | 26.53%   | 125.61%            | -21.79% |     0.56 | 49.92%     | ok               |
 | CVX        |       71 | -14.90%  | 9.83%              | -26.75% |    -0.37 | 41.60%     | ok               |
-| DASH-USD   |       63 | -37.83%  | 13.58%             | -64.43% |     0.03 | 31.61%     | ok               |
+| DASH-USD   |       63 | -37.83%  | 4.01%              | -64.43% |     0.03 | 31.61%     | ok               |
 | DBC        |       56 | -12.95%  | 19.68%             | -25.67% |    -0.45 | 32.95%     | ok               |
 | DE         |       72 | -3.15%   | 61.02%             | -25.24% |     0.03 | 46.76%     | ok               |
 | DIA        |       60 | -2.66%   | 36.28%             | -12.94% |    -0.11 | 45.26%     | ok               |
 | DIS        |       68 | -18.53%  | -9.99%             | -28.17% |    -0.33 | 47.25%     | ok               |
-| DOGE-USD   |       78 | -21.30%  | -76.55%            | -62.31% |     0.04 | 50.57%     | ok               |
-| DOT-USD    |       90 | -50.56%  | -84.92%            | -60.30% |    -0.42 | 49.04%     | ok               |
-| DXY-INDEX  |       40 | -2.00%   | -1.01%             | -6.05%  |    -0.3  | 30.09%     | ok               |
+| DOGE-USD   |       77 | -21.59%  | -76.51%            | -60.95% |     0.03 | 50.77%     | ok               |
+| DOT-USD    |       90 | -47.58%  | -86.19%            | -62.71% |    -0.36 | 48.66%     | ok               |
+| DXY-INDEX  |       38 | -1.77%   | -0.16%             | -6.02%  |    -0.27 | 29.78%     | ok               |
 | EEM        |       64 | -9.40%   | 66.71%             | -25.67% |    -0.25 | 43.43%     | ok               |
 | EFA        |       60 | -7.42%   | 39.09%             | -13.02% |    -0.26 | 44.26%     | ok               |
 | EOG        |       77 | -24.73%  | 15.67%             | -48.13% |    -0.54 | 46.09%     | ok               |
-| ETC-USD    |       64 | -35.69%  | -71.76%            | -48.16% |    -0.51 | 31.23%     | ok               |
-| ETH-USD    |       62 | 144.24%  | -44.58%            | -30.11% |     1.21 | 45.21%     | ok               |
+| ETC-USD    |       64 | -35.69%  | -73.50%            | -48.16% |    -0.51 | 31.23%     | ok               |
+| ETH-USD    |       62 | 144.24%  | -46.07%            | -30.11% |     1.21 | 45.21%     | ok               |
 | EWJ        |       64 | -17.91%  | 40.29%             | -30.73% |    -0.58 | 39.27%     | ok               |
 | FCX        |       63 | -28.65%  | 59.94%             | -48.09% |    -0.33 | 45.09%     | ok               |
-| FET-USD    |       83 | -30.73%  | -81.16%            | -54.02% |    -0.03 | 40.61%     | ok               |
-| FIL-USD    |       72 | -35.65%  | -82.25%            | -50.22% |    -0.33 | 33.33%     | ok               |
+| FET-USD    |       79 | -25.04%  | -83.19%            | -48.39% |     0.04 | 40.04%     | ok               |
+| FIL-USD    |       72 | -30.97%  | -83.49%            | -50.88% |    -0.24 | 33.14%     | ok               |
 | FXI        |       44 | -2.22%   | 44.39%             | -23.91% |     0.03 | 29.62%     | ok               |
 | GDX        |       60 | 11.28%   | 187.29%            | -34.99% |     0.3  | 48.09%     | ok               |
 | GDXJ       |       68 | -23.13%  | 210.62%            | -44.93% |    -0.22 | 46.42%     | ok               |
 | GE         |       74 | 26.68%   | 240.19%            | -27.82% |     0.52 | 53.74%     | ok               |
 | GLD        |       48 | 25.23%   | 100.78%            | -16.63% |     0.64 | 46.26%     | ok               |
 | GOOGL      |       63 | 75.66%   | 146.67%            | -20.41% |     1.14 | 53.41%     | ok               |
-| GRT-USD    |       85 | -3.45%   | -88.60%            | -54.83% |     0.19 | 42.72%     | ok               |
+| GRT-USD    |       87 | -12.67%  | -89.55%            | -56.53% |     0.07 | 41.76%     | ok               |
 | GS         |       76 | -2.38%   | 165.17%            | -22.13% |     0.05 | 52.08%     | ok               |
 | HD         |       73 | -2.60%   | -1.60%             | -18.58% |     0.01 | 43.93%     | ok               |
-| HON        |       93 | -26.82%  | 26.06%             | -29.80% |    -0.72 | 52.41%     | ok               |
+| HON        |       93 | -26.82%  | 20.20%             | -29.80% |    -0.72 | 52.41%     | ok               |
 | HYG        |       79 | -9.05%   | 3.25%              | -9.59%  |    -1.05 | 34.44%     | ok               |
 | IBIT       |       32 | 38.08%   | -8.26%             | -18.95% |     0.78 | 32.30%     | ok               |
 | IBM        |       78 | 4.04%    | 57.04%             | -27.54% |     0.18 | 49.75%     | ok               |
-| ICP-USD    |       83 | -6.90%   | -74.11%            | -55.89% |     0.2  | 37.55%     | ok               |
+| ICP-USD    |       81 | 15.64%   | -76.19%            | -50.29% |     0.39 | 36.02%     | ok               |
 | IEF        |       76 | -10.90%  | -0.57%             | -11.70% |    -1.54 | 32.78%     | ok               |
 | IEMG       |       58 | -5.52%   | 60.87%             | -26.84% |    -0.12 | 43.59%     | ok               |
-| INJ-USD    |       77 | -51.80%  | -72.99%            | -76.97% |    -0.47 | 38.70%     | ok               |
+| INJ-USD    |       75 | -55.12%  | -76.08%            | -77.42% |    -0.55 | 37.55%     | ok               |
 | INTC       |       70 | 55.82%   | 183.18%            | -60.60% |     0.62 | 49.25%     | ok               |
 | INTU       |       67 | -20.02%  | -57.84%            | -43.77% |    -0.23 | 42.60%     | ok               |
 | ITA        |       72 | 0.83%    | 99.43%             | -23.75% |     0.1  | 47.75%     | ok               |
@@ -344,12 +344,12 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 | JNJ        |       71 | 9.57%    | 68.18%             | -17.51% |     0.39 | 50.75%     | ok               |
 | JPM        |       73 | -17.16%  | 91.34%             | -33.16% |    -0.39 | 53.91%     | ok               |
 | KO         |       49 | 28.93%   | 40.63%             | -8.07%  |     1.03 | 37.77%     | ok               |
-| LDO-USD    |       76 | -1.03%   | -85.37%            | -60.93% |     0.26 | 38.12%     | ok               |
+| LDO-USD    |       74 | 1.95%    | -88.26%            | -60.93% |     0.29 | 37.93%     | ok               |
 | LIN        |       64 | 0.44%    | 32.04%             | -21.53% |     0.08 | 38.60%     | ok               |
-| LINK-USD   |       71 | -16.15%  | -65.70%            | -49.35% |     0.07 | 41.76%     | ok               |
+| LINK-USD   |       72 | -18.18%  | -68.20%            | -50.48% |     0.04 | 41.76%     | ok               |
 | LLY        |       71 | -25.16%  | 65.01%             | -53.34% |    -0.34 | 51.08%     | ok               |
 | LRCX       |       80 | -20.80%  | 306.56%            | -63.56% |    -0.08 | 46.26%     | ok               |
-| LTC-USD    |       66 | -34.00%  | -60.74%            | -53.76% |    -0.29 | 48.47%     | ok               |
+| LTC-USD    |       66 | -34.00%  | -64.69%            | -53.76% |    -0.29 | 48.47%     | ok               |
 | MCD        |       75 | -2.55%   | -3.87%             | -18.81% |    -0.05 | 38.10%     | ok               |
 | META       |       72 | -28.65%  | 24.02%             | -38.96% |    -0.48 | 49.08%     | ok               |
 | MPC        |       71 | -15.29%  | 56.97%             | -44.76% |    -0.17 | 49.58%     | ok               |
@@ -357,49 +357,49 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 | MS         |       81 | -16.46%  | 149.77%            | -27.79% |    -0.34 | 49.75%     | ok               |
 | MSFT       |       81 | -37.49%  | -5.70%             | -38.43% |    -0.99 | 47.92%     | ok               |
 | MU         |       51 | 270.20%  | 1049.34%           | -68.76% |     1.34 | 59.90%     | ok               |
-| NEAR-USD   |       87 | 3.87%    | -54.24%            | -60.07% |     0.29 | 42.15%     | ok               |
+| NEAR-USD   |       83 | 22.03%   | -56.91%            | -60.10% |     0.44 | 40.80%     | ok               |
 | NEM        |       74 | -31.68%  | 191.06%            | -38.49% |    -0.34 | 53.41%     | ok               |
 | NFLX       |       62 | 31.00%   | 39.03%             | -21.09% |     0.66 | 54.74%     | ok               |
 | NKE        |       91 | -48.19%  | -57.51%            | -57.25% |    -0.9  | 43.59%     | ok               |
 | NOW        |       80 | 6.62%    | -33.50%            | -30.25% |     0.24 | 45.76%     | ok               |
 | NVDA       |       76 | -24.41%  | 123.60%            | -45.02% |    -0.16 | 58.29%     | ok               |
-| OP-USD     |       72 | -12.93%  | -92.62%            | -70.27% |     0.11 | 34.67%     | ok               |
+| OP-USD     |       70 | -9.10%   | -92.40%            | -70.11% |     0.15 | 34.29%     | ok               |
 | ORCL       |       74 | 93.68%   | 20.22%             | -29.47% |     0.86 | 53.58%     | ok               |
 | OXY        |       67 | 8.55%    | -15.75%            | -31.37% |     0.26 | 43.26%     | ok               |
 | PEP        |       83 | -10.20%  | -17.04%            | -21.35% |    -0.24 | 49.08%     | ok               |
-| PEPE-USD   |       79 | 14.92%   | -78.50%            | -57.66% |     0.4  | 44.83%     | ok               |
+| PEPE-USD   |       79 | 0.11%    | -80.39%            | -57.66% |     0.28 | 44.83%     | ok               |
 | PFE        |       77 | -39.75%  | -11.79%            | -40.87% |    -1.29 | 34.94%     | ok               |
 | PG         |       64 | -15.05%  | -4.56%             | -21.96% |    -0.55 | 41.26%     | ok               |
 | PM         |       83 | -5.17%   | 104.77%            | -33.68% |    -0.02 | 56.91%     | ok               |
-| POL-USD    |       79 | 66.27%   | -81.22%            | -46.45% |     0.77 | 50.77%     | ok               |
+| POL-USD    |       79 | 72.14%   | -81.94%            | -46.45% |     0.81 | 50.38%     | ok               |
 | QCOM       |       75 | -12.01%  | 18.94%             | -56.59% |     0.01 | 46.76%     | ok               |
 | QQQ        |       64 | 16.76%   | 64.65%             | -12.88% |     0.5  | 45.09%     | ok               |
-| RENDER-USD |       98 | -19.07%  | -61.66%            | -45.00% |     0.1  | 43.98%     | ok               |
+| RENDER-USD |       98 | -19.07%  | -61.25%            | -45.00% |     0.1  | 43.71%     | ok               |
 | RTX        |       58 | 27.88%   | 118.86%            | -16.99% |     0.68 | 51.58%     | ok               |
 | SBUX       |       64 | -22.61%  | 7.95%              | -29.22% |    -0.45 | 39.77%     | ok               |
 | SCHW       |       78 | -20.35%  | 55.27%             | -31.92% |    -0.45 | 46.26%     | ok               |
-| SHIB-USD   |       78 | -27.51%  | -76.32%            | -48.95% |    -0.13 | 53.26%     | ok               |
+| SHIB-USD   |       78 | -32.88%  | -76.83%            | -48.95% |    -0.21 | 53.07%     | ok               |
 | SHY        |       48 | -2.24%   | 0.12%              | -2.85%  |    -0.79 | 34.28%     | ok               |
-| SKY-USD    |       70 | -28.56%  | 3.75%              | -43.98% |    -0.35 | 41.04%     | ok               |
+| SKY-USD    |       70 | -28.56%  | -0.81%             | -43.98% |    -0.34 | 40.77%     | ok               |
 | SLB        |       77 | -20.81%  | -5.57%             | -54.13% |    -0.32 | 50.92%     | ok               |
 | SLV        |       58 | 44.14%   | 166.44%            | -42.66% |     0.64 | 41.93%     | ok               |
 | SMH        |       48 | 87.45%   | 196.99%            | -33.99% |     1.13 | 49.25%     | ok               |
-| SNX-USD    |       62 | -16.00%  | -83.31%            | -34.76% |     0.08 | 38.70%     | ok               |
-| SOL-USD    |       68 | -35.74%  | -64.48%            | -56.90% |    -0.13 | 59.20%     | ok               |
+| SNX-USD    |       60 | -2.40%   | -85.68%            | -34.76% |     0.23 | 37.55%     | ok               |
+| SOL-USD    |       68 | -39.41%  | -65.10%            | -56.90% |    -0.18 | 58.81%     | ok               |
 | SOXX       |       57 | 75.69%   | 175.30%            | -41.89% |     0.99 | 48.09%     | ok               |
 | SPY        |       64 | 2.96%    | 49.46%             | -16.47% |     0.16 | 50.08%     | ok               |
-| SUSHI-USD  |       92 | -80.67%  | -86.13%            | -84.53% |    -1.23 | 36.02%     | ok               |
+| SUSHI-USD  |       94 | -77.22%  | -87.47%            | -81.97% |    -1.12 | 36.21%     | ok               |
 | T          |       64 | 44.42%   | 22.35%             | -17.01% |     0.96 | 51.91%     | ok               |
 | TGT        |       58 | -12.54%  | -11.66%            | -40.57% |    -0.18 | 38.94%     | ok               |
-| TIA-USD    |       90 | -28.18%  | -90.31%            | -60.92% |    -0.06 | 36.02%     | ok               |
+| TIA-USD    |       91 | -42.86%  | -90.89%            | -69.51% |    -0.26 | 36.59%     | ok               |
 | TLT        |       68 | -21.58%  | -9.07%             | -21.75% |    -1.68 | 31.61%     | ok               |
 | TMO        |       61 | 13.93%   | -4.98%             | -18.85% |     0.38 | 49.08%     | ok               |
 | TMUS       |       70 | 12.74%   | 10.31%             | -24.50% |     0.36 | 48.09%     | ok               |
-| TRX-USD    |       72 | 0.99%    | 32.26%             | -22.90% |     0.12 | 49.04%     | ok               |
+| TRX-USD    |       72 | 0.99%    | 29.50%             | -22.90% |     0.12 | 49.04%     | ok               |
 | TSLA       |       69 | 9.97%    | 107.56%            | -42.22% |     0.29 | 41.43%     | ok               |
 | TXN        |       77 | -15.53%  | 82.93%             | -47.39% |    -0.09 | 53.91%     | ok               |
 | UNH        |       74 | 33.82%   | -18.21%            | -26.96% |     0.56 | 52.41%     | ok               |
-| UNI-USD    |       90 | -76.74%  | -71.20%            | -80.61% |    -1.01 | 42.15%     | ok               |
+| UNI-USD    |       92 | -77.04%  | -73.08%            | -80.61% |    -1.02 | 42.72%     | ok               |
 | UPS        |       70 | -35.75%  | -25.19%            | -38.75% |    -0.71 | 40.27%     | ok               |
 | USO        |       68 | 7.65%    | 45.39%             | -43.35% |     0.25 | 34.28%     | ok               |
 | VEA        |       58 | -0.98%   | 49.17%             | -17.93% |     0.01 | 44.09%     | ok               |
@@ -409,7 +409,7 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 | VWO        |       76 | -13.41%  | 45.89%             | -25.20% |    -0.47 | 44.09%     | ok               |
 | VZ         |       89 | -27.52%  | 6.64%              | -27.84% |    -0.93 | 36.94%     | ok               |
 | WFC        |       84 | -17.50%  | 76.86%             | -29.78% |    -0.29 | 49.42%     | ok               |
-| WIF-USD    |       68 | -43.81%  | -83.71%            | -57.06% |    -0.24 | 32.18%     | ok               |
+| WIF-USD    |       68 | -35.28%  | -84.33%            | -50.54% |    -0.13 | 31.99%     | ok               |
 | WMT        |       59 | 20.12%   | 98.10%             | -21.31% |     0.58 | 50.58%     | ok               |
 | XBI        |       62 | 5.64%    | 79.85%             | -20.73% |     0.22 | 40.77%     | ok               |
 | XLB        |       66 | -10.72%  | 25.39%             | -26.57% |    -0.35 | 36.94%     | ok               |
@@ -418,15 +418,15 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 | XLF        |       76 | -8.64%   | 42.73%             | -23.61% |    -0.26 | 48.25%     | ok               |
 | XLI        |       64 | 2.18%    | 57.50%             | -11.38% |     0.14 | 44.76%     | ok               |
 | XLK        |       44 | 57.41%   | 76.12%             | -14.75% |     1.11 | 46.59%     | ok               |
-| XLM-USD    |       69 | 5.21%    | -49.75%            | -50.36% |     0.28 | 45.79%     | ok               |
+| XLM-USD    |       69 | 5.21%    | -51.41%            | -50.36% |     0.28 | 45.79%     | ok               |
 | XLP        |       68 | 6.56%    | 15.18%             | -11.16% |     0.4  | 42.93%     | ok               |
 | XLU        |       67 | -4.08%   | 52.43%             | -20.40% |    -0.14 | 37.77%     | ok               |
 | XLV        |       66 | -12.12%  | 13.61%             | -16.83% |    -0.59 | 35.61%     | ok               |
 | XLY        |       72 | 2.75%    | 31.13%             | -14.01% |     0.15 | 44.26%     | ok               |
 | XOM        |       58 | 2.35%    | 31.86%             | -20.29% |     0.14 | 36.94%     | ok               |
-| XRP-USD    |       60 | -31.84%  | -64.36%            | -44.89% |    -0.29 | 33.91%     | ok               |
-| YFI-USD    |       81 | -52.55%  | -73.98%            | -67.78% |    -0.75 | 40.80%     | ok               |
-| ZEC-USD    |       62 | 62.53%   | 923.33%            | -47.68% |     0.64 | 35.82%     | ok               |
+| XRP-USD    |       58 | -30.47%  | -62.21%            | -44.89% |    -0.26 | 33.72%     | ok               |
+| YFI-USD    |       81 | -50.93%  | -73.18%            | -67.78% |    -0.72 | 40.23%     | ok               |
+| ZEC-USD    |       64 | 66.71%   | 951.88%            | -47.68% |     0.66 | 35.06%     | ok               |
 
 ## AAPL Threshold Sweep
 
@@ -442,11 +442,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          40 | 7.79%    | -69.71%            | -43.61% |     0.3  |       38 | 30.27%     | ok               |
-|          45 | -7.90%   | -69.71%            | -49.19% |     0.11 |       40 | 26.05%     | ok               |
-|          35 | -11.34%  | -69.71%            | -51.96% |     0.09 |       50 | 32.95%     | ok               |
-|          50 | -33.87%  | -69.71%            | -47.39% |    -0.36 |       42 | 19.73%     | ok               |
-|          15 | -54.37%  | -69.71%            | -61.76% |    -0.38 |       80 | 51.15%     | ok               |
+|          40 | 10.48%   | -73.46%            | -43.61% |     0.33 |       38 | 30.84%     | ok               |
+|          45 | -5.60%   | -73.46%            | -49.19% |     0.14 |       40 | 26.63%     | ok               |
+|          35 | -9.13%   | -73.46%            | -51.96% |     0.12 |       50 | 33.52%     | ok               |
+|          15 | -53.24%  | -73.46%            | -61.76% |    -0.35 |       80 | 51.72%     | ok               |
+|          50 | -33.87%  | -73.46%            | -47.39% |    -0.36 |       42 | 19.73%     | ok               |
 
 ## ABBV Threshold Sweep
 
@@ -462,11 +462,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          15 | -83.94%  | -81.80%            | -91.83% |    -0.58 |       80 | 63.41%     | ok               |
-|          50 | -77.92%  | -81.80%            | -85.97% |    -0.59 |       55 | 26.82%     | ok               |
-|          45 | -80.28%  | -81.80%            | -88.02% |    -0.62 |       58 | 31.61%     | ok               |
-|          35 | -82.47%  | -81.80%            | -89.77% |    -0.66 |       76 | 42.15%     | ok               |
-|          20 | -85.21%  | -81.80%            | -92.33% |    -0.66 |       90 | 57.66%     | ok               |
+|          15 | -83.23%  | -80.06%            | -91.83% |    -0.55 |       82 | 63.98%     | ok               |
+|          50 | -77.92%  | -80.06%            | -85.97% |    -0.59 |       55 | 26.82%     | ok               |
+|          45 | -80.28%  | -80.06%            | -88.02% |    -0.62 |       58 | 31.61%     | ok               |
+|          20 | -84.55%  | -80.06%            | -92.33% |    -0.63 |       92 | 58.24%     | ok               |
+|          35 | -82.72%  | -80.06%            | -89.77% |    -0.67 |       78 | 42.34%     | ok               |
 
 ## ADBE Threshold Sweep
 
@@ -492,11 +492,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          30 | -50.43%  | -76.08%            | -53.13% |    -0.57 |       86 | 38.12%     | ok               |
-|          15 | -61.07%  | -76.08%            | -69.47% |    -0.66 |       88 | 50.57%     | ok               |
-|          25 | -61.32%  | -76.08%            | -73.33% |    -0.72 |       88 | 45.21%     | ok               |
-|          20 | -65.02%  | -76.08%            | -72.09% |    -0.78 |       90 | 48.28%     | ok               |
-|          50 | -45.64%  | -76.08%            | -48.43% |    -0.81 |       42 | 16.86%     | ok               |
+|          30 | -50.43%  | -76.33%            | -53.13% |    -0.57 |       86 | 38.12%     | ok               |
+|          15 | -60.12%  | -76.33%            | -68.72% |    -0.63 |       88 | 50.77%     | ok               |
+|          25 | -60.38%  | -76.33%            | -72.68% |    -0.69 |       88 | 45.40%     | ok               |
+|          20 | -64.17%  | -76.33%            | -71.41% |    -0.76 |       90 | 48.47%     | ok               |
+|          50 | -45.64%  | -76.33%            | -48.43% |    -0.81 |       42 | 16.86%     | ok               |
 
 ## AMAT Threshold Sweep
 
@@ -542,21 +542,21 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | 35.19%   | -91.44%            | -46.73% |     0.58 |       44 | 20.11%     | ok               |
-|          45 | 2.79%    | -91.44%            | -63.86% |     0.24 |       60 | 26.25%     | ok               |
-|          40 | -16.95%  | -91.44%            | -63.33% |     0.05 |       66 | 31.80%     | ok               |
-|          20 | -25.11%  | -91.44%            | -70.51% |     0.04 |       73 | 52.49%     | ok               |
-|          35 | -23.04%  | -91.44%            | -64.45% |    -0    |       70 | 37.55%     | ok               |
+|          50 | 47.75%   | -91.98%            | -46.73% |     0.7  |       42 | 19.73%     | ok               |
+|          45 | 11.87%   | -91.98%            | -63.86% |     0.34 |       60 | 25.67%     | ok               |
+|          40 | -9.62%   | -91.98%            | -63.33% |     0.13 |       66 | 31.23%     | ok               |
+|          20 | -18.50%  | -91.98%            | -70.51% |     0.11 |       73 | 51.92%     | ok               |
+|          35 | -16.24%  | -91.98%            | -64.45% |     0.08 |       70 | 36.97%     | ok               |
 
 ## ARB-USD Threshold Sweep
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          15 | 52.21%   | -86.82%            | -53.74% |     0.63 |       87 | 56.32%     | ok               |
-|          40 | 28.98%   | -86.82%            | -47.60% |     0.49 |       50 | 29.89%     | ok               |
-|          20 | 14.39%   | -86.82%            | -60.40% |     0.39 |       75 | 49.81%     | ok               |
-|          35 | 16.36%   | -86.82%            | -56.00% |     0.39 |       60 | 33.33%     | ok               |
-|          45 | 15.68%   | -86.82%            | -50.83% |     0.37 |       56 | 23.18%     | ok               |
+|          15 | 64.96%   | -87.52%            | -53.74% |     0.69 |       87 | 55.75%     | ok               |
+|          40 | 39.78%   | -87.52%            | -47.60% |     0.58 |       50 | 29.31%     | ok               |
+|          35 | 26.11%   | -87.52%            | -56.00% |     0.47 |       60 | 32.76%     | ok               |
+|          45 | 25.36%   | -87.52%            | -50.83% |     0.47 |       56 | 22.61%     | ok               |
+|          20 | 23.97%   | -87.52%            | -60.40% |     0.46 |       75 | 49.23%     | ok               |
 
 ## ARKK Threshold Sweep
 
@@ -572,21 +572,21 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          25 | -63.91%  | -72.48%            | -70.52% |    -0.92 |       95 | 51.92%     | ok               |
-|          15 | -68.12%  | -72.48%            | -71.82% |    -0.96 |       93 | 61.49%     | ok               |
-|          45 | -59.38%  | -72.48%            | -65.47% |    -1.09 |       76 | 29.69%     | ok               |
-|          30 | -67.78%  | -72.48%            | -73.96% |    -1.12 |       92 | 45.59%     | ok               |
-|          20 | -71.46%  | -72.48%            | -74.51% |    -1.13 |      101 | 55.75%     | ok               |
+|          25 | -65.05%  | -74.61%            | -71.49% |    -0.95 |       95 | 52.68%     | ok               |
+|          15 | -69.56%  | -74.61%            | -72.85% |    -1.01 |       95 | 62.45%     | ok               |
+|          45 | -59.71%  | -74.61%            | -65.46% |    -1.1  |       74 | 29.89%     | ok               |
+|          30 | -67.72%  | -74.61%            | -73.94% |    -1.11 |       90 | 45.98%     | ok               |
+|          20 | -72.38%  | -74.61%            | -75.37% |    -1.16 |      103 | 56.51%     | ok               |
 
 ## AVAX-USD Threshold Sweep
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | 15.04%   | -78.65%            | -34.50% |     0.37 |       38 | 19.54%     | ok               |
-|          45 | 4.12%    | -78.65%            | -41.07% |     0.23 |       40 | 23.56%     | ok               |
-|          15 | -5.39%   | -78.65%            | -52.46% |     0.2  |       67 | 54.02%     | ok               |
-|          40 | -10.50%  | -78.65%            | -47.98% |     0.04 |       46 | 26.63%     | ok               |
-|          25 | -16.70%  | -78.65%            | -52.93% |     0.04 |       73 | 44.44%     | ok               |
+|          50 | 29.78%   | -79.90%            | -29.53% |     0.54 |       32 | 18.97%     | ok               |
+|          45 | 27.37%   | -79.90%            | -32.82% |     0.51 |       32 | 22.61%     | ok               |
+|          40 | 27.32%   | -79.90%            | -32.96% |     0.51 |       38 | 25.48%     | ok               |
+|          35 | 18.15%   | -79.90%            | -36.30% |     0.4  |       56 | 30.84%     | ok               |
+|          15 | 1.85%    | -79.90%            | -52.46% |     0.27 |       67 | 53.45%     | ok               |
 
 ## AVGO Threshold Sweep
 
@@ -622,11 +622,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          30 | 3.75%    | -46.18%            | -53.87% |     0.25 |       76 | 48.85%     | ok               |
-|          20 | -8.48%   | -46.18%            | -54.02% |     0.15 |       70 | 55.36%     | ok               |
-|          15 | -18.95%  | -46.18%            | -60.20% |     0.04 |       79 | 59.96%     | ok               |
-|          25 | -20.00%  | -46.18%            | -59.80% |     0    |       72 | 51.15%     | ok               |
-|          35 | -18.38%  | -46.18%            | -64.08% |    -0.03 |       70 | 45.02%     | ok               |
+|          20 | 17.83%   | -42.36%            | -45.63% |     0.4  |       69 | 55.17%     | ok               |
+|          15 | 4.35%    | -42.36%            | -48.75% |     0.28 |       78 | 59.77%     | ok               |
+|          30 | 3.82%    | -42.36%            | -53.87% |     0.25 |       76 | 49.23%     | ok               |
+|          25 | 3.14%    | -42.36%            | -51.09% |     0.25 |       68 | 51.34%     | ok               |
+|          35 | -18.32%  | -42.36%            | -64.08% |    -0.03 |       70 | 45.40%     | ok               |
 
 ## BITO Threshold Sweep
 
@@ -662,21 +662,21 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | 170.82%  | -80.92%            | -35.57% |     1.24 |       46 | 22.22%     | ok               |
-|          25 | 186.54%  | -80.92%            | -46.61% |     1.08 |       65 | 48.28%     | ok               |
-|          20 | 170.36%  | -80.92%            | -54.25% |     1.03 |       66 | 52.87%     | ok               |
-|          15 | 176.55%  | -80.92%            | -62.48% |     1.02 |       69 | 57.85%     | ok               |
-|          45 | 85.55%   | -80.92%            | -42.36% |     0.84 |       56 | 27.01%     | ok               |
+|          50 | 179.94%  | -80.52%            | -35.57% |     1.28 |       44 | 21.84%     | ok               |
+|          45 | 130.53%  | -80.52%            | -42.36% |     1.06 |       54 | 26.05%     | ok               |
+|          20 | 137.48%  | -80.52%            | -55.19% |     0.94 |       68 | 52.87%     | ok               |
+|          15 | 139.09%  | -80.52%            | -63.45% |     0.92 |       70 | 58.05%     | ok               |
+|          25 | 109.07%  | -80.52%            | -47.99% |     0.86 |       67 | 48.08%     | ok               |
 
 ## BTC-USD Threshold Sweep
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          40 | 52.04%   | -39.40%            | -14.50% |     0.95 |       46 | 34.48%     | ok               |
-|          45 | 37.57%   | -39.40%            | -15.18% |     0.76 |       46 | 30.84%     | ok               |
-|          35 | 36.20%   | -39.40%            | -22.12% |     0.7  |       70 | 41.38%     | ok               |
-|          30 | 19.84%   | -39.40%            | -21.75% |     0.45 |       74 | 48.08%     | ok               |
-|          50 | 11.33%   | -39.40%            | -18.05% |     0.34 |       44 | 25.48%     | ok               |
+|          40 | 46.18%   | -38.23%            | -14.53% |     0.84 |       46 | 34.87%     | ok               |
+|          45 | 40.84%   | -38.23%            | -15.18% |     0.81 |       44 | 30.65%     | ok               |
+|          35 | 28.81%   | -38.23%            | -26.34% |     0.58 |       70 | 41.76%     | ok               |
+|          50 | 13.98%   | -38.23%            | -18.05% |     0.4  |       42 | 25.29%     | ok               |
+|          30 | 13.35%   | -38.23%            | -21.75% |     0.35 |       74 | 48.47%     | ok               |
 
 ## C Threshold Sweep
 
@@ -722,11 +722,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | -6.92%   | -75.76%            | -38.71% |     0.11 |       50 | 21.07%     | ok               |
-|          25 | -40.17%  | -75.76%            | -60.58% |    -0.22 |       89 | 51.53%     | ok               |
-|          30 | -39.06%  | -75.76%            | -58.43% |    -0.24 |       91 | 46.55%     | ok               |
-|          15 | -48.12%  | -75.76%            | -65.55% |    -0.31 |      103 | 63.03%     | ok               |
-|          40 | -43.33%  | -75.76%            | -48.44% |    -0.41 |       76 | 34.67%     | ok               |
+|          50 | -4.86%   | -75.95%            | -38.71% |     0.13 |       50 | 20.69%     | ok               |
+|          25 | -43.63%  | -75.95%            | -61.30% |    -0.28 |       89 | 51.34%     | ok               |
+|          30 | -42.58%  | -75.95%            | -59.19% |    -0.3  |       91 | 46.36%     | ok               |
+|          15 | -51.14%  | -75.95%            | -66.20% |    -0.36 |      105 | 62.84%     | ok               |
+|          40 | -44.41%  | -75.95%            | -50.01% |    -0.43 |       76 | 34.29%     | ok               |
 
 ## COP Threshold Sweep
 
@@ -762,11 +762,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          35 | 17.27%   | -69.21%            | -37.78% |     0.39 |       66 | 31.03%     | ok               |
-|          45 | -1.09%   | -69.21%            | -42.29% |     0.18 |       54 | 20.69%     | ok               |
-|          50 | -0.89%   | -69.21%            | -29.30% |     0.18 |       46 | 17.43%     | ok               |
-|          30 | -6.87%   | -69.21%            | -39.89% |     0.16 |       64 | 35.63%     | ok               |
-|          40 | -6.61%   | -69.21%            | -38.86% |     0.13 |       58 | 27.01%     | ok               |
+|          35 | 16.74%   | -72.65%            | -37.78% |     0.39 |       68 | 31.23%     | ok               |
+|          45 | -1.09%   | -72.65%            | -42.29% |     0.18 |       54 | 20.69%     | ok               |
+|          50 | -0.89%   | -72.65%            | -29.30% |     0.18 |       46 | 17.43%     | ok               |
+|          30 | -7.30%   | -72.65%            | -39.89% |     0.16 |       66 | 35.82%     | ok               |
+|          40 | -6.61%   | -72.65%            | -38.86% |     0.13 |       58 | 27.01%     | ok               |
 
 ## CSCO Threshold Sweep
 
@@ -792,11 +792,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | 126.59%  | 13.58%             | -32.30% |     0.95 |       40 | 16.67%     | ok               |
-|          40 | 81.99%   | 13.58%             | -32.07% |     0.75 |       48 | 23.56%     | ok               |
-|          45 | 63.64%   | 13.58%             | -40.40% |     0.67 |       44 | 18.97%     | ok               |
-|          25 | -32.35%  | 13.58%             | -64.14% |     0.1  |       69 | 34.48%     | ok               |
-|          35 | -32.14%  | 13.58%             | -63.23% |     0.09 |       69 | 28.16%     | ok               |
+|          50 | 144.32%  | 4.01%              | -27.01% |     1.01 |       40 | 15.90%     | ok               |
+|          40 | 81.99%   | 4.01%              | -32.07% |     0.75 |       48 | 23.56%     | ok               |
+|          45 | 76.44%   | 4.01%              | -35.73% |     0.73 |       44 | 18.20%     | ok               |
+|          25 | -32.35%  | 4.01%              | -64.14% |     0.1  |       69 | 34.48%     | ok               |
+|          35 | -32.14%  | 4.01%              | -63.23% |     0.09 |       69 | 28.16%     | ok               |
 
 ## DBC Threshold Sweep
 
@@ -842,31 +842,31 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          15 | 15.31%   | -76.55%            | -59.36% |     0.41 |       82 | 65.90%     | ok               |
-|          20 | -1.55%   | -76.55%            | -57.37% |     0.26 |       85 | 61.11%     | ok               |
-|          25 | -5.63%   | -76.55%            | -55.33% |     0.22 |       75 | 55.75%     | ok               |
-|          30 | -21.30%  | -76.55%            | -62.31% |     0.04 |       78 | 50.57%     | ok               |
-|          35 | -44.62%  | -76.55%            | -61.79% |    -0.36 |       74 | 44.25%     | ok               |
+|          15 | 14.51%   | -76.51%            | -57.89% |     0.4  |       81 | 66.48%     | ok               |
+|          20 | -2.23%   | -76.51%            | -55.83% |     0.26 |       84 | 61.69%     | ok               |
+|          25 | -6.29%   | -76.51%            | -53.72% |     0.21 |       74 | 56.32%     | ok               |
+|          30 | -21.59%  | -76.51%            | -60.95% |     0.03 |       77 | 50.77%     | ok               |
+|          35 | -48.65%  | -76.51%            | -63.16% |    -0.44 |       74 | 44.06%     | ok               |
 
 ## DOT-USD Threshold Sweep
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | -21.12%  | -84.92%            | -46.17% |    -0.14 |       60 | 26.63%     | ok               |
-|          45 | -30.12%  | -84.92%            | -54.01% |    -0.27 |       52 | 31.61%     | ok               |
-|          20 | -50.83%  | -84.92%            | -64.09% |    -0.36 |       90 | 60.92%     | ok               |
-|          35 | -48.93%  | -84.92%            | -61.76% |    -0.41 |       80 | 42.15%     | ok               |
-|          30 | -50.56%  | -84.92%            | -60.30% |    -0.42 |       90 | 49.04%     | ok               |
+|          50 | -14.04%  | -86.19%            | -46.17% |    -0.03 |       58 | 26.25%     | ok               |
+|          45 | -21.37%  | -86.19%            | -54.01% |    -0.12 |       50 | 31.03%     | ok               |
+|          20 | -46.13%  | -86.19%            | -64.09% |    -0.28 |       90 | 60.92%     | ok               |
+|          35 | -43.83%  | -86.19%            | -62.62% |    -0.32 |       76 | 41.38%     | ok               |
+|          40 | -36.92%  | -86.19%            | -54.76% |    -0.36 |       54 | 34.10%     | ok               |
 
 ## DXY-INDEX Threshold Sweep
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | -2.00%   | -1.01%             | -6.05%  |    -0.3  |       40 | 30.09%     | ok               |
-|          40 | -3.26%   | -1.01%             | -7.30%  |    -0.4  |       72 | 49.57%     | ok               |
-|          15 | -4.46%   | -1.01%             | -11.37% |    -0.4  |       86 | 76.62%     | ok               |
-|          30 | -3.91%   | -1.01%             | -9.83%  |    -0.43 |       70 | 61.04%     | ok               |
-|          35 | -4.47%   | -1.01%             | -9.97%  |    -0.53 |       75 | 55.63%     | ok               |
+|          50 | -1.77%   | -0.16%             | -6.02%  |    -0.27 |       38 | 29.78%     | ok               |
+|          15 | -3.43%   | -0.16%             | -11.37% |    -0.29 |       82 | 76.96%     | ok               |
+|          40 | -4.14%   | -0.16%             | -7.30%  |    -0.53 |       76 | 49.57%     | ok               |
+|          30 | -5.03%   | -0.16%             | -9.61%  |    -0.58 |       72 | 61.96%     | ok               |
+|          25 | -6.00%   | -0.16%             | -12.10% |    -0.65 |       78 | 67.17%     | ok               |
 
 ## EEM Threshold Sweep
 
@@ -902,21 +902,21 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | -7.93%   | -71.76%            | -27.89% |    -0.02 |       28 | 17.05%     | ok               |
-|          35 | -15.03%  | -71.76%            | -42.62% |    -0.11 |       44 | 27.01%     | ok               |
-|          45 | -16.07%  | -71.76%            | -35.44% |    -0.17 |       26 | 18.97%     | ok               |
-|          40 | -21.04%  | -71.76%            | -40.48% |    -0.26 |       42 | 22.80%     | ok               |
-|          30 | -35.69%  | -71.76%            | -48.16% |    -0.51 |       64 | 31.23%     | ok               |
+|          50 | -7.93%   | -73.50%            | -27.89% |    -0.02 |       28 | 17.05%     | ok               |
+|          35 | -15.03%  | -73.50%            | -42.62% |    -0.11 |       44 | 27.01%     | ok               |
+|          45 | -16.07%  | -73.50%            | -35.44% |    -0.17 |       26 | 18.97%     | ok               |
+|          40 | -21.04%  | -73.50%            | -40.48% |    -0.26 |       42 | 22.80%     | ok               |
+|          30 | -35.69%  | -73.50%            | -48.16% |    -0.51 |       64 | 31.23%     | ok               |
 
 ## ETH-USD Threshold Sweep
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          35 | 144.24%  | -44.58%            | -30.11% |     1.21 |       62 | 45.21%     | ok               |
-|          30 | 125.69%  | -44.58%            | -32.89% |     1.08 |       66 | 54.02%     | ok               |
-|          40 | 50.09%   | -44.58%            | -33.11% |     0.69 |       60 | 37.93%     | ok               |
-|          15 | 38.47%   | -44.58%            | -42.74% |     0.56 |       78 | 69.54%     | ok               |
-|          20 | 32.89%   | -44.58%            | -39.10% |     0.52 |       83 | 63.98%     | ok               |
+|          35 | 144.24%  | -46.07%            | -30.11% |     1.21 |       62 | 45.21%     | ok               |
+|          30 | 142.03%  | -46.07%            | -32.89% |     1.16 |       66 | 53.64%     | ok               |
+|          40 | 50.09%   | -46.07%            | -33.11% |     0.69 |       60 | 37.93%     | ok               |
+|          20 | 45.42%   | -46.07%            | -39.10% |     0.61 |       83 | 63.03%     | ok               |
+|          25 | 44.34%   | -46.07%            | -40.90% |     0.61 |       67 | 58.81%     | ok               |
 
 ## EWJ Threshold Sweep
 
@@ -942,21 +942,21 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          20 | 8.75%    | -81.16%            | -57.95% |     0.38 |       88 | 50.96%     | ok               |
-|          15 | -18.67%  | -81.16%            | -59.58% |     0.17 |       84 | 54.02%     | ok               |
-|          25 | -28.85%  | -81.16%            | -58.52% |     0.02 |       91 | 44.64%     | ok               |
-|          30 | -30.73%  | -81.16%            | -54.02% |    -0.03 |       83 | 40.61%     | ok               |
-|          35 | -48.59%  | -81.16%            | -62.73% |    -0.39 |       69 | 33.91%     | ok               |
+|          20 | 17.67%   | -83.19%            | -58.75% |     0.44 |       84 | 50.38%     | ok               |
+|          15 | -13.69%  | -83.19%            | -59.58% |     0.21 |       84 | 54.02%     | ok               |
+|          25 | -23.01%  | -83.19%            | -59.31% |     0.08 |       87 | 44.06%     | ok               |
+|          30 | -25.04%  | -83.19%            | -48.39% |     0.04 |       79 | 40.04%     | ok               |
+|          35 | -43.30%  | -83.19%            | -58.16% |    -0.3  |       65 | 33.33%     | ok               |
 
 ## FIL-USD Threshold Sweep
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          40 | -9.16%   | -82.25%            | -39.40% |     0.05 |       50 | 23.56%     | ok               |
-|          45 | -27.58%  | -82.25%            | -43.98% |    -0.29 |       44 | 17.62%     | ok               |
-|          35 | -32.45%  | -82.25%            | -47.50% |    -0.3  |       60 | 27.78%     | ok               |
-|          50 | -26.52%  | -82.25%            | -44.97% |    -0.32 |       38 | 13.03%     | ok               |
-|          30 | -35.65%  | -82.25%            | -50.22% |    -0.33 |       72 | 33.33%     | ok               |
+|          40 | -4.01%   | -83.49%            | -41.11% |     0.13 |       48 | 23.56%     | ok               |
+|          45 | -21.27%  | -83.49%            | -43.98% |    -0.16 |       44 | 17.82%     | ok               |
+|          50 | -20.11%  | -83.49%            | -44.97% |    -0.18 |       38 | 13.22%     | ok               |
+|          35 | -27.49%  | -83.49%            | -48.17% |    -0.21 |       58 | 27.59%     | ok               |
+|          30 | -30.97%  | -83.49%            | -50.88% |    -0.24 |       72 | 33.14%     | ok               |
 
 ## FXI Threshold Sweep
 
@@ -1022,11 +1022,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | 39.95%   | -88.60%            | -34.47% |     0.64 |       44 | 21.84%     | ok               |
-|          45 | 21.41%   | -88.60%            | -46.59% |     0.44 |       50 | 27.39%     | ok               |
-|          35 | 16.47%   | -88.60%            | -48.22% |     0.39 |       60 | 36.21%     | ok               |
-|          15 | 14.49%   | -88.60%            | -49.67% |     0.39 |       75 | 61.88%     | ok               |
-|          40 | 16.36%   | -88.60%            | -46.38% |     0.38 |       48 | 30.46%     | ok               |
+|          50 | 46.24%   | -89.55%            | -30.00% |     0.71 |       40 | 21.07%     | ok               |
+|          15 | 16.13%   | -89.55%            | -49.67% |     0.4  |       77 | 61.69%     | ok               |
+|          20 | 12.10%   | -89.55%            | -46.47% |     0.36 |       85 | 56.13%     | ok               |
+|          45 | 13.62%   | -89.55%            | -48.76% |     0.35 |       48 | 26.25%     | ok               |
+|          35 | 9.43%    | -89.55%            | -49.87% |     0.31 |       60 | 35.44%     | ok               |
 
 ## GS Threshold Sweep
 
@@ -1052,11 +1052,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | -13.43%  | 26.06%             | -21.17% |    -0.4  |       72 | 31.78%     | ok               |
-|          45 | -15.16%  | 26.06%             | -19.99% |    -0.43 |       74 | 36.77%     | ok               |
-|          40 | -23.52%  | 26.06%             | -26.29% |    -0.66 |       76 | 41.10%     | ok               |
-|          35 | -24.98%  | 26.06%             | -27.37% |    -0.69 |       91 | 47.42%     | ok               |
-|          30 | -26.82%  | 26.06%             | -29.80% |    -0.72 |       93 | 52.41%     | ok               |
+|          50 | -13.43%  | 20.20%             | -21.17% |    -0.4  |       72 | 31.78%     | ok               |
+|          45 | -15.16%  | 20.20%             | -19.99% |    -0.43 |       74 | 36.77%     | ok               |
+|          40 | -23.52%  | 20.20%             | -26.29% |    -0.66 |       76 | 41.10%     | ok               |
+|          35 | -24.98%  | 20.20%             | -27.37% |    -0.69 |       91 | 47.42%     | ok               |
+|          30 | -26.82%  | 20.20%             | -29.80% |    -0.72 |       93 | 52.41%     | ok               |
 
 ## HYG Threshold Sweep
 
@@ -1092,11 +1092,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          40 | 14.78%   | -74.11%            | -32.85% |     0.36 |       58 | 26.25%     | ok               |
-|          35 | 3.27%    | -74.11%            | -46.24% |     0.25 |       68 | 31.23%     | ok               |
-|          30 | -6.90%   | -74.11%            | -55.89% |     0.2  |       83 | 37.55%     | ok               |
-|          50 | -0.01%   | -74.11%            | -43.65% |     0.19 |       40 | 16.09%     | ok               |
-|          45 | -13.01%  | -74.11%            | -40.57% |     0.02 |       58 | 20.31%     | ok               |
+|          35 | 31.16%   | -76.19%            | -37.43% |     0.51 |       64 | 29.89%     | ok               |
+|          40 | 24.23%   | -76.19%            | -32.85% |     0.46 |       58 | 25.48%     | ok               |
+|          30 | 15.64%   | -76.19%            | -50.29% |     0.39 |       81 | 36.02%     | ok               |
+|          50 | 7.40%    | -76.19%            | -43.65% |     0.28 |       38 | 15.71%     | ok               |
+|          45 | -5.14%   | -76.19%            | -40.57% |     0.13 |       58 | 19.73%     | ok               |
 
 ## IEF Threshold Sweep
 
@@ -1122,11 +1122,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          45 | -9.97%   | -72.99%            | -53.80% |     0.06 |       42 | 22.61%     | ok               |
-|          35 | -18.70%  | -72.99%            | -60.42% |     0.01 |       62 | 32.76%     | ok               |
-|          50 | -19.76%  | -72.99%            | -49.35% |    -0.1  |       46 | 19.54%     | ok               |
-|          40 | -27.04%  | -72.99%            | -57.21% |    -0.15 |       52 | 28.93%     | ok               |
-|          25 | -53.83%  | -72.99%            | -81.57% |    -0.46 |       77 | 43.30%     | ok               |
+|          45 | -16.04%  | -76.08%            | -56.91% |    -0.02 |       44 | 22.22%     | ok               |
+|          35 | -25.06%  | -76.08%            | -61.19% |    -0.08 |       60 | 31.99%     | ok               |
+|          50 | -25.16%  | -76.08%            | -52.76% |    -0.19 |       48 | 19.16%     | ok               |
+|          40 | -33.63%  | -76.08%            | -59.56% |    -0.26 |       50 | 28.16%     | ok               |
+|          20 | -52.25%  | -76.08%            | -80.49% |    -0.39 |       78 | 46.55%     | ok               |
 
 ## INTC Threshold Sweep
 
@@ -1202,11 +1202,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          15 | 24.99%   | -85.37%            | -46.95% |     0.48 |       81 | 51.92%     | ok               |
-|          20 | 13.39%   | -85.37%            | -44.97% |     0.4  |       85 | 47.32%     | ok               |
-|          50 | 15.22%   | -85.37%            | -48.04% |     0.37 |       46 | 16.86%     | ok               |
-|          30 | -1.03%   | -85.37%            | -60.93% |     0.26 |       76 | 38.12%     | ok               |
-|          35 | -3.23%   | -85.37%            | -62.61% |     0.22 |       74 | 31.23%     | ok               |
+|          15 | 24.99%   | -88.26%            | -46.95% |     0.48 |       81 | 51.92%     | ok               |
+|          20 | 13.39%   | -88.26%            | -44.97% |     0.4  |       85 | 47.32%     | ok               |
+|          50 | 15.22%   | -88.26%            | -48.04% |     0.37 |       46 | 16.86%     | ok               |
+|          30 | 1.95%    | -88.26%            | -60.93% |     0.29 |       74 | 37.93%     | ok               |
+|          35 | -0.33%   | -88.26%            | -62.61% |     0.25 |       72 | 31.03%     | ok               |
 
 ## LIN Threshold Sweep
 
@@ -1222,11 +1222,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          30 | -16.15%  | -65.70%            | -49.35% |     0.07 |       71 | 41.76%     | ok               |
-|          45 | -13.28%  | -65.70%            | -38.11% |     0.05 |       50 | 26.63%     | ok               |
-|          50 | -12.86%  | -65.70%            | -36.52% |     0.03 |       40 | 21.26%     | ok               |
-|          35 | -24.33%  | -65.70%            | -49.18% |    -0.05 |       59 | 36.78%     | ok               |
-|          40 | -28.49%  | -65.70%            | -50.55% |    -0.14 |       55 | 31.03%     | ok               |
+|          30 | -18.18%  | -68.20%            | -50.48% |     0.04 |       72 | 41.76%     | ok               |
+|          45 | -16.95%  | -68.20%            | -38.56% |    -0    |       50 | 26.25%     | ok               |
+|          50 | -16.55%  | -68.20%            | -36.98% |    -0.02 |       40 | 20.88%     | ok               |
+|          35 | -27.53%  | -68.20%            | -49.56% |    -0.1  |       60 | 36.40%     | ok               |
+|          40 | -31.51%  | -68.20%            | -50.91% |    -0.19 |       56 | 30.65%     | ok               |
 
 ## LLY Threshold Sweep
 
@@ -1252,11 +1252,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          45 | -12.22%  | -60.74%            | -44.78% |    -0    |       56 | 31.80%     | ok               |
-|          35 | -22.47%  | -60.74%            | -54.86% |    -0.13 |       66 | 42.91%     | ok               |
-|          30 | -34.00%  | -60.74%            | -53.76% |    -0.29 |       66 | 48.47%     | ok               |
-|          40 | -31.40%  | -60.74%            | -56.10% |    -0.3  |       58 | 38.12%     | ok               |
-|          25 | -36.79%  | -60.74%            | -54.26% |    -0.33 |       74 | 50.96%     | ok               |
+|          45 | -12.22%  | -64.69%            | -44.78% |    -0    |       56 | 31.80%     | ok               |
+|          35 | -22.47%  | -64.69%            | -54.86% |    -0.13 |       66 | 42.91%     | ok               |
+|          30 | -34.00%  | -64.69%            | -53.76% |    -0.29 |       66 | 48.47%     | ok               |
+|          40 | -31.40%  | -64.69%            | -56.10% |    -0.3  |       58 | 38.12%     | ok               |
+|          25 | -36.79%  | -64.69%            | -54.26% |    -0.33 |       74 | 50.96%     | ok               |
 
 ## MCD Threshold Sweep
 
@@ -1332,11 +1332,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          45 | 103.12%  | -54.24%            | -48.01% |     0.99 |       44 | 23.37%     | ok               |
-|          50 | 70.90%   | -54.24%            | -53.13% |     0.82 |       38 | 18.39%     | ok               |
-|          40 | 60.91%   | -54.24%            | -56.35% |     0.73 |       48 | 27.78%     | ok               |
-|          35 | 33.68%   | -54.24%            | -60.50% |     0.53 |       70 | 33.14%     | ok               |
-|          15 | 2.00%    | -54.24%            | -54.94% |     0.31 |       89 | 56.13%     | ok               |
+|          45 | 117.25%  | -56.91%            | -44.39% |     1.06 |       44 | 23.95%     | ok               |
+|          50 | 82.68%   | -56.91%            | -49.90% |     0.9  |       40 | 18.97%     | ok               |
+|          40 | 85.21%   | -56.91%            | -53.32% |     0.88 |       44 | 27.97%     | ok               |
+|          35 | 51.51%   | -56.91%            | -59.02% |     0.66 |       64 | 32.57%     | ok               |
+|          30 | 22.03%   | -56.91%            | -60.10% |     0.44 |       83 | 40.80%     | ok               |
 
 ## NEM Threshold Sweep
 
@@ -1392,11 +1392,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | 50.84%   | -92.62%            | -36.11% |     0.73 |       32 | 12.07%     | ok               |
-|          45 | 49.75%   | -92.62%            | -45.76% |     0.68 |       34 | 16.67%     | ok               |
-|          40 | 27.95%   | -92.62%            | -53.61% |     0.49 |       48 | 25.10%     | ok               |
-|          35 | 6.49%    | -92.62%            | -58.33% |     0.29 |       56 | 28.16%     | ok               |
-|          30 | -12.93%  | -92.62%            | -70.27% |     0.11 |       72 | 34.67%     | ok               |
+|          50 | 56.64%   | -92.40%            | -36.11% |     0.79 |       32 | 11.49%     | ok               |
+|          45 | 55.51%   | -92.40%            | -45.76% |     0.73 |       34 | 16.09%     | ok               |
+|          40 | 32.88%   | -92.40%            | -53.61% |     0.53 |       48 | 24.52%     | ok               |
+|          35 | 11.12%   | -92.40%            | -58.13% |     0.33 |       56 | 27.78%     | ok               |
+|          30 | -9.10%   | -92.40%            | -70.11% |     0.15 |       70 | 34.29%     | ok               |
 
 ## ORCL Threshold Sweep
 
@@ -1432,11 +1432,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          15 | 14.96%   | -78.50%            | -61.96% |     0.43 |       78 | 60.34%     | ok               |
-|          30 | 14.92%   | -78.50%            | -57.66% |     0.4  |       79 | 44.83%     | ok               |
-|          35 | 8.37%    | -78.50%            | -51.35% |     0.33 |       64 | 39.46%     | ok               |
-|          25 | -5.95%   | -78.50%            | -53.88% |     0.23 |       85 | 50.00%     | ok               |
-|          20 | -10.37%  | -78.50%            | -61.13% |     0.21 |       84 | 56.70%     | ok               |
+|          15 | -7.44%   | -80.39%            | -64.84% |     0.28 |       80 | 60.15%     | ok               |
+|          30 | 0.11%    | -80.39%            | -57.66% |     0.28 |       79 | 44.83%     | ok               |
+|          35 | -5.60%   | -80.39%            | -51.35% |     0.2  |       64 | 39.46%     | ok               |
+|          25 | -18.07%  | -80.39%            | -53.88% |     0.12 |       85 | 50.00%     | ok               |
+|          20 | -27.83%  | -80.39%            | -64.07% |     0.04 |       86 | 56.51%     | ok               |
 
 ## PFE Threshold Sweep
 
@@ -1472,11 +1472,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          30 | 66.27%   | -81.22%            | -46.45% |     0.77 |       79 | 50.77%     | ok               |
-|          25 | 69.33%   | -81.22%            | -46.72% |     0.77 |       64 | 58.62%     | ok               |
-|          20 | 56.30%   | -81.22%            | -52.88% |     0.68 |       70 | 62.84%     | ok               |
-|          15 | 39.48%   | -81.22%            | -58.42% |     0.57 |       72 | 67.62%     | ok               |
-|          50 | 18.38%   | -81.22%            | -22.86% |     0.42 |       52 | 20.88%     | ok               |
+|          30 | 72.14%   | -81.94%            | -46.45% |     0.81 |       79 | 50.38%     | ok               |
+|          25 | 75.31%   | -81.94%            | -46.72% |     0.8  |       64 | 58.24%     | ok               |
+|          20 | 61.82%   | -81.94%            | -52.88% |     0.72 |       70 | 62.45%     | ok               |
+|          15 | 44.41%   | -81.94%            | -58.42% |     0.6  |       72 | 67.24%     | ok               |
+|          50 | 24.06%   | -81.94%            | -22.86% |     0.5  |       50 | 20.69%     | ok               |
 
 ## QCOM Threshold Sweep
 
@@ -1502,11 +1502,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          20 | 46.52%   | -61.66%            | -43.43% |     0.62 |       86 | 54.22%     | ok               |
-|          15 | 29.51%   | -61.66%            | -44.59% |     0.52 |       86 | 57.23%     | ok               |
-|          25 | 17.48%   | -61.66%            | -40.60% |     0.44 |       90 | 50.40%     | ok               |
-|          30 | -19.07%  | -61.66%            | -45.00% |     0.1  |       98 | 43.98%     | ok               |
-|          35 | -31.74%  | -61.66%            | -41.33% |    -0.12 |       84 | 35.54%     | ok               |
+|          20 | 44.95%   | -61.25%            | -43.43% |     0.61 |       86 | 54.49%     | ok               |
+|          15 | 28.12%   | -61.25%            | -44.59% |     0.51 |       86 | 57.49%     | ok               |
+|          25 | 15.90%   | -61.25%            | -40.60% |     0.42 |       90 | 50.50%     | ok               |
+|          30 | -19.07%  | -61.25%            | -45.00% |     0.1  |       98 | 43.71%     | ok               |
+|          35 | -31.74%  | -61.25%            | -41.33% |    -0.12 |       84 | 35.33%     | ok               |
 
 ## RTX Threshold Sweep
 
@@ -1542,11 +1542,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          15 | 0.07%    | -76.32%            | -49.21% |     0.25 |       80 | 69.54%     | ok               |
-|          25 | -12.55%  | -76.32%            | -43.85% |     0.1  |       77 | 59.96%     | ok               |
-|          20 | -13.84%  | -76.32%            | -46.92% |     0.09 |       79 | 64.56%     | ok               |
-|          35 | -16.32%  | -76.32%            | -53.32% |     0.01 |       66 | 46.93%     | ok               |
-|          40 | -19.26%  | -76.32%            | -50.74% |    -0.05 |       56 | 39.46%     | ok               |
+|          15 | -2.83%   | -76.83%            | -49.21% |     0.22 |       80 | 70.11%     | ok               |
+|          20 | -19.11%  | -76.83%            | -48.69% |     0.03 |       79 | 64.94%     | ok               |
+|          25 | -18.71%  | -76.83%            | -43.85% |     0.02 |       77 | 60.15%     | ok               |
+|          35 | -29.57%  | -76.83%            | -55.49% |    -0.2  |       68 | 46.55%     | ok               |
+|          30 | -32.88%  | -76.83%            | -48.95% |    -0.21 |       78 | 53.07%     | ok               |
 
 ## SHY Threshold Sweep
 
@@ -1562,11 +1562,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          30 | -28.56%  | 3.75%              | -43.98% |    -0.35 |       70 | 41.04%     | ok               |
-|          15 | -32.92%  | 3.75%              | -56.39% |    -0.35 |       60 | 51.25%     | ok               |
-|          25 | -32.22%  | 3.75%              | -48.09% |    -0.4  |       65 | 44.67%     | ok               |
-|          20 | -42.55%  | 3.75%              | -58.40% |    -0.59 |       62 | 48.30%     | ok               |
-|          35 | -39.77%  | 3.75%              | -49.68% |    -0.7  |       64 | 34.69%     | ok               |
+|          30 | -28.56%  | -0.81%             | -43.98% |    -0.34 |       70 | 40.77%     | ok               |
+|          15 | -32.92%  | -0.81%             | -56.39% |    -0.35 |       60 | 50.90%     | ok               |
+|          25 | -32.22%  | -0.81%             | -48.09% |    -0.4  |       65 | 44.37%     | ok               |
+|          20 | -42.55%  | -0.81%             | -58.40% |    -0.59 |       62 | 47.97%     | ok               |
+|          35 | -39.77%  | -0.81%             | -49.68% |    -0.69 |       64 | 34.46%     | ok               |
 
 ## SLB Threshold Sweep
 
@@ -1602,21 +1602,21 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          20 | -0.15%   | -83.31%            | -43.20% |     0.28 |       73 | 48.66%     | ok               |
-|          35 | -7.07%   | -83.31%            | -30.08% |     0.17 |       66 | 31.61%     | ok               |
-|          30 | -16.00%  | -83.31%            | -34.76% |     0.08 |       62 | 38.70%     | ok               |
-|          15 | -32.75%  | -83.31%            | -47.56% |    -0.05 |       83 | 53.26%     | ok               |
-|          25 | -29.34%  | -83.31%            | -38.88% |    -0.07 |       74 | 43.10%     | ok               |
+|          20 | 13.45%   | -85.68%            | -43.20% |     0.39 |       73 | 48.08%     | ok               |
+|          35 | 7.97%    | -85.68%            | -30.08% |     0.32 |       64 | 30.46%     | ok               |
+|          30 | -2.40%   | -85.68%            | -34.76% |     0.23 |       60 | 37.55%     | ok               |
+|          25 | -17.94%  | -85.68%            | -38.84% |     0.07 |       74 | 41.95%     | ok               |
+|          15 | -23.59%  | -85.68%            | -47.56% |     0.06 |       83 | 52.68%     | ok               |
 
 ## SOL-USD Threshold Sweep
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          40 | -9.04%   | -64.48%            | -54.68% |     0.14 |       62 | 38.31%     | ok               |
-|          25 | -24.96%  | -64.48%            | -53.21% |     0    |       72 | 56.70%     | ok               |
-|          35 | -26.03%  | -64.48%            | -61.96% |    -0.03 |       72 | 45.79%     | ok               |
-|          15 | -30.85%  | -64.48%            | -59.14% |    -0.05 |       74 | 63.79%     | ok               |
-|          20 | -35.74%  | -64.48%            | -56.90% |    -0.13 |       68 | 59.20%     | ok               |
+|          40 | -13.17%  | -65.10%            | -56.32% |     0.09 |       62 | 37.74%     | ok               |
+|          25 | -29.25%  | -65.10%            | -53.21% |    -0.05 |       72 | 56.32%     | ok               |
+|          15 | -32.24%  | -65.10%            | -59.14% |    -0.07 |       74 | 63.22%     | ok               |
+|          35 | -31.35%  | -65.10%            | -62.56% |    -0.11 |       74 | 45.02%     | ok               |
+|          20 | -39.41%  | -65.10%            | -56.90% |    -0.18 |       68 | 58.81%     | ok               |
 
 ## SOXX Threshold Sweep
 
@@ -1642,11 +1642,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | -23.49%  | -86.13%            | -40.08% |    -0.19 |       52 | 14.75%     | ok               |
-|          45 | -58.58%  | -86.13%            | -64.27% |    -0.77 |       56 | 18.20%     | ok               |
-|          40 | -61.52%  | -86.13%            | -68.16% |    -0.77 |       63 | 24.71%     | ok               |
-|          15 | -78.36%  | -86.13%            | -79.45% |    -0.94 |       89 | 47.32%     | ok               |
-|          35 | -73.65%  | -86.13%            | -79.42% |    -1.03 |       78 | 30.27%     | ok               |
+|          50 | -24.39%  | -87.47%            | -40.79% |    -0.2  |       52 | 14.56%     | ok               |
+|          45 | -59.07%  | -87.47%            | -64.69% |    -0.78 |       56 | 18.01%     | ok               |
+|          40 | -61.97%  | -87.47%            | -68.54% |    -0.78 |       63 | 24.52%     | ok               |
+|          35 | -68.63%  | -87.47%            | -75.86% |    -0.89 |       80 | 30.08%     | ok               |
+|          15 | -77.09%  | -87.47%            | -79.82% |    -0.9  |       91 | 47.32%     | ok               |
 
 ## T Threshold Sweep
 
@@ -1672,11 +1672,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          40 | 15.64%   | -90.31%            | -36.58% |     0.37 |       68 | 26.25%     | ok               |
-|          35 | 15.16%   | -90.31%            | -44.72% |     0.37 |       66 | 31.03%     | ok               |
-|          50 | 11.42%   | -90.31%            | -46.02% |     0.32 |       34 | 11.69%     | ok               |
-|          45 | 10.81%   | -90.31%            | -46.58% |     0.32 |       54 | 18.97%     | ok               |
-|          30 | -28.18%  | -90.31%            | -60.92% |    -0.06 |       90 | 36.02%     | ok               |
+|          50 | 11.42%   | -90.89%            | -46.02% |     0.32 |       34 | 11.69%     | ok               |
+|          45 | 10.53%   | -90.89%            | -47.53% |     0.31 |       56 | 18.97%     | ok               |
+|          35 | -8.38%   | -90.89%            | -50.55% |     0.14 |       68 | 31.23%     | ok               |
+|          40 | -8.00%   | -90.89%            | -49.43% |     0.14 |       70 | 26.44%     | ok               |
+|          15 | -52.44%  | -90.89%            | -59.98% |    -0.25 |       99 | 52.68%     | ok               |
 
 ## TLT Threshold Sweep
 
@@ -1712,11 +1712,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          40 | 6.87%    | 32.26%             | -18.79% |     0.28 |       52 | 37.16%     | ok               |
-|          30 | 0.99%    | 32.26%             | -22.90% |     0.12 |       72 | 49.04%     | ok               |
-|          50 | 0.66%    | 32.26%             | -18.49% |     0.1  |       44 | 31.99%     | ok               |
-|          35 | 0.16%    | 32.26%             | -21.77% |     0.09 |       68 | 45.79%     | ok               |
-|          45 | -0.23%   | 32.26%             | -18.27% |     0.07 |       44 | 33.52%     | ok               |
+|          40 | 6.87%    | 29.50%             | -18.79% |     0.28 |       52 | 37.16%     | ok               |
+|          30 | 0.99%    | 29.50%             | -22.90% |     0.12 |       72 | 49.04%     | ok               |
+|          50 | 0.66%    | 29.50%             | -18.49% |     0.1  |       44 | 31.99%     | ok               |
+|          35 | 0.16%    | 29.50%             | -21.77% |     0.09 |       68 | 45.79%     | ok               |
+|          45 | -0.23%   | 29.50%             | -18.27% |     0.07 |       44 | 33.52%     | ok               |
 
 ## TSLA Threshold Sweep
 
@@ -1752,11 +1752,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          45 | -29.92%  | -71.20%            | -58.49% |    -0.16 |       56 | 26.05%     | ok               |
-|          40 | -34.51%  | -71.20%            | -63.75% |    -0.2  |       58 | 31.03%     | ok               |
-|          50 | -36.00%  | -71.20%            | -57.60% |    -0.3  |       54 | 21.26%     | ok               |
-|          35 | -45.03%  | -71.20%            | -68.71% |    -0.32 |       72 | 36.02%     | ok               |
-|          20 | -77.25%  | -71.20%            | -83.06% |    -0.87 |      105 | 52.87%     | ok               |
+|          45 | -29.92%  | -73.08%            | -58.49% |    -0.16 |       56 | 26.05%     | ok               |
+|          40 | -34.42%  | -73.08%            | -63.75% |    -0.2  |       60 | 31.23%     | ok               |
+|          50 | -36.00%  | -73.08%            | -57.60% |    -0.3  |       54 | 21.26%     | ok               |
+|          35 | -45.75%  | -73.08%            | -68.71% |    -0.33 |       74 | 36.59%     | ok               |
+|          20 | -77.54%  | -73.08%            | -83.15% |    -0.88 |      105 | 53.45%     | ok               |
 
 ## UPS Threshold Sweep
 
@@ -1852,11 +1852,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          15 | 60.65%   | -83.71%            | -46.21% |     0.66 |       71 | 41.38%     | ok               |
-|          20 | 54.98%   | -83.71%            | -40.67% |     0.64 |       65 | 38.70%     | ok               |
-|          25 | -11.37%  | -83.71%            | -52.41% |     0.2  |       67 | 36.21%     | ok               |
-|          50 | -20.06%  | -83.71%            | -37.87% |    -0.14 |       40 | 12.07%     | ok               |
-|          30 | -43.81%  | -83.71%            | -57.06% |    -0.24 |       68 | 32.18%     | ok               |
+|          15 | 60.65%   | -84.33%            | -46.21% |     0.66 |       71 | 41.38%     | ok               |
+|          20 | 54.98%   | -84.33%            | -40.67% |     0.64 |       65 | 38.70%     | ok               |
+|          25 | 2.09%    | -84.33%            | -45.19% |     0.31 |       67 | 36.02%     | ok               |
+|          50 | -12.13%  | -84.33%            | -33.04% |    -0.02 |       38 | 11.69%     | ok               |
+|          30 | -35.28%  | -84.33%            | -50.54% |    -0.13 |       68 | 31.99%     | ok               |
 
 ## WMT Threshold Sweep
 
@@ -1942,11 +1942,11 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          50 | 26.14%   | -49.75%            | -38.97% |     0.48 |       44 | 27.39%     | ok               |
-|          45 | 22.34%   | -49.75%            | -43.99% |     0.44 |       50 | 31.03%     | ok               |
-|          30 | 5.21%    | -49.75%            | -50.36% |     0.28 |       69 | 45.79%     | ok               |
-|          40 | 1.75%    | -49.75%            | -43.80% |     0.23 |       49 | 35.44%     | ok               |
-|          35 | -4.00%   | -49.75%            | -50.42% |     0.17 |       69 | 41.76%     | ok               |
+|          50 | 27.47%   | -51.41%            | -38.97% |     0.49 |       44 | 27.20%     | ok               |
+|          45 | 23.64%   | -51.41%            | -43.99% |     0.45 |       50 | 30.84%     | ok               |
+|          30 | 5.21%    | -51.41%            | -50.36% |     0.28 |       69 | 45.79%     | ok               |
+|          40 | 2.83%    | -51.41%            | -43.80% |     0.24 |       49 | 35.25%     | ok               |
+|          35 | -4.00%   | -51.41%            | -50.42% |     0.17 |       69 | 41.76%     | ok               |
 
 ## XLP Threshold Sweep
 
@@ -2002,28 +2002,28 @@ Realized forward return in the signal's direction, grouped by confidence. HIGH s
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          35 | -24.90%  | -64.36%            | -46.89% |    -0.14 |       70 | 40.04%     | ok               |
-|          40 | -31.84%  | -64.36%            | -44.89% |    -0.29 |       60 | 33.91%     | ok               |
-|          30 | -38.99%  | -64.36%            | -56.11% |    -0.36 |       74 | 44.44%     | ok               |
-|          45 | -39.45%  | -64.36%            | -46.83% |    -0.45 |       60 | 29.69%     | ok               |
-|          50 | -36.16%  | -64.36%            | -39.26% |    -0.49 |       62 | 22.22%     | ok               |
+|          35 | -25.11%  | -62.21%            | -46.87% |    -0.14 |       68 | 39.85%     | ok               |
+|          40 | -30.47%  | -62.21%            | -44.89% |    -0.26 |       58 | 33.72%     | ok               |
+|          30 | -37.23%  | -62.21%            | -54.70% |    -0.33 |       70 | 44.06%     | ok               |
+|          45 | -38.24%  | -62.21%            | -46.06% |    -0.42 |       58 | 29.50%     | ok               |
+|          50 | -34.88%  | -62.21%            | -38.03% |    -0.46 |       60 | 22.03%     | ok               |
 
 ## YFI-USD Threshold Sweep
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          40 | -32.83%  | -73.98%            | -52.37% |    -0.46 |       62 | 27.20%     | ok               |
-|          45 | -38.27%  | -73.98%            | -54.04% |    -0.66 |       64 | 22.61%     | ok               |
-|          35 | -49.34%  | -73.98%            | -64.08% |    -0.73 |       73 | 34.67%     | ok               |
-|          30 | -52.55%  | -73.98%            | -67.78% |    -0.75 |       81 | 40.80%     | ok               |
-|          50 | -41.48%  | -73.98%            | -51.80% |    -0.84 |       52 | 17.43%     | ok               |
+|          40 | -26.73%  | -73.18%            | -50.17% |    -0.33 |       58 | 26.82%     | ok               |
+|          45 | -32.67%  | -73.18%            | -51.92% |    -0.53 |       60 | 22.22%     | ok               |
+|          35 | -47.55%  | -73.18%            | -64.34% |    -0.7  |       69 | 34.10%     | ok               |
+|          30 | -50.93%  | -73.18%            | -67.78% |    -0.72 |       81 | 40.23%     | ok               |
+|          15 | -60.85%  | -73.18%            | -76.10% |    -0.81 |       85 | 54.41%     | ok               |
 
 ## ZEC-USD Threshold Sweep
 
 |   threshold | return   | benchmark_return   | mdd     |   sharpe |   trades | exposure   | skipped_reason   |
 |------------:|:---------|:-------------------|:--------|---------:|---------:|:-----------|:-----------------|
-|          45 | 136.96%  | 923.33%            | -24.66% |     0.94 |       46 | 23.18%     | ok               |
-|          35 | 102.61%  | 923.33%            | -44.34% |     0.81 |       52 | 30.08%     | ok               |
-|          25 | 80.38%   | 923.33%            | -48.59% |     0.72 |       58 | 39.27%     | ok               |
-|          50 | 62.89%   | 923.33%            | -34.39% |     0.65 |       48 | 20.69%     | ok               |
-|          30 | 62.53%   | 923.33%            | -47.68% |     0.64 |       62 | 35.82%     | ok               |
+|          45 | 142.05%  | 951.88%            | -24.66% |     0.96 |       46 | 22.80%     | ok               |
+|          35 | 107.82%  | 951.88%            | -44.34% |     0.82 |       54 | 29.31%     | ok               |
+|          25 | 85.01%   | 951.88%            | -48.59% |     0.73 |       60 | 38.51%     | ok               |
+|          50 | 66.39%   | 951.88%            | -34.39% |     0.66 |       48 | 20.31%     | ok               |
+|          30 | 66.71%   | 951.88%            | -47.68% |     0.66 |       64 | 35.06%     | ok               |
