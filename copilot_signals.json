@@ -1,11 +1,11 @@
 {
   "version": "2.1",
-  "generated_at": "2026-11-26T07:57:53+00:00",
+  "generated_at": "2026-11-27T08:00:17+00:00",
   "summary": {
     "total_symbols": 161,
     "long_signals": 19,
-    "short_signals": 56,
-    "neutral_signals": 86,
+    "short_signals": 49,
+    "neutral_signals": 93,
     "high_confidence_longs": [
       "HD",
       "DIS",
@@ -95,56 +95,56 @@
     {
       "symbol": "BTC-USD",
       "signal": "SHORT",
-      "composite_score": -49.67,
+      "composite_score": -27.5,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.532
+        "score": 0.363
       },
       "price": {
-        "close": 60484.0,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": -6.68,
-        "range_position": 0.092
+        "close": 61577.6,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -5.09,
+        "range_position": 0.129
       },
       "indicators": {
-        "rsi14": 22.4,
-        "macd_hist": -85.1368,
-        "adx14": 76.52,
-        "atr_pct": 5.6,
-        "bb_width": 0.3628,
-        "rvol": 0.31,
-        "stoch_rsi": 71.14,
-        "mom_divergence": 0.0,
+        "rsi14": 31.17,
+        "macd_hist": 136.7117,
+        "adx14": 77.18,
+        "atr_pct": 5.28,
+        "bb_width": 0.3424,
+        "rvol": 0.22,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.5,
+        "momentum": 0.75,
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 53706.0571,
-        "atr_stop_short": 67261.9429,
-        "atr_target_1r": 67261.9429,
-        "atr_target_2r": 74039.8857,
-        "pivot": 59352.6333,
-        "r1": 61494.5667,
-        "s1": 58226.6667
+        "atr_stop_long": 55081.1429,
+        "atr_stop_short": 68074.0571,
+        "atr_target_1r": 68074.0571,
+        "atr_target_2r": 74570.5143,
+        "pivot": 60627.4333,
+        "r1": 61404.8667,
+        "s1": 59721.7667
       },
       "moving_averages": {
-        "ema20": 65364.2171,
-        "ema50": 71478.6944,
-        "ema200": 74537.6582,
-        "vwap20": 64483.6848
+        "ema20": 65004.8967,
+        "ema50": 71090.9889,
+        "ema200": 74408.8721,
+        "vwap20": 64276.6363
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -153,56 +153,56 @@
     {
       "symbol": "ETH-USD",
       "signal": "NEUTRAL",
-      "composite_score": -31.33,
+      "composite_score": -15.25,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 1689.07,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -7.17,
-        "range_position": 0.141
+        "close": 1732.19,
+        "change_pct_1d": 0.03,
+        "change_pct_10d": -4.98,
+        "range_position": 0.174
       },
       "indicators": {
-        "rsi14": 26.47,
-        "macd_hist": 2.1386,
-        "adx14": 68.19,
-        "atr_pct": 6.83,
-        "bb_width": 0.3963,
-        "rvol": 0.18,
-        "stoch_rsi": 86.41,
-        "mom_divergence": 0.0,
+        "rsi14": 35.07,
+        "macd_hist": 9.0913,
+        "adx14": 68.96,
+        "atr_pct": 6.47,
+        "bb_width": 0.3543,
+        "rvol": 0.39,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
-        "trend": -3.5,
-        "momentum": -0.25,
+        "trend": -2.5,
+        "momentum": 0.75,
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 1458.2286,
-        "atr_stop_short": 1919.9114,
-        "atr_target_1r": 1919.9114,
-        "atr_target_2r": 2150.7529,
-        "pivot": 1664.8433,
-        "r1": 1722.8567,
-        "s1": 1632.5667
+        "atr_stop_long": 1508.0414,
+        "atr_stop_short": 1956.3386,
+        "atr_target_1r": 1956.3386,
+        "atr_target_2r": 2180.4871,
+        "pivot": 1694.1367,
+        "r1": 1722.2533,
+        "s1": 1659.6433
       },
       "moving_averages": {
-        "ema20": 1849.0789,
-        "ema50": 2077.8364,
-        "ema200": 2230.0767,
-        "vwap20": 1827.8904
+        "ema20": 1837.8337,
+        "ema50": 2064.2322,
+        "ema200": 2225.1062,
+        "vwap20": 1816.9134
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -211,24 +211,24 @@
     {
       "symbol": "SOL-USD",
       "signal": "NEUTRAL",
-      "composite_score": -19.0,
+      "composite_score": -18.5,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 70.82,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -0.96,
-        "range_position": 0.165
+        "close": 73.19,
+        "change_pct_1d": 0.03,
+        "change_pct_10d": -2.56,
+        "range_position": 0.202
       },
       "indicators": {
-        "rsi14": 33.09,
-        "macd_hist": 0.5284,
-        "adx14": 63.99,
-        "atr_pct": 7.12,
-        "bb_width": 0.3546,
-        "rvol": 0.17,
+        "rsi14": 42.04,
+        "macd_hist": 0.8313,
+        "adx14": 61.25,
+        "atr_pct": 6.69,
+        "bb_width": 0.3144,
+        "rvol": 0.3,
         "stoch_rsi": 100.0,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
@@ -239,28 +239,28 @@
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 60.7357,
-        "atr_stop_short": 80.9043,
-        "atr_target_1r": 80.9043,
-        "atr_target_2r": 90.9886,
-        "pivot": 69.0433,
-        "r1": 72.3267,
-        "s1": 67.1067
+        "atr_stop_long": 63.3971,
+        "atr_stop_short": 82.9829,
+        "atr_target_1r": 82.9829,
+        "atr_target_2r": 92.7757,
+        "pivot": 70.82,
+        "r1": 71.92,
+        "s1": 69.83
       },
       "moving_averages": {
-        "ema20": 76.4547,
-        "ema50": 86.8471,
-        "ema200": 93.8652,
-        "vwap20": 74.4627
+        "ema20": 76.1533,
+        "ema50": 86.3157,
+        "ema200": 93.6615,
+        "vwap20": 74.1338
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -269,24 +269,82 @@
     {
       "symbol": "XRP-USD",
       "signal": "NEUTRAL",
-      "composite_score": -19.0,
+      "composite_score": -13.0,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 0.95282,
-        "change_pct_1d": 0.02,
-        "change_pct_10d": -0.17,
-        "range_position": -0.045
+        "close": 0.97539,
+        "change_pct_1d": 0.03,
+        "change_pct_10d": -0.73,
+        "range_position": -0.013
       },
       "indicators": {
-        "rsi14": 38.76,
-        "macd_hist": 0.0082,
-        "adx14": 62.93,
-        "atr_pct": 6.56,
-        "bb_width": 0.2948,
-        "rvol": 0.15,
+        "rsi14": 45.48,
+        "macd_hist": 0.0116,
+        "adx14": 60.47,
+        "atr_pct": 6.38,
+        "bb_width": 0.2485,
+        "rvol": 0.18,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
+        "weekly_trend": "BEARISH"
+      },
+      "subscores": {
+        "trend": -2.5,
+        "momentum": 0.75,
+        "strength": 0.5,
+        "volatility": 0.0,
+        "fibonacci": -0.25,
+        "pivot": 0.75,
+        "volume": 0.0
+      },
+      "levels": {
+        "atr_stop_long": 0.850969,
+        "atr_stop_short": 1.0998,
+        "atr_target_1r": 1.0998,
+        "atr_target_2r": 1.2242,
+        "pivot": 0.946053,
+        "r1": 0.959347,
+        "s1": 0.929467
+      },
+      "moving_averages": {
+        "ema20": 1.0009,
+        "ema50": 1.1262,
+        "ema200": 1.2897,
+        "vwap20": 0.972703
+      },
+      "meta": {
+        "data_source": "Kraken API",
+        "quality_grade": "A",
+        "date": "2026-11-27",
+        "bar_complete": false,
+        "bar_age_days": 0,
+        "stale": false
+      }
+    },
+    {
+      "symbol": "ADA-USD",
+      "signal": "NEUTRAL",
+      "composite_score": -18.5,
+      "confidence": {
+        "level": "LOW",
+        "score": 0.0
+      },
+      "price": {
+        "close": 0.152975,
+        "change_pct_1d": 0.03,
+        "change_pct_10d": -1.41,
+        "range_position": 0.103
+      },
+      "indicators": {
+        "rsi14": 38.11,
+        "macd_hist": 0.0018,
+        "adx14": 68.44,
+        "atr_pct": 6.83,
+        "bb_width": 0.3143,
+        "rvol": 0.2,
         "stoch_rsi": 100.0,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
@@ -297,86 +355,28 @@
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.827753,
-        "atr_stop_short": 1.0779,
-        "atr_target_1r": 1.0779,
-        "atr_target_2r": 1.203,
-        "pivot": 0.92404,
-        "r1": 0.9603,
-        "s1": 0.90026
+        "atr_stop_long": 0.132079,
+        "atr_stop_short": 0.173871,
+        "atr_target_1r": 0.173871,
+        "atr_target_2r": 0.194768,
+        "pivot": 0.148415,
+        "r1": 0.151318,
+        "s1": 0.145567
       },
       "moving_averages": {
-        "ema20": 1.0046,
-        "ema50": 1.1328,
-        "ema200": 1.2928,
-        "vwap20": 0.977714
+        "ema20": 0.158191,
+        "ema50": 0.180143,
+        "ema200": 0.219374,
+        "vwap20": 0.155279
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
-        "bar_complete": false,
-        "bar_age_days": 0,
-        "stale": false
-      }
-    },
-    {
-      "symbol": "ADA-USD",
-      "signal": "NEUTRAL",
-      "composite_score": -25.67,
-      "confidence": {
-        "level": "LOW",
-        "score": 0.0
-      },
-      "price": {
-        "close": 0.147803,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -3.39,
-        "range_position": 0.068
-      },
-      "indicators": {
-        "rsi14": 29.8,
-        "macd_hist": 0.0011,
-        "adx14": 67.79,
-        "atr_pct": 7.23,
-        "bb_width": 0.3421,
-        "rvol": 0.34,
-        "stoch_rsi": 100.0,
-        "mom_divergence": 0.0,
-        "weekly_trend": "BEARISH"
-      },
-      "subscores": {
-        "trend": -2.5,
-        "momentum": -0.25,
-        "strength": 0.5,
-        "volatility": -0.25,
-        "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
-      },
-      "levels": {
-        "atr_stop_long": 0.126424,
-        "atr_stop_short": 0.169182,
-        "atr_target_1r": 0.169182,
-        "atr_target_2r": 0.19056,
-        "pivot": 0.143007,
-        "r1": 0.15056,
-        "s1": 0.138249
-      },
-      "moving_averages": {
-        "ema20": 0.158676,
-        "ema50": 0.181226,
-        "ema200": 0.220049,
-        "vwap20": 0.155912
-      },
-      "meta": {
-        "data_source": "Kraken API",
-        "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -385,56 +385,56 @@
     {
       "symbol": "LINK-USD",
       "signal": "NEUTRAL",
-      "composite_score": -22.33,
+      "composite_score": 3.0,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 9.1565,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": 0.24,
-        "range_position": 0.246
+        "close": 9.5884,
+        "change_pct_1d": 0.03,
+        "change_pct_10d": 2.97,
+        "range_position": 0.295
       },
       "indicators": {
-        "rsi14": 36.9,
-        "macd_hist": 0.0721,
-        "adx14": 69.03,
-        "atr_pct": 6.59,
-        "bb_width": 0.3025,
-        "rvol": 0.32,
+        "rsi14": 46.67,
+        "macd_hist": 0.1263,
+        "adx14": 68.79,
+        "atr_pct": 6.28,
+        "bb_width": 0.2714,
+        "rvol": 0.47,
         "stoch_rsi": 100.0,
-        "mom_divergence": 0.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
-        "trend": -2.5,
-        "momentum": 0.25,
+        "trend": -0.5,
+        "momentum": 0.75,
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
+        "pivot": 0.75,
+        "volume": 0.0
       },
       "levels": {
-        "atr_stop_long": 7.95,
-        "atr_stop_short": 10.3631,
-        "atr_target_1r": 10.3631,
-        "atr_target_2r": 11.5696,
-        "pivot": 8.8752,
-        "r1": 9.2967,
-        "s1": 8.6235
+        "atr_stop_long": 8.3833,
+        "atr_stop_short": 10.7934,
+        "atr_target_1r": 10.7934,
+        "atr_target_2r": 11.9984,
+        "pivot": 9.2364,
+        "r1": 9.4429,
+        "s1": 9.0628
       },
       "moving_averages": {
-        "ema20": 9.4878,
-        "ema50": 10.475,
-        "ema200": 10.7307,
-        "vwap20": 9.2812
+        "ema20": 9.5071,
+        "ema50": 10.4445,
+        "ema200": 10.7196,
+        "vwap20": 9.266
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -443,56 +443,56 @@
     {
       "symbol": "UNI-USD",
       "signal": "SHORT",
-      "composite_score": -53.67,
+      "composite_score": -31.5,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.535
+        "score": 0.359
       },
       "price": {
-        "close": 4.7123,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -8.74,
-        "range_position": 0.278
+        "close": 4.8786,
+        "change_pct_1d": 0.05,
+        "change_pct_10d": -8.16,
+        "range_position": 0.297
       },
       "indicators": {
-        "rsi14": 28.74,
-        "macd_hist": -0.0073,
-        "adx14": 63.7,
-        "atr_pct": 9.69,
-        "bb_width": 0.6424,
-        "rvol": 0.13,
-        "stoch_rsi": 69.28,
-        "mom_divergence": 0.0,
+        "rsi14": 36.27,
+        "macd_hist": 0.0193,
+        "adx14": 63.87,
+        "atr_pct": 9.28,
+        "bb_width": 0.5872,
+        "rvol": 0.34,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.5,
+        "momentum": 0.75,
         "strength": 0.5,
         "volatility": -0.75,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 3.7989,
-        "atr_stop_short": 5.6257,
-        "atr_target_1r": 5.6257,
-        "atr_target_2r": 6.5391,
-        "pivot": 4.6222,
-        "r1": 4.8851,
-        "s1": 4.4791
+        "atr_stop_long": 3.9731,
+        "atr_stop_short": 5.7841,
+        "atr_target_1r": 5.7841,
+        "atr_target_2r": 6.6897,
+        "pivot": 4.6792,
+        "r1": 4.8215,
+        "s1": 4.5119
       },
       "moving_averages": {
-        "ema20": 5.3678,
-        "ema50": 6.1452,
-        "ema200": 5.6576,
-        "vwap20": 5.4696
+        "ema20": 5.3162,
+        "ema50": 6.0933,
+        "ema200": 5.6496,
+        "vwap20": 5.3957
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -507,19 +507,19 @@
         "score": 0.516
       },
       "price": {
-        "close": 95.37,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -12.1,
-        "range_position": 0.289
+        "close": 96.04,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -14.58,
+        "range_position": 0.294
       },
       "indicators": {
-        "rsi14": 31.12,
-        "macd_hist": -0.3437,
-        "adx14": 59.81,
-        "atr_pct": 8.48,
-        "bb_width": 0.4535,
-        "rvol": 0.2,
-        "stoch_rsi": 52.31,
+        "rsi14": 34.27,
+        "macd_hist": -0.0592,
+        "adx14": 61.84,
+        "atr_pct": 8.35,
+        "bb_width": 0.4295,
+        "rvol": 0.15,
+        "stoch_rsi": 70.71,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -533,24 +533,24 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 79.2014,
-        "atr_stop_short": 111.5386,
-        "atr_target_1r": 111.5386,
-        "atr_target_2r": 127.7071,
-        "pivot": 93.7267,
-        "r1": 97.7333,
-        "s1": 91.3833
+        "atr_stop_long": 80.0086,
+        "atr_stop_short": 112.0714,
+        "atr_target_1r": 112.0714,
+        "atr_target_2r": 128.1029,
+        "pivot": 94.73,
+        "r1": 97.24,
+        "s1": 91.82
       },
       "moving_averages": {
-        "ema20": 107.6656,
-        "ema50": 121.8179,
-        "ema200": 123.4818,
-        "vwap20": 109.0293
+        "ema20": 106.4688,
+        "ema50": 120.7678,
+        "ema200": 123.1988,
+        "vwap20": 108.0467
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -559,56 +559,56 @@
     {
       "symbol": "AVAX-USD",
       "signal": "SHORT",
-      "composite_score": -51.33,
+      "composite_score": -35.83,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.522
+        "score": 0.433
       },
       "price": {
-        "close": 6.638,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": -6.66,
-        "range_position": 0.152
+        "close": 6.748,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -7.38,
+        "range_position": 0.169
       },
       "indicators": {
-        "rsi14": 22.83,
-        "macd_hist": -0.0104,
-        "adx14": 47.76,
-        "atr_pct": 7.68,
-        "bb_width": 0.4137,
-        "rvol": 0.18,
-        "stoch_rsi": 5.96,
+        "rsi14": 27.03,
+        "macd_hist": 0.0125,
+        "adx14": 50.98,
+        "atr_pct": 7.25,
+        "bb_width": 0.411,
+        "rvol": 0.14,
+        "stoch_rsi": 38.07,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.75,
+        "momentum": -0.5,
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 5.619,
-        "atr_stop_short": 7.657,
-        "atr_target_1r": 7.657,
-        "atr_target_2r": 8.676,
-        "pivot": 6.501,
-        "r1": 6.769,
-        "s1": 6.356
+        "atr_stop_long": 5.7694,
+        "atr_stop_short": 7.7266,
+        "atr_target_1r": 7.7266,
+        "atr_target_2r": 8.7051,
+        "pivot": 6.6007,
+        "r1": 6.7253,
+        "s1": 6.4593
       },
       "moving_averages": {
-        "ema20": 7.2784,
-        "ema50": 8.0801,
-        "ema200": 8.7658,
-        "vwap20": 7.5709
+        "ema20": 7.2233,
+        "ema50": 8.0259,
+        "ema200": 8.7445,
+        "vwap20": 7.5424
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -617,56 +617,56 @@
     {
       "symbol": "LTC-USD",
       "signal": "NEUTRAL",
-      "composite_score": -29.58,
+      "composite_score": -15.5,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 43.45,
-        "change_pct_1d": 0.02,
-        "change_pct_10d": -2.29,
-        "range_position": 0.118
+        "close": 44.38,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": -2.1,
+        "range_position": 0.144
       },
       "indicators": {
-        "rsi14": 32.79,
-        "macd_hist": 0.2288,
-        "adx14": 74.25,
-        "atr_pct": 6.45,
-        "bb_width": 0.3692,
-        "rvol": 0.61,
+        "rsi14": 37.15,
+        "macd_hist": 0.4725,
+        "adx14": 72.4,
+        "atr_pct": 6.1,
+        "bb_width": 0.3447,
+        "rvol": 0.42,
         "stoch_rsi": 100.0,
-        "mom_divergence": 0.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
-        "trend": -3.5,
-        "momentum": 0.25,
+        "trend": -2.5,
+        "momentum": 0.75,
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
         "pivot": 0.5,
-        "volume": -0.25
+        "volume": 0.0
       },
       "levels": {
-        "atr_stop_long": 37.8414,
-        "atr_stop_short": 49.0586,
-        "atr_target_1r": 49.0586,
-        "atr_target_2r": 54.6671,
-        "pivot": 41.66,
-        "r1": 43.87,
-        "s1": 40.53
+        "atr_stop_long": 38.9657,
+        "atr_stop_short": 49.7943,
+        "atr_target_1r": 49.7943,
+        "atr_target_2r": 55.2086,
+        "pivot": 43.5667,
+        "r1": 44.4233,
+        "s1": 42.9133
       },
       "moving_averages": {
-        "ema20": 45.36,
-        "ema50": 50.6451,
-        "ema200": 54.4585,
-        "vwap20": 44.4416
+        "ema20": 45.2942,
+        "ema50": 50.4115,
+        "ema200": 54.3597,
+        "vwap20": 44.2531
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -675,24 +675,256 @@
     {
       "symbol": "BCH-USD",
       "signal": "NEUTRAL",
+      "composite_score": -13.25,
+      "confidence": {
+        "level": "LOW",
+        "score": 0.0
+      },
+      "price": {
+        "close": 213.32,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": 0.7,
+        "range_position": 0.175
+      },
+      "indicators": {
+        "rsi14": 44.74,
+        "macd_hist": 2.6294,
+        "adx14": 74.69,
+        "atr_pct": 6.09,
+        "bb_width": 0.2553,
+        "rvol": 0.57,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
+        "weekly_trend": "BEARISH"
+      },
+      "subscores": {
+        "trend": -2.5,
+        "momentum": 0.75,
+        "strength": 0.5,
+        "volatility": -0.25,
+        "fibonacci": -0.25,
+        "pivot": 0.75,
+        "volume": 0.25
+      },
+      "levels": {
+        "atr_stop_long": 187.3357,
+        "atr_stop_short": 239.3043,
+        "atr_target_1r": 239.3043,
+        "atr_target_2r": 265.2886,
+        "pivot": 208.42,
+        "r1": 212.54,
+        "s1": 205.55
+      },
+      "moving_averages": {
+        "ema20": 217.2262,
+        "ema50": 240.3686,
+        "ema200": 285.1521,
+        "vwap20": 211.5255
+      },
+      "meta": {
+        "data_source": "Kraken API",
+        "quality_grade": "A",
+        "date": "2026-11-27",
+        "bar_complete": false,
+        "bar_age_days": 0,
+        "stale": false
+      }
+    },
+    {
+      "symbol": "XLM-USD",
+      "signal": "SHORT",
+      "composite_score": -35.0,
+      "confidence": {
+        "level": "LOW",
+        "score": 0.329
+      },
+      "price": {
+        "close": 0.129735,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -8.21,
+        "range_position": 0.066
+      },
+      "indicators": {
+        "rsi14": 35.83,
+        "macd_hist": 0.0006,
+        "adx14": 63.21,
+        "atr_pct": 6.63,
+        "bb_width": 0.2447,
+        "rvol": 0.28,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
+        "weekly_trend": "BEARISH"
+      },
+      "subscores": {
+        "trend": -4.5,
+        "momentum": 0.75,
+        "strength": 0.5,
+        "volatility": 0.0,
+        "fibonacci": -0.25,
+        "pivot": 0.5,
+        "volume": -0.5
+      },
+      "levels": {
+        "atr_stop_long": 0.112533,
+        "atr_stop_short": 0.146937,
+        "atr_target_1r": 0.146937,
+        "atr_target_2r": 0.164139,
+        "pivot": 0.127476,
+        "r1": 0.129773,
+        "s1": 0.124355
+      },
+      "moving_averages": {
+        "ema20": 0.137267,
+        "ema50": 0.154652,
+        "ema200": 0.178624,
+        "vwap20": 0.136802
+      },
+      "meta": {
+        "data_source": "Kraken API",
+        "quality_grade": "A",
+        "date": "2026-11-27",
+        "bar_complete": false,
+        "bar_age_days": 0,
+        "stale": false
+      }
+    },
+    {
+      "symbol": "DOT-USD",
+      "signal": "NEUTRAL",
+      "composite_score": -20.08,
+      "confidence": {
+        "level": "LOW",
+        "score": 0.0
+      },
+      "price": {
+        "close": 0.6842,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -7.89,
+        "range_position": -0.068
+      },
+      "indicators": {
+        "rsi14": 29.42,
+        "macd_hist": 0.0059,
+        "adx14": 73.81,
+        "atr_pct": 7.14,
+        "bb_width": 0.4164,
+        "rvol": 0.51,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
+        "weekly_trend": "BEARISH"
+      },
+      "subscores": {
+        "trend": -2.5,
+        "momentum": 0.25,
+        "strength": 0.5,
+        "volatility": -0.25,
+        "fibonacci": -0.25,
+        "pivot": 0.75,
+        "volume": -0.25
+      },
+      "levels": {
+        "atr_stop_long": 0.586514,
+        "atr_stop_short": 0.781886,
+        "atr_target_1r": 0.781886,
+        "atr_target_2r": 0.879571,
+        "pivot": 0.668767,
+        "r1": 0.681733,
+        "s1": 0.659133
+      },
+      "moving_averages": {
+        "ema20": 0.741044,
+        "ema50": 0.86376,
+        "ema200": 1.0811,
+        "vwap20": 0.744956
+      },
+      "meta": {
+        "data_source": "Kraken API",
+        "quality_grade": "A",
+        "date": "2026-11-27",
+        "bar_complete": false,
+        "bar_age_days": 0,
+        "stale": false
+      }
+    },
+    {
+      "symbol": "ATOM-USD",
+      "signal": "NEUTRAL",
+      "composite_score": -18.67,
+      "confidence": {
+        "level": "LOW",
+        "score": 0.0
+      },
+      "price": {
+        "close": 1.2405,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -6.83,
+        "range_position": 0.034
+      },
+      "indicators": {
+        "rsi14": 38.15,
+        "macd_hist": 0.0074,
+        "adx14": 39.36,
+        "atr_pct": 6.57,
+        "bb_width": 0.2341,
+        "rvol": 0.25,
+        "stoch_rsi": 50.52,
+        "mom_divergence": 1.0,
+        "weekly_trend": "BEARISH"
+      },
+      "subscores": {
+        "trend": -2.5,
+        "momentum": 0.5,
+        "strength": 0.5,
+        "volatility": 0.0,
+        "fibonacci": -0.25,
+        "pivot": 0.5,
+        "volume": -0.5
+      },
+      "levels": {
+        "atr_stop_long": 1.0776,
+        "atr_stop_short": 1.4034,
+        "atr_target_1r": 1.4034,
+        "atr_target_2r": 1.5664,
+        "pivot": 1.2155,
+        "r1": 1.2565,
+        "s1": 1.1744
+      },
+      "moving_averages": {
+        "ema20": 1.3002,
+        "ema50": 1.4318,
+        "ema200": 1.6708,
+        "vwap20": 1.2884
+      },
+      "meta": {
+        "data_source": "Kraken API",
+        "quality_grade": "A",
+        "date": "2026-11-27",
+        "bar_complete": false,
+        "bar_age_days": 0,
+        "stale": false
+      }
+    },
+    {
+      "symbol": "SUSHI-USD",
+      "signal": "NEUTRAL",
       "composite_score": -19.0,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 208.01,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -0.2,
-        "range_position": 0.146
+        "close": 0.1552,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -1.08,
+        "range_position": 0.083
       },
       "indicators": {
-        "rsi14": 38.72,
-        "macd_hist": 1.5688,
-        "adx14": 79.46,
+        "rsi14": 37.89,
+        "macd_hist": 0.002,
+        "adx14": 61.34,
         "atr_pct": 6.31,
-        "bb_width": 0.2977,
-        "rvol": 0.14,
+        "bb_width": 0.2524,
+        "rvol": 0.33,
         "stoch_rsi": 100.0,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
@@ -707,256 +939,24 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 181.7443,
-        "atr_stop_short": 234.2757,
-        "atr_target_1r": 234.2757,
-        "atr_target_2r": 260.5414,
-        "pivot": 200.7067,
-        "r1": 210.4933,
-        "s1": 195.7533
+        "atr_stop_long": 0.1356,
+        "atr_stop_short": 0.1748,
+        "atr_target_1r": 0.1748,
+        "atr_target_2r": 0.1944,
+        "pivot": 0.153367,
+        "r1": 0.156533,
+        "s1": 0.149533
       },
       "moving_averages": {
-        "ema20": 217.4793,
-        "ema50": 241.4075,
-        "ema200": 285.8661,
-        "vwap20": 213.4078
+        "ema20": 0.160981,
+        "ema50": 0.181482,
+        "ema200": 0.21119,
+        "vwap20": 0.156962
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
-        "bar_complete": false,
-        "bar_age_days": 0,
-        "stale": false
-      }
-    },
-    {
-      "symbol": "XLM-USD",
-      "signal": "SHORT",
-      "composite_score": -40.33,
-      "confidence": {
-        "level": "MEDIUM",
-        "score": 0.409
-      },
-      "price": {
-        "close": 0.1286,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": -6.63,
-        "range_position": 0.058
-      },
-      "indicators": {
-        "rsi14": 32.36,
-        "macd_hist": 0.0003,
-        "adx14": 64.05,
-        "atr_pct": 6.87,
-        "bb_width": 0.2524,
-        "rvol": 0.1,
-        "stoch_rsi": 93.6,
-        "mom_divergence": 0.0,
-        "weekly_trend": "BEARISH"
-      },
-      "subscores": {
-        "trend": -4.5,
-        "momentum": 0.25,
-        "strength": 0.5,
-        "volatility": -0.25,
-        "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
-      },
-      "levels": {
-        "atr_stop_long": 0.110933,
-        "atr_stop_short": 0.146267,
-        "atr_target_1r": 0.146267,
-        "atr_target_2r": 0.163935,
-        "pivot": 0.125469,
-        "r1": 0.131351,
-        "s1": 0.122095
-      },
-      "moving_averages": {
-        "ema20": 0.138245,
-        "ema50": 0.155745,
-        "ema200": 0.179128,
-        "vwap20": 0.137925
-      },
-      "meta": {
-        "data_source": "Kraken API",
-        "quality_grade": "A",
-        "date": "2026-11-26",
-        "bar_complete": false,
-        "bar_age_days": 0,
-        "stale": false
-      }
-    },
-    {
-      "symbol": "DOT-USD",
-      "signal": "NEUTRAL",
-      "composite_score": -25.67,
-      "confidence": {
-        "level": "LOW",
-        "score": 0.0
-      },
-      "price": {
-        "close": 0.6664,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -9.05,
-        "range_position": -0.098
-      },
-      "indicators": {
-        "rsi14": 24.1,
-        "macd_hist": 0.0023,
-        "adx14": 72.73,
-        "atr_pct": 7.61,
-        "bb_width": 0.4492,
-        "rvol": 0.3,
-        "stoch_rsi": 100.0,
-        "mom_divergence": 0.0,
-        "weekly_trend": "BEARISH"
-      },
-      "subscores": {
-        "trend": -2.5,
-        "momentum": -0.25,
-        "strength": 0.5,
-        "volatility": -0.25,
-        "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
-      },
-      "levels": {
-        "atr_stop_long": 0.564986,
-        "atr_stop_short": 0.767814,
-        "atr_target_1r": 0.767814,
-        "atr_target_2r": 0.869229,
-        "pivot": 0.6486,
-        "r1": 0.6786,
-        "s1": 0.6283
-      },
-      "moving_averages": {
-        "ema20": 0.746484,
-        "ema50": 0.870866,
-        "ema200": 1.0851,
-        "vwap20": 0.751656
-      },
-      "meta": {
-        "data_source": "Kraken API",
-        "quality_grade": "A",
-        "date": "2026-11-26",
-        "bar_complete": false,
-        "bar_age_days": 0,
-        "stale": false
-      }
-    },
-    {
-      "symbol": "ATOM-USD",
-      "signal": "NEUTRAL",
-      "composite_score": -23.67,
-      "confidence": {
-        "level": "LOW",
-        "score": 0.0
-      },
-      "price": {
-        "close": 1.2543,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -5.81,
-        "range_position": 0.05
-      },
-      "indicators": {
-        "rsi14": 34.65,
-        "macd_hist": 0.0075,
-        "adx14": 37.34,
-        "atr_pct": 6.5,
-        "bb_width": 0.2309,
-        "rvol": 0.32,
-        "stoch_rsi": 11.29,
-        "mom_divergence": 0.0,
-        "weekly_trend": "BEARISH"
-      },
-      "subscores": {
-        "trend": -2.5,
-        "momentum": -0.25,
-        "strength": 0.5,
-        "volatility": 0.0,
-        "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
-      },
-      "levels": {
-        "atr_stop_long": 1.0913,
-        "atr_stop_short": 1.4173,
-        "atr_target_1r": 1.4173,
-        "atr_target_2r": 1.5802,
-        "pivot": 1.2367,
-        "r1": 1.2735,
-        "s1": 1.1995
-      },
-      "moving_averages": {
-        "ema20": 1.3102,
-        "ema50": 1.4412,
-        "ema200": 1.6757,
-        "vwap20": 1.2944
-      },
-      "meta": {
-        "data_source": "Kraken API",
-        "quality_grade": "A",
-        "date": "2026-11-26",
-        "bar_complete": false,
-        "bar_age_days": 0,
-        "stale": false
-      }
-    },
-    {
-      "symbol": "SUSHI-USD",
-      "signal": "NEUTRAL",
-      "composite_score": -22.33,
-      "confidence": {
-        "level": "LOW",
-        "score": 0.0
-      },
-      "price": {
-        "close": 0.1532,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -0.91,
-        "range_position": 0.072
-      },
-      "indicators": {
-        "rsi14": 32.67,
-        "macd_hist": 0.0017,
-        "adx14": 62.33,
-        "atr_pct": 6.48,
-        "bb_width": 0.2771,
-        "rvol": 0.34,
-        "stoch_rsi": 85.55,
-        "mom_divergence": 0.0,
-        "weekly_trend": "BEARISH"
-      },
-      "subscores": {
-        "trend": -2.5,
-        "momentum": 0.25,
-        "strength": 0.5,
-        "volatility": -0.25,
-        "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
-      },
-      "levels": {
-        "atr_stop_long": 0.133357,
-        "atr_stop_short": 0.173043,
-        "atr_target_1r": 0.173043,
-        "atr_target_2r": 0.192886,
-        "pivot": 0.1517,
-        "r1": 0.1584,
-        "s1": 0.1477
-      },
-      "moving_averages": {
-        "ema20": 0.161637,
-        "ema50": 0.182574,
-        "ema200": 0.211592,
-        "vwap20": 0.157999
-      },
-      "meta": {
-        "data_source": "Kraken API",
-        "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -965,31 +965,31 @@
     {
       "symbol": "CRV-USD",
       "signal": "SHORT",
-      "composite_score": -42.0,
+      "composite_score": -31.33,
       "confidence": {
         "level": "LOW",
-        "score": 0.269
+        "score": 0.208
       },
       "price": {
-        "close": 0.17257,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": -16.06,
-        "range_position": 0.013
+        "close": 0.17829,
+        "change_pct_1d": 0.03,
+        "change_pct_10d": -14.88,
+        "range_position": 0.036
       },
       "indicators": {
-        "rsi14": 12.3,
-        "macd_hist": 0.0004,
-        "adx14": 59.43,
-        "atr_pct": 10.33,
-        "bb_width": 0.6116,
-        "rvol": 0.25,
-        "stoch_rsi": 12.66,
+        "rsi14": 19.51,
+        "macd_hist": 0.0015,
+        "adx14": 56.62,
+        "atr_pct": 9.69,
+        "bb_width": 0.5779,
+        "rvol": 0.34,
+        "stoch_rsi": 46.65,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
-        "trend": -3.5,
-        "momentum": -0.75,
+        "trend": -2.5,
+        "momentum": -0.5,
         "strength": 0.5,
         "volatility": -0.75,
         "fibonacci": -0.25,
@@ -997,24 +997,24 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.13692,
-        "atr_stop_short": 0.20822,
-        "atr_target_1r": 0.20822,
-        "atr_target_2r": 0.24387,
-        "pivot": 0.17089,
-        "r1": 0.17828,
-        "s1": 0.1644
+        "atr_stop_long": 0.143721,
+        "atr_stop_short": 0.212859,
+        "atr_target_1r": 0.212859,
+        "atr_target_2r": 0.247427,
+        "pivot": 0.174477,
+        "r1": 0.178803,
+        "s1": 0.169613
       },
       "moving_averages": {
-        "ema20": 0.209123,
-        "ema50": 0.257773,
-        "ema200": 0.28794,
-        "vwap20": 0.201036
+        "ema20": 0.206304,
+        "ema50": 0.254708,
+        "ema200": 0.28681,
+        "vwap20": 0.19934
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1023,31 +1023,31 @@
     {
       "symbol": "COMP-USD",
       "signal": "NEUTRAL",
-      "composite_score": -20.0,
+      "composite_score": -15.0,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 17.93,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": 0.96,
-        "range_position": 0.216
+        "close": 18.15,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": 1.0,
+        "range_position": 0.231
       },
       "indicators": {
-        "rsi14": 30.04,
-        "macd_hist": 0.1061,
-        "adx14": 46.85,
-        "atr_pct": 4.61,
-        "bb_width": 0.244,
-        "rvol": 0.08,
-        "stoch_rsi": 61.15,
-        "mom_divergence": 0.0,
+        "rsi14": 38.58,
+        "macd_hist": 0.1606,
+        "adx14": 46.91,
+        "atr_pct": 4.42,
+        "bb_width": 0.2323,
+        "rvol": 0.13,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -2.5,
-        "momentum": 0.0,
+        "momentum": 0.75,
         "strength": 0.5,
         "volatility": 0.25,
         "fibonacci": -0.25,
@@ -1055,24 +1055,24 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 16.2771,
-        "atr_stop_short": 19.5829,
-        "atr_target_1r": 19.5829,
-        "atr_target_2r": 21.2357,
-        "pivot": 17.6167,
-        "r1": 18.1733,
-        "s1": 17.3033
+        "atr_stop_long": 16.5471,
+        "atr_stop_short": 19.7529,
+        "atr_target_1r": 19.7529,
+        "atr_target_2r": 21.3557,
+        "pivot": 17.88,
+        "r1": 18.22,
+        "s1": 17.65
       },
       "moving_averages": {
-        "ema20": 18.3712,
-        "ema50": 19.7647,
-        "ema200": 20.6853,
-        "vwap20": 18.4573
+        "ema20": 18.3553,
+        "ema50": 19.7037,
+        "ema200": 20.662,
+        "vwap20": 18.4039
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1080,57 +1080,57 @@
     },
     {
       "symbol": "SKY-USD",
-      "signal": "SHORT",
-      "composite_score": -53.67,
+      "signal": "NEUTRAL",
+      "composite_score": -26.75,
       "confidence": {
-        "level": "MEDIUM",
-        "score": 0.535
+        "level": "LOW",
+        "score": 0.0
       },
       "price": {
-        "close": 0.04316,
-        "change_pct_1d": 0.03,
-        "change_pct_10d": -15.64,
-        "range_position": -0.101
+        "close": 0.04687,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": -12.11,
+        "range_position": -0.031
       },
       "indicators": {
-        "rsi14": 23.38,
-        "macd_hist": -0.0005,
-        "adx14": 88.5,
-        "atr_pct": 11.75,
-        "bb_width": 0.6286,
-        "rvol": 0.35,
-        "stoch_rsi": 72.0,
-        "mom_divergence": 0.0,
+        "rsi14": 33.67,
+        "macd_hist": 0.0002,
+        "adx14": 85.99,
+        "atr_pct": 11.67,
+        "bb_width": 0.5819,
+        "rvol": 0.95,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.5,
+        "momentum": 0.75,
         "strength": 0.5,
         "volatility": -0.75,
         "fibonacci": -0.25,
         "pivot": 0.5,
-        "volume": -0.5
+        "volume": 0.25
       },
       "levels": {
-        "atr_stop_long": 0.03302,
-        "atr_stop_short": 0.0533,
-        "atr_target_1r": 0.0533,
-        "atr_target_2r": 0.06344,
-        "pivot": 0.041027,
-        "r1": 0.043453,
-        "s1": 0.039523
+        "atr_stop_long": 0.035931,
+        "atr_stop_short": 0.057809,
+        "atr_target_1r": 0.057809,
+        "atr_target_2r": 0.068747,
+        "pivot": 0.045373,
+        "r1": 0.048867,
+        "s1": 0.042877
       },
       "moving_averages": {
-        "ema20": 0.050158,
-        "ema50": 0.058886,
-        "ema200": 0.064489,
-        "vwap20": 0.045289
+        "ema20": 0.050121,
+        "ema50": 0.058536,
+        "ema200": 0.064342,
+        "vwap20": 0.045354
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1139,56 +1139,56 @@
     {
       "symbol": "YFI-USD",
       "signal": "SHORT",
-      "composite_score": -46.33,
+      "composite_score": -30.83,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.493
+        "score": 0.355
       },
       "price": {
-        "close": 1591.7,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -7.32,
-        "range_position": 0.008
+        "close": 1633.2,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -7.62,
+        "range_position": 0.041
       },
       "indicators": {
-        "rsi14": 31.01,
-        "macd_hist": -1.0978,
-        "adx14": 58.96,
-        "atr_pct": 5.79,
-        "bb_width": 0.3153,
-        "rvol": 0.16,
-        "stoch_rsi": 29.02,
+        "rsi14": 37.83,
+        "macd_hist": 3.4032,
+        "adx14": 61.12,
+        "atr_pct": 5.7,
+        "bb_width": 0.2895,
+        "rvol": 0.2,
+        "stoch_rsi": 100.0,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.0,
+        "momentum": 0.25,
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 1407.3143,
-        "atr_stop_short": 1776.0857,
-        "atr_target_1r": 1776.0857,
-        "atr_target_2r": 1960.4714,
-        "pivot": 1578.6667,
-        "r1": 1628.1333,
-        "s1": 1550.0333
+        "atr_stop_long": 1446.8571,
+        "atr_stop_short": 1819.5429,
+        "atr_target_1r": 1819.5429,
+        "atr_target_2r": 2005.8857,
+        "pivot": 1592.1667,
+        "r1": 1623.5333,
+        "s1": 1562.4333
       },
       "moving_averages": {
-        "ema20": 1741.8007,
-        "ema50": 1925.8618,
-        "ema200": 2255.5234,
-        "vwap20": 1706.886
+        "ema20": 1731.6387,
+        "ema50": 1914.464,
+        "ema200": 2249.1627,
+        "vwap20": 1693.7369
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1203,19 +1203,19 @@
         "score": 0.0
       },
       "price": {
-        "close": 0.1431,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": -4.09,
-        "range_position": 0.066
+        "close": 0.146,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -7.01,
+        "range_position": 0.085
       },
       "indicators": {
-        "rsi14": 38.97,
-        "macd_hist": 0.001,
-        "adx14": 23.07,
-        "atr_pct": 8.77,
-        "bb_width": 0.2196,
-        "rvol": 0.1,
-        "stoch_rsi": 56.06,
+        "rsi14": 41.64,
+        "macd_hist": 0.0012,
+        "adx14": 20.74,
+        "atr_pct": 8.33,
+        "bb_width": 0.2094,
+        "rvol": 0.14,
+        "stoch_rsi": 65.39,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
@@ -1229,24 +1229,24 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.118014,
-        "atr_stop_short": 0.168186,
-        "atr_target_1r": 0.168186,
-        "atr_target_2r": 0.193271,
-        "pivot": 0.140067,
-        "r1": 0.148133,
-        "s1": 0.134333
+        "atr_stop_long": 0.121671,
+        "atr_stop_short": 0.170329,
+        "atr_target_1r": 0.170329,
+        "atr_target_2r": 0.194657,
+        "pivot": 0.1441,
+        "r1": 0.1469,
+        "s1": 0.1409
       },
       "moving_averages": {
-        "ema20": 0.155747,
-        "ema50": 0.178022,
-        "ema200": 0.243033,
-        "vwap20": 0.152991
+        "ema20": 0.15487,
+        "ema50": 0.176789,
+        "ema200": 0.242014,
+        "vwap20": 0.152739
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1255,56 +1255,56 @@
     {
       "symbol": "LDO-USD",
       "signal": "SHORT",
-      "composite_score": -53.67,
+      "composite_score": -35.83,
       "confidence": {
-        "level": "LOW",
-        "score": 0.335
+        "level": "MEDIUM",
+        "score": 0.433
       },
       "price": {
-        "close": 0.232,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -15.94,
-        "range_position": -0.011
+        "close": 0.243,
+        "change_pct_1d": 0.04,
+        "change_pct_10d": -12.59,
+        "range_position": 0.03
       },
       "indicators": {
-        "rsi14": 19.35,
-        "macd_hist": -0.0013,
-        "adx14": 68.53,
-        "atr_pct": 8.22,
-        "bb_width": 0.5262,
-        "rvol": 0.1,
-        "stoch_rsi": 25.87,
+        "rsi14": 26.36,
+        "macd_hist": 0.0004,
+        "adx14": 70.46,
+        "atr_pct": 7.61,
+        "bb_width": 0.5105,
+        "rvol": 0.43,
+        "stoch_rsi": 72.67,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.5,
+        "momentum": -0.5,
         "strength": 0.5,
-        "volatility": -0.75,
+        "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.193857,
-        "atr_stop_short": 0.270143,
-        "atr_target_1r": 0.270143,
-        "atr_target_2r": 0.308286,
-        "pivot": 0.228667,
-        "r1": 0.239333,
-        "s1": 0.222333
+        "atr_stop_long": 0.206,
+        "atr_stop_short": 0.28,
+        "atr_target_1r": 0.28,
+        "atr_target_2r": 0.317,
+        "pivot": 0.234333,
+        "r1": 0.237667,
+        "s1": 0.230667
       },
       "moving_averages": {
-        "ema20": 0.27022,
-        "ema50": 0.31733,
-        "ema200": 0.368597,
-        "vwap20": 0.275404
+        "ema20": 0.2678,
+        "ema50": 0.31449,
+        "ema200": 0.367307,
+        "vwap20": 0.272714
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1319,18 +1319,18 @@
         "score": 0.0
       },
       "price": {
-        "close": 3.0505,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": -3.36,
-        "range_position": 0.339
+        "close": 3.0843,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": -9.1,
+        "range_position": 0.347
       },
       "indicators": {
-        "rsi14": 40.13,
-        "macd_hist": 0.0226,
-        "adx14": 40.16,
-        "atr_pct": 10.47,
-        "bb_width": 0.3465,
-        "rvol": 0.33,
+        "rsi14": 40.64,
+        "macd_hist": 0.0341,
+        "adx14": 40.31,
+        "atr_pct": 9.93,
+        "bb_width": 0.3225,
+        "rvol": 0.16,
         "stoch_rsi": 100.0,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
@@ -1345,24 +1345,24 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 2.412,
-        "atr_stop_short": 3.689,
-        "atr_target_1r": 3.689,
-        "atr_target_2r": 4.3275,
-        "pivot": 2.9368,
-        "r1": 3.1642,
-        "s1": 2.8226
+        "atr_stop_long": 2.4719,
+        "atr_stop_short": 3.6967,
+        "atr_target_1r": 3.6967,
+        "atr_target_2r": 4.309,
+        "pivot": 3.0466,
+        "r1": 3.1332,
+        "s1": 2.96
       },
       "moving_averages": {
-        "ema20": 3.2844,
-        "ema50": 3.6562,
-        "ema200": 3.023,
-        "vwap20": 3.2417
+        "ema20": 3.265,
+        "ema50": 3.6336,
+        "ema200": 3.0233,
+        "vwap20": 3.2236
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1371,56 +1371,56 @@
     {
       "symbol": "ALGO-USD",
       "signal": "NEUTRAL",
-      "composite_score": -14.83,
+      "composite_score": -8.0,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 0.07952,
-        "change_pct_1d": 0.02,
-        "change_pct_10d": -0.01,
-        "range_position": 0.054
+        "close": 0.0822,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": 2.53,
+        "range_position": 0.092
       },
       "indicators": {
-        "rsi14": 37.84,
-        "macd_hist": 0.0008,
-        "adx14": 40.9,
-        "atr_pct": 7.9,
-        "bb_width": 0.3177,
-        "rvol": 0.39,
+        "rsi14": 45.6,
+        "macd_hist": 0.0012,
+        "adx14": 40.48,
+        "atr_pct": 7.58,
+        "bb_width": 0.2806,
+        "rvol": 0.13,
         "stoch_rsi": 100.0,
-        "mom_divergence": 0.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -2.5,
-        "momentum": 0.25,
+        "momentum": 0.75,
         "strength": 1.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
         "pivot": 0.5,
-        "volume": -0.5
+        "volume": 0.0
       },
       "levels": {
-        "atr_stop_long": 0.066963,
-        "atr_stop_short": 0.092077,
-        "atr_target_1r": 0.092077,
-        "atr_target_2r": 0.104634,
-        "pivot": 0.077423,
-        "r1": 0.080117,
-        "s1": 0.075457
+        "atr_stop_long": 0.069733,
+        "atr_stop_short": 0.094667,
+        "atr_target_1r": 0.094667,
+        "atr_target_2r": 0.107134,
+        "pivot": 0.08065,
+        "r1": 0.08333,
+        "s1": 0.07911
       },
       "moving_averages": {
-        "ema20": 0.082637,
-        "ema50": 0.091678,
-        "ema200": 0.100618,
-        "vwap20": 0.080287
+        "ema20": 0.082791,
+        "ema50": 0.091392,
+        "ema200": 0.100465,
+        "vwap20": 0.080165
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1429,56 +1429,56 @@
     {
       "symbol": "APT-USD",
       "signal": "SHORT",
-      "composite_score": -51.92,
+      "composite_score": -38.67,
       "confidence": {
         "level": "LOW",
-        "score": 0.325
+        "score": 0.25
       },
       "price": {
-        "close": 0.3786,
+        "close": 0.3911,
         "change_pct_1d": 0.02,
-        "change_pct_10d": -16.15,
-        "range_position": -0.214
+        "change_pct_10d": -13.84,
+        "range_position": -0.193
       },
       "indicators": {
-        "rsi14": 14.1,
-        "macd_hist": -0.0005,
-        "adx14": 77.01,
-        "atr_pct": 9.67,
-        "bb_width": 0.7449,
-        "rvol": 1.01,
-        "stoch_rsi": 37.29,
+        "rsi14": 19.75,
+        "macd_hist": 0.0029,
+        "adx14": 76.93,
+        "atr_pct": 9.05,
+        "bb_width": 0.7138,
+        "rvol": 0.47,
+        "stoch_rsi": 88.0,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.5,
+        "momentum": -0.25,
         "strength": 0.5,
         "volatility": -0.75,
         "fibonacci": -0.25,
         "pivot": 0.5,
-        "volume": -0.25
+        "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.305414,
-        "atr_stop_short": 0.451786,
-        "atr_target_1r": 0.451786,
-        "atr_target_2r": 0.524971,
-        "pivot": 0.366267,
-        "r1": 0.383133,
-        "s1": 0.354733
+        "atr_stop_long": 0.320286,
+        "atr_stop_short": 0.461914,
+        "atr_target_1r": 0.461914,
+        "atr_target_2r": 0.532729,
+        "pivot": 0.3821,
+        "r1": 0.3916,
+        "s1": 0.3737
       },
       "moving_averages": {
-        "ema20": 0.455603,
-        "ema50": 0.562509,
-        "ema200": 0.795393,
-        "vwap20": 0.454112
+        "ema20": 0.449856,
+        "ema50": 0.55596,
+        "ema200": 0.791325,
+        "vwap20": 0.442441
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1493,19 +1493,19 @@
         "score": 0.0
       },
       "price": {
-        "close": 2.007,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -19.43,
-        "range_position": 0.006
+        "close": 2.033,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": -11.49,
+        "range_position": 0.022
       },
       "indicators": {
-        "rsi14": 31.84,
-        "macd_hist": -0.0103,
-        "adx14": 16.32,
-        "atr_pct": 9.8,
-        "bb_width": 0.3977,
-        "rvol": 0.16,
-        "stoch_rsi": 1.74,
+        "rsi14": 34.3,
+        "macd_hist": -0.0029,
+        "adx14": 16.26,
+        "atr_pct": 9.41,
+        "bb_width": 0.4007,
+        "rvol": 0.23,
+        "stoch_rsi": 14.04,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1519,24 +1519,24 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 1.6134,
-        "atr_stop_short": 2.4006,
-        "atr_target_1r": 2.4006,
-        "atr_target_2r": 2.7941,
-        "pivot": 1.9913,
-        "r1": 2.0727,
-        "s1": 1.9347
+        "atr_stop_long": 1.6504,
+        "atr_stop_short": 2.4156,
+        "atr_target_1r": 2.4156,
+        "atr_target_2r": 2.7981,
+        "pivot": 2.0053,
+        "r1": 2.0547,
+        "s1": 1.9677
       },
       "moving_averages": {
-        "ema20": 2.2095,
-        "ema50": 2.4504,
-        "ema200": 2.6357,
-        "vwap20": 2.2396
+        "ema20": 2.1936,
+        "ema50": 2.4344,
+        "ema200": 2.6293,
+        "vwap20": 2.2302
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1544,32 +1544,32 @@
     },
     {
       "symbol": "FIL-USD",
-      "signal": "SHORT",
-      "composite_score": -40.33,
+      "signal": "NEUTRAL",
+      "composite_score": -29.67,
       "confidence": {
         "level": "LOW",
-        "score": 0.259
+        "score": 0.0
       },
       "price": {
-        "close": 0.543,
-        "change_pct_1d": -0.01,
-        "change_pct_10d": -10.25,
-        "range_position": -0.101
+        "close": 0.548,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -9.87,
+        "range_position": -0.093
       },
       "indicators": {
-        "rsi14": 17.53,
-        "macd_hist": 0.0032,
-        "adx14": 82.93,
-        "atr_pct": 8.75,
-        "bb_width": 0.6046,
-        "rvol": 0.3,
-        "stoch_rsi": 65.3,
+        "rsi14": 22.34,
+        "macd_hist": 0.0057,
+        "adx14": 81.85,
+        "atr_pct": 8.34,
+        "bb_width": 0.5805,
+        "rvol": 0.49,
+        "stoch_rsi": 100.0,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
-        "trend": -3.5,
-        "momentum": -0.5,
+        "trend": -2.5,
+        "momentum": -0.25,
         "strength": 0.5,
         "volatility": -0.75,
         "fibonacci": -0.25,
@@ -1577,24 +1577,24 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.448,
-        "atr_stop_short": 0.638,
-        "atr_target_1r": 0.638,
-        "atr_target_2r": 0.733,
-        "pivot": 0.534667,
-        "r1": 0.565333,
-        "s1": 0.517333
+        "atr_stop_long": 0.456571,
+        "atr_stop_short": 0.639429,
+        "atr_target_1r": 0.639429,
+        "atr_target_2r": 0.730857,
+        "pivot": 0.543,
+        "r1": 0.552,
+        "s1": 0.528
       },
       "moving_averages": {
-        "ema20": 0.629803,
-        "ema50": 0.759443,
-        "ema200": 0.893973,
-        "vwap20": 0.606015
+        "ema20": 0.621495,
+        "ema50": 0.750925,
+        "ema200": 0.890277,
+        "vwap20": 0.599464
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1602,32 +1602,32 @@
     },
     {
       "symbol": "HBAR-USD",
-      "signal": "SHORT",
-      "composite_score": -30.83,
+      "signal": "NEUTRAL",
+      "composite_score": -18.5,
       "confidence": {
-        "level": "MEDIUM",
-        "score": 0.355
+        "level": "LOW",
+        "score": 0.0
       },
       "price": {
-        "close": 0.05337,
+        "close": 0.0555,
         "change_pct_1d": 0.03,
-        "change_pct_10d": -6.97,
-        "range_position": -0.163
+        "change_pct_10d": -4.87,
+        "range_position": -0.131
       },
       "indicators": {
-        "rsi14": 30.38,
-        "macd_hist": 0.0003,
-        "adx14": 49.34,
-        "atr_pct": 7.05,
-        "bb_width": 0.41,
-        "rvol": 0.2,
+        "rsi14": 38.6,
+        "macd_hist": 0.0006,
+        "adx14": 49.76,
+        "atr_pct": 6.71,
+        "bb_width": 0.3859,
+        "rvol": 0.16,
         "stoch_rsi": 100.0,
-        "mom_divergence": 0.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
-        "trend": -3.5,
-        "momentum": 0.25,
+        "trend": -2.5,
+        "momentum": 0.75,
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
@@ -1635,24 +1635,24 @@
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.045846,
-        "atr_stop_short": 0.060894,
-        "atr_target_1r": 0.060894,
-        "atr_target_2r": 0.068419,
-        "pivot": 0.05091,
-        "r1": 0.0533,
-        "s1": 0.04963
+        "atr_stop_long": 0.048047,
+        "atr_stop_short": 0.062953,
+        "atr_target_1r": 0.062953,
+        "atr_target_2r": 0.070406,
+        "pivot": 0.05375,
+        "r1": 0.0554,
+        "s1": 0.05227
       },
       "moving_averages": {
-        "ema20": 0.057863,
-        "ema50": 0.067306,
-        "ema200": 0.080887,
-        "vwap20": 0.057847
+        "ema20": 0.057685,
+        "ema50": 0.066863,
+        "ema200": 0.08064,
+        "vwap20": 0.057472
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "B",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1661,25 +1661,25 @@
     {
       "symbol": "TRX-USD",
       "signal": "SHORT",
-      "composite_score": -34.67,
+      "composite_score": -32.17,
       "confidence": {
-        "level": "MEDIUM",
-        "score": 0.377
+        "level": "LOW",
+        "score": 0.312
       },
       "price": {
-        "close": 0.303685,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -0.4,
-        "range_position": -0.085
+        "close": 0.305079,
+        "change_pct_1d": 0.0,
+        "change_pct_10d": -0.94,
+        "range_position": -0.067
       },
       "indicators": {
-        "rsi14": 34.73,
-        "macd_hist": 0.0003,
-        "adx14": 46.73,
-        "atr_pct": 1.85,
-        "bb_width": 0.074,
-        "rvol": 0.22,
-        "stoch_rsi": 44.99,
+        "rsi14": 40.81,
+        "macd_hist": 0.0004,
+        "adx14": 44.4,
+        "atr_pct": 1.8,
+        "bb_width": 0.0692,
+        "rvol": 0.16,
+        "stoch_rsi": 61.84,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
@@ -1689,28 +1689,28 @@
         "strength": 0.5,
         "volatility": 0.5,
         "fibonacci": -0.25,
-        "pivot": -0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.292477,
-        "atr_stop_short": 0.314893,
-        "atr_target_1r": 0.314893,
-        "atr_target_2r": 0.326102,
-        "pivot": 0.304895,
-        "r1": 0.307668,
-        "s1": 0.300937
+        "atr_stop_long": 0.294109,
+        "atr_stop_short": 0.316049,
+        "atr_target_1r": 0.316049,
+        "atr_target_2r": 0.32702,
+        "pivot": 0.303227,
+        "r1": 0.30504,
+        "s1": 0.301847
       },
       "moving_averages": {
-        "ema20": 0.310023,
-        "ema50": 0.318193,
-        "ema200": 0.324641,
-        "vwap20": 0.309643
+        "ema20": 0.30955,
+        "ema50": 0.317678,
+        "ema200": 0.324441,
+        "vwap20": 0.309185
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1719,56 +1719,56 @@
     {
       "symbol": "ETC-USD",
       "signal": "NEUTRAL",
-      "composite_score": -17.08,
+      "composite_score": -17.5,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 5.924,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": 0.77,
-        "range_position": -0.023
+        "close": 5.996,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -0.45,
+        "range_position": -0.006
       },
       "indicators": {
-        "rsi14": 36.68,
-        "macd_hist": 0.0486,
-        "adx14": 63.76,
-        "atr_pct": 6.63,
-        "bb_width": 0.2973,
-        "rvol": 3.06,
-        "stoch_rsi": 97.11,
-        "mom_divergence": 0.0,
+        "rsi14": 41.57,
+        "macd_hist": 0.066,
+        "adx14": 61.89,
+        "atr_pct": 6.34,
+        "bb_width": 0.273,
+        "rvol": 0.21,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -2.5,
-        "momentum": 0.25,
+        "momentum": 0.75,
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": 0.25
+        "pivot": -0.5,
+        "volume": 0.0
       },
       "levels": {
-        "atr_stop_long": 5.1387,
-        "atr_stop_short": 6.7093,
-        "atr_target_1r": 6.7093,
-        "atr_target_2r": 7.4946,
-        "pivot": 5.7633,
-        "r1": 5.9907,
-        "s1": 5.6477
+        "atr_stop_long": 5.2351,
+        "atr_stop_short": 6.7569,
+        "atr_target_1r": 6.7569,
+        "atr_target_2r": 7.5177,
+        "pivot": 6.123,
+        "r1": 6.395,
+        "s1": 5.632
       },
       "moving_averages": {
-        "ema20": 6.1362,
-        "ema50": 6.7992,
-        "ema200": 7.8575,
-        "vwap20": 5.9713
+        "ema20": 6.1212,
+        "ema50": 6.7669,
+        "ema200": 7.8378,
+        "vwap20": 5.9672
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1777,25 +1777,25 @@
     {
       "symbol": "ARB-USD",
       "signal": "SHORT",
-      "composite_score": -53.67,
+      "composite_score": -53.17,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.535
+        "score": 0.532
       },
       "price": {
-        "close": 0.1144,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -12.8,
-        "range_position": 0.238
+        "close": 0.1173,
+        "change_pct_1d": 0.04,
+        "change_pct_10d": -12.2,
+        "range_position": 0.254
       },
       "indicators": {
-        "rsi14": 21.93,
-        "macd_hist": -0.0009,
-        "adx14": 46.5,
-        "atr_pct": 8.46,
-        "bb_width": 0.6332,
-        "rvol": 0.45,
-        "stoch_rsi": 37.5,
+        "rsi14": 27.55,
+        "macd_hist": -0.0002,
+        "adx14": 49.36,
+        "atr_pct": 8.3,
+        "bb_width": 0.6076,
+        "rvol": 0.26,
+        "stoch_rsi": 61.48,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -1805,28 +1805,28 @@
         "strength": 0.5,
         "volatility": -0.75,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.095043,
-        "atr_stop_short": 0.133757,
-        "atr_target_1r": 0.133757,
-        "atr_target_2r": 0.153114,
-        "pivot": 0.110233,
-        "r1": 0.115767,
-        "s1": 0.107467
+        "atr_stop_long": 0.097829,
+        "atr_stop_short": 0.136771,
+        "atr_target_1r": 0.136771,
+        "atr_target_2r": 0.156243,
+        "pivot": 0.113133,
+        "r1": 0.116367,
+        "s1": 0.109867
       },
       "moving_averages": {
-        "ema20": 0.130321,
-        "ema50": 0.148232,
-        "ema200": 0.145426,
-        "vwap20": 0.136968
+        "ema20": 0.128969,
+        "ema50": 0.14697,
+        "ema200": 0.145126,
+        "vwap20": 0.135565
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1835,56 +1835,56 @@
     {
       "symbol": "OP-USD",
       "signal": "SHORT",
-      "composite_score": -55.33,
+      "composite_score": -34.17,
       "confidence": {
         "level": "LOW",
-        "score": 0.345
+        "score": 0.224
       },
       "price": {
-        "close": 0.0686,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -13.38,
-        "range_position": -0.15
+        "close": 0.0719,
+        "change_pct_1d": 0.04,
+        "change_pct_10d": -8.64,
+        "range_position": -0.109
       },
       "indicators": {
-        "rsi14": 9.01,
-        "macd_hist": -0.0002,
-        "adx14": 82.93,
-        "atr_pct": 8.59,
-        "bb_width": 0.6115,
-        "rvol": 0.2,
-        "stoch_rsi": 15.66,
+        "rsi14": 18.54,
+        "macd_hist": 0.0004,
+        "adx14": 82.54,
+        "atr_pct": 7.89,
+        "bb_width": 0.5846,
+        "rvol": 0.35,
+        "stoch_rsi": 84.3,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.75,
+        "momentum": -0.25,
         "strength": 0.5,
-        "volatility": -0.75,
+        "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.056814,
-        "atr_stop_short": 0.080386,
-        "atr_target_1r": 0.080386,
-        "atr_target_2r": 0.092171,
-        "pivot": 0.067967,
-        "r1": 0.070733,
-        "s1": 0.066133
+        "atr_stop_long": 0.060557,
+        "atr_stop_short": 0.083243,
+        "atr_target_1r": 0.083243,
+        "atr_target_2r": 0.094586,
+        "pivot": 0.069433,
+        "r1": 0.070667,
+        "s1": 0.068067
       },
       "moving_averages": {
-        "ema20": 0.081215,
-        "ema50": 0.096546,
-        "ema200": 0.127244,
-        "vwap20": 0.082606
+        "ema20": 0.080388,
+        "ema50": 0.095606,
+        "ema200": 0.126706,
+        "vwap20": 0.081581
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1892,57 +1892,57 @@
     },
     {
       "symbol": "POL-USD",
-      "signal": "SHORT",
-      "composite_score": -51.33,
+      "signal": "NEUTRAL",
+      "composite_score": -26.0,
       "confidence": {
-        "level": "MEDIUM",
-        "score": 0.522
+        "level": "LOW",
+        "score": 0.0
       },
       "price": {
-        "close": 0.07587,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -4.22,
-        "range_position": 0.139
+        "close": 0.07839,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": -5.55,
+        "range_position": 0.181
       },
       "indicators": {
-        "rsi14": 28.62,
-        "macd_hist": -0.0002,
-        "adx14": 48.11,
-        "atr_pct": 5.65,
-        "bb_width": 0.2626,
-        "rvol": 0.14,
-        "stoch_rsi": 17.24,
-        "mom_divergence": 0.0,
+        "rsi14": 38.54,
+        "macd_hist": 0.0002,
+        "adx14": 49.45,
+        "atr_pct": 5.25,
+        "bb_width": 0.2408,
+        "rvol": 0.19,
+        "stoch_rsi": 99.37,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.75,
+        "momentum": 0.75,
         "strength": 0.5,
-        "volatility": -0.25,
+        "volatility": 0.0,
         "fibonacci": -0.25,
         "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.067294,
-        "atr_stop_short": 0.084446,
-        "atr_target_1r": 0.084446,
-        "atr_target_2r": 0.093021,
-        "pivot": 0.075393,
-        "r1": 0.077837,
-        "s1": 0.073807
+        "atr_stop_long": 0.070153,
+        "atr_stop_short": 0.086627,
+        "atr_target_1r": 0.086627,
+        "atr_target_2r": 0.094864,
+        "pivot": 0.076973,
+        "r1": 0.078477,
+        "s1": 0.075867
       },
       "moving_averages": {
-        "ema20": 0.081005,
-        "ema50": 0.087369,
-        "ema200": 0.094949,
-        "vwap20": 0.080964
+        "ema20": 0.080885,
+        "ema50": 0.087073,
+        "ema200": 0.094789,
+        "vwap20": 0.080538
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -1951,56 +1951,56 @@
     {
       "symbol": "INJ-USD",
       "signal": "NEUTRAL",
-      "composite_score": -50.33,
+      "composite_score": -30.33,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 6.124,
-        "change_pct_1d": 0.03,
-        "change_pct_10d": -11.22,
-        "range_position": 0.391
+        "close": 6.434,
+        "change_pct_1d": 0.04,
+        "change_pct_10d": -13.35,
+        "range_position": 0.447
       },
       "indicators": {
-        "rsi14": 37.48,
-        "macd_hist": -0.1118,
-        "adx14": 14.69,
-        "atr_pct": 12.17,
-        "bb_width": 0.4638,
-        "rvol": 0.27,
-        "stoch_rsi": 25.78,
+        "rsi14": 33.83,
+        "macd_hist": -0.0631,
+        "adx14": 12.62,
+        "atr_pct": 10.64,
+        "bb_width": 0.442,
+        "rvol": 0.19,
+        "stoch_rsi": 23.73,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
-        "trend": -3.5,
+        "trend": -0.5,
         "momentum": -2.0,
-        "strength": 0.0,
+        "strength": -1.0,
         "volatility": -0.75,
         "fibonacci": 1.0,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 4.6337,
-        "atr_stop_short": 7.6143,
-        "atr_target_1r": 7.6143,
-        "atr_target_2r": 9.1046,
-        "pivot": 5.8563,
-        "r1": 6.1627,
-        "s1": 5.6437
+        "atr_stop_long": 5.0643,
+        "atr_stop_short": 7.8037,
+        "atr_target_1r": 7.8037,
+        "atr_target_2r": 9.1734,
+        "pivot": 6.1527,
+        "r1": 6.3563,
+        "s1": 5.9793
       },
       "moving_averages": {
-        "ema20": 6.7816,
-        "ema50": 7.127,
-        "ema200": 6.3188,
-        "vwap20": 7.0192
+        "ema20": 6.7536,
+        "ema50": 7.1021,
+        "ema200": 6.3197,
+        "vwap20": 6.982
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -2008,57 +2008,57 @@
     },
     {
       "symbol": "TIA-USD",
-      "signal": "SHORT",
-      "composite_score": -31.25,
+      "signal": "NEUTRAL",
+      "composite_score": -19.0,
       "confidence": {
-        "level": "MEDIUM",
-        "score": 0.407
+        "level": "LOW",
+        "score": 0.0
       },
       "price": {
-        "close": 0.3404,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -3.81,
-        "range_position": 0.128
+        "close": 0.3458,
+        "change_pct_1d": 0.03,
+        "change_pct_10d": -3.65,
+        "range_position": 0.139
       },
       "indicators": {
-        "rsi14": 25.11,
-        "macd_hist": 0.0022,
-        "adx14": 76.33,
-        "atr_pct": 9.03,
-        "bb_width": 0.4572,
-        "rvol": 0.6,
-        "stoch_rsi": 0.0,
-        "mom_divergence": 0.0,
+        "rsi14": 36.9,
+        "macd_hist": 0.0037,
+        "adx14": 74.24,
+        "atr_pct": 7.86,
+        "bb_width": 0.4271,
+        "rvol": 0.1,
+        "stoch_rsi": 96.29,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -2.5,
-        "momentum": -0.75,
+        "momentum": 0.75,
         "strength": 0.5,
-        "volatility": -0.75,
+        "volatility": -0.25,
         "fibonacci": -0.25,
         "pivot": 0.5,
-        "volume": -0.25
+        "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.2789,
-        "atr_stop_short": 0.4019,
-        "atr_target_1r": 0.4019,
-        "atr_target_2r": 0.4634,
-        "pivot": 0.326,
-        "r1": 0.3464,
-        "s1": 0.3154
+        "atr_stop_long": 0.291443,
+        "atr_stop_short": 0.400157,
+        "atr_target_1r": 0.400157,
+        "atr_target_2r": 0.454514,
+        "pivot": 0.343033,
+        "r1": 0.352467,
+        "s1": 0.326667
       },
       "moving_averages": {
-        "ema20": 0.369679,
-        "ema50": 0.418041,
-        "ema200": 0.449596,
-        "vwap20": 0.372709
+        "ema20": 0.367035,
+        "ema50": 0.415046,
+        "ema200": 0.448242,
+        "vwap20": 0.368996
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -2067,56 +2067,56 @@
     {
       "symbol": "GRT-USD",
       "signal": "NEUTRAL",
-      "composite_score": -9.5,
+      "composite_score": -17.0,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 0.01642,
-        "change_pct_1d": -0.0,
-        "change_pct_10d": -1.32,
-        "range_position": 0.143
+        "close": 0.01686,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": -4.8,
+        "range_position": 0.162
       },
       "indicators": {
-        "rsi14": 42.91,
+        "rsi14": 47.01,
         "macd_hist": 0.0002,
-        "adx14": 31.78,
-        "atr_pct": 7.36,
-        "bb_width": 0.2129,
-        "rvol": 0.17,
-        "stoch_rsi": 99.04,
+        "adx14": 29.93,
+        "atr_pct": 6.79,
+        "bb_width": 0.1808,
+        "rvol": 0.13,
+        "stoch_rsi": 100.0,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -2.5,
         "momentum": 0.75,
-        "strength": 1.5,
+        "strength": 0.5,
         "volatility": 0.0,
         "fibonacci": -0.25,
         "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.014001,
-        "atr_stop_short": 0.018839,
-        "atr_target_1r": 0.018839,
-        "atr_target_2r": 0.021257,
-        "pivot": 0.01614,
-        "r1": 0.01686,
-        "s1": 0.01574
+        "atr_stop_long": 0.014571,
+        "atr_stop_short": 0.019149,
+        "atr_target_1r": 0.019149,
+        "atr_target_2r": 0.021437,
+        "pivot": 0.016523,
+        "r1": 0.016887,
+        "s1": 0.016287
       },
       "moving_averages": {
-        "ema20": 0.017328,
-        "ema50": 0.019412,
-        "ema200": 0.022932,
-        "vwap20": 0.01696
+        "ema20": 0.017303,
+        "ema50": 0.01932,
+        "ema200": 0.022865,
+        "vwap20": 0.016898
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -2125,56 +2125,56 @@
     {
       "symbol": "RENDER-USD",
       "signal": "SHORT",
-      "composite_score": -50.33,
+      "composite_score": -32.5,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.516
+        "score": 0.364
       },
       "price": {
-        "close": 1.304,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -5.3,
-        "range_position": 0.079
+        "close": 1.361,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -8.23,
+        "range_position": 0.136
       },
       "indicators": {
-        "rsi14": 34.95,
-        "macd_hist": -0.0018,
-        "adx14": 30.3,
-        "atr_pct": 8.41,
-        "bb_width": 0.3246,
-        "rvol": 0.18,
-        "stoch_rsi": 29.5,
+        "rsi14": 38.77,
+        "macd_hist": 0.0056,
+        "adx14": 31.51,
+        "atr_pct": 7.73,
+        "bb_width": 0.3116,
+        "rvol": 0.16,
+        "stoch_rsi": 47.74,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.0,
+        "momentum": 0.0,
         "strength": 0.5,
-        "volatility": -0.75,
+        "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 1.0847,
-        "atr_stop_short": 1.5233,
-        "atr_target_1r": 1.5233,
-        "atr_target_2r": 1.7426,
-        "pivot": 1.267,
-        "r1": 1.325,
-        "s1": 1.238
+        "atr_stop_long": 1.1507,
+        "atr_stop_short": 1.5713,
+        "atr_target_1r": 1.5713,
+        "atr_target_2r": 1.7816,
+        "pivot": 1.3217,
+        "r1": 1.3473,
+        "s1": 1.3023
       },
       "moving_averages": {
-        "ema20": 1.4051,
-        "ema50": 1.5357,
-        "ema200": 1.6631,
-        "vwap20": 1.399
+        "ema20": 1.403,
+        "ema50": 1.5298,
+        "ema200": 1.6601,
+        "vwap20": 1.3935
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -2182,26 +2182,316 @@
     },
     {
       "symbol": "FET-USD",
-      "signal": "SHORT",
-      "composite_score": -53.67,
+      "signal": "NEUTRAL",
+      "composite_score": -26.33,
       "confidence": {
         "level": "LOW",
-        "score": 0.335
+        "score": 0.0
       },
       "price": {
-        "close": 0.1114,
-        "change_pct_1d": 0.03,
-        "change_pct_10d": -15.61,
-        "range_position": -0.05
+        "close": 0.1249,
+        "change_pct_1d": 0.04,
+        "change_pct_10d": -6.16,
+        "range_position": 0.037
       },
       "indicators": {
-        "rsi14": 18.71,
-        "macd_hist": -0.0003,
-        "adx14": 50.26,
-        "atr_pct": 9.28,
-        "bb_width": 0.4862,
-        "rvol": 0.27,
-        "stoch_rsi": 20.37,
+        "rsi14": 34.03,
+        "macd_hist": 0.0015,
+        "adx14": 49.65,
+        "atr_pct": 8.48,
+        "bb_width": 0.4608,
+        "rvol": 0.4,
+        "stoch_rsi": 94.43,
+        "mom_divergence": 0.0,
+        "weekly_trend": "BEARISH"
+      },
+      "subscores": {
+        "trend": -2.5,
+        "momentum": 0.25,
+        "strength": 0.5,
+        "volatility": -0.75,
+        "fibonacci": -0.25,
+        "pivot": 0.5,
+        "volume": -0.5
+      },
+      "levels": {
+        "atr_stop_long": 0.103729,
+        "atr_stop_short": 0.146071,
+        "atr_target_1r": 0.146071,
+        "atr_target_2r": 0.167243,
+        "pivot": 0.117,
+        "r1": 0.1255,
+        "s1": 0.1121
+      },
+      "moving_averages": {
+        "ema20": 0.127824,
+        "ema50": 0.150569,
+        "ema200": 0.18483,
+        "vwap20": 0.126133
+      },
+      "meta": {
+        "data_source": "Kraken API",
+        "quality_grade": "A",
+        "date": "2026-11-27",
+        "bar_complete": false,
+        "bar_age_days": 0,
+        "stale": false
+      }
+    },
+    {
+      "symbol": "ZEC-USD",
+      "signal": "NEUTRAL",
+      "composite_score": -43.58,
+      "confidence": {
+        "level": "LOW",
+        "score": 0.0
+      },
+      "price": {
+        "close": 741.0,
+        "change_pct_1d": 0.09,
+        "change_pct_10d": -23.37,
+        "range_position": 0.34
+      },
+      "indicators": {
+        "rsi14": 35.92,
+        "macd_hist": -9.1631,
+        "adx14": 57.21,
+        "atr_pct": 13.73,
+        "bb_width": 0.6326,
+        "rvol": 0.53,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
+        "weekly_trend": "BEARISH"
+      },
+      "subscores": {
+        "trend": -3.5,
+        "momentum": -1.25,
+        "strength": 0.5,
+        "volatility": -0.75,
+        "fibonacci": -0.25,
+        "pivot": 0.5,
+        "volume": -0.25
+      },
+      "levels": {
+        "atr_stop_long": 537.5357,
+        "atr_stop_short": 944.4643,
+        "atr_target_1r": 944.4643,
+        "atr_target_2r": 1147.9286,
+        "pivot": 710.48,
+        "r1": 758.96,
+        "s1": 633.41
+      },
+      "moving_averages": {
+        "ema20": 881.4195,
+        "ema50": 1021.0604,
+        "ema200": 865.8532,
+        "vwap20": 869.3109
+      },
+      "meta": {
+        "data_source": "Kraken API",
+        "quality_grade": "A",
+        "date": "2026-11-27",
+        "bar_complete": false,
+        "bar_age_days": 0,
+        "stale": false
+      }
+    },
+    {
+      "symbol": "DASH-USD",
+      "signal": "NEUTRAL",
+      "composite_score": -19.0,
+      "confidence": {
+        "level": "LOW",
+        "score": 0.0
+      },
+      "price": {
+        "close": 36.555,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -5.37,
+        "range_position": 0.143
+      },
+      "indicators": {
+        "rsi14": 38.47,
+        "macd_hist": 0.3312,
+        "adx14": 69.88,
+        "atr_pct": 7.91,
+        "bb_width": 0.3979,
+        "rvol": 0.09,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
+        "weekly_trend": "BEARISH"
+      },
+      "subscores": {
+        "trend": -2.5,
+        "momentum": 0.75,
+        "strength": 0.5,
+        "volatility": -0.25,
+        "fibonacci": -0.25,
+        "pivot": 0.5,
+        "volume": -0.5
+      },
+      "levels": {
+        "atr_stop_long": 30.7726,
+        "atr_stop_short": 42.3374,
+        "atr_target_1r": 42.3374,
+        "atr_target_2r": 48.1199,
+        "pivot": 35.87,
+        "r1": 36.863,
+        "s1": 34.888
+      },
+      "moving_averages": {
+        "ema20": 38.4578,
+        "ema50": 43.4776,
+        "ema200": 44.0321,
+        "vwap20": 37.5254
+      },
+      "meta": {
+        "data_source": "Kraken API",
+        "quality_grade": "A",
+        "date": "2026-11-27",
+        "bar_complete": false,
+        "bar_age_days": 0,
+        "stale": false
+      }
+    },
+    {
+      "symbol": "DOGE-USD",
+      "signal": "NEUTRAL",
+      "composite_score": -18.5,
+      "confidence": {
+        "level": "LOW",
+        "score": 0.0
+      },
+      "price": {
+        "close": 0.05811,
+        "change_pct_1d": 0.03,
+        "change_pct_10d": -3.27,
+        "range_position": -0.238
+      },
+      "indicators": {
+        "rsi14": 36.57,
+        "macd_hist": 0.0005,
+        "adx14": 77.54,
+        "atr_pct": 6.5,
+        "bb_width": 0.3468,
+        "rvol": 0.3,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
+        "weekly_trend": "BEARISH"
+      },
+      "subscores": {
+        "trend": -2.5,
+        "momentum": 0.75,
+        "strength": 0.5,
+        "volatility": -0.25,
+        "fibonacci": -0.25,
+        "pivot": 0.75,
+        "volume": -0.5
+      },
+      "levels": {
+        "atr_stop_long": 0.050561,
+        "atr_stop_short": 0.06566,
+        "atr_target_1r": 0.06566,
+        "atr_target_2r": 0.07321,
+        "pivot": 0.056458,
+        "r1": 0.057157,
+        "s1": 0.055705
+      },
+      "moving_averages": {
+        "ema20": 0.060649,
+        "ema50": 0.068903,
+        "ema200": 0.084188,
+        "vwap20": 0.059763
+      },
+      "meta": {
+        "data_source": "Kraken API",
+        "quality_grade": "A",
+        "date": "2026-11-27",
+        "bar_complete": false,
+        "bar_age_days": 0,
+        "stale": false
+      }
+    },
+    {
+      "symbol": "SHIB-USD",
+      "signal": "SHORT",
+      "composite_score": -30.83,
+      "confidence": {
+        "level": "MEDIUM",
+        "score": 0.355
+      },
+      "price": {
+        "close": 3.695e-06,
+        "change_pct_1d": 0.02,
+        "change_pct_10d": -4.89,
+        "range_position": -0.159
+      },
+      "indicators": {
+        "rsi14": 29.49,
+        "macd_hist": 0.0,
+        "adx14": 69.05,
+        "atr_pct": 5.83,
+        "bb_width": 0.3363,
+        "rvol": 0.22,
+        "stoch_rsi": 100.0,
+        "mom_divergence": 1.0,
+        "weekly_trend": "BEARISH"
+      },
+      "subscores": {
+        "trend": -3.5,
+        "momentum": 0.25,
+        "strength": 0.5,
+        "volatility": -0.25,
+        "fibonacci": -0.25,
+        "pivot": 0.75,
+        "volume": -0.5
+      },
+      "levels": {
+        "atr_stop_long": 3.2639e-06,
+        "atr_stop_short": 4.1261e-06,
+        "atr_target_1r": 4.1261e-06,
+        "atr_target_2r": 4.5573e-06,
+        "pivot": 3.6247e-06,
+        "r1": 3.6633e-06,
+        "s1": 3.5843e-06
+      },
+      "moving_averages": {
+        "ema20": 3.9033e-06,
+        "ema50": 4.3754e-06,
+        "ema200": 5.1824e-06,
+        "vwap20": 3.8598e-06
+      },
+      "meta": {
+        "data_source": "Kraken API",
+        "quality_grade": "A",
+        "date": "2026-11-27",
+        "bar_complete": false,
+        "bar_age_days": 0,
+        "stale": false
+      }
+    },
+    {
+      "symbol": "PEPE-USD",
+      "signal": "SHORT",
+      "composite_score": -53.17,
+      "confidence": {
+        "level": "LOW",
+        "score": 0.332
+      },
+      "price": {
+        "close": 3.604e-06,
+        "change_pct_1d": 0.04,
+        "change_pct_10d": -5.65,
+        "range_position": 0.316
+      },
+      "indicators": {
+        "rsi14": 19.68,
+        "macd_hist": -0.0,
+        "adx14": 38.91,
+        "atr_pct": 8.87,
+        "bb_width": 0.625,
+        "rvol": 0.39,
+        "stoch_rsi": 50.61,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
@@ -2211,318 +2501,28 @@
         "strength": 0.5,
         "volatility": -0.75,
         "fibonacci": -0.25,
-        "pivot": 0.5,
+        "pivot": 0.75,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 0.090729,
-        "atr_stop_short": 0.132071,
-        "atr_target_1r": 0.132071,
-        "atr_target_2r": 0.152743,
-        "pivot": 0.106167,
-        "r1": 0.112233,
-        "s1": 0.102433
+        "atr_stop_long": 2.9646e-06,
+        "atr_stop_short": 4.2434e-06,
+        "atr_target_1r": 4.2434e-06,
+        "atr_target_2r": 4.8829e-06,
+        "pivot": 3.4763e-06,
+        "r1": 3.5837e-06,
+        "s1": 3.3657e-06
       },
       "moving_averages": {
-        "ema20": 0.127255,
-        "ema50": 0.151256,
-        "ema200": 0.185396,
-        "vwap20": 0.126651
+        "ema20": 3.8487e-06,
+        "ema50": 4.085e-06,
+        "ema200": 3.9548e-06,
+        "vwap20": 4.2495e-06
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
-        "bar_complete": false,
-        "bar_age_days": 0,
-        "stale": false
-      }
-    },
-    {
-      "symbol": "ZEC-USD",
-      "signal": "NEUTRAL",
-      "composite_score": -48.67,
-      "confidence": {
-        "level": "LOW",
-        "score": 0.0
-      },
-      "price": {
-        "close": 745.38,
-        "change_pct_1d": -0.03,
-        "change_pct_10d": -17.53,
-        "range_position": 0.343
-      },
-      "indicators": {
-        "rsi14": 31.9,
-        "macd_hist": -9.7568,
-        "adx14": 57.88,
-        "atr_pct": 13.13,
-        "bb_width": 0.6725,
-        "rvol": 0.26,
-        "stoch_rsi": 86.81,
-        "mom_divergence": 0.0,
-        "weekly_trend": "BEARISH"
-      },
-      "subscores": {
-        "trend": -3.5,
-        "momentum": -1.75,
-        "strength": 0.5,
-        "volatility": -0.75,
-        "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
-      },
-      "levels": {
-        "atr_stop_long": 549.7029,
-        "atr_stop_short": 941.0571,
-        "atr_target_1r": 941.0571,
-        "atr_target_2r": 1136.7343,
-        "pivot": 739.3333,
-        "r1": 805.3067,
-        "s1": 704.2567
-      },
-      "moving_averages": {
-        "ema20": 902.2472,
-        "ema50": 1034.9813,
-        "ema200": 867.7397,
-        "vwap20": 893.3778
-      },
-      "meta": {
-        "data_source": "Kraken API",
-        "quality_grade": "A",
-        "date": "2026-11-26",
-        "bar_complete": false,
-        "bar_age_days": 0,
-        "stale": false
-      }
-    },
-    {
-      "symbol": "DASH-USD",
-      "signal": "SHORT",
-      "composite_score": -35.33,
-      "confidence": {
-        "level": "MEDIUM",
-        "score": 0.38
-      },
-      "price": {
-        "close": 36.151,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -3.69,
-        "range_position": 0.136
-      },
-      "indicators": {
-        "rsi14": 36.8,
-        "macd_hist": 0.1924,
-        "adx14": 70.34,
-        "atr_pct": 8.34,
-        "bb_width": 0.4377,
-        "rvol": 0.42,
-        "stoch_rsi": 100.0,
-        "mom_divergence": 0.0,
-        "weekly_trend": "BEARISH"
-      },
-      "subscores": {
-        "trend": -3.5,
-        "momentum": 0.25,
-        "strength": 0.5,
-        "volatility": -0.75,
-        "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
-      },
-      "levels": {
-        "atr_stop_long": 30.124,
-        "atr_stop_short": 42.178,
-        "atr_target_1r": 42.178,
-        "atr_target_2r": 48.205,
-        "pivot": 34.8497,
-        "r1": 36.9643,
-        "s1": 33.7923
-      },
-      "moving_averages": {
-        "ema20": 38.6838,
-        "ema50": 43.7708,
-        "ema200": 44.1113,
-        "vwap20": 37.6822
-      },
-      "meta": {
-        "data_source": "Kraken API",
-        "quality_grade": "A",
-        "date": "2026-11-26",
-        "bar_complete": false,
-        "bar_age_days": 0,
-        "stale": false
-      }
-    },
-    {
-      "symbol": "DOGE-USD",
-      "signal": "NEUTRAL",
-      "composite_score": -22.33,
-      "confidence": {
-        "level": "LOW",
-        "score": 0.0
-      },
-      "price": {
-        "close": 0.056508,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -4.05,
-        "range_position": -0.28
-      },
-      "indicators": {
-        "rsi14": 29.36,
-        "macd_hist": 0.0002,
-        "adx14": 78.96,
-        "atr_pct": 6.87,
-        "bb_width": 0.3785,
-        "rvol": 0.19,
-        "stoch_rsi": 100.0,
-        "mom_divergence": 1.0,
-        "weekly_trend": "BEARISH"
-      },
-      "subscores": {
-        "trend": -2.5,
-        "momentum": 0.25,
-        "strength": 0.5,
-        "volatility": -0.25,
-        "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
-      },
-      "levels": {
-        "atr_stop_long": 0.048742,
-        "atr_stop_short": 0.064275,
-        "atr_target_1r": 0.064275,
-        "atr_target_2r": 0.072042,
-        "pivot": 0.05479,
-        "r1": 0.057466,
-        "s1": 0.053309
-      },
-      "moving_averages": {
-        "ema20": 0.060927,
-        "ema50": 0.069348,
-        "ema200": 0.084438,
-        "vwap20": 0.059938
-      },
-      "meta": {
-        "data_source": "Kraken API",
-        "quality_grade": "A",
-        "date": "2026-11-26",
-        "bar_complete": false,
-        "bar_age_days": 0,
-        "stale": false
-      }
-    },
-    {
-      "symbol": "SHIB-USD",
-      "signal": "SHORT",
-      "composite_score": -36.33,
-      "confidence": {
-        "level": "MEDIUM",
-        "score": 0.436
-      },
-      "price": {
-        "close": 3.623e-06,
-        "change_pct_1d": 0.01,
-        "change_pct_10d": -6.04,
-        "range_position": -0.191
-      },
-      "indicators": {
-        "rsi14": 23.49,
-        "macd_hist": 0.0,
-        "adx14": 68.3,
-        "atr_pct": 6.18,
-        "bb_width": 0.3532,
-        "rvol": 0.37,
-        "stoch_rsi": 63.44,
-        "mom_divergence": 0.0,
-        "weekly_trend": "BEARISH"
-      },
-      "subscores": {
-        "trend": -3.5,
-        "momentum": -0.5,
-        "strength": 0.5,
-        "volatility": -0.25,
-        "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
-      },
-      "levels": {
-        "atr_stop_long": 3.1751e-06,
-        "atr_stop_short": 4.0709e-06,
-        "atr_target_1r": 4.0709e-06,
-        "atr_target_2r": 4.5187e-06,
-        "pivot": 3.5227e-06,
-        "r1": 3.6593e-06,
-        "s1": 3.4503e-06
-      },
-      "moving_averages": {
-        "ema20": 3.9253e-06,
-        "ema50": 4.4031e-06,
-        "ema200": 5.1964e-06,
-        "vwap20": 3.8772e-06
-      },
-      "meta": {
-        "data_source": "Kraken API",
-        "quality_grade": "A",
-        "date": "2026-11-26",
-        "bar_complete": false,
-        "bar_age_days": 0,
-        "stale": false
-      }
-    },
-    {
-      "symbol": "PEPE-USD",
-      "signal": "SHORT",
-      "composite_score": -55.33,
-      "confidence": {
-        "level": "LOW",
-        "score": 0.345
-      },
-      "price": {
-        "close": 3.497e-06,
-        "change_pct_1d": 0.0,
-        "change_pct_10d": -10.4,
-        "range_position": 0.292
-      },
-      "indicators": {
-        "rsi14": 10.98,
-        "macd_hist": -0.0,
-        "adx14": 37.01,
-        "atr_pct": 9.31,
-        "bb_width": 0.6371,
-        "rvol": 0.22,
-        "stoch_rsi": 17.81,
-        "mom_divergence": 0.0,
-        "weekly_trend": "BEARISH"
-      },
-      "subscores": {
-        "trend": -3.5,
-        "momentum": -2.75,
-        "strength": 0.5,
-        "volatility": -0.75,
-        "fibonacci": -0.25,
-        "pivot": 0.5,
-        "volume": -0.5
-      },
-      "levels": {
-        "atr_stop_long": 2.8457e-06,
-        "atr_stop_short": 4.1483e-06,
-        "atr_target_1r": 4.1483e-06,
-        "atr_target_2r": 4.7996e-06,
-        "pivot": 3.425e-06,
-        "r1": 3.602e-06,
-        "s1": 3.304e-06
-      },
-      "moving_averages": {
-        "ema20": 3.8768e-06,
-        "ema50": 4.1055e-06,
-        "ema200": 3.9561e-06,
-        "vwap20": 4.2947e-06
-      },
-      "meta": {
-        "data_source": "Kraken API",
-        "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -2531,56 +2531,56 @@
     {
       "symbol": "BONK-USD",
       "signal": "SHORT",
-      "composite_score": -49.83,
+      "composite_score": -37.0,
       "confidence": {
         "level": "MEDIUM",
-        "score": 0.513
+        "score": 0.39
       },
       "price": {
-        "close": 2.197e-06,
-        "change_pct_1d": 0.04,
-        "change_pct_10d": -5.71,
-        "range_position": -0.011
+        "close": 2.188e-06,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": -8.87,
+        "range_position": -0.015
       },
       "indicators": {
-        "rsi14": 30.59,
-        "macd_hist": -0.0,
-        "adx14": 53.56,
-        "atr_pct": 8.45,
-        "bb_width": 0.4701,
-        "rvol": 0.25,
-        "stoch_rsi": 57.76,
+        "rsi14": 30.2,
+        "macd_hist": 0.0,
+        "adx14": 54.97,
+        "atr_pct": 8.1,
+        "bb_width": 0.4557,
+        "rvol": 0.28,
+        "stoch_rsi": 71.21,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -3.5,
-        "momentum": -2.0,
+        "momentum": 0.0,
         "strength": 0.5,
         "volatility": -0.75,
         "fibonacci": -0.25,
-        "pivot": 0.75,
+        "pivot": 0.5,
         "volume": -0.5
       },
       "levels": {
-        "atr_stop_long": 1.8259e-06,
-        "atr_stop_short": 2.5681e-06,
-        "atr_target_1r": 2.5681e-06,
-        "atr_target_2r": 2.9393e-06,
-        "pivot": 2.0897e-06,
-        "r1": 2.1833e-06,
-        "s1": 2.0253e-06
+        "atr_stop_long": 1.8334e-06,
+        "atr_stop_short": 2.5426e-06,
+        "atr_target_1r": 2.5426e-06,
+        "atr_target_2r": 2.8971e-06,
+        "pivot": 2.178e-06,
+        "r1": 2.219e-06,
+        "s1": 2.132e-06
       },
       "moving_averages": {
-        "ema20": 2.3726e-06,
-        "ema50": 2.6922e-06,
-        "ema200": 3.9922e-06,
-        "vwap20": 2.3338e-06
+        "ema20": 2.353e-06,
+        "ema50": 2.6715e-06,
+        "ema200": 3.9767e-06,
+        "vwap20": 2.3154e-06
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -2589,56 +2589,56 @@
     {
       "symbol": "WIF-USD",
       "signal": "NEUTRAL",
-      "composite_score": -21.83,
+      "composite_score": -13.75,
       "confidence": {
         "level": "LOW",
         "score": 0.0
       },
       "price": {
-        "close": 0.132,
-        "change_pct_1d": 0.04,
-        "change_pct_10d": -2.0,
-        "range_position": -0.006
+        "close": 0.1375,
+        "change_pct_1d": 0.01,
+        "change_pct_10d": 0.73,
+        "range_position": 0.031
       },
       "indicators": {
-        "rsi14": 36.12,
-        "macd_hist": 0.0014,
-        "adx14": 74.36,
-        "atr_pct": 7.73,
-        "bb_width": 0.4214,
-        "rvol": 0.48,
+        "rsi14": 42.49,
+        "macd_hist": 0.0025,
+        "adx14": 69.6,
+        "atr_pct": 7.69,
+        "bb_width": 0.3875,
+        "rvol": 0.53,
         "stoch_rsi": 100.0,
-        "mom_divergence": 0.0,
+        "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
       },
       "subscores": {
         "trend": -2.5,
-        "momentum": 0.25,
+        "momentum": 0.75,
         "strength": 0.5,
         "volatility": -0.25,
         "fibonacci": -0.25,
-        "pivot": 0.75,
-        "volume": -0.5
+        "pivot": 0.5,
+        "volume": 0.25
       },
       "levels": {
-        "atr_stop_long": 0.1116,
-        "atr_stop_short": 0.1524,
-        "atr_target_1r": 0.1524,
-        "atr_target_2r": 0.1728,
-        "pivot": 0.123167,
-        "r1": 0.131033,
-        "s1": 0.119133
+        "atr_stop_long": 0.116357,
+        "atr_stop_short": 0.158643,
+        "atr_target_1r": 0.158643,
+        "atr_target_2r": 0.179786,
+        "pivot": 0.134967,
+        "r1": 0.142733,
+        "s1": 0.127933
       },
       "moving_averages": {
-        "ema20": 0.138133,
-        "ema50": 0.161457,
-        "ema200": 0.199431,
-        "vwap20": 0.134989
+        "ema20": 0.138392,
+        "ema50": 0.160657,
+        "ema200": 0.199142,
+        "vwap20": 0.134657
       },
       "meta": {
         "data_source": "Kraken API",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -2691,14 +2691,14 @@
         "ema20": 349.0589,
         "ema50": 342.1015,
         "ema200": 310.7481,
-        "vwap20": 347.7006
+        "vwap20": 347.7008
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -2749,14 +2749,14 @@
         "ema20": 511.2809,
         "ema50": 511.2519,
         "ema200": 472.7053,
-        "vwap20": 519.5807
+        "vwap20": 519.5793
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -2807,14 +2807,14 @@
         "ema20": 288.4947,
         "ema50": 308.84,
         "ema200": 322.0775,
-        "vwap20": 283.5442
+        "vwap20": 283.5424
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -2865,14 +2865,14 @@
         "ema20": 256.3501,
         "ema50": 255.9776,
         "ema200": 247.8246,
-        "vwap20": 256.1684
+        "vwap20": 256.1659
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -2923,14 +2923,14 @@
         "ema20": 379.6564,
         "ema50": 376.5198,
         "ema200": 378.6145,
-        "vwap20": 379.8114
+        "vwap20": 379.8104
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -2981,14 +2981,14 @@
         "ema20": 169.6463,
         "ema50": 191.4031,
         "ema200": 199.3199,
-        "vwap20": 164.2551
+        "vwap20": 164.2472
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3039,14 +3039,14 @@
         "ema20": 619.2731,
         "ema50": 639.6157,
         "ema200": 638.1609,
-        "vwap20": 615.4519
+        "vwap20": 615.4483
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3097,14 +3097,14 @@
         "ema20": 61.5331,
         "ema50": 65.7669,
         "ema200": 78.0597,
-        "vwap20": 61.5996
+        "vwap20": 61.5993
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3162,7 +3162,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3186,7 +3186,7 @@
         "adx14": 24.69,
         "atr_pct": 8.01,
         "bb_width": 0.3117,
-        "rvol": 0.94,
+        "rvol": 0.95,
         "stoch_rsi": 52.94,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
@@ -3213,14 +3213,14 @@
         "ema20": 117.6077,
         "ema50": 127.4098,
         "ema200": 152.7993,
-        "vwap20": 120.2474
+        "vwap20": 120.2438
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3278,7 +3278,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3336,7 +3336,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3394,7 +3394,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3452,7 +3452,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3510,7 +3510,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3534,7 +3534,7 @@
         "adx14": 15.1,
         "atr_pct": 12.92,
         "bb_width": 0.4284,
-        "rvol": 1.09,
+        "rvol": 1.1,
         "stoch_rsi": 60.91,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
@@ -3561,14 +3561,14 @@
         "ema20": 488.1056,
         "ema50": 514.5229,
         "ema200": 445.0832,
-        "vwap20": 485.4252
+        "vwap20": 485.3972
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3619,14 +3619,14 @@
         "ema20": 62.7354,
         "ema50": 77.7346,
         "ema200": 82.2891,
-        "vwap20": 59.8859
+        "vwap20": 59.8844
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3677,14 +3677,14 @@
         "ema20": 167.798,
         "ema50": 171.9918,
         "ema200": 172.6266,
-        "vwap20": 165.5224
+        "vwap20": 165.5223
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3742,7 +3742,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3793,14 +3793,14 @@
         "ema20": 327.2,
         "ema50": 339.412,
         "ema200": 354.594,
-        "vwap20": 325.5863
+        "vwap20": 325.5817
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3824,7 +3824,7 @@
         "adx14": 41.06,
         "atr_pct": 11.81,
         "bb_width": 0.4969,
-        "rvol": 1.42,
+        "rvol": 1.43,
         "stoch_rsi": 93.51,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
@@ -3851,14 +3851,14 @@
         "ema20": 737.8179,
         "ema50": 832.8213,
         "ema200": 762.0119,
-        "vwap20": 726.4479
+        "vwap20": 726.3488
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3909,14 +3909,14 @@
         "ema20": 357.9995,
         "ema50": 401.8607,
         "ema200": 418.867,
-        "vwap20": 354.3596
+        "vwap20": 354.3545
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -3967,14 +3967,14 @@
         "ema20": 217.2835,
         "ema50": 248.5063,
         "ema200": 262.9438,
-        "vwap20": 212.1156
+        "vwap20": 212.112
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4032,7 +4032,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4090,7 +4090,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4148,7 +4148,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4206,7 +4206,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4264,7 +4264,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4322,7 +4322,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4380,7 +4380,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4438,7 +4438,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4496,7 +4496,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4547,14 +4547,14 @@
         "ema20": 28.6865,
         "ema50": 28.6392,
         "ema200": 27.2428,
-        "vwap20": 29.2626
+        "vwap20": 29.2625
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4612,7 +4612,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4670,7 +4670,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4728,7 +4728,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4786,7 +4786,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4844,7 +4844,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4902,7 +4902,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -4960,7 +4960,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5018,7 +5018,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5076,7 +5076,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5134,7 +5134,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5192,7 +5192,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5250,7 +5250,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5308,7 +5308,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5359,14 +5359,14 @@
         "ema20": 126.4442,
         "ema50": 120.8404,
         "ema200": 115.9773,
-        "vwap20": 127.0942
+        "vwap20": 127.0943
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5424,7 +5424,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5482,7 +5482,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5540,7 +5540,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5591,14 +5591,14 @@
         "ema20": 36.6224,
         "ema50": 37.2858,
         "ema200": 44.1897,
-        "vwap20": 37.3416
+        "vwap20": 37.3415
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5656,7 +5656,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5707,14 +5707,14 @@
         "ema20": 118.2374,
         "ema50": 113.4266,
         "ema200": 107.3479,
-        "vwap20": 118.5954
+        "vwap20": 118.5957
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5772,7 +5772,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5830,7 +5830,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5888,7 +5888,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -5946,7 +5946,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6004,7 +6004,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6062,7 +6062,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6120,7 +6120,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6178,7 +6178,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6236,7 +6236,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6287,14 +6287,14 @@
         "ema20": 96.2803,
         "ema50": 93.4054,
         "ema200": 85.2263,
-        "vwap20": 96.5075
+        "vwap20": 96.5076
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6352,7 +6352,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6410,7 +6410,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6468,7 +6468,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6526,7 +6526,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6584,7 +6584,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6642,7 +6642,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6700,7 +6700,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6751,14 +6751,14 @@
         "ema20": 108.2196,
         "ema50": 112.2969,
         "ema200": 108.4341,
-        "vwap20": 109.7952
+        "vwap20": 109.7938
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6816,7 +6816,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6874,7 +6874,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6925,14 +6925,14 @@
         "ema20": 736.5227,
         "ema50": 749.9633,
         "ema200": 733.4512,
-        "vwap20": 736.121
+        "vwap20": 736.1172
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -6956,7 +6956,7 @@
         "adx14": 30.43,
         "atr_pct": 3.68,
         "bb_width": 0.1521,
-        "rvol": 1.28,
+        "rvol": 1.29,
         "stoch_rsi": 100.0,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
@@ -6983,14 +6983,14 @@
         "ema20": 665.4749,
         "ema50": 690.3838,
         "ema200": 681.2162,
-        "vwap20": 662.2318
+        "vwap20": 662.2204
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7041,14 +7041,14 @@
         "ema20": 272.1157,
         "ema50": 277.4444,
         "ema200": 276.1682,
-        "vwap20": 273.3613
+        "vwap20": 273.3609
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7106,7 +7106,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7164,7 +7164,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7177,19 +7177,19 @@
         "score": 0.593
       },
       "price": {
-        "close": 103.725,
+        "close": 103.718,
         "change_pct_1d": 0.0,
-        "change_pct_10d": 0.54,
-        "range_position": 0.883
+        "change_pct_10d": 0.53,
+        "range_position": 0.882
       },
       "indicators": {
-        "rsi14": 66.47,
-        "macd_hist": 0.04,
+        "rsi14": 66.42,
+        "macd_hist": 0.0396,
         "adx14": 39.3,
-        "atr_pct": 0.51,
+        "atr_pct": 0.52,
         "bb_width": 0.0373,
         "rvol": null,
-        "stoch_rsi": 65.71,
+        "stoch_rsi": 65.51,
         "mom_divergence": 0.0,
         "weekly_trend": "BULLISH"
       },
@@ -7203,24 +7203,24 @@
         "volume": 0.0
       },
       "levels": {
-        "atr_stop_long": 102.6579,
-        "atr_stop_short": 104.7921,
-        "atr_target_1r": 104.7921,
-        "atr_target_2r": 105.8593,
+        "atr_stop_long": 102.6441,
+        "atr_stop_short": 104.7919,
+        "atr_target_1r": 104.7919,
+        "atr_target_2r": 105.8657,
         "pivot": 103.7733,
         "r1": 103.9967,
         "s1": 103.4467
       },
       "moving_averages": {
-        "ema20": 103.1517,
-        "ema50": 102.2532,
+        "ema20": 103.151,
+        "ema50": 102.2529,
         "ema200": 100.6509,
         "vwap20": null
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "bar_complete": false,
         "bar_age_days": 0,
         "stale": false
@@ -7273,14 +7273,14 @@
         "ema20": 349.9082,
         "ema50": 366.293,
         "ema200": 385.2991,
-        "vwap20": 350.7307
+        "vwap20": 350.7242
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7331,14 +7331,14 @@
         "ema20": 42.9434,
         "ema50": 48.0674,
         "ema200": 55.1597,
-        "vwap20": 42.3186
+        "vwap20": 42.3162
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7396,7 +7396,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7447,14 +7447,14 @@
         "ema20": 80.8899,
         "ema50": 80.8243,
         "ema200": 83.3446,
-        "vwap20": 81.0939
+        "vwap20": 81.0941
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7512,7 +7512,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7563,14 +7563,14 @@
         "ema20": 59.1399,
         "ema50": 61.867,
         "ema200": 62.4346,
-        "vwap20": 58.8978
+        "vwap20": 58.8977
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7628,7 +7628,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7679,14 +7679,14 @@
         "ema20": 62.8723,
         "ema50": 63.6629,
         "ema200": 59.3151,
-        "vwap20": 63.3558
+        "vwap20": 63.3557
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7744,7 +7744,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7795,14 +7795,14 @@
         "ema20": 167.3276,
         "ema50": 176.5203,
         "ema200": 171.8158,
-        "vwap20": 166.0089
+        "vwap20": 166.0077
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7860,7 +7860,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7918,7 +7918,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -7942,7 +7942,7 @@
         "adx14": 22.71,
         "atr_pct": 1.57,
         "bb_width": 0.0509,
-        "rvol": 1.02,
+        "rvol": 1.03,
         "stoch_rsi": 33.02,
         "mom_divergence": -1.0,
         "weekly_trend": "BULLISH"
@@ -7969,14 +7969,14 @@
         "ema20": 90.4415,
         "ema50": 88.2603,
         "ema200": 85.0502,
-        "vwap20": 90.8871
+        "vwap20": 90.8872
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8034,7 +8034,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8092,7 +8092,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8150,7 +8150,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8208,7 +8208,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8266,7 +8266,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8324,7 +8324,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8382,7 +8382,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8440,7 +8440,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8491,14 +8491,14 @@
         "ema20": 32.7079,
         "ema50": 33.4019,
         "ema200": 34.9362,
-        "vwap20": 33.1146
+        "vwap20": 33.1145
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8556,7 +8556,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8614,7 +8614,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8672,7 +8672,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8730,7 +8730,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8788,7 +8788,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8846,7 +8846,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8904,7 +8904,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8955,14 +8955,14 @@
         "ema20": 78.4059,
         "ema50": 82.9159,
         "ema200": 84.7448,
-        "vwap20": 78.8843
+        "vwap20": 78.8833
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -8986,7 +8986,7 @@
         "adx14": 18.21,
         "atr_pct": 5.97,
         "bb_width": 0.3601,
-        "rvol": 1.27,
+        "rvol": 1.28,
         "stoch_rsi": 15.16,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
@@ -9013,14 +9013,14 @@
         "ema20": 95.1858,
         "ema50": 103.0931,
         "ema200": 108.7906,
-        "vwap20": 96.6467
+        "vwap20": 96.643
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -9078,7 +9078,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -9087,8 +9087,8 @@
       "signal": "SHORT",
       "composite_score": -47.58,
       "confidence": {
-        "level": "LOW",
-        "score": 0.25
+        "level": "MEDIUM",
+        "score": 0.35
       },
       "price": {
         "close": 34.07,
@@ -9102,7 +9102,7 @@
         "adx14": 60.35,
         "atr_pct": 4.75,
         "bb_width": 0.4344,
-        "rvol": 1.2,
+        "rvol": 1.21,
         "stoch_rsi": 18.56,
         "mom_divergence": 0.0,
         "weekly_trend": "BEARISH"
@@ -9129,14 +9129,14 @@
         "ema20": 38.6028,
         "ema50": 41.5075,
         "ema200": 43.21,
-        "vwap20": 39.0332
+        "vwap20": 39.031
       },
       "meta": {
         "data_source": "Yahoo Finance",
-        "quality_grade": "A",
+        "quality_grade": "B",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -9194,7 +9194,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -9218,7 +9218,7 @@
         "adx14": 34.79,
         "atr_pct": 8.2,
         "bb_width": 0.3244,
-        "rvol": 0.99,
+        "rvol": 1.0,
         "stoch_rsi": 97.03,
         "mom_divergence": 1.0,
         "weekly_trend": "BEARISH"
@@ -9245,14 +9245,14 @@
         "ema20": 144.3969,
         "ema50": 157.9169,
         "ema200": 156.1382,
-        "vwap20": 142.898
+        "vwap20": 142.8888
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -9303,14 +9303,14 @@
         "ema20": 473.9603,
         "ema50": 515.9692,
         "ema200": 510.421,
-        "vwap20": 471.631
+        "vwap20": 471.6241
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -9368,7 +9368,7 @@
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     },
@@ -9419,14 +9419,14 @@
         "ema20": 150.7303,
         "ema50": 152.2815,
         "ema200": 143.5089,
-        "vwap20": 151.7541
+        "vwap20": 151.7544
       },
       "meta": {
         "data_source": "Yahoo Finance",
         "quality_grade": "A",
         "date": "2026-11-25",
         "bar_complete": true,
-        "bar_age_days": 1,
+        "bar_age_days": 2,
         "stale": false
       }
     }
@@ -9747,9 +9747,9 @@
     {
       "symbol": "HBAR-USD",
       "source": "Kraken API",
-      "bars_received": 505,
+      "bars_received": 506,
       "bars_expected": 730,
-      "completeness": 0.6918,
+      "completeness": 0.6932,
       "freshness_hours": 8.0,
       "has_volume": true,
       "nan_pct": 0.0,
@@ -9954,7 +9954,7 @@
       "bars_received": 721,
       "bars_expected": 730,
       "completeness": 0.9877,
-      "freshness_hours": 8.0,
+      "freshness_hours": 8.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9966,7 +9966,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.0,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9978,7 +9978,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.0,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -9990,7 +9990,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.0,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10002,7 +10002,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.0,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10014,7 +10014,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10026,7 +10026,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10038,7 +10038,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10050,7 +10050,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10062,7 +10062,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10074,7 +10074,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10086,7 +10086,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10098,7 +10098,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10110,7 +10110,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10122,7 +10122,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10134,7 +10134,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10146,7 +10146,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10158,7 +10158,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10170,7 +10170,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10182,7 +10182,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10194,7 +10194,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10206,7 +10206,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10218,7 +10218,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10230,7 +10230,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10242,7 +10242,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10254,7 +10254,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10266,7 +10266,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10278,7 +10278,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10290,7 +10290,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10302,7 +10302,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10314,7 +10314,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10326,7 +10326,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10338,7 +10338,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10350,7 +10350,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10362,7 +10362,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10374,7 +10374,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10386,7 +10386,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10398,7 +10398,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10410,7 +10410,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10422,7 +10422,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10434,7 +10434,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10446,7 +10446,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10458,7 +10458,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10470,7 +10470,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10482,7 +10482,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10494,7 +10494,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10506,7 +10506,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10518,7 +10518,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10530,7 +10530,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10542,7 +10542,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10554,7 +10554,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10566,7 +10566,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10578,7 +10578,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10590,7 +10590,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10602,7 +10602,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10614,7 +10614,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.1,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10626,7 +10626,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10638,7 +10638,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10650,7 +10650,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10662,7 +10662,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10674,7 +10674,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10686,7 +10686,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10698,7 +10698,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10710,7 +10710,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10722,7 +10722,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10734,7 +10734,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10746,7 +10746,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10758,7 +10758,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10770,7 +10770,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10782,7 +10782,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10794,7 +10794,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10806,7 +10806,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10818,7 +10818,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10830,7 +10830,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10842,7 +10842,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10854,7 +10854,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10866,7 +10866,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10878,7 +10878,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10890,7 +10890,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10902,7 +10902,7 @@
       "bars_received": 662,
       "bars_expected": 800,
       "completeness": 0.8275,
-      "freshness_hours": 8.2,
+      "freshness_hours": 8.1,
       "has_volume": false,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10914,7 +10914,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10926,7 +10926,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10938,7 +10938,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10950,7 +10950,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10962,7 +10962,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10974,7 +10974,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10986,7 +10986,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -10998,7 +10998,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11010,7 +11010,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11022,7 +11022,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11034,7 +11034,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.1,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11046,7 +11046,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11058,7 +11058,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11070,7 +11070,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11082,7 +11082,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11094,7 +11094,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11106,7 +11106,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11118,7 +11118,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11130,7 +11130,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11142,7 +11142,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11154,7 +11154,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11166,7 +11166,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11178,7 +11178,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11190,7 +11190,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11202,7 +11202,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11214,7 +11214,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11226,7 +11226,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11238,7 +11238,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.2,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11250,7 +11250,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.3,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11262,7 +11262,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.3,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11274,7 +11274,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.3,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11286,7 +11286,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.3,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11298,11 +11298,11 @@
       "bars_received": 722,
       "bars_expected": 800,
       "completeness": 0.9025,
-      "freshness_hours": 32.3,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
-      "quality_grade": "A"
+      "quality_grade": "B"
     },
     {
       "symbol": "BITO",
@@ -11310,7 +11310,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.3,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11322,7 +11322,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.3,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11334,7 +11334,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.3,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11346,7 +11346,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.3,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11358,7 +11358,7 @@
       "bars_received": 800,
       "bars_expected": 800,
       "completeness": 1.0,
-      "freshness_hours": 32.3,
+      "freshness_hours": 56.2,
       "has_volume": true,
       "nan_pct": 0.0,
       "gap_count": 0,
@@ -11372,7 +11372,7 @@
       "successes": 44,
       "failures": 0,
       "success_rate": 1.0,
-      "avg_latency_ms": 231.6,
+      "avg_latency_ms": 148.7,
       "last_failure_reason": null
     },
     {
@@ -11381,7 +11381,7 @@
       "successes": 117,
       "failures": 0,
       "success_rate": 1.0,
-      "avg_latency_ms": 298.8,
+      "avg_latency_ms": 229.4,
       "last_failure_reason": null
     }
   ]
